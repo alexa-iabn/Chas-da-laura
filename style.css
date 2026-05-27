@@ -1,0 +1,67 @@
+body{
+    background-color: #F5F3EE;
+    margin: 0;
+    padding: 0;
+    
+    width: 100%;
+    min-height: 100vh;
+}
+
+.topoEstoque{
+    width: 100%;
+    height: 6vh;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+
+    background-color: aqua;
+}
+
+.paginaPrincipal{
+    display: block;
+    width: 5vh;
+    height: 5vh;
+
+    background-image: url(Imagens/casa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.LinkEstoque{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
+}
+
+.linkEstoqueProdutos{
+    text-decoration: none;
+    color: black;
+    margin-top: 1%;
+    margin-left: 1%;
+    font-size: 120%;
+}
+
+.notificacao{
+    background-color: blue;
+}
+
+.sino{
+    display: block;
+    width: 5vh;
+    height: 5vh;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(Imagens/sino.svg);
+}
+
+
+.logoMenuLateral{
+    width: 1vh;
+    height: 1vh;
+}

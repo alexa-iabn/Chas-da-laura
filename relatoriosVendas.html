@@ -9,9 +9,9 @@
 <body>
     
         <header class="topoEstoque">
-            <a href="paginaPrincipal.html" class="linkInicio"></a>
-            <a href="estoque.html" class="LinkEstoque">> Estoque </a>
-            <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Insumos</a>
+            <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
+            <a href="estoque.html" class="LinkEstoque"> > Estoque </a>
+            <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Produtos</a>
 
             <div class="notificacao">
                 <i class="sino"></i>
@@ -34,7 +34,7 @@
         <aside class="menuLateral">
 
             <div class="logoMenuLateral">
-                <img src="Imagens/Logo.png" alt="Logo chás da laura">
+                <img src="Imagens/Logo.png"  alt="Logo chás da laura">
             </div>
             <nav class="menu">
                 <ul>
@@ -114,8 +114,8 @@
         </aside>
     
         <main>
-            <h1 class="tituloPagina">Estoque de Insumos</h1>
-            <h3 class="subtituloPagina">Acompanhe o nível de estoque e situação dos insumos.</h3>
+            <h1 class="tituloPagina">Relatórios de Vendas</h1>
+            <h3 class="subtituloPagina">Acompanhe o desenvolvimento das vendas no período selecionado.</h3>
             <div class="demonstracoes">
 
                 <div class="demo">
@@ -123,9 +123,9 @@
                         <span class="iconePranchetaDemo"></span>
                     </div>
                     <div class="textoDemo">
-                        <span class="demoSemiTitulo">Total de insumos</span>
+                        <span class="demoSemiTitulo">Total de produtos</span>
                         <span class="demoTitulo">12</span>
-                        <span class="demoTextoNormal">Insumos cadastrados</span>
+                        <span class="demoTextoNormal">Produtos cadastrados</span>
                     </div>
                 </div>
 
@@ -134,9 +134,9 @@
                         <span class="iconeCertoDemo"></span>
                     </div>
                     <div class="textoDemo">
-                        <span class="demoSemiTitulo">Insumos ativos</span>
+                        <span class="demoSemiTitulo">Produtos ativos</span>
                         <span class="demoTitulo">10</span>
-                        <span class="demoTextoNormal">Insumos ativos</span>
+                        <span class="demoTextoNormal">Produtos ativos</span>
                     </div>
                 </div>
 
@@ -158,47 +158,14 @@
                     <div class="textoDemo">
                         <span class="demoSemiTitulo">Valor total em estoque</span>
                         <span class="demoTitulo">R$ 2.487,50</span>
-                        <span class="demoTextoNormal">Custo total dos insumos</span>
+                        <span class="demoTextoNormal">Custo total dos produtos</span>
                     </div>
                 </div>
 
             </div>
 
-            <div class="menuTabela">
-
-                <div class="titulosTabela">
-                    <h2 class="tituloTabela">Lista de insumos</h2>
-                    <h4 class="subtituloTabela">Veja e gerencie todos os insumos</h4>
-                </div>
-
-                <button class="botaoTabela">
-                    <span class="iconeLista"></span>
-                    <span class="nomeBotao">Lista</span>
-                </button>
-
-                <button class="botaoTabela">
-                    <span class="iconeCartao"></span>
-                    <span class="nomeBotao">cards</span>
-                </button>
-
-                <button class="botaoTabela">
-                    <span class="iconeMais"></span>
-                    <span class="nomeBotao">Novo insumo</span>
-                </button>
-            </div>
-            
             <div class="conteinerTabela">
-
-                <div class="topoTabela">
-                    <input type="text" placeholder="Buscar produto..." class="barraPesquisaTabela">
-                    <select class="filtroTabela">
-                        <option value="">Filtrar por</option>
-                        <option value="maiorPreco">Maior Preço</option>
-                        <option value="menorPreco">Menor Preço</option>
-                        <option value="maiorQuantidade">Maior Quantidade</option>
-                        <option value="menorQuantidade">Menor Quantidade</option>
-                    </select>
-                </div>
+                <h2 class="tituloTabela">Detalhamento do estoque</h2>
 
                 <table>
 
@@ -219,13 +186,13 @@
                             <td>
                                 <div class="Produto">
                                     <span class="fotoProduto"></span>
-                                    <span>Flor de camomila</span>
+                                    <span>Blend 1</span>
                                 </div>
                             </td>
 
                             <td>
                                 <div class="Categoria">
-                                    <span>Flor</span>
+                                    <span>Chá</span>
                                 </div>
                             </td>
 
@@ -237,7 +204,7 @@
 
                             <td>R$ 50,00</td>
 
-                            <td>2 kg</td>
+                            <td>10 un</td>
 
                             <td>
                                 <div class="Acao">
@@ -249,44 +216,154 @@
                     </tbody>
                 </table>
             </div>
+            
+            <section class="conteinerRelatorios">
+                <div class="conteinerFiltros">
 
-            <section class="conteinerCartas">
-                <Article class="carta">
-                    <div class="conteucoCarta">
+                    <div class="filtroPeriodo">
 
-                        <div class="imagemCarta">
-                            <img src="" alt="produto cha da laura">
-                        </div>
+                        <span>Periodo</span>
 
-                        <div class="infoCarta">
+                        <label for="dataInicio"></label>
+                        <input type="date" class="campoData">
 
-                            <h2>Flor de camomila</h2>
+                        <label for="dataFim"></label>
+                        <input type="date" class="campoData">
 
-                            <div class="tipo">Flor</div>
-                            <div class="status">normal</div>
-
-                        </div>
-
-                        <div class="detalhesCarta">
-
-                            <span>preço de venda</span>
-                            <strong>R$ 50,00</strong>
-
-                            <hr>
-
-                            <span>Em estoque</span>
-                            <strong>2 kg</strong>
-
-                        </div>
-
-                        <hr>
-
-                        <div class="acoesCarta">
-                            <button class="editarCartas"></button>
-                            <button class="exluircartas"></button>
-                        </div>
                     </div>
-                </Article>
+
+                    <div class="filtroCategoria">
+
+                        <span>Categoria</span>
+
+                        <select name="filtroCategoria" id="filtroCateg">
+                            <option value="todas">Todas as categorias</option>
+                            <option value="cha">Chá</option>
+                            <option value="aromatizador">Armoatizador</option>
+                        </select>
+
+                    </div>
+
+                    <div class="filtroProduto">
+
+                        <span>Produto</span>
+
+                        <select name="filtroProduto" id="filtroProd">
+                            <option value="todos">Todos os produtos</option>
+                            <option value="blend 1">Blend 1</option>
+                            <option value="aromatizador 1">aromatizador 1</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="demostracoes">
+
+                    <div class="demo">
+                    <div class="iconeDemo">
+                        <span class="iconeCarrinhoDemo"></span>
+                    </div>
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Faturamento total</span>
+                        <span class="demoTitulo">R$ 48.756,30</span>
+                        <span class="demoTextoNormal">Valor total de vendas</span>
+                    </div>
+
+                    <div class="demo">
+                    <div class="iconeDemo">
+                        <span class="iconeSacolaDemo"></span>
+                    </div>
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Produto mais vendido</span>
+                        <span class="demoTitulo">Blend 1</span>
+                        <span class="demoTextoNormal">Produto lider no periodo</span>
+                    </div>
+
+                    <div class="demo">
+                    <div class="iconeDemo">
+                        <span class="iconeDinheiroDemo"></span>
+                    </div>
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Ticket médio</span>
+                        <span class="demoTitulo">R$ 331,33</span>
+                        <span class="demoTextoNormal">Por período</span>
+                    </div>
+
+                    <div class="demo">
+                    <div class="iconeDemo">
+                        <span class="iconeSacolaDemo"></span>
+                    </div>
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Pedidos Realizados</span>
+                        <span class="demoTitulo">147</span>
+                        <span class="demoTextoNormal">Total de pedidos</span>
+                    </div>
+
+                </div>
+
+                <div class="graficos">
+
+                    <div class="cardGrafico">
+                        <h2 class="tituloGrafico">Faturamento diário(R$)</h2>
+                        <canvas class="graficoFaturamentoDiario"></canvas>
+                    </div>
+
+                    <div class="cardGrafico">
+                        <h2 class="tituloGrafico">Faturamento por categoria(R$)</h2>
+                        <canvas class="graficoFaturamentoCategoria"></canvas>
+                    </div>
+
+                    <div class="cardGrafico">
+                        <h2 class="tituloGrafico">Vendas por forma de pagamento</h2>
+                        <canvas class="graficoVendasFormaPagamento"></canvas>
+                    </div>
+
+                </div>
+            
+                <div class="conteinerTabela">
+
+                    <h2 class="tituloTabela">Detalhamento do estoque</h2>
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Categoria</th>
+                                <th>Produtos</th>
+                                <th>Quantidade</th>
+                                <th>Valor unitário</th>
+                                <th>Valor total</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <tr>
+
+                                <td>25/04/2026</td>
+
+                                <td>
+                                    <div class="Categoria">
+                                        <span>Chá</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="produto">
+                                        <span class="fotoProduto"></span>
+                                        <span>blend 1</span>
+                                    </div>
+                                </td>
+
+                                <td>10 un</td>
+
+                                <td>R$ 50,00 un</td>
+
+                                <td>R$ 500,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </main>
 </body>
