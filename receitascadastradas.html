@@ -1,0 +1,247 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Receitas Cadastradas</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+    <header class="topoEstoque">
+        <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+
+        <a href="#" class="LinkEstoque">
+            Cadastros
+        </a>
+
+        <a href="#" class="linkEstoqueProdutos">
+            > Receitas > Receitas cadastradas
+        </a>
+
+        <div class="notificacao">
+            <i class="sino"></i>
+            <span class="bolinha"></span>
+        </div>
+
+        <div class="PerfilUsuario">
+
+            <div class="avatar">
+                <span class="L">L</span>
+            </div>
+
+            <h2 class="nomeUsuario">Laura</h2>
+
+            <span class="seta">⌄</span>
+
+        </div>
+    </header>
+
+    <aside class="menuLateral">
+
+        <div class="logoMenuLateral">
+            <img src="Imagens/Logo.png" alt="Logo chás da laura">
+        </div>
+
+        <nav class="menu">
+            <ul>
+
+                <li>
+                    <a href="paineldeinicio.html" class="itemMenu">
+                        <span class="iconeCasa"></span>
+                        <span class="tituloMenu">Painel inicial</span>
+                    </a>
+                </li>
+
+                <li>
+                    <details open>
+                        <summary class="itemMenu">
+                            <span class="iconeLapis"></span>
+                            <span class="tituloMenu">Cadastros</span>
+                            <span class="iconeSeta"></span>
+                        </summary>
+
+                        <ul class="subMenu">
+                            <li><a href="CadastroClientes.html">Clientes</a></li>
+                            <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                            <li><a href="CadastroInsumos.html">Insumos</a></li>
+                            <li><a href="CadastroProdutos.html">Produtos</a></li>
+                            <li><a href="cadastroreceitas.html">Receitas</a></li>
+                            <li><a href="CadastroParceiros.html">Parceiros</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li>
+                    <details>
+                        <summary class="itemMenu">
+                            <span class="iconeLapis"></span>
+                            <span class="tituloMenu">Estoque</span>
+                            <span class="iconeSeta"></span>
+                        </summary>
+
+                        <ul class="subMenu">
+                            <li><a href="EstoqueProdutos.html">Produtos</a></li>
+                            <li><a href="EstoqueInsumos.html">Insumos</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li>
+                    <a href="relatoriosVendas.html" class="itemMenu">
+                        <span class="iconeGrafico"></span>
+                        <span class="tituloMenu">Relatórios</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="PaginaProducao.html" class="itemMenu">
+                        <span class="iconePrancheta"></span>
+                        <span class="tituloMenu">Produção</span>
+                    </a>
+                </li>
+
+                <li>
+                    <details>
+                        <summary class="itemMenu">
+                            <span class="iconeSetaCima"></span>
+                            <span class="tituloMenu">Saídas</span>
+                            <span class="iconeSeta"></span>
+                        </summary>
+
+                        <ul class="subMenu">
+                            <li><a href="SaidasCliente.html">Clientes</a></li>
+                            <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+            </ul>
+        </nav>
+        <img src="Imagens/ChaImagemMenu.png"
+     class="imagemCha"
+     alt="Chá da Laura">
+
+    </aside>
+
+    <main>
+
+        <h1 class="tituloPagina">
+            Receitas cadastradas
+        </h1>
+
+        <h3 class="subtituloPagina">
+            Gerencie e visualize todas as receitas do sistema
+        </h3>
+
+        <div class="conteinerTabela">
+
+            <div class="topoTabela">
+
+                <a href="cadastroreceitas.html">
+                    <button>← Voltar</button>
+                </a>
+
+                <button>Lista</button>
+
+                <button>Cards</button>
+
+                <br><br>
+
+                <input
+                    type="text"
+                    placeholder="Buscar receita..."
+                >
+
+                <a href="cadastroreceitas.html">
+                    <button>+ Nova receita</button>
+                </a>
+
+            </div>
+
+            <br>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Nome da receita</th>
+                        <th>Rendimento</th>
+                        <th>Custo por unidade</th>
+                        <th>Custo total</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr><td>Receita 1</td><td>10 Latas - 50g</td><td>R$ 2,15</td><td>R$ 21,50</td><td><a href="editarreceita.html">✏️</a><button class="botaoAbrirModal">🗑️</button></td></tr>
+                    <tr><td>Receita 2</td><td>10 Latas - 50g</td><td>R$ 2,15</td><td>R$ 21,50</td><td><a href="editarreceita.html">✏️</a><button class="botaoAbrirModal">🗑️</button></td></tr>
+                    <tr><td>Receita 3</td><td>10 Latas - 50g</td><td>R$ 2,15</td><td>R$ 21,50</td><td><a href="editarreceita.html">✏️</a><button class="botaoAbrirModal">🗑️</button></td></tr>
+                    <tr><td>Receita 4</td><td>10 Latas - 50g</td><td>R$ 2,15</td><td>R$ 21,50</td><td><a href="editarreceita.html">✏️</a><button class="botaoAbrirModal">🗑️</button></td></tr>
+                    <tr><td>Receita 5</td><td>10 Latas - 50g</td><td>R$ 2,15</td><td>R$ 21,50</td><td><a href="editarreceita.html">✏️</a><button class="botaoAbrirModal">🗑️</button></td></tr>
+                    <tr><td>Receita 6</td><td>10 Latas - 50g</td><td>R$ 2,15</td><td>R$ 21,50</td><td><a href="editarreceita.html">✏️</a><button class="botaoAbrirModal">🗑️</button></td></tr>
+                    <tr><td>Receita 7</td><td>10 Latas - 50g</td><td>R$ 2,15</td><td>R$ 21,50</td><td><a href="editarreceita.html">✏️</a><button class="botaoAbrirModal">🗑️</button></td></tr>
+                    <tr><td>Receita 8</td><td>10 Latas - 50g</td><td>R$ 2,15</td><td>R$ 21,50</td><td><a href="editarreceita.html">✏️</a><button class="botaoAbrirModal">🗑️</button></td></tr>
+                    <tr><td>Receita 9</td><td>10 Latas - 50g</td><td>R$ 2,15</td><td>R$ 21,50</td><td><a href="editarreceita.html">✏️</a><button class="botaoAbrirModal">🗑️</button></td></tr>
+                    <tr><td>Receita 10</td><td>10 Latas - 50g</td><td>R$ 2,15</td><td>R$ 21,50</td><td><a href="editarreceita.html">✏️</a><button class="botaoAbrirModal">🗑️</button></td></tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+    <div class="fundoModal">
+
+        <div class="modalExcluir">
+
+            <div class="iconeModal">🗑</div>
+
+            <h2>Excluir Receita</h2>
+
+            <p>Tem certeza que deseja excluir esta receita?</p>
+            <p>Essa ação não pode ser desfeita.</p>
+
+            <div class="cardModalReceita">
+
+                <div class="bolinhaReceita">
+                    R1
+                </div>
+
+                <div>
+                    <h3>Receita 1</h3>
+
+                    <p>📦 10 Latas - 50g</p>
+                    <p>💰 R$ 2,15</p>
+                    <p>💵 R$ 21,50</p>
+                </div>
+
+            </div>
+
+            <div class="alertaModal">
+                ⚠️ Todas as informações e históricos relacionados a esta receita serão permanentemente apagados do sistema.
+            </div>
+
+            <div class="botoesModal">
+
+                <button class="botaoCancelar">
+                    Cancelar
+                </button>
+
+                <button class="botaoConfirmarExcluir">
+                    Excluir receita
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+
+    </body>
+    </html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parceiros Cadastrados — Cards — Chás da Laura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topoEstoque">
+    <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+    <a href="#" class="LinkEstoque">Cadastros</a>
+    <a href="#" class="linkEstoqueProdutos"> &gt; Parceiros &gt; Parceiros cadastrados</a>
+    <div class="notificacao"><i class="sino"></i><span class="bolinha"></span></div>
+    <div class="PerfilUsuario">
+        <div class="avatar"><span class="L">L</span></div>
+        <h2 class="nomeUsuario">Laura</h2>
+        <span class="seta">⌄</span>
+    </div>
+</header>
+
+<aside class="menuLateral">
+    <div class="logoMenuLateral"><img src="Imagens/Logo.png" alt="Logo chás da laura"></div>
+    <nav class="menu"><ul>
+        <li><a href="paineldeinicio.html" class="itemMenu"><span class="iconeCasa"></span><span class="tituloMenu">Painel inicial</span></a></li>
+        <li><details open><summary class="itemMenu"><span class="iconeLapis"></span><span class="tituloMenu">Cadastros</span><span class="iconeSeta"></span></summary>
+            <ul class="subMenu">
+                <li><a href="CadastroClientes.html">Clientes</a></li>
+                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                <li><a href="CadastroInsumos.html">Insumos</a></li>
+                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                <li><a href="cadastroparceiros.html">Parceiros</a></li>
+            </ul></details></li>
+        <li><details><summary class="itemMenu"><span class="iconeLapis"></span><span class="tituloMenu">Estoque</span><span class="iconeSeta"></span></summary><ul class="subMenu"><li><a href="EstoqueProdutos.html">Produtos</a></li><li><a href="EstoqueInsumos.html">Insumos</a></li></ul></details></li>
+        <li><a href="relatoriosVendas.html" class="itemMenu"><span class="iconeGrafico"></span><span class="tituloMenu">Relatórios</span></a></li>
+        <li><a href="PaginaProducao.html" class="itemMenu"><span class="iconePrancheta"></span><span class="tituloMenu">Produção</span></a></li>
+        <li><details><summary class="itemMenu"><span class="iconeSetaCima"></span><span class="tituloMenu">Saídas</span><span class="iconeSeta"></span></summary><ul class="subMenu"><li><a href="SaidasCliente.html">Clientes</a></li><li><a href="SaidasParceiros.html">Parceiros</a></li></ul></details></li>
+    </ul></nav>
+    <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+</aside>
+
+<main>
+    <h1 class="tituloPagina">Parceiros cadastrados</h1>
+    <h3 class="subtituloPagina">Gerencie e visualize todos os parceiros do sistema</h3>
+
+    <div class="topoCardsReceitas">
+        <div>
+            <a href="cadastroparceiros.html"><button>← Voltar</button></a>
+            <a href="parceiroscadastrados.html"><button>☰ Lista</button></a>
+            <a href="parceiroscards.html"><button>▣ Cards</button></a>
+        </div>
+        <div>
+            <input type="text" placeholder="Buscar parceiro...">
+            <a href="cadastroparceiros.html"><button>+ Novo parceiro</button></a>
+        </div>
+    </div>
+
+    <section class="cardsReceitas">
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">MS</div>
+            <div class="infoReceita">
+                <h3>Maria Silva</h3>
+                <p>📞 (11) 98765-4321</p>
+                <p>✉️ maria.silva@gmail.com</p>
+                <p>📍 rua x, 134</p>
+                <p>📅 12/05/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Maria Silva','MS','(11) 98765-4321','maria.silva@gmail.com','rua x, 134')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">JO</div>
+            <div class="infoReceita">
+                <h3>João Oliveira</h3>
+                <p>📞 (11) 98765-4321</p>
+                <p>✉️ joao.oliveira@gmail.com</p>
+                <p>📍 rua x, 134</p>
+                <p>📅 15/05/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('João Oliveira','JO','(11) 98765-4321','joao.oliveira@gmail.com','rua x, 134')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">AP</div>
+            <div class="infoReceita">
+                <h3>Ana Paula Santos</h3>
+                <p>📞 (11) 98765-4321</p>
+                <p>✉️ ana.santos@gmail.com</p>
+                <p>📍 rua x, 134</p>
+                <p>📅 18/05/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Ana Paula Santos','AP','(11) 98765-4321','ana.santos@gmail.com','rua x, 134')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">CF</div>
+            <div class="infoReceita">
+                <h3>Carlos Ferreira</h3>
+                <p>📞 (11) 97654-3210</p>
+                <p>✉️ carlos.ferreira@gmail.com</p>
+                <p>📍 rua y, 200</p>
+                <p>📅 20/05/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Carlos Ferreira','CF','(11) 97654-3210','carlos.ferreira@gmail.com','rua y, 200')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">LC</div>
+            <div class="infoReceita">
+                <h3>Lúcia Costa</h3>
+                <p>📞 (11) 96543-2109</p>
+                <p>✉️ lucia.costa@gmail.com</p>
+                <p>📍 rua z, 55</p>
+                <p>📅 22/05/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Lúcia Costa','LC','(11) 96543-2109','lucia.costa@gmail.com','rua z, 55')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">RM</div>
+            <div class="infoReceita">
+                <h3>Roberto Mendes</h3>
+                <p>📞 (11) 95432-1098</p>
+                <p>✉️ roberto.mendes@gmail.com</p>
+                <p>📍 av. brasil, 10</p>
+                <p>📅 25/05/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Roberto Mendes','RM','(11) 95432-1098','roberto.mendes@gmail.com','av. brasil, 10')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">PA</div>
+            <div class="infoReceita">
+                <h3>Patricia Alves</h3>
+                <p>📞 (11) 94321-0987</p>
+                <p>✉️ patricia.alves@gmail.com</p>
+                <p>📍 rua das flores, 3</p>
+                <p>📅 28/05/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Patricia Alves','PA','(11) 94321-0987','patricia.alves@gmail.com','rua das flores, 3')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">FS</div>
+            <div class="infoReceita">
+                <h3>Fernando Souza</h3>
+                <p>📞 (11) 93210-9876</p>
+                <p>✉️ fernando.souza@gmail.com</p>
+                <p>📍 rua x, 134</p>
+                <p>📅 30/05/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Fernando Souza','FS','(11) 93210-9876','fernando.souza@gmail.com','rua x, 134')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">ML</div>
+            <div class="infoReceita">
+                <h3>Mariana Lima</h3>
+                <p>📞 (11) 92109-8765</p>
+                <p>✉️ mariana.lima@gmail.com</p>
+                <p>📍 rua x, 134</p>
+                <p>📅 01/06/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Mariana Lima','ML','(11) 92109-8765','mariana.lima@gmail.com','rua x, 134')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">TR</div>
+            <div class="infoReceita">
+                <h3>Thiago Rocha</h3>
+                <p>📞 (11) 91098-7654</p>
+                <p>✉️ thiago.rocha@gmail.com</p>
+                <p>📍 rua x, 134</p>
+                <p>📅 03/06/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Thiago Rocha','TR','(11) 91098-7654','thiago.rocha@gmail.com','rua x, 134')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">VN</div>
+            <div class="infoReceita">
+                <h3>Vanessa Nunes</h3>
+                <p>📞 (11) 90987-6543</p>
+                <p>✉️ vanessa.nunes@gmail.com</p>
+                <p>📍 rua x, 134</p>
+                <p>📅 05/06/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Vanessa Nunes','VN','(11) 90987-6543','vanessa.nunes@gmail.com','rua x, 134')">🗑</button>
+            </div>
+        </article>
+
+        <article class="cardReceita">
+            <div class="bolinhaReceita">DM</div>
+            <div class="infoReceita">
+                <h3>Diego Martins</h3>
+                <p>📞 (11) 89876-5432</p>
+                <p>✉️ diego.martins@gmail.com</p>
+                <p>📍 rua x, 134</p>
+                <p>📅 07/06/2025</p>
+            </div>
+            <div class="acoesReceita">
+                <a href="editarparceiro.html">✎</a>
+                <button onclick="abrirModal('Diego Martins','DM','(11) 89876-5432','diego.martins@gmail.com','rua x, 134')">🗑</button>
+            </div>
+        </article>
+
+    </section>
+</main>
+
+<!-- Modal excluir -->
+<div class="fundoModal" id="modalExcluir" onclick="if(event.target===this)fecharModal()">
+    <div class="modalExcluir">
+        <div class="iconeModal">🗑</div>
+        <h2>Excluir Parceiro</h2>
+        <p>Tem certeza que deseja excluir este parceiro?</p>
+        <p>Essa ação não pode ser desfeita.</p>
+        <div class="cardModalReceita">
+            <div class="bolinhaReceita" id="modalSigla">MS</div>
+            <div>
+                <h3 id="modalNome">Maria Silva</h3>
+                <p id="modalTel">📞 (11) 98765-4321</p>
+                <p id="modalEmail">✉️ maria.silva@gmail.com</p>
+                <p id="modalEnd">📍 rua x, 134</p>
+            </div>
+        </div>
+        <div class="alertaModal">
+            ⚠️ Todas as informações e históricos relacionados a este parceiro serão permanentemente apagados do sistema.
+        </div>
+        <div class="botoesModal">
+            <button class="botaoCancelar" onclick="fecharModal()">Cancelar</button>
+            <button class="botaoConfirmarExcluir" onclick="fecharModal()">Excluir parceiro</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function abrirModal(nome, sigla, tel, email, end) {
+        document.getElementById('modalNome').textContent  = nome;
+        document.getElementById('modalSigla').textContent = sigla;
+        document.getElementById('modalTel').textContent   = '📞 ' + tel;
+        document.getElementById('modalEmail').textContent = '✉️ ' + email;
+        document.getElementById('modalEnd').textContent   = '📍 ' + end;
+        document.getElementById('modalExcluir').style.display = 'flex';
+    }
+    function fecharModal() {
+        document.getElementById('modalExcluir').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

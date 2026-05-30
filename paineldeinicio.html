@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de início</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topoEstoque">
+    <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+    <a href="paineldeinicio.html" class="LinkEstoque">Painel de início</a>
+
+    <div class="notificacao">
+        <i class="sino"></i>
+        <span class="bolinha"></span>
+    </div>
+
+    <div class="PerfilUsuario">
+        <div class="avatar">
+            <span class="L">L</span>
+        </div>
+
+        <h2 class="nomeUsuario">Laura</h2>
+        <span class="seta">⌄</span>
+    </div>
+</header>
+
+<aside class="menuLateral">
+    <div class="logoMenuLateral">
+        <img src="Imagens/Logo.png" alt="Logo chás da laura">
+    </div>
+
+    <nav class="menu">
+        <ul>
+            <li>
+                <a href="paineldeinicio.html" class="itemMenu">
+                    <span class="iconeCasa"></span>
+                    <span class="tituloMenu">Painel inicial</span>
+                </a>
+            </li>
+
+            <li>
+                <details>
+                    <summary class="itemMenu">
+                        <span class="iconeLapis"></span>
+                        <span class="tituloMenu">Cadastros</span>
+                        <span class="iconeSeta"></span>
+                    </summary>
+
+                    <ul class="subMenu">
+                        <li><a href="CadastroClientes.html">Clientes</a></li>
+                        <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                        <li><a href="CadastroInsumos.html">Insumos</a></li>
+                        <li><a href="CadastroProdutos.html">Produtos</a></li>
+                        <li><a href="cadastroreceitas.html">Receitas</a></li>
+                        <li><a href="CadastroParceiros.html">Parceiros</a></li>
+                    </ul>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary class="itemMenu">
+                        <span class="iconeLapis"></span>
+                        <span class="tituloMenu">Estoque</span>
+                        <span class="iconeSeta"></span>
+                    </summary>
+
+                    <ul class="subMenu">
+                        <li><a href="EstoqueProdutos.html">Produtos</a></li>
+                        <li><a href="EstoqueInsumos.html">Insumos</a></li>
+                    </ul>
+                </details>
+            </li>
+
+            <li>
+                <a href="relatoriosVendas.html" class="itemMenu">
+                    <span class="iconeGrafico"></span>
+                    <span class="tituloMenu">Relatórios</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="PaginaProducao.html" class="itemMenu">
+                    <span class="iconePrancheta"></span>
+                    <span class="tituloMenu">Produção</span>
+                </a>
+            </li>
+
+            <li>
+                <details>
+                    <summary class="itemMenu">
+                        <span class="iconeSetaCima"></span>
+                        <span class="tituloMenu">Saídas</span>
+                        <span class="iconeSeta"></span>
+                    </summary>
+
+                    <ul class="subMenu">
+                        <li><a href="SaidasCliente.html">Clientes</a></li>
+                        <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </nav>
+    <img src="Imagens/ChaImagemMenu.png"
+     class="imagemCha"
+     alt="Chá da Laura">
+</aside>
+
+<main>
+    <h1 class="tituloPagina">Painel de início</h1>
+    <h3 class="subtituloPagina">Olá Laura! Veja o resumo do seu estoque</h3>
+
+    <section class="demonstracoes">
+        <div class="demo">
+            <div class="textoDemo">
+                <span class="demoSemiTitulo">Produtos</span>
+                <span class="demoTitulo">128</span>
+                <a href="#">Ver todos</a>
+            </div>
+        </div>
+
+        <div class="demo">
+            <div class="textoDemo">
+                <span class="demoSemiTitulo">Estoque total</span>
+                <span class="demoTitulo">2.456</span>
+                <a href="#">Ver detalhes</a>
+            </div>
+        </div>
+
+        <div class="demo">
+            <div class="textoDemo">
+                <span class="demoSemiTitulo">Produtos com &lt; 10 un</span>
+                <span class="demoTitulo">18</span>
+                <a href="#">Ver lista</a>
+            </div>
+        </div>
+
+        <div class="demo">
+            <div class="textoDemo">
+                <span class="demoSemiTitulo">Produtos zerados</span>
+                <span class="demoTitulo">7</span>
+                <a href="#">Ver lista</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="conteinerTabela">
+        <h2 class="tituloTabela">Estoque por status</h2>
+
+        <div class="demonstracoes">
+            <div class="demo">
+                <div class="textoDemo">
+                    <span class="demoSemiTitulo">Normal</span>
+                    <span class="demoTitulo">103</span>
+                </div>
+            </div>
+
+            <div class="demo">
+                <div class="textoDemo">
+                    <span class="demoSemiTitulo">Estoque baixo</span>
+                    <span class="demoTitulo">18</span>
+                </div>
+            </div>
+
+            <div class="demo">
+                <div class="textoDemo">
+                    <span class="demoSemiTitulo">Zerado</span>
+                    <span class="demoTitulo">7</span>
+                </div>
+            </div>
+
+            <div class="demo">
+                <div class="textoDemo">
+                    <span class="demoSemiTitulo">Vencidos</span>
+                    <span class="demoTitulo">4</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="conteinerTabela">
+        <h2 class="tituloTabela">Movimentações <span>(últimos 7 dias)</span></h2>
+
+        <p>Entradas <strong>32</strong></p>
+        <p>Saídas <strong>45</strong></p>
+        <p>Produções <strong>12</strong></p>
+    </section>
+
+    <section class="conteinerTabela">
+        <h2 class="tituloTabela">Produtos mais vendidos <span>(últimos 30 dias)</span></h2>
+
+        <div class="graficoBarras">
+            <div class="barraItem">
+                <div class="barra" style="height: 40px;"></div>
+                <span>P1</span>
+            </div>
+
+            <div class="barraItem">
+                <div class="barra" style="height: 140px;"></div>
+                <span>P2</span>
+            </div>
+
+            <div class="barraItem">
+                <div class="barra" style="height: 120px;"></div>
+                <span>P3</span>
+            </div>
+
+            <div class="barraItem">
+                <div class="barra" style="height: 85px;"></div>
+                <span>P4</span>
+            </div>
+
+            <div class="barraItem">
+                <div class="barra" style="height: 55px;"></div>
+                <span>P5</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="conteinerTabela">
+        <h2 class="tituloTabela">Produtos parados</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Dias sem saída</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Produto A</td>
+                    <td>45 dias</td>
+                </tr>
+                <tr>
+                    <td>Produto B</td>
+                    <td>38 dias</td>
+                </tr>
+                <tr>
+                    <td>Produto C</td>
+                    <td>32 dias</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="#">Ver relatório completo</a>
+    </section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parceiros Cadastrados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topoEstoque">
+  <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+  <a href="#" class="LinkEstoque">Cadastros</a>
+  <a href="#" class="linkEstoqueProdutos"> > Parceiros > Parceiros cadastrados</a>
+
+  <div class="notificacao">
+    <i class="sino"></i>
+  </div>
+
+  <div class="PerfilUsuario">
+    <div class="avatar">L</div>
+    <h2 class="nomeUsuario">Laura</h2>
+  </div>
+</header>
+
+<aside class="menuLateral">
+  <div class="logoMenuLateral">
+    <img src="Imagens/Logo.png" alt="Logo">
+  </div>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="paineldeinicio.html" class="itemMenu">Painel inicial</a></li>
+
+      <li>
+        <details open>
+          <summary class="itemMenu">Cadastros</summary>
+          <ul class="subMenu">
+            <li><a href="cadastroprodutos.html">Produtos</a></li>
+            <li><a href="cadastroreceitas.html">Receitas</a></li>
+            <li><a href="cadastroparceiros.html">Parceiros</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li><a href="EstoqueProdutos.html" class="itemMenu">Estoque</a></li>
+      <li><a href="relatoriosVendas.html" class="itemMenu">Relatórios</a></li>
+      <li><a href="PaginaProducao.html" class="itemMenu">Produção</a></li>
+    </ul>
+  </nav>
+
+  <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+</aside>
+
+<main>
+
+  <h1 class="tituloPagina">Parceiros cadastrados</h1>
+  <h3 class="subtituloPagina">Gerencie e visualize todos os parceiros do sistema</h3>
+
+  <div class="conteinerTabela">
+
+    <div class="topoCardsReceitas">
+      <div>
+        <a href="paineldeinicio.html"><button>← Voltar</button></a>
+        <button>☰ Lista</button>
+        <button>▣ Cards</button>
+      </div>
+
+      <div>
+        <input type="text" placeholder="Buscar parceiro...">
+        <a href="cadastroparceiros.html"><button>+ Novo parceiro</button></a>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF/CNPJ</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Maria Silva</td>
+          <td>123.456.789-00</td>
+          <td>(11) 98765-4321</td>
+          <td>Rua X, 134</td>
+          <td>
+            <a href="editarparceiro.html">✏️</a>
+            <button class="botaoAbrirModal">🗑️</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>João Oliveira</td>
+          <td>987.654.321-00</td>
+          <td>(11) 98765-4321</td>
+          <td>Rua X, 134</td>
+          <td>
+            <a href="editarparceiro.html">✏️</a>
+            <button class="botaoAbrirModal">🗑️</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Ana Paula Santos</td>
+          <td>456.789.123-00</td>
+          <td>(11) 98765-4321</td>
+          <td>Rua X, 134</td>
+          <td>
+            <a href="editarparceiro.html">✏️</a>
+            <button class="botaoAbrirModal">🗑️</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Maria Silva</td>
+          <td>123.456.789-00</td>
+          <td>(11) 98765-4321</td>
+          <td>Rua X, 134</td>
+          <td>
+            <a href="editarparceiro.html">✏️</a>
+            <button class="botaoAbrirModal">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</main>
+
+<div class="fundoModal">
+  <div class="modalExcluir">
+
+    <div class="iconeModal">🗑️</div>
+
+    <h2>Excluir parceiro</h2>
+
+    <p>Tem certeza que deseja excluir este parceiro?</p>
+    <p>Essa ação não pode ser desfeita.</p>
+
+    <div class="cardModalReceita">
+      <div class="bolinhaReceita">MS</div>
+
+      <div>
+        <h3>Maria Silva</h3>
+        <p>📞 (11) 98765-4321</p>
+        <p>✉️ maria.silva@gmail.com</p>
+        <p>📍 Rua X, 134 - Foz do Iguaçu - PR</p>
+      </div>
+    </div>
+
+    <div class="alertaModal">
+      ⚠️ Todas as informações e históricos relacionados a este parceiro serão permanentemente apagados do sistema.
+    </div>
+
+    <div class="botoesModal">
+      <button class="botaoCancelar">Cancelar</button>
+      <button class="botaoConfirmarExcluir">Excluir parceiro</button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
