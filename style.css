@@ -15,8 +15,15 @@ body{
     padding: 0;
 
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-    background-color: aqua;
+.caminho{
+    display: flex;
+    align-items: center;
+
+    margin-left: 35vh;
 }
 
 .paginaPrincipal{
@@ -41,27 +48,729 @@ body{
 .linkEstoqueProdutos{
     text-decoration: none;
     color: black;
-    margin-top: 1%;
-    margin-left: 1%;
+    margin-top: 1vh;
+    margin-left: 1vh;
     font-size: 120%;
 }
 
-.notificacao{
-    background-color: blue;
+.notfUser{
+    display: flex;
+    align-items: center;
+    margin-right: 2vh;
+}
+
+.notificacao, .avatar{
+    background-color: rgb(255, 255, 255);
+
+    width: 5vh;
+    height: 5vh;
+    margin-top: 0.3vh;
+    margin-left: 2vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    border-radius: 50%;
 }
 
 .sino{
-    display: block;
     width: 5vh;
     height: 5vh;
 
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url(Imagens/sino.svg);
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
 }
 
+.bolinha{
+    width: 2vh;
+    height: 2vh;
 
-.logoMenuLateral{
-    width: 1vh;
-    height: 1vh;
+    background-color: rgb(231, 3, 3);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0.5vh;
+    right: 0.5vh;
 }
+
+.PerfilUsuario{
+    display: flex;
+}
+
+.avatar{
+    background-color: #144621;
+}
+
+.L{
+    font-size: 25px;
+    margin: 0;
+    color: #ffffff;
+}
+
+.nomeUsuario{
+    margin: 0;
+    margin-top: 1vh;
+    margin-left: 1vh;
+}
+
+.menuLateral{
+    width: 30vh;
+    height: 100vh;
+
+    background-color: #144621;
+
+    position:absolute;
+    top: 0;
+    left: 0;
+
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.menuLateral summary{
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.botaoRetratil{
+    width: 5vh;
+    height: 5vh;
+
+    margin: 2vh;
+    cursor: pointer;
+
+    background-image: url(Imagens/listaSemPonto.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+
+    filter: brightness(0) invert(1);
+}
+
+body.sidebarFechado .menuLateral{
+    width: 8vh;
+}
+
+body.sidebarFechado .blocoOpcao{
+    background-color: transparent;
+}
+
+body.sidebarFechado .logoMenuLateral{
+    display: none;
+}
+
+body.sidebarFechado .tituloMenu{
+    display: none;
+}
+
+body.sidebarFechado .conteudo{
+    margin-left: -20vh;
+}
+
+.logoMenuLateral img{
+    width: 30vh;
+    height: 20vh;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+
+    padding: 0;
+    margin: 0;
+}
+
+.menu li a, .menu summary span{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.menu ul li {
+    margin-left: 1vh;
+}
+
+.menu ul li .itemMenu{
+    margin-left: 1vh;
+}
+
+.itemMenu{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+
+    margin: 0;
+    padding: 0;
+    
+}
+
+.blocoOpcao{
+    width: 27vh;
+    height: 6vh;
+
+    display: flex;
+    align-items: center;
+    border-radius: 1.5vh;
+
+    margin: 0;
+    padding: 0;
+}
+
+.blocoOpcao.ativo{
+    background-color: #53f844a9;
+}
+
+.circulo{
+    width: 5vh;
+    height: 5vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: #027420;
+}
+
+.iconeCasa{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/casa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeLapis{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/lapiz.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeCaixa{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/caixa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeGrafico{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/grafico.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconePrancheta{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/prancheta.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeSetaCima{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/setaCima.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.menuLateral .subMenu{
+    display: flex;
+    gap: 1.5vh;
+
+    color: #ffffff;
+    list-style: disc;
+    margin-top: 1vh;
+    margin-left: 3vh;
+    padding-left: 5vh;
+    padding-bottom: 2vh;
+
+    border-radius: 2vh;
+    background-color: #197e167e;
+}
+
+.seta{
+    margin: 1vh;
+}
+
+/* CONTEUDO PRINCIPAL */
+
+/* TITULO DA PÁGINA */
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulos{
+    margin-right: 73vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.subtituloPagina{
+    margin: 0;
+    margin-top: -3vh;
+
+    font-weight: 100;
+}
+
+/* DEMOSTRATIVOS */
+
+.demonstracoes{
+    width: 165vh;
+    height: 20vh;
+
+    margin-left: 35vh;
+    margin-right: 10vh;
+    margin-top: 3vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
+}
+
+.demo{
+    display: flex;
+
+    background-color: rgb(255, 255, 255);
+    width: 40vh;
+    height: 17vh;
+
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+
+    border-radius: 1.5vh;
+}
+
+.iconeDemo{
+
+    width: 8vh;
+    height: 8vh;
+
+    margin: 2vh;
+    border-radius: 1.5vh;
+
+    background-color: #A3FF69;
+}
+
+.iconePranchetaDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/prancheta.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeCertoDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/certo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeCaixaDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/caixa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeDinheiroDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/dinheiro_circulo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.textoDemo{
+    width: 25vh;
+    height: 100%;
+    margin-top: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    
+}
+
+.demoSemiTitulo{
+
+    font-weight: bolder;
+    margin: 0;
+}
+
+.demoTitulo{
+    font-size: 5vh;
+    font-weight: bolder;
+}
+
+/* TITULO TABELA E BOTÕES CARD, LIST E NOVO PRODUTO */
+
+.menuTabela{
+    margin-left: 25vh;
+    display: flex;
+    gap:2vh
+}
+
+.titulosTabela{
+    display: flex;
+    flex-direction: column;
+}
+
+.subtituloTabela{
+    margin-top: -3vh;
+    font-weight: 100;
+}
+
+.botoesTabela{
+    display: flex;
+    gap: 2vh;
+
+    margin-top: 5vh;
+}
+
+.botaoTabelaLista{
+    display: flex;
+    align-items: center;
+
+    width: 12vh;
+    height: 5vh;
+
+    border-color: #6c6d6c;
+    border-radius: 1vh;
+    background-color: transparent;
+
+    margin-left: 75vh;
+}
+
+.iconeLista{
+    width: 4vh;
+    height: 4vh;
+    margin: 0vh;
+
+    display: block;
+
+    background-image: url(Imagens/lista.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.nomeBotao{
+    margin-left: 1vh;
+    font-weight: bolder;
+}
+
+.botaoTabelaCard{
+    display: flex;
+    align-items: center;
+
+    width: 15vh;
+    height: 5vh;
+
+    border-color: #144621;
+    border-radius: 1vh;
+    background-color: #144621;
+}
+
+.iconeCartao{
+    width: 4vh;
+    height: 4vh;
+    margin: 0vh;
+
+    display: block;
+
+    background-image: url(Imagens/carta.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.nomeBotaoCartao{
+    margin-left: 1vh;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.botaoTabelaNovo{
+    display: flex;
+    align-items: center;
+
+    width: 22vh;
+    height: 5vh;
+
+    border-color: #144621;
+    border-radius: 1vh;
+    background-color: #144621;
+}
+
+.iconeMais{
+    width: 4vh;
+    height: 4vh;
+    margin: 0vh;
+
+    display: block;
+
+    background-image: url(Imagens/mais.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+/* TABELA */
+
+.conteinerTabela{
+    background-color: rgb(255, 255, 255);
+    height: 43vh;
+    width: 165vh;
+
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    border-radius: 1.5vh;
+    margin-left: 25vh;
+}
+
+.topoTabela{
+    width: 100%;
+    height: 5vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 2vh;
+
+    margin-top: 0.5vh;
+}
+
+.barraPesquisaTabela{
+    width: 30vh;
+    height: 3vh;
+
+    border-radius: 1vh;
+    border-color: #6c6d6c;
+    background-color: transparent;
+}
+
+.filtroTabela{
+    width: 20vh;
+    height: 4vh;
+
+    border-radius: 1vh;
+    border-color: #6c6d6c;
+    background-color: transparent;
+
+    margin-right: 2vh;
+}
+
+.tabela{
+    width: 100%;
+    height: auto;
+}
+
+.tabela td, .tabela th{
+    text-align: center;
+}
+
+.topoTabelaVerdadeira{
+    background-color: #b3b1b1;
+    width: 100%;
+    color: #ffffff;
+}
+
+.Produto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fotoProduto{
+    width: 4vh;
+    height: 4vh;
+    margin: 0vh;
+
+    display: block;
+
+    background-image: url(Imagens/produto_1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.Categoria, .Status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #A3FF69;
+    width: 60%;
+    height: 100%;
+
+    border-radius: 1.5vh;
+
+    margin-left: 5vh;
+}
+
+.precoVenda{
+    margin-left: 30vh;
+}
+
+.Acao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.iconeLapisTabela{
+    width: 4vh;
+    height: 4vh;
+    margin: 0vh;
+
+    display: block;
+
+    background-image: url(Imagens/lapiz_2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeLixeira{
+    width: 4vh;
+    height: 4vh;
+    margin: 0vh;
+
+    display: block;
+
+    background-image: url(Imagens/lixeira.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(17%)
+    sepia(98%)
+    saturate(7476%)
+    hue-rotate(356deg)
+    brightness(96%)
+    contrast(118%);
+}
+

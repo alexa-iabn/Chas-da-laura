@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque de produtos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+        <header class="topoEstoque">
+            <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
+            <a href="estoque.html" class="LinkEstoque"> > Estoque </a>
+            <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Produtos</a>
+
+            <div class="notificacao">
+                <i class="sino"></i>
+                <span class="bolinha"></span>
+            </div>
+
+            <div class="PerfilUsuario">
+
+                <div class="avatar">
+                    <span class="L">L</span>
+                </div>
+
+                <h2 class="nomeUsuario">Laura</h2>
+
+                <span class="seta">⌄</span>
+
+            </div>
+        </header>
+
+        <aside class="menuLateral">
+
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png"  alt="Logo chás da laura">
+            </div>
+            <nav class="menu">
+                <ul>
+
+                    <li>
+                        <a href="paginaInicial.html" class="itemMenu">
+                            <span class="iconeCasa"></span>
+                            <span class="tituloMenu">Painel inicial</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="itemMenu">
+                                <span class="iconeLapis"></span>
+                                <span class="tituloMenu">Cadastros</span>
+                                <span class="iconeSeta"></span>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="CadastroClientes.html">Clientes</a></li>
+                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                                <li><a href="CadastroInsumos.html">Insumos</a></li>
+                                <li><a href="CadastroProdutos.html">Produtos</a></li>
+                                <li><a href="CadastroReceitas.html">Receitas</a></li>
+                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="itemMenu">
+                                <span class="iconeLapis"></span>
+                                <span class="tituloMenu">Estoque</span>
+                                <span class="iconeSeta"></span>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="estoqueProdutos.html">Produtos</a></li>
+                                <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    
+                    <li>
+                        <a href="PaginaRelatorios.html" class="itemMenu">
+                            <span class="iconeGrafico"></span>
+                            <span class="tituloMenu">Relatórios</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="PaginaProducao.html" class="itemMenu">
+                            <span class="iconePrancheta"></span>
+                            <span class="tituloMenu">Produção</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="itemMenu">
+                                <span class="iconeSetaCima"></span>
+                                <span class="tituloMenu">Saídas</span>
+                                <span class="iconeSeta"></span>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="SaidasCliente.html">Clientes</a></li>
+                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+            
+        </aside>
+    
+        <main>
+            <h1 class="tituloPagina">Faturamento po categoria</h1>
+            <h3 class="subtituloPagina">Visualize o valor total do faturamento por categoria por periodo</h3>
+            
+            <div class="baixarArquivos">
+
+                <button class="botaoBaixarExcel">
+                    <span class="iconeExcel"></span>
+                    <span>Exportar em excel(.xlsx)</span>
+                </button>
+
+                <button class="botaoBaixarPdf">
+                    <span class="iconePdf"></span>
+                    <span>Exportar em PDF(.pfd)</span>
+                </button>
+
+            </div>
+
+            <div class="conteinerFiltros">
+
+                <div class="filtroPeriodo">
+
+                    <span>Periodo</span>
+
+                    <label for="dataInicio"></label>
+                    <input type="date" class="campoData">
+
+                    <label for="dataFim"></label>
+                    <input type="date" class="campoData">
+
+                </div>
+
+                <div class="filtroCategoria">
+
+                    <span>Categoria</span>
+
+                    <select name="filtroCategoria" id="filtroCateg">
+                        <option value="todas">Todas as categorias</option>
+                        <option value="cha">Chá</option>
+                        <option value="aromatizador">Armoatizador</option>
+                    </select>
+
+                </div>
+
+                <div class="filtroProduto">
+
+                    <span>Produto</span>
+
+                    <select name="filtroProduto" id="filtroProd">
+                        <option value="todos">Todos os produtos</option>
+                        <option value="blend 1">Blend 1</option>
+                        <option value="aromatizador 1">aromatizador 1</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="tabela">
+
+                <select name="" id="">
+                    <option value="maiorFaturamento">Maior Faturamento</option>
+                    <option value="menorFaturamento">Menor Faturamento</option>
+                    <option value="dataRecente">Data mais recente</option>
+                    <option value="dataLonge">Data mais longe</option>
+                    <option value="maiorTicket">Maior Ticket</option>
+                    <option value="menorTicket">Menor Ticket</option>
+                </select>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Faturamento(R$)</th>
+                            <th>Pedidos realizados</th>
+                            <th>Ticket médio</th>
+                            <th>% do todo</th>
+                            <th>unidades vendidas</th>
+                            <th>clientes atendidos</th>
+                        </tr>
+                    </thead>
+                        
+                    <tbody>
+                        <tr>
+                            <td>25/04/2026</td>
+                            <td>R$ 650,00</td>
+                            <td>2</td>
+                            <td>R$ 325,00</td>
+                            <td>2,5%</td>
+                            <td>2</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+                
+        </main>
+</body>
+</html>
