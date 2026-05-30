@@ -4,34 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de produtos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     
         <header class="topoEstoque">
-            <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-            <a href="estoque.html" class="LinkEstoque"> > Estoque </a>
-            <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Produtos</a>
-
-            <div class="notificacao">
-                <i class="sino"></i>
-                <span class="bolinha"></span>
+            <div class="caminho">
+                <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
+                <a href="estoque.html" class="LinkEstoque"> > Estoque </a>
+                <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Produtos</a>
             </div>
-
-            <div class="PerfilUsuario">
-
-                <div class="avatar">
-                    <span class="L">L</span>
+            <div class="notfUser">
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
                 </div>
 
-                <h2 class="nomeUsuario">Laura</h2>
+                <div class="PerfilUsuario">
 
-                <span class="seta">⌄</span>
+                    <div class="avatar">
+                        <span class="L"> L </span>
+                    </div>
 
+                    <h2 class="nomeUsuario">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                </div>
             </div>
         </header>
 
         <aside class="menuLateral">
+
+            <button id="botaoRetratil" class="botaoRetratil"></button>
 
             <div class="logoMenuLateral">
                 <img src="Imagens/Logo.png"  alt="Logo chás da laura">
@@ -39,19 +44,25 @@
             <nav class="menu">
                 <ul>
 
-                    <li>
+                    <li class="blocoOpcao">
                         <a href="paginaInicial.html" class="itemMenu">
-                            <span class="iconeCasa"></span>
+                            <div class="circulo">
+                                <span class="iconeCasa"></span>
+                            </div>
                             <span class="tituloMenu">Painel inicial</span>
                         </a>
                     </li>
 
                     <li>
                         <details>
-                            <summary class="itemMenu">
-                                <span class="iconeLapis"></span>
-                                <span class="tituloMenu">Cadastros</span>
-                                <span class="iconeSeta"></span>
+
+                            <summary class="blocoOpcao">
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeLapis"></span>
+                                    </div>
+                                    <span class="tituloMenu">Cadastros</span>
+                                </div>
                             </summary>
 
                             <ul class="subMenu">
@@ -67,10 +78,14 @@
 
                     <li>
                         <details>
-                            <summary class="itemMenu">
-                                <span class="iconeLapis"></span>
-                                <span class="tituloMenu">Estoque</span>
-                                <span class="iconeSeta"></span>
+
+                            <summary class=" blocoOpcao">
+                                <div class="div itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeCaixa"></span>
+                                    </div>
+                                    <span class="tituloMenu">Estoque</span>
+                                </div>
                             </summary>
 
                             <ul class="subMenu">
@@ -80,26 +95,33 @@
                         </details>
                     </li>
                     
-                    <li>
+                    <li class="blocoOpcao">
                         <a href="PaginaRelatorios.html" class="itemMenu">
-                            <span class="iconeGrafico"></span>
+                            <div class="circulo">
+                                <span class="iconeGrafico"></span>
+                            </div>
                             <span class="tituloMenu">Relatórios</span>
                         </a>
                     </li>
 
-                    <li>
+                    <li class="blocoOpcao">
                         <a href="PaginaProducao.html" class="itemMenu">
-                            <span class="iconePrancheta"></span>
+                            <div class="circulo">
+                                <span class="iconePrancheta"></span>
+                            </div>
                             <span class="tituloMenu">Produção</span>
                         </a>
                     </li>
 
                     <li>
                         <details>
-                            <summary class="itemMenu">
-                                <span class="iconeSetaCima"></span>
-                                <span class="tituloMenu">Saídas</span>
-                                <span class="iconeSeta"></span>
+                            <summary class="blocoOpcao" >
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeSetaCima"></span>
+                                    </div>
+                                    <span class="tituloMenu">Saídas</span>
+                                </div>
                             </summary>
 
                             <ul class="subMenu">
@@ -113,9 +135,11 @@
             
         </aside>
     
-        <main>
-            <h1 class="tituloPagina">Estoque de produtos</h1>
-            <h3 class="subtituloPagina">Acompanhe o nível de estoque e situação dos produtos.</h3>
+        <main class="conteudo">
+            <div class="titulos">
+                <h1 class="tituloPagina">Estoque de produtos</h1>
+                <h3 class="subtituloPagina">Acompanhe o nível de estoque e situação dos produtos.</h3>
+            </div>
             <div class="demonstracoes">
 
                 <div class="demo">
@@ -171,20 +195,25 @@
                     <h4 class="subtituloTabela">Veja e gerencie todos os produtos</h4>
                 </div>
 
-                <button class="botaoTabela">
-                    <span class="iconeLista"></span>
-                    <span class="nomeBotao">Lista</span>
-                </button>
+                <div class="botoesTabela">
 
-                <button class="botaoTabela">
-                    <span class="iconeCartao"></span>
-                    <span class="nomeBotao">cards</span>
-                </button>
+                    <button class="botaoTabelaLista">
+                        <span class="iconeLista"></span>
+                        <span class="nomeBotao">Lista</span>
+                    </button>
 
-                <button class="botaoTabela">
-                    <span class="iconeMais"></span>
-                    <span class="nomeBotao">Novo produto</span>
-                </button>
+                    <button class="botaoTabelaCard">
+                        <span class="iconeCartao"></span>
+                        <span class="nomeBotaoCartao">cards</span>
+                    </button>
+
+                    <button class="botaoTabelaNovo">
+                        <span class="iconeMais"></span>
+                        <span class="nomeBotaoCartao">Novo produto</span>
+                    </button>
+
+                </div>
+
             </div>
             
             <div class="conteinerTabela">
@@ -200,9 +229,9 @@
                     </select>
                 </div>
 
-                <table>
+                <table class="tabela">
 
-                    <thead>
+                    <thead class="topoTabelaVerdadeira">
                         <tr>
                             <th>Produtos</th>
                             <th>Categoria</th>
@@ -241,7 +270,7 @@
 
                             <td>
                                 <div class="Acao">
-                                    <span class="iconeLapis"></span>
+                                    <span class="iconeLapisTabela"></span>
                                     <span class="iconeLixeira"></span>
                                 </div>
                             </td>
@@ -289,5 +318,6 @@
                 </Article>
             </section>
         </main>
+        <script src="arquivo.js"></script>
 </body>
 </html>
