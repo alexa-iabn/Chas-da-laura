@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatórios de Produção</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header class="topoEstoque">
+    <span class="menuIcon">&#9776;</span>
+    <span class="iconeHome">&#127968;</span>
+    <nav class="breadcrumb">
+      <a href="paineldeinicio.html">Início</a>
+      <span class="separador">›</span>
+      <span>Relatórios de produção</span>
+    </nav>
+    <div class="espacoFlex"></div>
+    <div class="notificacao">&#128276;</div>
+    <div class="PerfilUsuario">
+      <div class="avatar">L</div>
+      <span class="nomeUsuario">Laura</span>
+      <span class="seta">&#8964;</span>
+    </div>
+  </header>
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="menuLateral">
+    <div class="logoMenuLateral">
+      <img src="Imagens/Logo.png" alt="Logo Chás da Laura">
+    </div>
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="paineldeinicio.html" class="itemMenu">
+            <span class="iconeCasa"></span>
+            <span>Painel de início</span>
+          </a>
+        </li>
+        <li>
+          <details>
+            <summary class="itemMenu">
+              <span class="iconeLapis"></span>
+              <span>Cadastros</span>
+            </summary>
+            <ul class="subMenu">
+              <li><a href="CadastroClientes.html">Clientes</a></li>
+              <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+              <li><a href="CadastroInsumos.html">Insumos</a></li>
+              <li><a href="cadastroprodutos.html">Produtos</a></li>
+              <li><a href="cadastroreceitas.html">Receitas</a></li>
+              <li><a href="cadastroparceiros.html">Parceiros</a></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary class="itemMenu">
+              <span class="iconeEstoque"></span>
+              <span>Estoque</span>
+            </summary>
+            <ul class="subMenu">
+              <li><a href="EstoqueProdutos.html">Produtos</a></li>
+              <li><a href="EstoqueInsumos.html">Insumos</a></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <a href="relatoriosVendas.html" class="itemMenu ativo">
+            <span class="iconeRelatorio"></span>
+            <span>Relatórios</span>
+          </a>
+        </li>
+        <li>
+          <a href="PaginaProducao.html" class="itemMenu">
+            <span class="iconeProducao"></span>
+            <span>Produção</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+  </aside>
+
+  <!-- ══ MAIN ══ -->
+  <main>
+    <h1 class="tituloPagina">Relatórios de produção</h1>
+    <p class="subtituloPagina">Acompane o desempenho da produção no período selecionado</p>
+
+    <!-- ── FILTROS ── -->
+    <div class="cardFiltros">
+      <div class="grupoFiltro">
+        <label>Período</label>
+        <select class="seletorPeriodo">
+          <option>01/05/2025 - 31/05/2026</option>
+          <option>01/01/2026 - 31/05/2026</option>
+          <option>01/04/2026 - 30/04/2026</option>
+          <option>Personalizado</option>
+        </select>
+      </div>
+      <div class="grupoFiltro">
+        <label>Produto</label>
+        <select>
+          <option>Todos os produtos</option>
+          <option>Chás</option>
+          <option>Chás Funcionais</option>
+          <option>Kits</option>
+          <option>Chás Soltos</option>
+        </select>
+      </div>
+      <div class="grupoFiltro">
+        <label>Status</label>
+        <select>
+          <option>Todos</option>
+          <option>Concluído</option>
+          <option>Em andamento</option>
+          <option>Pendente</option>
+        </select>
+      </div>
+      <div class="botoesAcao">
+        <button class="btnFiltrar">&#9776; Filtrar</button>
+        <button class="btnLimpar">&#8635; Limpar Filtros</button>
+      </div>
+    </div>
+
+    <!-- ── CARDS DE MÉTRICAS ── -->
+    <div class="cardsMetricas">
+      <div class="cardMetrica">
+        <div class="iconeMetrica">&#128230;</div>
+        <div class="infoMetrica">
+          <span class="labelMetrica">Produção total do período</span>
+          <span class="valorMetrica">1.250</span>
+          <span class="subMetrica">unidades</span>
+          <span class="tendenciaPositiva">&#8599; 12,5% vs mês anterior</span>
+        </div>
+      </div>
+      <div class="cardMetrica">
+        <div class="iconeMetrica">&#128230;</div>
+        <div class="infoMetrica">
+          <span class="labelMetrica">Produtos produzidos</span>
+          <span class="valorMetrica">12</span>
+          <span class="subMetrica">produtos diferentes</span>
+        </div>
+      </div>
+      <div class="cardMetrica">
+        <div class="iconeMetrica">&#11088;</div>
+        <div class="infoMetrica">
+          <span class="labelMetrica">Custo total da produção</span>
+          <span class="valorMetrica">R$ 2.450,00</span>
+          <span class="subMetrica">Custo médio: R$ 1,96/ un</span>
+        </div>
+      </div>
+      <div class="cardMetrica">
+        <div class="iconeMetrica">&#127807;</div>
+        <div class="infoMetrica">
+          <span class="labelMetrica">Insumos consumidos</span>
+          <span class="valorMetrica">18,75 kg</span>
+          <span class="subMetrica">de insumos</span>
+          <span class="tendenciaPositiva">&#8599; 8,4% vs mês anterior</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── LINHA DE GRÁFICOS ── -->
+    <div class="linhaGraficos">
+
+      <!-- Gráfico de barras — Produção semanal -->
+      <div class="cardGrafico">
+        <div class="topoGrafico">
+          <span class="tituloGrafico">Produção semanal (unidades)</span>
+          <button class="btnExportarGrafico" title="Exportar">&#8659;</button>
+        </div>
+        <div class="areaGraficoBarra">
+          <div class="legendaSemana">
+            <div class="colunaBarra">
+              <span class="valorBarra">120</span>
+              <div class="barraWrapper">
+                <div class="barra" style="height:22%"></div>
+              </div>
+              <span class="labelBarra">Semana 1<br>29/04 - 05/05</span>
+            </div>
+            <div class="colunaBarra">
+              <span class="valorBarra">340</span>
+              <div class="barraWrapper">
+                <div class="barra" style="height:58%"></div>
+              </div>
+              <span class="labelBarra">Semana 2<br>06/05 - 12/05</span>
+            </div>
+            <div class="colunaBarra">
+              <span class="valorBarra">210</span>
+              <div class="barraWrapper">
+                <div class="barra" style="height:37%"></div>
+              </div>
+              <span class="labelBarra">Semana 3<br>13/05 - 19/05</span>
+            </div>
+            <div class="colunaBarra">
+              <span class="valorBarra">580</span>
+              <div class="barraWrapper">
+                <div class="barra destaque" style="height:100%"></div>
+              </div>
+              <span class="labelBarra">Semana 4<br>20/05 - 26/05</span>
+            </div>
+            <div class="colunaBarra">
+              <span class="valorBarra">0</span>
+              <div class="barraWrapper">
+                <div class="barra" style="height:1%"></div>
+              </div>
+              <span class="labelBarra">Semana 5<br>27/05 - 31/05</span>
+            </div>
+          </div>
+          <div class="legendaGrafico">
+            <span class="pontoCor"></span>
+            <span>Unidades produzidas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráfico de rosca — Produtos mais produzidos -->
+      <div class="cardGrafico">
+        <div class="topoGrafico">
+          <span class="tituloGrafico">Produtos mais produzidos</span>
+          <button class="btnExportarGrafico" title="Exportar">&#8659;</button>
+        </div>
+        <div class="areaGraficoRosca">
+          <!-- SVG donut manual -->
+          <div class="donutWrapper">
+            <svg class="donutSvg" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <!-- Chás 65% -->
+              <circle cx="18" cy="18" r="15.9155"
+                fill="transparent" stroke="#1e4a2a" stroke-width="3.5"
+                stroke-dasharray="65 35" stroke-dashoffset="0"/>
+              <!-- Chás Funcionais 20% -->
+              <circle cx="18" cy="18" r="15.9155"
+                fill="transparent" stroke="#3a7d4f" stroke-width="3.5"
+                stroke-dasharray="20 80" stroke-dashoffset="-65"/>
+              <!-- Kits 10% -->
+              <circle cx="18" cy="18" r="15.9155"
+                fill="transparent" stroke="#a8d5b5" stroke-width="3.5"
+                stroke-dasharray="10 90" stroke-dashoffset="-85"/>
+              <!-- Chás Soltos 3% -->
+              <circle cx="18" cy="18" r="15.9155"
+                fill="transparent" stroke="#d0ead8" stroke-width="3.5"
+                stroke-dasharray="3 97" stroke-dashoffset="-95"/>
+              <!-- Outros 2% -->
+              <circle cx="18" cy="18" r="15.9155"
+                fill="transparent" stroke="#e8f5ec" stroke-width="3.5"
+                stroke-dasharray="2 98" stroke-dashoffset="-98"/>
+            </svg>
+          </div>
+          <div class="legendasRosca">
+            <div class="itemLegendaRosca">
+              <span class="corLegenda" style="background:#1e4a2a"></span>
+              <span>Chás</span>
+              <span class="pctLegenda">65% (813 un)</span>
+            </div>
+            <div class="itemLegendaRosca">
+              <span class="corLegenda" style="background:#3a7d4f"></span>
+              <span>Chás Funcionais</span>
+              <span class="pctLegenda">20% (250 un)</span>
+            </div>
+            <div class="itemLegendaRosca">
+              <span class="corLegenda" style="background:#a8d5b5"></span>
+              <span>Kits</span>
+              <span class="pctLegenda">10% (125 un)</span>
+            </div>
+            <div class="itemLegendaRosca">
+              <span class="corLegenda" style="background:#d0ead8"></span>
+              <span>Chás Soltos</span>
+              <span class="pctLegenda">3% (37 un)</span>
+            </div>
+            <div class="itemLegendaRosca">
+              <span class="corLegenda" style="background:#c0c0c0"></span>
+              <span>Outros</span>
+              <span class="pctLegenda">2% (25 un)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráfico horizontal — Consumo de insumos -->
+      <div class="cardGrafico">
+        <div class="topoGrafico">
+          <span class="tituloGrafico">Consumo de insumos (kg)</span>
+          <button class="btnExportarGrafico" title="Exportar">&#8659;</button>
+        </div>
+        <div class="areaGraficoHorizontal">
+          <div class="linhaInsumo">
+            <div class="labelInsumo"><span>Camomila</span><span class="valorInsumo">6,20 kg</span></div>
+            <div class="barraHorizontalWrapper"><div class="barraHorizontal" style="width:100%"></div></div>
+          </div>
+          <div class="linhaInsumo">
+            <div class="labelInsumo"><span>Hibisco</span><span class="valorInsumo">4,10 kg</span></div>
+            <div class="barraHorizontalWrapper"><div class="barraHorizontal" style="width:66%"></div></div>
+          </div>
+          <div class="linhaInsumo">
+            <div class="labelInsumo"><span>Erva-doce</span><span class="valorInsumo">3,30 kg</span></div>
+            <div class="barraHorizontalWrapper"><div class="barraHorizontal" style="width:53%"></div></div>
+          </div>
+          <div class="linhaInsumo">
+            <div class="labelInsumo"><span>Capim-limão</span><span class="valorInsumo">2,80 kg</span></div>
+            <div class="barraHorizontalWrapper"><div class="barraHorizontal" style="width:45%"></div></div>
+          </div>
+          <div class="linhaInsumo">
+            <div class="labelInsumo"><span>Gengibre</span><span class="valorInsumo">1,80 kg</span></div>
+            <div class="barraHorizontalWrapper"><div class="barraHorizontal" style="width:29%"></div></div>
+          </div>
+          <div class="linhaInsumo">
+            <div class="labelInsumo"><span>Outros</span><span class="valorInsumo">0,55 kg</span></div>
+            <div class="barraHorizontalWrapper"><div class="barraHorizontal" style="width:9%"></div></div>
+          </div>
+          <div class="eixoHorizontal">
+            <span>0</span><span>2</span><span>4</span><span>6</span><span>8</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /linhaGraficos -->
+
+    <!-- ── TABELA DE DETALHAMENTO ── -->
+    <div class="cardTabela">
+      <div class="topoTabela">
+        <span class="tituloTabela">Detalhamento da produção</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Semana</th>
+            <th>Produto</th>
+            <th>Quantidade produzida</th>
+            <th>Receita utilizada</th>
+            <th>Custo da produção</th>
+            <th>Responsável</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>20/05 - 26/05</td>
+            <td><span class="corProduto" style="background:#1e4a2a"></span>Bled 1 - 50g</td>
+            <td>50 un</td>
+            <td>Receita 1</td>
+            <td>R$ 294,00</td>
+            <td>Laura</td>
+          </tr>
+          <tr>
+            <td>20/05 - 26/05</td>
+            <td><span class="corProduto" style="background:#3a7d4f"></span>Bled 2 - 50g</td>
+            <td>50 un</td>
+            <td>Receita 2</td>
+            <td>R$ 294,00</td>
+            <td>Laura</td>
+          </tr>
+          <tr>
+            <td>20/05 - 26/05</td>
+            <td><span class="corProduto" style="background:#e67e22"></span>Bled 3 - 50g</td>
+            <td>50 un</td>
+            <td>Receita 3</td>
+            <td>R$ 294,00</td>
+            <td>Laura</td>
+          </tr>
+          <tr>
+            <td>20/05 - 26/05</td>
+            <td><span class="corProduto" style="background:#8e44ad"></span>Bled 4 - 50g</td>
+            <td>50 un</td>
+            <td>Receita 4</td>
+            <td>R$ 294,00</td>
+            <td>Laura</td>
+          </tr>
+          <tr>
+            <td>13/05 - 19/05</td>
+            <td><span class="corProduto" style="background:#1e4a2a"></span>Bled 1 - 50g</td>
+            <td>30 un</td>
+            <td>Receita 1</td>
+            <td>R$ 176,40</td>
+            <td>Laura</td>
+          </tr>
+          <tr>
+            <td>06/05 - 12/05</td>
+            <td><span class="corProduto" style="background:#3a7d4f"></span>Bled 2 - 50g</td>
+            <td>80 un</td>
+            <td>Receita 2</td>
+            <td>R$ 470,40</td>
+            <td>Laura</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>
