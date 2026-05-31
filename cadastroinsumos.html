@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Insumos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="topoEstoque">
+        <div class="breadcrumb">
+            <span class="iconeHome">🏠</span>
+            <a href="paineldeinicio.html" class="breadcrumbLink">Cadastros</a>
+            <span class="breadcrumbSep">›</span>
+            <a href="insumosCadastrados.html" class="breadcrumbLink">Insumos</a>
+            <span class="breadcrumbSep">›</span>
+            <span class="breadcrumbAtivo">Novo insumo</span>
+        </div>
+        <div class="notfUser">
+            <div class="notificacao">
+                <span class="sino">🔔</span>
+                <span class="bolinha"></span>
+            </div>
+            <div class="PerfilUsuario">
+                <div class="avatar"><span class="L">L</span></div>
+                <h2 class="nomeUsuario">Laura</h2>
+                <span class="seta">⌄</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU LATERAL -->
+    <aside class="menuLateral">
+        <div class="logoMenuLateral">
+            <img src="Imagens/Logo.png" alt="Logo chás da laura">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="blocoOpcao">
+                    <a href="paineldeinicio.html" class="itemMenu">
+                        <div class="circulo"><span>🏠</span></div>
+                        <span class="tituloMenu">Painel de inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <details open>
+                        <summary class="blocoOpcao ativo">
+                            <div class="itemMenu">
+                                <div class="circulo"><span>✏️</span></div>
+                                <span class="tituloMenu">Cadastros</span>
+                                <span class="setaMenu">⌄</span>
+                            </div>
+                        </summary>
+                        <ul class="subMenu">
+                            <li><a href="#">Clientes</a></li>
+                            <li><a href="#">Fornecedores</a></li>
+                            <li><a href="insumosCadastrados.html" class="subAtivo">Insumos</a></li>
+                            <li><a href="#">Produtos</a></li>
+                            <li><a href="#">Receitas</a></li>
+                            <li><a href="#">Parceiros</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary class="blocoOpcao">
+                            <div class="itemMenu">
+                                <div class="circulo"><span>📦</span></div>
+                                <span class="tituloMenu">Estoque</span>
+                                <span class="setaMenu">⌄</span>
+                            </div>
+                        </summary>
+                        <ul class="subMenu">
+                            <li><a href="EstoqueProdutos.html">Produtos</a></li>
+                            <li><a href="EstoqueInsumos.html">Insumos</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li class="blocoOpcao">
+                    <a href="relatoriosEstoque.html" class="itemMenu">
+                        <div class="circulo"><span>📊</span></div>
+                        <span class="tituloMenu">Relatórios</span>
+                    </a>
+                </li>
+                <li class="blocoOpcao">
+                    <a href="#" class="itemMenu">
+                        <div class="circulo"><span>📋</span></div>
+                        <span class="tituloMenu">Produção</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="conteudoPrincipal">
+        <div class="cabecalhoPagina">
+            <div>
+                <h1 class="tituloPagina">Cadastro de Insumos</h1>
+                <p class="subtituloPagina">Preencha as informações essenciais para cadastrar um novo insumo</p>
+            </div>
+            <a href="insumosCadastrados.html" class="btnVerCadastrados">👤 Ver insumos cadastrados</a>
+        </div>
+
+        <!-- FORMULÁRIO -->
+        <section class="cardFormulario">
+            <div class="gridFormulario">
+
+                <div class="campoFormulario">
+                    <label class="labelCampo">Nome do insumo</label>
+                    <input type="text" class="inputCampo" placeholder="Digite seu nome completo" id="nomeInsumo">
+                </div>
+
+                <div class="campoFormulario">
+                    <label class="labelCampo">Valor</label>
+                    <input type="number" class="inputCampo" placeholder="0,00" id="valorInsumo" step="0.01" min="0">
+                </div>
+
+                <div class="campoFormulario campoQuantidade">
+                    <label class="labelCampo">Quantidade</label>
+                    <div class="inputComUnidade">
+                        <input type="number" class="inputCampo" placeholder="Digite a quantidade do insumo..." id="qtdInsumo" min="0">
+                        <select class="seletorUnidade" id="unidadeInsumo">
+                            <option>KG</option>
+                            <option>G</option>
+                            <option>UN</option>
+                            <option>L</option>
+                            <option>ML</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="campoFormulario">
+                    <label class="labelCampo">Fornecedor</label>
+                    <div class="inputComSeta">
+                        <select class="inputCampo selectCampo" id="fornecedorInsumo">
+                            <option value="">Selecione o fornecedor</option>
+                            <option>Nutribom alimentos LTDA</option>
+                            <option>NaturaErvas Ltda</option>
+                            <option>Especiarias Brasil</option>
+                            <option>Flor e Campo Distribuidora</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="campoFormulario">
+                    <label class="labelCampo">Validade</label>
+                    <input type="text" class="inputCampo" placeholder="Ex. 22/08/2026" id="validadeInsumo">
+                </div>
+
+                <div class="campoFormulario">
+                    <label class="labelCampo">Estoque mínimo</label>
+                    <input type="text" class="inputCampo" placeholder="Ex: 05" id="estoqueMinimo">
+                </div>
+
+                <div class="campoFormulario campoDescricao">
+                    <label class="labelCampo">Descrição</label>
+                    <textarea class="textareaCampo" placeholder="Descreva o insumo, característica, qualidade, origem, etc..." id="descricaoInsumo" rows="4"></textarea>
+                </div>
+
+            </div>
+
+            <div class="rodapeFormulario">
+                <button class="btnCancelar" onclick="window.location.href='insumosCadastrados.html'">Cancelar</button>
+                <button class="btnSalvar" onclick="salvarInsumo()">💾 Salvar insumo</button>
+            </div>
+        </section>
+
+        <!-- LISTA ABAIXO DO FORMULÁRIO -->
+        <section class="conteinerTabelaInferior">
+            <div class="topoTabelaInferior">
+                <div>
+                    <h2 class="tituloTabelaInferior">Insumos cadastrados</h2>
+                    <p class="subTituloTabelaInferior">Gerencie os insumos do sistema</p>
+                </div>
+                <div class="grupoBuscaInferior">
+                    <div class="inputBusca">
+                        <span class="iconeBusca">🔍</span>
+                        <input type="text" placeholder="Buscar Insumos..." id="campoBuscaInferior" oninput="filtrarTabelaInferior()">
+                    </div>
+                    <a href="cadastroInsumos.html" class="btnNovoInsumoInferior">+ Novo insumo</a>
+                </div>
+            </div>
+            <div class="wrapperTabela">
+                <table class="tabelaInsumos">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Quantidade</th>
+                            <th>Fornecedor</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaInferior">
+                        <tr>
+                            <td>Folha de camomila</td>
+                            <td>Ervas</td>
+                            <td>4 Kg</td>
+                            <td>Nutribom alimentos LTDA</td>
+                            <td class="acoesTabela">
+                                <button class="btnEditar" title="Editar">✏️</button>
+                                <button class="btnExcluir" title="Excluir" onclick="excluirLinhaInferior(this)">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hibisco flor</td>
+                            <td>Flor</td>
+                            <td>20 und</td>
+                            <td>Nutribom alimentos LTDA</td>
+                            <td class="acoesTabela">
+                                <button class="btnEditar" title="Editar">✏️</button>
+                                <button class="btnExcluir" title="Excluir" onclick="excluirLinhaInferior(this)">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Canela em pau</td>
+                            <td>Especiarias</td>
+                            <td>500 g</td>
+                            <td>Nutribom alimentos LTDA</td>
+                            <td class="acoesTabela">
+                                <button class="btnEditar" title="Editar">✏️</button>
+                                <button class="btnExcluir" title="Excluir" onclick="excluirLinhaInferior(this)">🗑️</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function salvarInsumo() {
+            const nome = document.getElementById('nomeInsumo').value.trim();
+            const qtd = document.getElementById('qtdInsumo').value.trim();
+            const unidade = document.getElementById('unidadeInsumo').value;
+            const fornecedor = document.getElementById('fornecedorInsumo').value;
+            const valor = document.getElementById('valorInsumo').value;
+
+            if (!nome) {
+                alert('Por favor, preencha o nome do insumo.');
+                return;
+            }
+
+            // Detecta categoria fictícia pelo nome (simplificado)
+            const categorias = {
+                'camomila': 'Ervas', 'hortelã': 'Ervas', 'erva': 'Ervas',
+                'hibisco': 'Flor', 'lavanda': 'Flor', 'rosa': 'Flor',
+                'canela': 'Especiarias', 'cravo': 'Especiarias', 'pimenta': 'Especiarias',
+                'gengibre': 'Raízes', 'alcaçuz': 'Raízes'
+            };
+            let categoria = 'Geral';
+            for (const [chave, cat] of Object.entries(categorias)) {
+                if (nome.toLowerCase().includes(chave)) { categoria = cat; break; }
+            }
+
+            const tabela = document.getElementById('corpoTabelaInferior');
+            const novaLinha = document.createElement('tr');
+            novaLinha.innerHTML = `
+                <td>${nome}</td>
+                <td>${categoria}</td>
+                <td>${qtd} ${unidade}</td>
+                <td>${fornecedor || '—'}</td>
+                <td class="acoesTabela">
+                    <button class="btnEditar" title="Editar">✏️</button>
+                    <button class="btnExcluir" title="Excluir" onclick="excluirLinhaInferior(this)">🗑️</button>
+                </td>
+            `;
+            tabela.appendChild(novaLinha);
+
+            // Limpa o formulário
+            document.getElementById('nomeInsumo').value = '';
+            document.getElementById('qtdInsumo').value = '';
+            document.getElementById('fornecedorInsumo').value = '';
+            document.getElementById('valorInsumo').value = '';
+            document.getElementById('validadeInsumo').value = '';
+            document.getElementById('estoqueMinimo').value = '';
+            document.getElementById('descricaoInsumo').value = '';
+
+            alert('Insumo cadastrado com sucesso!');
+        }
+
+        function filtrarTabelaInferior() {
+            const busca = document.getElementById('campoBuscaInferior').value.toLowerCase();
+            const linhas = document.querySelectorAll('#corpoTabelaInferior tr');
+            linhas.forEach(l => {
+                l.style.display = l.textContent.toLowerCase().includes(busca) ? '' : 'none';
+            });
+        }
+
+        function excluirLinhaInferior(btn) {
+            if (confirm('Deseja realmente excluir este insumo?')) {
+                btn.closest('tr').remove();
+            }
+        }
+    </script>
+</body>
+</html>
