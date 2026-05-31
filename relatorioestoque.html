@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="topoEstoque">
+        <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+        <div class="notfUser">
+            <div class="notificacao">
+                <i class="sino">🔔</i>
+                <span class="bolinha"></span>
+            </div>
+            <div class="PerfilUsuario">
+                <div class="avatar">
+                    <span class="L">L</span>
+                </div>
+                <h2 class="nomeUsuario">Laura</h2>
+                <span class="seta">⌄</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU LATERAL -->
+    <aside class="menuLateral">
+        <div class="logoMenuLateral">
+            <img src="Imagens/Logo.png" alt="Logo chás da laura">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="blocoOpcao">
+                    <a href="paineldeinicio.html" class="itemMenu">
+                        <div class="circulo">
+                            <span class="iconeCasa">🏠</span>
+                        </div>
+                        <span class="tituloMenu">Painel de inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <details>
+                        <summary class="blocoOpcao">
+                            <div class="itemMenu">
+                                <div class="circulo">
+                                    <span class="iconeLapis">✏️</span>
+                                </div>
+                                <span class="tituloMenu">Cadastros</span>
+                            </div>
+                        </summary>
+                        <ul class="subMenu">
+                            <li><a href="cadastro.html">Clientes</a></li>
+                            <li><a href="cadastroparceiros.html">Parceiros</a></li>
+                            <li><a href="cadastroprodutos.html">Produtos</a></li>
+                            <li><a href="cadastroreceitas.html">Receitas</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary class="blocoOpcao">
+                            <div class="itemMenu">
+                                <div class="circulo">
+                                    <span class="iconeCaixa">📦</span>
+                                </div>
+                                <span class="tituloMenu">Estoque</span>
+                            </div>
+                        </summary>
+                        <ul class="subMenu">
+                            <li><a href="EstoqueProdutos.html">Produtos</a></li>
+                            <li><a href="EstoqueInsumos.html">Insumos</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li class="blocoOpcao ativo">
+                    <a href="relatoriosEstoque.html" class="itemMenu">
+                        <div class="circulo">
+                            <span class="iconeGrafico">📊</span>
+                        </div>
+                        <span class="tituloMenu">Relatórios</span>
+                    </a>
+                </li>
+                <li class="blocoOpcao">
+                    <a href="PaginaProducao.html" class="itemMenu">
+                        <div class="circulo">
+                            <span class="iconePrancheta">📋</span>
+                        </div>
+                        <span class="tituloMenu">Produção</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="conteudoPrincipal">
+        <div class="cabecalhoPagina">
+            <div>
+                <h1 class="tituloPagina">Relatórios de estoque</h1>
+                <p class="subtituloPagina">Acompanhe a situação atual de todos os itens em estoque</p>
+            </div>
+        </div>
+
+        <!-- FILTROS -->
+        <section class="conteinerFiltros">
+            <div class="grupofiltro">
+                <label class="labelFiltro">Período</label>
+                <div class="inputComSeta">
+                    <input type="text" class="campoFiltro" value="01/05/2025 - 31/05/2026" readonly>
+                    <span class="setaFiltro">⌄</span>
+                </div>
+            </div>
+            <div class="grupofiltro">
+                <label class="labelFiltro">Categoria</label>
+                <div class="inputComSeta">
+                    <select class="campoFiltro">
+                        <option>Todas as categorias</option>
+                        <option>Produto</option>
+                        <option>Insumo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grupofiltro">
+                <label class="labelFiltro">Tipo de item</label>
+                <div class="inputComSeta">
+                    <select class="campoFiltro">
+                        <option>Todos os tipos</option>
+                        <option>Normal</option>
+                        <option>Estoque baixo</option>
+                        <option>Zerado</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btnFiltrar">🔽 Filtrar</button>
+            <button class="btnLimpar">↺ Limpar Filtros</button>
+        </section>
+
+        <!-- CARDS DE RESUMO -->
+        <section class="cardsResumo">
+            <div class="cardResumo verde">
+                <div class="iconeCard">
+                    <span>📦</span>
+                </div>
+                <div class="textoCard">
+                    <span class="labelCard">Valor total em estoque</span>
+                    <span class="valorCard">R$ 48.756,30</span>
+                    <span class="subValorCard">valor de custo</span>
+                    <span class="variacaoCard positiva">↑ 8,7% vs período anterior</span>
+                </div>
+            </div>
+            <div class="cardResumo amarelo">
+                <div class="iconeCard">
+                    <span>⚠️</span>
+                </div>
+                <div class="textoCard">
+                    <span class="labelCard">Itens com estoque baixo</span>
+                    <span class="valorCard">16</span>
+                    <span class="subValorCard">Itens</span>
+                </div>
+            </div>
+            <div class="cardResumo vermelho">
+                <div class="iconeCard">
+                    <span>❌</span>
+                </div>
+                <div class="textoCard">
+                    <span class="labelCard">Itens sem estoque</span>
+                    <span class="valorCard">3</span>
+                    <span class="subValorCard">Itens</span>
+                </div>
+            </div>
+            <div class="cardResumo azul">
+                <div class="iconeCard">
+                    <span>📦</span>
+                </div>
+                <div class="textoCard">
+                    <span class="labelCard">Total de itens</span>
+                    <span class="valorCard">147</span>
+                    <span class="subValorCard">Produtos e insumos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRÁFICOS -->
+        <section class="conteinerGraficos">
+            <!-- Gráfico 1: Valor por tipo (Rosca) -->
+            <div class="cardGrafico">
+                <div class="topoGrafico">
+                    <h2 class="tituloGrafico">Valor do estoque por tipo</h2>
+                    <button class="btnExportarGrafico">⬇</button>
+                </div>
+                <div class="areaGrafico">
+                    <canvas id="graficoValorTipo"></canvas>
+                    <div class="legendaGrafico">
+                        <div class="itemLegenda">
+                            <span class="corLegenda verde-escuro"></span>
+                            <div>
+                                <p class="nomeLegenda">Produtos</p>
+                                <p class="valorLegenda">R$ 29.290,50</p>
+                                <p class="percLegenda">(59,9%)</p>
+                            </div>
+                        </div>
+                        <div class="itemLegenda">
+                            <span class="corLegenda verde-claro"></span>
+                            <div>
+                                <p class="nomeLegenda">Insumos</p>
+                                <p class="valorLegenda">R$ 19.465,80</p>
+                                <p class="percLegenda">(39,9%)</p>
+                            </div>
+                        </div>
+                        <div class="totalGrafico">
+                            <p>Total</p>
+                            <p>R$ 48.756,30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico 2: Situação do estoque (Rosca) -->
+            <div class="cardGrafico">
+                <div class="topoGrafico">
+                    <h2 class="tituloGrafico">Situação do estoque (quantidade de itens)</h2>
+                    <button class="btnExportarGrafico">⬇</button>
+                </div>
+                <div class="areaGrafico">
+                    <canvas id="graficoSituacao"></canvas>
+                    <div class="legendaGrafico">
+                        <div class="itemLegenda">
+                            <span class="corLegenda verde-escuro"></span>
+                            <div>
+                                <p class="nomeLegenda">Em estoque</p>
+                                <p class="percLegenda">128 (87,1%)</p>
+                            </div>
+                        </div>
+                        <div class="itemLegenda">
+                            <span class="corLegenda amarelo-leg"></span>
+                            <div>
+                                <p class="nomeLegenda">Estoque baixo</p>
+                                <p class="percLegenda">16 (10,9%)</p>
+                            </div>
+                        </div>
+                        <div class="itemLegenda">
+                            <span class="corLegenda vermelho-leg"></span>
+                            <div>
+                                <p class="nomeLegenda">Sem estoque</p>
+                                <p class="percLegenda">3 (2,0%)</p>
+                            </div>
+                        </div>
+                        <div class="totalGrafico">
+                            <p>Total</p>
+                            <p>147 Itens</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico 3: Entradas e Saídas (Linha) -->
+            <div class="cardGrafico">
+                <div class="topoGrafico">
+                    <h2 class="tituloGrafico">Entradas e Saídas (quantidade)</h2>
+                    <button class="btnExportarGrafico">⬇</button>
+                </div>
+                <div class="legendaTopo">
+                    <span class="legendaLinha verde-escuro">— Entradas</span>
+                    <span class="legendaLinha vermelho-leg">— Saídas</span>
+                </div>
+                <canvas id="graficoEntradasSaidas"></canvas>
+                <div class="totaisLinha">
+                    <div>
+                        <p class="labelTotalLinha">Total entradas</p>
+                        <p class="valorTotalLinha">5.410,20</p>
+                    </div>
+                    <div>
+                        <p class="labelTotalLinha">Total saídas</p>
+                        <p class="valorTotalLinha vermelho">3.985,70</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABELA DE DETALHAMENTO -->
+        <section class="conteinerTabela">
+            <div class="topoTabela">
+                <h2 class="tituloTabela">Detalhamento do estoque</h2>
+            </div>
+            <div class="wrapperTabela">
+                <table class="tabelaEstoque">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Item</th>
+                            <th>Estoque atual</th>
+                            <th>Estoque mínimo</th>
+                            <th>Valor unitário</th>
+                            <th>Valor total</th>
+                            <th>Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="tagTipo produto">Produto</span></td>
+                            <td class="celulaProduto">
+                                <div class="miniFoto produto"></div>
+                                Bled 1 - 50g
+                            </td>
+                            <td>25 UN</td>
+                            <td>10 UN</td>
+                            <td>R$ 50,00 UN</td>
+                            <td>R$ 1.250,00</td>
+                            <td><span class="tagSituacao normal">Normal</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tagTipo produto">Produto</span></td>
+                            <td class="celulaProduto">
+                                <div class="miniFoto produto"></div>
+                                Bled 2 - 50g
+                            </td>
+                            <td>0 UN</td>
+                            <td>10 UN</td>
+                            <td>R$ 50,00 UN</td>
+                            <td>R$ 0,00</td>
+                            <td><span class="tagSituacao zerado">Zerado</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tagTipo insumo">Insumo</span></td>
+                            <td class="celulaProduto">
+                                <div class="miniFoto insumo"></div>
+                                Flor de camomila
+                            </td>
+                            <td>100g</td>
+                            <td>500g</td>
+                            <td>R$ 20,00 KG</td>
+                            <td>R$ 2,00</td>
+                            <td><span class="tagSituacao baixo">Estoque baixo</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tagTipo insumo">Insumo</span></td>
+                            <td class="celulaProduto">
+                                <div class="miniFoto insumo"></div>
+                                Flor de hibisco
+                            </td>
+                            <td>2 KG</td>
+                            <td>500g</td>
+                            <td>R$ 40,00 Kg</td>
+                            <td>R$ 80,00</td>
+                            <td><span class="tagSituacao normal">Normal</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tagTipo produto">Produto</span></td>
+                            <td class="celulaProduto">
+                                <div class="miniFoto produto"></div>
+                                Blend Relaxante 30g
+                            </td>
+                            <td>12 UN</td>
+                            <td>15 UN</td>
+                            <td>R$ 35,00 UN</td>
+                            <td>R$ 420,00</td>
+                            <td><span class="tagSituacao baixo">Estoque baixo</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="tagTipo insumo">Insumo</span></td>
+                            <td class="celulaProduto">
+                                <div class="miniFoto insumo"></div>
+                                Hortelã desidratada
+                            </td>
+                            <td>800g</td>
+                            <td>500g</td>
+                            <td>R$ 30,00 KG</td>
+                            <td>R$ 24,00</td>
+                            <td><span class="tagSituacao normal">Normal</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="relatoriosEstoque.js"></script>
+</body>
+</html>
