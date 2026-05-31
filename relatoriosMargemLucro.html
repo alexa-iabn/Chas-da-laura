@@ -135,106 +135,97 @@
             
         </aside>
     
-        <main>
-
-            <h1 class="tituloPagina">Relatórios de Vendas</h1>
-            <h3 class="subtituloPagina">Acompanhe o desenvolvimento das vendas no período selecionado.</h3>
+        <main class="conteudo">
+        
+            <h1 class="tituloPagina">Margem de lucro</h1>
+            <h3 class="subtituloPagina">Acompanhe a margem de lucro da empresa no período selecionado</h3>
 
             <section class="conteinerRelatorios">
 
-                <div class="conteinerFiltros">
+                    <div class="conteinerFiltros">
 
-                    <div class="filtroPeriodo">
+                        <div class="filtroPeriodo">
 
-                        <span>Periodo</span>
+                            <span>Periodo</span>
 
-                        <label for="dataInicio"></label>
-                        <input type="date" class="campoData">
+                            <label for="dataInicio"></label>
+                            <input type="date" class="campoData">
 
-                        <label for="dataFim"></label>
-                        <input type="date" class="campoData">
+                            <label for="dataFim"></label>
+                            <input type="date" class="campoData">
 
+                        </div>
+
+                        <div class="filtroProduto">
+
+                            <span>Produto</span>
+
+                            <select name="filtroProduto" id="filtroProd">
+                                <option value="todos">Todos os produtos</option>
+                                <option value="blend 1">Blend 1</option>
+                                <option value="aromatizador 1">aromatizador 1</option>
+                            </select>
+
+                        </div>
                     </div>
 
-                    <div class="filtroCategoria">
 
-                        <span>Categoria</span>
-
-                        <select name="filtroCategoria" id="filtroCateg">
-                            <option value="todas">Todas as categorias</option>
-                            <option value="cha">Chá</option>
-                            <option value="aromatizador">Armoatizador</option>
-                        </select>
-
+                    <div class="demo">
+                        <div class="iconeDemo">
+                            <span class="iconeDinheiroDemo"></span>
+                        </div>
+                        <div class="textoDemo">
+                            <span class="demoSemiTitulo">Receita bruta</span>
+                            <span class="demoTitulo">R$ 48.756,30</span>
+                            <span class="demoTextoNormal">Valor total bruto</span>
+                        </div>
                     </div>
 
-                    <div class="filtroProduto">
-
-                        <span>Produto</span>
-
-                        <select name="filtroProduto" id="filtroProd">
-                            <option value="todos">Todos os produtos</option>
-                            <option value="blend 1">Blend 1</option>
-                            <option value="aromatizador 1">aromatizador 1</option>
-                        </select>
-
+                    <div class="demo">
+                        <div class="iconeDemo">
+                            <span class="iconeGraficoRedondoDemo"></span>
+                        </div>
+                        <div class="textoDemo">
+                            <span class="demoSemiTitulo">Custos variavel</span>
+                            <span class="demoTitulo">R$ 22.413,00</span>
+                            <span class="demoTextoNormal">Valor total</span>
+                        </div>
                     </div>
+
+                    <div class="demo">
+                        <div class="iconeDemo">
+                            <span class="iconeMoedasDemo"></span>
+                        </div>
+                        <div class="textoDemo">
+                            <span class="demoSemiTitulo">Margem de contribuição</span>
+                            <span class="demoTitulo">R$ 21.385,33</span>
+                            <span class="demoTextoNormal">Total de contribuição</span>
+                        </div>
+                    </div>
+
+                    <div class="demo">
+                        <div class="iconeDemo">
+                            <span class="iconePorcentagemDemo"></span>
+                        </div>
+                        <div class="textoDemo">
+                            <span class="demoSemiTitulo">Margem de lucro</span>
+                            <span class="demoTitulo">57,0%</span>
+                            <span class="demoTextoNormal">do periodo</span>
+                        </div>
+                    </div>
+
                 </div>
-
-                <div class="demo">
-                    <div class="iconeDemo">
-                        <span class="iconePranchetaDemo"></span>
-                    </div>
-                    <div class="textoDemo">
-                        <span class="demoSemiTitulo">Total de produtos</span>
-                        <span class="demoTitulo">12</span>
-                        <span class="demoTextoNormal">Produtos cadastrados</span>
-                    </div>
-                </div>
-
-                <div class="demo">
-                    <div class="iconeDemo">
-                        <span class="iconeCertoDemo"></span>
-                    </div>
-                    <div class="textoDemo">
-                        <span class="demoSemiTitulo">Produtos ativos</span>
-                        <span class="demoTitulo">10</span>
-                        <span class="demoTextoNormal">Produtos ativos</span>
-                    </div>
-                </div>
-
-                <div class="demo">
-                    <div class="iconeDemo">
-                        <span class="iconeCaixaDemo"></span>
-                    </div>
-                    <div class="textoDemo">
-                        <span class="demoSemiTitulo">Estoque total</span>
-                        <span class="demoTitulo">1.250</span>
-                        <span class="demoTextoNormal">Unidades em estoque</span>
-                    </div>
-                </div>
-
-                <div class="demo">
-                    <div class="iconeDemo">
-                        <span class="iconeDinheiroDemo"></span>
-                    </div>
-                    <div class="textoDemo">
-                        <span class="demoSemiTitulo">Valor total em estoque</span>
-                        <span class="demoTitulo">R$ 2.487,50</span>
-                        <span class="demoTextoNormal">Custo total dos produtos</span>
-                    </div>
-                </div>
-
+            
                 <div class="graficos">
 
                     <div class="cardGrafico">
 
                         <div class="topoGrafico">
                             <button class="olharTabela"></button>
-                            <h2 class="tituloGrafico">Faturamento diário(R$)</h2>
+                            <h2 class="tituloGrafico">Análise de lucratividade</h2>
                         </div>
 
-                        <canvas class="graficoFaturamentoDiario"></canvas>
+                        <canvas class="graficoAnaliseLucratividade"></canvas>
 
                     </div>
 
@@ -242,66 +233,53 @@
 
                         <div class="topoGrafico">
                             <button class="olharTabela"></button>
-                            <h2 class="tituloGrafico">Faturamento por categoria(R$)</h2>
+                            <h2 class="tituloGrafico">Evolução da margem de lucro</h2>
                         </div>
 
-                        <canvas class="graficoFaturamentoCategoria"></canvas>
+                        <canvas class="graficoEvolucaoMargemLucro"></canvas>
 
                     </div>
 
                     <div class="cardGrafico">
 
-                        <div class="topoGrafico">
+                        <div class="topoGrafico"></div>
                             <button class="olharTabela"></button>
-                            <h2 class="tituloGrafico">Vendas por forma de pagamento</h2>
+                            <h2 class="tituloGrafico">Margem de contribuição X receita</h2>
                         </div>
 
-                        <canvas class="graficoVendasFormaPagamento"></canvas>
-                        
+                        <canvas class="graficoMargemContribuicaoReceita"></canvas>
+
                     </div>
 
                 </div>
             
                 <div class="conteinerTabela">
 
-                    <h2 class="tituloTabela">Detalhamento do estoque</h2>
+                    <h2 class="tituloTabela">Performace dos produtos</h2>
 
                     <table>
 
                         <thead>
                             <tr>
-                                <th>Data</th>
-                                <th>Categoria</th>
+                                <th>#</th>
                                 <th>Produtos</th>
-                                <th>Quantidade</th>
-                                <th>Valor unitário</th>
-                                <th>Valor total</th>
+                                <th>Receita(R$)</th>
+                                <th>Custos variáveis(R$)</th>
+                                <th>Margem de contribuição(R$)</th>
+                                <th>Lucro líquido(R$)</th>
+                                <th>Margem de lucro(%)</th>
                             </tr>
                         </thead>
                         
                         <tbody>
                             <tr>
-
-                                <td>25/04/2026</td>
-
-                                <td>
-                                    <div class="Categoria">
-                                        <span>Chá</span>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="produto">
-                                        <span class="fotoProduto"></span>
-                                        <span>blend 1</span>
-                                    </div>
-                                </td>
-
-                                <td>10 un</td>
-
-                                <td>R$ 50,00 un</td>
-
-                                <td>R$ 500,00</td>
+                                <td>1</td>
+                                <td>Blend 1</td>
+                                <td>R$ 750,00</td>
+                                <td>R$ 50,00</td>
+                                <td>R$ 700,00</td>
+                                <td>R$ 600,00</td>
+                                <td>30%</td>
                             </tr>
                         </tbody>
                     </table>

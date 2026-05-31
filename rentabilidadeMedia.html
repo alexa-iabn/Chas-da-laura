@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de produtos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     
@@ -135,9 +135,9 @@
             
         </aside>
     
-        <main>
-            <h1 class="tituloPagina">Vendas por tipo de pagamento</h1>
-            <h3 class="subtituloPagina">Visualize o valor das vendas por tipo de pagamento por período</h3>
+        <main class="conteudo">
+            <h1 class="tituloPagina">Rentabilidade média</h1>
+            <h3 class="subtituloPagina">Visualize a Rentabilidade média por categoria e por período</h3>
             
             <div class="baixarArquivos">
 
@@ -169,63 +169,85 @@
 
                 <div class="filtroCategoria">
 
-                    <span>Categoria</span>
+                    <label for="Categoria">Categoria</label>
 
-                    <select name="filtroCategoria" id="filtroCateg">
-                        <option value="todas">Todas as categorias</option>
-                        <option value="cha">Chá</option>
-                        <option value="aromatizador">Armoatizador</option>
+                        <select name="" id="">
+                        <option value="todos">Todas</option>
+                        <option value="flor">Flor</option>
+                        <option value="erva">Erva</option>
+                        <option value="raiz">Raiz</option>
+                        <option value="caule">Caule</option>
+                        
                     </select>
+
+                 </div>
+
+                <div class="filtrar">
+
+                    <button class="botaoFiltar">
+                        <span class="iconeFiltro"></span>
+                        <span class="nomeBotaoFiltar">Filtar</span>
+                    </button>
+
+                    <button class="botaoFiltar">
+                        <span class="iconeCarregando"></span>
+                        <span class="nomeBotaoFiltar">Limpar filtro</span>
+                    </button>
 
                 </div>
 
-                <div class="filtroProduto">
-
-                    <span>Produto</span>
-
-                    <select name="filtroProduto" id="filtroProd">
-                        <option value="todos">Todos os produtos</option>
-                        <option value="blend 1">Blend 1</option>
-                        <option value="aromatizador 1">aromatizador 1</option>
-                    </select>
-
-                </div>
             </div>
 
             <div class="tabela">
 
-                <select name="" id="">
-                    <option value="maiorFaturamento">Maior Faturamento</option>
-                    <option value="menorFaturamento">Menor Faturamento</option>
-                    <option value="dataRecente">Data mais recente</option>
-                    <option value="dataLonge">Data mais longe</option>
-                    <option value="maiorTicket">Maior Ticket</option>
-                    <option value="menorTicket">Menor Ticket</option>
-                </select>
+                <input type="Busque item..." class="buscarProduto">
+
+                <div class="Ordenamento">
+
+                    <span class="ordenar">Ordenar por:</span>
+
+                    <select name="" id="">
+                        <option value="maiorFaturamento">Maior Faturamento</option>
+                        <option value="menorFaturamento">Menor Faturamento</option>
+                        <option value="dataRecente">Data mais recente</option>
+                        <option value="dataLonge">Data mais longe</option>
+                        <option value="maiorTicket">Maior Ticket</option>
+                        <option value="menorTicket">Menor Ticket</option>
+
+                    </select>
+                </div>
 
                 <table>
 
                     <thead>
                         <tr>
-                            <th>Forma de pagamento</th>
-                            <th>Faturamento(R$)</th>
-                            <th>Pedidos realizados</th>
-                            <th>Ticket médio</th>
-                            <th>Clientes atendidos</th>
-                            <th>Itens vendidos</th>
+                            <th>Categoria de insumo</th>
+                            <th>Receita gerada(R$)</th>
+                            <th>Custo ultilizado(R$)</th>
+                            <th>Lucro gerado(R$)</th>
+                            <th>Rentabilidade(%)</th>
                         </tr>
                     </thead>
                         
                     <tbody>
                         <tr>
-                            <td>Pix</td>
-                            <td>R$ 650,00</td>
-                            <td>2</td>
-                            <td>R$ 325,00</td>
-                            <td>2</td>
-                            <td>4</td>
+                            <td>Flor</td>
+                            <td>R$ 700,00</td>
+                            <td>R$ 500,00</td>
+                            <td>R$ 350,00</td>
+                            <td>70%</td>
                         </tr>
                     </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th>Totais</th>
+                            <th>R$ 5.800,00</th>
+                            <th>R$ 3.950,00</th>
+                            <th>R$ 1.850,00</th>
+                            <th>70,0%</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
                 

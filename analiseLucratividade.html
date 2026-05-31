@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de produtos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     
@@ -135,9 +135,12 @@
             
         </aside>
     
-        <main>
-            <h1 class="tituloPagina">Vendas por tipo de pagamento</h1>
-            <h3 class="subtituloPagina">Visualize o valor das vendas por tipo de pagamento por período</h3>
+        <main class="conteudo">
+
+            <div class="titulosPaginaTabela">
+                <h1 class="tituloPagina">Análise de lucratividade</h1>
+                <h3 class="subtituloPagina">Visualize o lucratividade, margem de contribuição e performacepor período</h3>
+            </div>
             
             <div class="baixarArquivos">
 
@@ -167,63 +170,68 @@
 
                 </div>
 
-                <div class="filtroCategoria">
+                <div class="filtrar">
 
-                    <span>Categoria</span>
+                    <button class="botaoFiltar">
+                        <span class="iconeFiltro"></span>
+                        <span class="nomeBotaoFiltar">Filtar</span>
+                    </button>
 
-                    <select name="filtroCategoria" id="filtroCateg">
-                        <option value="todas">Todas as categorias</option>
-                        <option value="cha">Chá</option>
-                        <option value="aromatizador">Armoatizador</option>
-                    </select>
-
-                </div>
-
-                <div class="filtroProduto">
-
-                    <span>Produto</span>
-
-                    <select name="filtroProduto" id="filtroProd">
-                        <option value="todos">Todos os produtos</option>
-                        <option value="blend 1">Blend 1</option>
-                        <option value="aromatizador 1">aromatizador 1</option>
-                    </select>
+                    <button class="botaoFiltar">
+                        <span class="iconeCarregando"></span>
+                        <span class="nomeBotaoFiltar">Limpar filtro</span>
+                    </button>
 
                 </div>
+
             </div>
 
             <div class="tabela">
 
-                <select name="" id="">
-                    <option value="maiorFaturamento">Maior Faturamento</option>
-                    <option value="menorFaturamento">Menor Faturamento</option>
-                    <option value="dataRecente">Data mais recente</option>
-                    <option value="dataLonge">Data mais longe</option>
-                    <option value="maiorTicket">Maior Ticket</option>
-                    <option value="menorTicket">Menor Ticket</option>
-                </select>
+                <input type="Busque item..." class="buscarProduto">
+
+                <div class="Ordenamento">
+
+                    <span class="ordenar">Ordenar por:</span>
+
+                    <select name="" id="">
+                        <option value="maiorFaturamento">Maior Faturamento</option>
+                        <option value="menorFaturamento">Menor Faturamento</option>
+                        <option value="dataRecente">Data mais recente</option>
+                        <option value="dataLonge">Data mais longe</option>
+                        <option value="maiorTicket">Maior Ticket</option>
+                        <option value="menorTicket">Menor Ticket</option>
+
+                    </select>
+                </div>
 
                 <table>
 
                     <thead>
                         <tr>
-                            <th>Forma de pagamento</th>
-                            <th>Faturamento(R$)</th>
-                            <th>Pedidos realizados</th>
-                            <th>Ticket médio</th>
-                            <th>Clientes atendidos</th>
-                            <th>Itens vendidos</th>
+                            <th>Produto</th>
+                            <th>Categoria</th>
+                            <th>Receita Liquida(R$)</th>
+                            <th>Custo insumos(R$)</th>
+                            <th>Custos emblagem(R$)</th>
+                            <th>Total de custos(R$)</th>
+                            <th>Margem de contribuição(R$)</th>
+                            <th>Lucro líquido(R$)</th>
+                            <th>Margem de lucro(%)</th>
                         </tr>
                     </thead>
                         
                     <tbody>
                         <tr>
-                            <td>Pix</td>
-                            <td>R$ 650,00</td>
-                            <td>2</td>
-                            <td>R$ 325,00</td>
-                            <td>2</td>
-                            <td>4</td>
+                            <td>Blend 1</td>
+                            <td>Relaxante</td>
+                            <td>R$ 700,00</td>
+                            <td>R$ 30,00</td>
+                            <td>R$ 5,00</td>
+                            <td>R$ 35,00</td>
+                            <td>R$ 100,00</td>
+                            <td>R$ 400,00</td>
+                            <td>35%</td>
                         </tr>
                     </tbody>
                 </table>
