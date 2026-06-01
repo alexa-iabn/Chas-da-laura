@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chás da Laura - Relatórios de Produção</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    
+    <header class="topoEstoque">
+        <div class="caminho">
+            <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
+            <a href="estoque.html" class="LinkEstoque"> > Relatórios </a>
+            <a href="relatorioProducao.html" class="linkEstoqueProdutos">> Relatórios de produção</a>
+        </div>
+        <div class="notfUser">
+            <div class="notificacao">
+                <i class="sino"></i>
+                <span class="bolinha"></span>
+            </div>
+            <div class="PerfilUsuario">
+                <div class="avatar"><span class="L"> L </span></div>
+                <h2 class="nomeUsuario">Laura</h2>
+                <span class="seta">⌄</span>
+            </div>
+        </div>
+    </header>
+
+    <aside class="menuLateral">
+        <button id="botaoRetratil" class="botaoRetratil"></button>
+        <div class="logoMenuLateral">
+            <img src="Imagens/Logo.png" alt="Logo chás da laura">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="blocoOpcao">
+                    <a href="paginaInicial.html" class="itemMenu">
+                        <div class="circulo"><span class="iconeCasa"></span></div>
+                        <span class="tituloMenu">Painel inicial</span>
+                    </a>
+                </li>
+                <li>
+                    <details>
+                        <summary class="blocoOpcao">
+                            <div class="itemMenu">
+                                <div class="circulo"><span class="iconeLapis"></span></div>
+                                <span class="tituloMenu">Cadastros</span>
+                            </div>
+                        </summary>
+                        <ul class="subMenu">
+                            <li><a href="CadastroClientes.html">Clientes</a></li>
+                            <li><a href="CadastroInsumos.html">Insumos</a></li>
+                            <li><a href="CadastroProdutos.html">Produtos</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li class="blocoOpcao">
+                    <a href="PaginaRelatorios.html" class="itemMenu">
+                        <div class="circulo"><span class="iconeGrafico"></span></div>
+                        <span class="tituloMenu">Relatórios</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="conteudo">
+        <h1 class="tituloPagina">Relatórios de produção</h1>
+        <h3 class="subtituloPagina">Acompanhe o desempenho da produção no período selecionado</h3>
+
+        <section class="conteinerFiltros">
+            <div class="filtroItem">
+                <label>Período</label>
+                <select>
+                    <option>01/05/2025 - 31/05/2026</option>
+                </select>
+            </div>
+            <div class="filtroItem">
+                <label>Produto</label>
+                <select>
+                    <option>Todos os produtos</option>
+                </select>
+            </div>
+            <div class="filtroItem">
+                <label>Status</label>
+                <select>
+                    <option>Todos</option>
+                </select>
+            </div>
+            <div class="botoesFiltro">
+                <button class="botaoFiltrar"><span class="iconeFiltro"></span> Filtrar</button>
+                <button class="botaoLimpar"><span class="iconeLimpar"></span> Limpar Filtros</button>
+            </div>
+        </section>
+
+        <section class="conteinerCardsKpi">
+            <div class="cardKpi">
+                <div class="iconeKpi verde"></div>
+                <div class="infoKpi">
+                    <span class="labelKpi">Produção total do período</span>
+                    <span class="valorKpi">1.250</span>
+                    <span class="subtextKpi unidades">unidades</span>
+                    <span class="subtextKpi verde">▲ 12,5% vs mês anterior</span>
+                </div>
+            </div>
+            <div class="cardKpi">
+                <div class="iconeKpi verdeClaro"></div>
+                <div class="infoKpi">
+                    <span class="labelKpi">Produtos produzidos</span>
+                    <span class="valorKpi">12</span>
+                    <span class="subtextKpi">produtos diferentes</span>
+                </div>
+            </div>
+            <div class="cardKpi">
+                <div class="iconeKpi estrelaVerde"></div>
+                <div class="infoKpi">
+                    <span class="labelKpi">Custo total da produção</span>
+                    <span class="valorKpi">R$ 2.450,00</span>
+                    <span class="subtextKpi">Custo médio: R$ 1,96/ un</span>
+                </div>
+            </div>
+            <div class="cardKpi">
+                <div class="iconeKpi listaVerde"></div>
+                <div class="infoKpi">
+                    <span class="labelKpi">Insumos consumidos</span>
+                    <span class="valorKpi">18,75 kg</span>
+                    <span class="subtextKpi">de insumos</span>
+                    <span class="subtextKpi verde">▲ 8,4% vs mês anterior</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="graficos">
+            <div class="cardGrafico">
+                <div class="topoGrafico">
+                    <h2 class="tituloGrafico">Produção semanal <small>(unidades)</small></h2>
+                    <button class="btnExportarCard"></button>
+                </div>
+                <div class="containerCanvas">
+                    <canvas id="graficoProducaoSemanal"></canvas>
+                </div>
+            </div>
+
+            <div class="cardGrafico">
+                <div class="topoGrafico">
+                    <h2 class="tituloGrafico">Produtos mais produzidos</h2>
+                    <button class="btnExportarCard"></button>
+                </div>
+                <div class="containerCanvas">
+                    <canvas id="graficoMaisProduzidos"></canvas>
+                </div>
+            </div>
+
+            <div class="cardGrafico">
+                <div class="topoGrafico">
+                    <h2 class="tituloGrafico">Consumo de insumos <small>(kg)</small></h2>
+                    <button class="btnExportarCard"></button>
+                </div>
+                <div class="containerCanvas">
+                    <canvas id="graficoConsumoInsumos"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="conteinerTabela">
+            <h2 class="tituloTabela">Detalhamento da produção</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Semana</th>
+                        <th>Produto</th>
+                        <th>Quantidade produzida</th>
+                        <th>Receita utilizada</th>
+                        <th>Custo da produção</th>
+                        <th>Responsável</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>20/05 - 26/05</td>
+                        <td><span class="indicadorCor b1"></span> Bled 1 - 50g</td>
+                        <td>50 un</td>
+                        <td>Receita 1</td>
+                        <td>R$ 294,00</td>
+                        <td>Laura</td>
+                    </tr>
+                    <tr>
+                        <td>20/05 - 26/05</td>
+                        <td><span class="indicadorCor b2"></span> Bled 2 - 50g</td>
+                        <td>50 un</td>
+                        <td>Receita 2</td>
+                        <td>R$ 294,00</td>
+                        <td>Laura</td>
+                    </tr>
+                    <tr>
+                        <td>20/05 - 26/05</td>
+                        <td><span class="indicadorCor b3"></span> Bled 3 - 50g</td>
+                        <td>50 un</td>
+                        <td>Receita 3</td>
+                        <td>R$ 294,00</td>
+                        <td>Laura</td>
+                    </tr>
+                    <tr>
+                        <td>20/05 - 26/05</td>
+                        <td><span class="indicadorCor b4"></span> Bled 4 - 50g</td>
+                        <td>50 un</td>
+                        <td>Receita 4</td>
+                        <td>R$ 294,00</td>
+                        <td>Laura</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
