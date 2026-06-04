@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fornecedores Cadastrados — Chás da Laura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-icon">🍃</div>
+      <div class="sidebar-logo-text">
+        Chás da
+        <span>Laura</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Painel de início
+      </a>
+
+      <div class="nav-item active open">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Cadastros
+        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="nav-sub">
+        <a href="#" class="nav-item">• Clientes</a>
+        <a href="FornecedoresCadastrados.html" class="nav-item active">• Fornecedores</a>
+        <a href="#" class="nav-item">• Insumos</a>
+        <a href="#" class="nav-item">• Produtos</a>
+        <a href="#" class="nav-item">• Receitas</a>
+        <a href="#" class="nav-item">• Parceiros</a>
+      </div>
+
+      <div class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        Estoque
+        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+
+      <a href="#" class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Relatórios
+      </a>
+
+      <a href="#" class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        Produção
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <button class="topbar-menu-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <nav class="breadcrumb">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <a href="#">Cadastros</a>
+        <span class="sep">›</span>
+        <span class="current">Fornecedores cadastrados</span>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="bell-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="bell-dot"></span>
+        </button>
+        <div class="user-badge">
+          <div class="user-avatar">L</div>
+          Laura
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main class="page-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Fornecedores cadastrados</h1>
+          <p class="page-subtitle">Gerencie e visualize todos os fornecedores do sistema</p>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <a href="CadastroFornecedor.html" class="btn btn-ghost">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Voltar
+          </a>
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="search-wrap">
+          <span class="search-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <input id="searchInput" type="text" placeholder="Buscar fornecedor..." oninput="filterTable()" />
+        </div>
+        <div class="toolbar-right">
+          <div class="view-toggle">
+            <button class="view-btn active" id="btnLista" onclick="setView('lista')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              Lista
+            </button>
+            <button class="view-btn" id="btnCards" onclick="setView('cards')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              Cards
+            </button>
+          </div>
+          <a href="CadastroFornecedor.html" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Novo fornecedor
+          </a>
+        </div>
+      </div>
+
+      <!-- List view -->
+      <div id="listaView">
+        <div class="table-wrap">
+          <table id="fornecedoresTable">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>CNPJ</th>
+                <th>Telefone</th>
+                <th>Endereço</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+          <div id="emptyMsg" class="empty-state" style="display:none">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <p>Nenhum fornecedor encontrado.</p>
+          </div>
+          <div class="pagination">
+            <span id="paginationInfo"></span>
+            <div class="pagination-btns" id="paginationBtns"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards view (hidden by default) -->
+      <div id="cardsView" style="display:none">
+        <div class="cards-grid" id="cardsGrid"></div>
+        <div id="emptyCards" class="empty-state" style="display:none">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <p>Nenhum fornecedor encontrado.</p>
+        </div>
+      </div>
+    </main>
+  </div><!-- /main -->
+</div><!-- /layout -->
+
+<!-- Delete modal -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal">
+    <!-- Trash icon -->
+    <div class="modal-icon-ring">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <polyline points="3 6 5 6 21 6"/>
+        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+        <path d="M10 11v6"/><path d="M14 11v6"/>
+        <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+      </svg>
+    </div>
+
+    <div class="modal-title">Excluir Fornecedor</div>
+    <p class="modal-subtitle">Tem certeza que deseja excluir este fornecedor?<br>Essa ação não pode ser desfeita.</p>
+
+    <!-- Supplier info card -->
+    <div class="modal-supplier-card">
+      <div class="modal-supplier-initials" id="modalInitials">NB</div>
+      <div class="modal-supplier-info">
+        <div class="modal-supplier-name" id="modalName">—</div>
+        <div class="modal-supplier-detail">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.62 4.45 2 2 0 0 1 3.59 2.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          <span id="modalTel">—</span>
+        </div>
+        <div class="modal-supplier-detail">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a id="modalEmail" href="#">—</a>
+        </div>
+        <div class="modal-supplier-detail">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="modalAddr">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warning -->
+    <div class="modal-warning">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span>Todas as informações e históricos relacionados a este fornecedor serão permanentemente apagados do sistema</span>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeModal()">Cancelar</button>
+      <button class="btn btn-danger" onclick="confirmDelete()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+        Excluir fornecedor
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ---- Sample data ---- */
+  const sampleData = [
+    { id: 1, nome: 'Nutri bom alimentos LTDA', cnpj: '12.345.678/0001-90', telefone: '(11) 98765-4321', endereco: 'Rua x, 134', cidade: 'São Paulo', estado: 'SP', email: 'nutri@email.com', categoria: 'Ingredientes Naturais' },
+    { id: 2, nome: 'Ervas do Campo Ltda',       cnpj: '98.765.432/0001-10', telefone: '(41) 93456-7890', endereco: 'Av. das Flores, 55', cidade: 'Curitiba', estado: 'PR', email: 'ervas@email.com', categoria: 'Ervas e Plantas' },
+    { id: 3, nome: 'Embalagens Verde Natural',  cnpj: '11.222.333/0001-44', telefone: '(48) 99876-5432', endereco: 'Rua do Porto, 210', cidade: 'Florianópolis', estado: 'SC', email: 'verde@email.com', categoria: 'Embalagens' },
+    { id: 4, nome: 'Chás Premium do Brasil',    cnpj: '44.555.666/0001-77', telefone: '(21) 97654-3210', endereco: 'Av. Central, 900', cidade: 'Rio de Janeiro', estado: 'RJ', email: 'premium@email.com', categoria: 'Ervas e Plantas' },
+    { id: 5, nome: 'Nutri bom alimentos LTDA',  cnpj: '12.345.678/0001-90', telefone: '(11) 98765-4321', endereco: 'Rua x, 134', cidade: 'São Paulo', estado: 'SP', email: 'nutri2@email.com', categoria: 'Ingredientes Naturais' },
+    { id: 6, nome: 'Agrotech Especiarias',       cnpj: '55.666.777/0001-88', telefone: '(62) 98888-1111', endereco: 'Rodovia GO-020, km 5', cidade: 'Goiânia', estado: 'GO', email: 'agro@email.com', categoria: 'Ingredientes Naturais' },
+    { id: 7, nome: 'Sabores da Terra ME',        cnpj: '22.333.444/0001-55', telefone: '(51) 97777-2222', endereco: 'Rua dos Ipês, 30', cidade: 'Porto Alegre', estado: 'RS', email: 'sabores@email.com', categoria: 'Ervas e Plantas' },
+    { id: 8, nome: 'EcoPack Soluções',           cnpj: '33.444.555/0001-66', telefone: '(71) 96666-3333', endereco: 'Av. Oceânica, 400', cidade: 'Salvador', estado: 'BA', email: 'ecopack@email.com', categoria: 'Embalagens' },
+    { id: 9, nome: 'Nutri bom alimentos LTDA',  cnpj: '12.345.678/0001-90', telefone: '(11) 98765-4321', endereco: 'Rua x, 134', cidade: 'São Paulo', estado: 'SP', email: 'nutri3@email.com', categoria: 'Ingredientes Naturais' },
+    { id:10, nome: 'Fitoterapia Ativa Ltda',     cnpj: '77.888.999/0001-00', telefone: '(31) 95555-4444', endereco: 'Rua dos Sabis, 77', cidade: 'Belo Horizonte', estado: 'MG', email: 'fito@email.com', categoria: 'Ervas e Plantas' },
+    { id:11, nome: 'Natural Roots EIRELI',       cnpj: '66.777.888/0001-11', telefone: '(85) 94444-5555', endereco: 'Av. Beira Mar, 1000', cidade: 'Fortaleza', estado: 'CE', email: 'roots@email.com', categoria: 'Outros' },
+    { id:12, nome: 'Flor de Liz Distribuidora', cnpj: '88.999.000/0001-22', telefone: '(27) 93333-6666', endereco: 'Rua das Acácias, 14', cidade: 'Vitória', estado: 'ES', email: 'flor@email.com', categoria: 'Ervas e Plantas' },
+  ];
+
+  let suppliers = [...sampleData];
+  let filtered = [...suppliers];
+  let currentPage = 1;
+  const perPage = 8;
+  let currentView = 'lista';
+  let pendingDeleteId = null;
+
+  function getInitials(name) {
+    return name.split(' ').slice(0,2).map(w => w[0]).join('').toUpperCase();
+  }
+
+  /* ---- Render table ---- */
+  function renderTable() {
+    const tbody = document.getElementById('tableBody');
+    const start = (currentPage - 1) * perPage;
+    const pageItems = filtered.slice(start, start + perPage);
+
+    tbody.innerHTML = '';
+    document.getElementById('emptyMsg').style.display = filtered.length === 0 ? 'block' : 'none';
+
+    pageItems.forEach(s => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><strong style="color:var(--gray-900)">${s.nome}</strong></td>
+        <td style="color:var(--gray-500);font-size:12.5px">${s.cnpj}</td>
+        <td>${s.telefone}</td>
+        <td style="color:var(--gray-500)">${s.endereco}</td>
+        <td>
+          <div class="td-actions">
+            <button class="action-btn edit" title="Editar" onclick="editSupplier(${s.id})">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button class="action-btn delete" title="Excluir" onclick="openDelete(${s.id})">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
+            </button>
+          </div>
+        </td>`;
+      tbody.appendChild(tr);
+    });
+
+    renderPagination();
+  }
+
+  /* ---- Render cards ---- */
+  function renderCards() {
+    const grid = document.getElementById('cardsGrid');
+    grid.innerHTML = '';
+    document.getElementById('emptyCards').style.display = filtered.length === 0 ? 'block' : 'none';
+
+    filtered.forEach(s => {
+      const div = document.createElement('div');
+      div.className = 'supplier-card';
+      div.innerHTML = `
+        <div class="supplier-card-head">
+          <div class="supplier-initials">${getInitials(s.nome)}</div>
+          <div>
+            <div class="supplier-card-name">${s.nome}</div>
+            <div class="supplier-card-cnpj">${s.cnpj}</div>
+          </div>
+        </div>
+        <div class="supplier-card-info">
+          <div class="supplier-card-row">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.62 4.45 2 2 0 0 1 3.59 2.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+            ${s.telefone}
+          </div>
+          <div class="supplier-card-row">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ${s.endereco} — ${s.cidade}/${s.estado}
+          </div>
+          <div class="supplier-card-row">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span class="badge badge-green">${s.categoria}</span>
+          </div>
+        </div>
+        <div class="supplier-card-actions">
+          <button class="btn btn-outline" onclick="editSupplier(${s.id})">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Editar
+          </button>
+          <button class="btn btn-danger" onclick="openDelete(${s.id})">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+            Excluir
+          </button>
+        </div>`;
+      grid.appendChild(div);
+    });
+  }
+
+  /* ---- Pagination ---- */
+  function renderPagination() {
+    const total = filtered.length;
+    const pages = Math.ceil(total / perPage);
+    const start = total === 0 ? 0 : (currentPage - 1) * perPage + 1;
+    const end = Math.min(currentPage * perPage, total);
+
+    document.getElementById('paginationInfo').textContent = `Mostrando ${start}–${end} de ${total} fornecedores`;
+
+    const btns = document.getElementById('paginationBtns');
+    btns.innerHTML = '';
+
+    const prev = document.createElement('button');
+    prev.className = 'pg-btn';
+    prev.innerHTML = '‹';
+    prev.disabled = currentPage === 1;
+    prev.onclick = () => { currentPage--; renderTable(); };
+    btns.appendChild(prev);
+
+    for (let i = 1; i <= pages; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'pg-btn' + (i === currentPage ? ' active' : '');
+      btn.textContent = i;
+      btn.onclick = (pg => () => { currentPage = pg; renderTable(); })(i);
+      btns.appendChild(btn);
+    }
+
+    const next = document.createElement('button');
+    next.className = 'pg-btn';
+    next.innerHTML = '›';
+    next.disabled = currentPage === pages || pages === 0;
+    next.onclick = () => { currentPage++; renderTable(); };
+    btns.appendChild(next);
+  }
+
+  /* ---- Search ---- */
+  function filterTable() {
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    filtered = suppliers.filter(s =>
+      s.nome.toLowerCase().includes(q) ||
+      s.cnpj.includes(q) ||
+      s.telefone.includes(q) ||
+      s.endereco.toLowerCase().includes(q)
+    );
+    currentPage = 1;
+    renderTable();
+    renderCards();
+  }
+
+  /* ---- View toggle ---- */
+  function setView(view) {
+    currentView = view;
+    document.getElementById('listaView').style.display = view === 'lista' ? 'block' : 'none';
+    document.getElementById('cardsView').style.display = view === 'cards' ? 'block' : 'none';
+    document.getElementById('btnLista').classList.toggle('active', view === 'lista');
+    document.getElementById('btnCards').classList.toggle('active', view === 'cards');
+  }
+
+  /* ---- Actions ---- */
+  function editSupplier(id) {
+    window.location.href = 'CadastroFornecedor.html?id=' + id;
+  }
+
+  function openDelete(id) {
+    const s = suppliers.find(x => x.id === id);
+    if (!s) return;
+    pendingDeleteId = id;
+
+    document.getElementById('modalInitials').textContent = getInitials(s.nome);
+    document.getElementById('modalName').textContent = s.nome;
+    document.getElementById('modalTel').textContent = s.telefone;
+    const emailEl = document.getElementById('modalEmail');
+    emailEl.textContent = s.email;
+    emailEl.href = 'mailto:' + s.email;
+    document.getElementById('modalAddr').textContent = `${s.endereco} · ${s.cidade} · ${s.estado}`;
+
+    document.getElementById('deleteModal').classList.add('open');
+  }
+
+  function closeModal() {
+    document.getElementById('deleteModal').classList.remove('open');
+    pendingDeleteId = null;
+  }
+
+  function confirmDelete() {
+    suppliers = suppliers.filter(s => s.id !== pendingDeleteId);
+    filterTable();
+    closeModal();
+  }
+
+  document.getElementById('deleteModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  /* ---- Init ---- */
+  renderTable();
+  renderCards();
+</script>
+</body>
+</html>
