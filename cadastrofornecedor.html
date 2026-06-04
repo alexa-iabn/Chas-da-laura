@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Fornecedor — Chás da Laura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-icon">🍃</div>
+      <div class="sidebar-logo-text">
+        Chás da
+        <span>Laura</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Painel de início
+      </a>
+
+      <div class="nav-item active open">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Cadastros
+        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="nav-sub">
+        <a href="#" class="nav-item">• Clientes</a>
+        <a href="FornecedoresCadastrados.html" class="nav-item active">• Fornecedores</a>
+        <a href="#" class="nav-item">• Insumos</a>
+        <a href="#" class="nav-item">• Produtos</a>
+        <a href="#" class="nav-item">• Receitas</a>
+        <a href="#" class="nav-item">• Parceiros</a>
+      </div>
+
+      <div class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        Estoque
+        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+
+      <a href="#" class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Relatórios
+      </a>
+
+      <a href="#" class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        Produção
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <button class="topbar-menu-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <nav class="breadcrumb">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <a href="#">Cadastros</a>
+        <span class="sep">›</span>
+        <a href="FornecedoresCadastrados.html">Fornecedores</a>
+        <span class="sep">›</span>
+        <span class="current">Novo fornecedor</span>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="bell-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="bell-dot"></span>
+        </button>
+        <div class="user-badge">
+          <div class="user-avatar">L</div>
+          Laura
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main class="page-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Cadastro de fornecedores</h1>
+          <p class="page-subtitle">Preencha as informações essenciais para cadastrar um novo fornecedor</p>
+        </div>
+        <a href="FornecedoresCadastrados.html" class="btn btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Ver fornecedores cadastrados
+        </a>
+      </div>
+
+      <form id="formFornecedor" onsubmit="handleSubmit(event)">
+
+        <!-- Informações gerais -->
+        <div class="form-section">
+          <div class="form-section-header">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Informações gerais
+          </div>
+          <div class="form-body">
+            <div class="form-grid form-grid-2" style="margin-bottom:16px">
+              <div class="form-group">
+                <label class="form-label" for="nomeCompleto">Nome Completo</label>
+                <input class="form-control" id="nomeCompleto" type="text" placeholder="Digite seu nome completo" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cnpj">CNPJ</label>
+                <input class="form-control" id="cnpj" type="text" placeholder="00.000.000/0001-00" maxlength="18" />
+              </div>
+            </div>
+
+            <div class="form-grid form-grid-2" style="margin-bottom:16px">
+              <div class="form-group">
+                <label class="form-label" for="telefone">Telefone</label>
+                <div class="form-control-icon">
+                  <input class="form-control" id="telefone" type="tel" placeholder="(00) 0000-0000" />
+                  <span class="input-icon">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.62 4.45 2 2 0 0 1 3.59 2.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+                  </span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">E-mail</label>
+                <input class="form-control" id="email" type="email" placeholder="Exemplo@gmail.com" />
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="razaoSocial">Razão social</label>
+                <input class="form-control" id="razaoSocial" type="text" placeholder="Ex: fazenda boa vista Ltda" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Endereço -->
+        <div class="form-section">
+          <div class="form-section-header">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Endereço
+          </div>
+          <div class="form-body">
+            <div class="form-grid form-grid-4">
+              <div class="form-group">
+                <label class="form-label" for="estado">Estado</label>
+                <select class="form-control" id="estado">
+                  <option value="">Selecione...</option>
+                  <option>AC</option><option>AL</option><option>AM</option><option>AP</option>
+                  <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                  <option>GO</option><option>MA</option><option>MG</option><option>MS</option>
+                  <option>MT</option><option>PA</option><option>PB</option><option>PE</option>
+                  <option>PI</option><option>PR</option><option>RJ</option><option>RN</option>
+                  <option>RO</option><option>RR</option><option>RS</option><option>SC</option>
+                  <option>SE</option><option>SP</option><option>TO</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cidade">Cidade</label>
+                <select class="form-control" id="cidade">
+                  <option value="">Selecione...</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="endereco">Endereço</label>
+                <input class="form-control" id="endereco" type="text" placeholder="Ex: Rua das flores" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="numero">Numero</label>
+                <input class="form-control" id="numero" type="text" placeholder="123" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informações complementares -->
+        <div class="form-section">
+          <div class="form-section-header">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Informações complementares
+          </div>
+          <div class="form-body">
+            <div class="form-grid form-grid-2" style="margin-bottom:16px">
+              <div class="form-group">
+                <label class="form-label" for="categoria">Categoria de fornecimento</label>
+                <select class="form-control" id="categoria">
+                  <option value="">Selecione uma categoria...</option>
+                  <option>Ervas e Plantas</option>
+                  <option>Embalagens</option>
+                  <option>Ingredientes Naturais</option>
+                  <option>Equipamentos</option>
+                  <option>Outros</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="pagamento">Condições de pagamento</label>
+                <input class="form-control" id="pagamento" type="text" placeholder="Ex: 30 dias, À vista, 10/30/45 dias" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="observacao">Observação</label>
+              <textarea class="form-control" id="observacao" rows="3" placeholder="Digite alguma observação sobre o cliente..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="form-actions">
+          <a href="FornecedoresCadastrados.html" class="btn btn-outline">Cancelar</a>
+          <button type="submit" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Salvar fornecedor
+          </button>
+        </div>
+
+      </form>
+    </main>
+  </div><!-- /main -->
+</div><!-- /layout -->
+
+<script>
+  /* CNPJ mask */
+  document.getElementById('cnpj').addEventListener('input', function(e) {
+    let v = e.target.value.replace(/\D/g, '').slice(0, 14);
+    v = v.replace(/^(\d{2})(\d)/, '$1.$2');
+    v = v.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+    v = v.replace(/\.(\d{3})(\d)/, '.$1/$2');
+    v = v.replace(/(\d{4})(\d)/, '$1-$2');
+    e.target.value = v;
+  });
+
+  /* Phone mask */
+  document.getElementById('telefone').addEventListener('input', function(e) {
+    let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+    if (v.length <= 10) v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+    else v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+    e.target.value = v;
+  });
+
+  /* Populate cities based on state (simplified) */
+  const citiesMap = {
+    'PR': ['Curitiba','Londrina','Maringá','Foz do Iguaçu','Cascavel','Ponta Grossa'],
+    'SP': ['São Paulo','Campinas','Santos','Ribeirão Preto','Sorocaba','São Bernardo do Campo'],
+    'RJ': ['Rio de Janeiro','Niterói','Petrópolis','Nova Friburgo','Campos dos Goytacazes'],
+    'MG': ['Belo Horizonte','Uberlândia','Contagem','Juiz de Fora','Betim'],
+    'SC': ['Florianópolis','Joinville','Blumenau','Chapecó','Itajaí'],
+    'RS': ['Porto Alegre','Caxias do Sul','Pelotas','Santa Maria','Canoas'],
+    'BA': ['Salvador','Feira de Santana','Vitória da Conquista','Camaçari'],
+    'GO': ['Goiânia','Aparecida de Goiânia','Anápolis','Rio Verde'],
+  };
+
+  document.getElementById('estado').addEventListener('change', function() {
+    const cidadeEl = document.getElementById('cidade');
+    const cities = citiesMap[this.value] || [];
+    cidadeEl.innerHTML = '<option value="">Selecione...</option>';
+    cities.forEach(c => {
+      const opt = document.createElement('option');
+      opt.textContent = c;
+      cidadeEl.appendChild(opt);
+    });
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('[type=submit]');
+    btn.textContent = '✓ Salvo!';
+    btn.style.background = 'var(--green-500)';
+    setTimeout(() => {
+      window.location.href = 'FornecedoresCadastrados.html';
+    }, 1000);
+  }
+</script>
+</body>
+</html>
