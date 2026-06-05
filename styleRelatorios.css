@@ -1,0 +1,250 @@
+
+
+/* CONTEUDO PRINCIPAL TITULOS*/
+
+.titulosRelatorios{
+
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: first baseline;
+}
+
+/* FILTROS DA PAGINA */
+
+.conteinerRelatorios{
+    width: 170vh;
+}
+
+.conteinerFiltros{
+    display: flex;
+    justify-content: space-between;
+
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 12vh;
+
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    border-radius: 1.5vh;
+
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.conjuntoFiltros{
+    display: flex;
+}
+
+.filtro{
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+
+    margin: 2vh;
+    margin-left: 5vh;
+}
+
+.nomeFiltro{
+    font-weight: bolder;
+}
+
+.campoData{
+    background-color: transparent;
+    border: 0.2vh solid rgb(146, 146, 146);
+    border-radius: 0.5vh;
+
+    width: 20vh;
+    height: 4vh;
+}
+
+.filtrar{
+    background-color: transparent;
+    border: 0.2vh solid rgb(146, 146, 146);
+    border-radius: 0.5vh;
+
+    width: 30vh;
+    height: 4vh;
+}
+
+.acoesFiltro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+
+    margin-right: 2vh;
+}
+
+.botaoFiltrar{
+    border-color: rgb(146, 146, 146);
+    border-radius: 0.5vh;
+    background-color: transparent;
+
+    width: 15vh;
+    height: 4vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+}
+
+.botaoLimparFiltro{
+    border-color: #144621;
+    border-radius: 0.5vh;
+    background-color: #144621;
+    color: white;
+
+    width: 20vh;
+    height: 4vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+}
+
+.iconeFiltro{
+    width: 3vh;
+    height: 3vh;
+
+    display: block;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(Imagens/filtro.svg);
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeCarregar{
+    width: 3vh;
+    height: 3vh;
+
+    display: block;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(Imagens/carregando.svg);
+
+    filter: brightness(0) invert(1);
+}
+
+/* DEMOSTRAÇÕES */
+
+.demostracoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+}
+
+/* GRAFICOS */
+
+.graficos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2vh;
+}
+
+.cardGrafico{
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgb(255, 255, 255);
+    width: 54vh;
+    height: 28vh;
+
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    border-radius: 1.5vh;
+
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.topoGrafico{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 5vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 1vh;
+
+}
+
+.olharTabela{
+    width: 5vh;
+    height: 5vh;
+    margin-right: 4vh;
+
+    display: block;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(Imagens/verTabela.svg);
+
+    border: none;
+    background-color: transparent;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+
+    cursor: pointer;
+
+}
+
+.tituloGrafico{
+    font-size: 3vh;
+}
+
+/* TABELA */
+
+.conteinerTabela{
+    width: 170vh;
+    height: auto;
+    margin-left: 0vh;
+}
+
+.tituloTabela{
+    display: flex;
+    align-items: center;
+
+    height: 5vh;
+}
+
+.tituloTabela h2{
+    font-size: 3vh;
+    margin-left: 2vh;
+}
+
+td, th{
+    text-align: center;
+    vertical-align: middle;
+    margin: 2vh;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.topoTabelaVerdadeira{
+    background-color: #144621;
+}
+
+

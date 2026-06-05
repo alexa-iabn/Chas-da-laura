@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de produtos</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styleEstoque.css">
+    <link rel="stylesheet" href="styleRelatorios.css">
+    <link rel="stylesheet" href="styleRelatoriosTabelas.css">
 </head>
 <body>
     
         <header class="topoEstoque">
+
             <div class="caminho">
+
                 <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-                <a href="estoque.html" class="LinkEstoque"> > Estoque </a>
-                <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Produtos</a>
+                <a href="relatorios.html" class="primeiroCaminho"> > Relatórios </a>
+                <a href="relatoriosMargemLucro.html" class="segundoCaminho"> > Relatório Margem de Lucro</a>
+                <a href="evolucaoMargemLucro.html" class="terceiroCaminho"> > Evolução Margem de lucro</a>
+
             </div>
+
             <div class="notfUser">
+
                 <div class="notificacao">
+
                     <i class="sino"></i>
                     <span class="bolinha"></span>
+
                 </div>
 
                 <div class="PerfilUsuario">
@@ -41,6 +51,7 @@
             <div class="logoMenuLateral">
                 <img src="Imagens/Logo.png"  alt="Logo chás da laura">
             </div>
+
             <nav class="menu">
                 <ul>
 
@@ -132,13 +143,18 @@
                     </li>
                 </ul>
             </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
         </aside>
     
         <main class="conteudo">
-            <h1 class="tituloPagina">Evolução da margem de lucro</h1>
-            <h3 class="subtituloPagina">Acompanhe a evolução da margem de lucro ao longo do período selecionada</h3>
-            
+
+            <div class="titulos">
+                <h1 class="tituloPagina">Evolução da margem de lucro</h1>
+                <h3 class="subtituloPagina">Acompanhe a evolução da margem de lucro ao longo do período selecionada</h3>
+            </div>
+
             <div class="baixarArquivos">
 
                 <button class="botaoBaixarExcel">
@@ -155,56 +171,81 @@
 
             <div class="conteinerFiltros">
 
-                <div class="filtroPeriodo">
+                <div class="conjuntoFiltros">
 
-                    <span>Periodo</span>
+                    <div class="filtro">
 
-                    <label for="dataInicio"></label>
-                    <input type="date" class="campoData">
+                        <span class="nomeFiltro">Periodo</span>
 
-                    <label for="dataFim"></label>
-                    <input type="date" class="campoData">
+                        <div class="periodo">
+
+                            <label for="dataInicio"></label>
+                            <input type="date" class="campoData">
+
+                            <label for="dataFim"></label>
+                            <input type="date" class="campoData">
+
+                        </div>
+
+                    </div>
+
+                    <div class="filtro">
+
+                        <span class="nomeFiltro">Produto</span>
+
+                        <select name="filtrar" class="filtrar" id="">
+                            <option value="todos">Todos</option>
+                            <option value="flor">blend 1</option>
+                            <option value="erva">blend 2</option>
+                            <option value="raiz">Aromatiante 1</option>
+                            <option value="caule">Aromatizante 2</option>
+                        </select>
+
+                    </div>
 
                 </div>
 
-                <div class="filtrar">
+                <div class="acoesFiltro">
 
-                    <button class="botaoFiltar">
-                        <span class="iconeFiltro"></span>
-                        <span class="nomeBotaoFiltar">Filtar</span>
+                    <button class="botaoFiltrar">
+                        <i class="iconeFiltro"></i>
+                        <span>Filtrar</span>
                     </button>
 
-                    <button class="botaoFiltar">
-                        <span class="iconeCarregando"></span>
-                        <span class="nomeBotaoFiltar">Limpar filtro</span>
+                    <button class="botaoLimparFiltro">
+                        <i class="iconeCarregar"></i>
+                        <span>Limpar Filtro</span>
                     </button>
-
                 </div>
 
             </div>
 
             <div class="tabela">
 
-                <input type="Busque item..." class="buscarProduto">
+                <div class="topoDaTabela">
 
-                <div class="Ordenamento">
+                    <input type="text" placeholder="Busque item..." class="buscarProduto">
 
-                    <span class="ordenar">Ordenar por:</span>
+                    <div class="Ordenamento">
 
-                    <select name="" id="">
-                        <option value="maiorFaturamento">Maior Faturamento</option>
-                        <option value="menorFaturamento">Menor Faturamento</option>
-                        <option value="dataRecente">Data mais recente</option>
-                        <option value="dataLonge">Data mais longe</option>
-                        <option value="maiorTicket">Maior Ticket</option>
-                        <option value="menorTicket">Menor Ticket</option>
+                        <span class="ordenar">Ordenar por:</span>
 
-                    </select>
+                        <select name="" id="" class="escolhaOrdenar">
+                            <option value="maiorcusto">Maior custo variável</option>
+                            <option value="menorcusto">Menor custo variável</option>
+                            <option value="dataRecente">Data mais recente</option>
+                            <option value="dataLonge">Data mais longe</option>
+                            <option value="maiorLucro">Maior lucro líquido</option>
+                            <option value="menorLucro">Menor lucro líquido</option>
+
+                        </select>
+                    </div>
+
                 </div>
 
                 <table>
 
-                    <thead>
+                    <thead class="topoTabelaVerdadeira">
                         <tr>
                             <th>Data</th>
                             <th>Produto</th>
@@ -229,6 +270,19 @@
                             <td>35%</td>
                         </tr>
                     </tbody>
+
+                    <tfoot class="totais">
+                        <tr>
+                            <th>Totais</th>
+                            <th>--</th>
+                            <th>--</th>
+                            <th>R$ 700,00</th>
+                            <th>R$ 35,00</th>
+                            <th>R$ 100,00</th>
+                            <th>R$ 400,00</th>
+                            <th>100%</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
                 

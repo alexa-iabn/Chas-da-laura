@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de produtos</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styleEstoque.css">
+    <link rel="stylesheet" href="styleRelatorios.css">
+    <link rel="stylesheet" href="styleRelatoriosTabelas.css">
 </head>
 <body>
     
         <header class="topoEstoque">
+
             <div class="caminho">
+
                 <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-                <a href="estoque.html" class="LinkEstoque"> > Estoque </a>
-                <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Produtos</a>
+                <a href="relatorios.html" class="primeiroCaminho"> > Relatórios </a>
+                <a href="relatoriosVendas.html" class="segundoCaminho">> Relatorio de vendas</a>
+                <a href="FaturamentoCategoria.html" class="terceiroCaminho">> Faturamento por categoria</a>
+
             </div>
+
             <div class="notfUser">
+
                 <div class="notificacao">
+
                     <i class="sino"></i>
                     <span class="bolinha"></span>
+
                 </div>
 
                 <div class="PerfilUsuario">
@@ -41,6 +51,7 @@
             <div class="logoMenuLateral">
                 <img src="Imagens/Logo.png"  alt="Logo chás da laura">
             </div>
+
             <nav class="menu">
                 <ul>
 
@@ -132,13 +143,18 @@
                     </li>
                 </ul>
             </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
         </aside>
     
-        <main>
-            <h1 class="tituloPagina">Faturamento po categoria</h1>
-            <h3 class="subtituloPagina">Visualize o valor total do faturamento por categoria por periodo</h3>
-            
+        <main class="conteudo">
+
+            <div class="titulos">
+                <h1 class="tituloPagina">Faturamento po categoria</h1>
+                <h3 class="subtituloPagina">Visualize o valor total do faturamento por categoria por periodo</h3>
+            </div>
+
             <div class="baixarArquivos">
 
                 <button class="botaoBaixarExcel">
@@ -155,57 +171,91 @@
 
             <div class="conteinerFiltros">
 
-                <div class="filtroPeriodo">
+                <div class="conjuntoFiltros">
 
-                    <span>Periodo</span>
+                    <div class="filtro">
 
-                    <label for="dataInicio"></label>
-                    <input type="date" class="campoData">
+                        <span class="nomeFiltro">Periodo</span>
 
-                    <label for="dataFim"></label>
-                    <input type="date" class="campoData">
+                        <div class="periodo">
+
+                            <label for="dataInicio"></label>
+                            <input type="date" class="campoData">
+
+                            <label for="dataFim"></label>
+                            <input type="date" class="campoData">
+
+                        </div>
+
+                    </div>
+
+                    <div class="filtro">
+
+                        <span>Categoria</span>
+
+                        <select name="filtroCategoria" class="filtrar" id="filtroCateg">
+                            <option value="todas">Todas as categorias</option>
+                            <option value="cha">Chá</option>
+                            <option value="aromatizador">Armoatizador</option>
+                        </select>
+
+                    </div>
+
+                    <div class="filtro">
+
+                        <span>Produto</span>
+
+                        <select name="filtroProduto" class="filtrar" id="filtroProd">
+                            <option value="todos">Todos os produtos</option>
+                            <option value="blend 1">Blend 1</option>
+                            <option value="aromatizador 1">aromatizador 1</option>
+                        </select>
+
+                    </div>
 
                 </div>
 
-                <div class="filtroCategoria">
+                <div class="acoesFiltro">
 
-                    <span>Categoria</span>
+                     <button class="botaoFiltrar">
+                        <i class="iconeFiltro"></i>
+                        <span>Filtrar</span>
+                    </button>
 
-                    <select name="filtroCategoria" id="filtroCateg">
-                        <option value="todas">Todas as categorias</option>
-                        <option value="cha">Chá</option>
-                        <option value="aromatizador">Armoatizador</option>
-                    </select>
-
+                    <button class="botaoLimparFiltro">
+                        <i class="iconeCarregar"></i>
+                        <span>Limpar Filtro</span>
+                    </button>
                 </div>
 
-                <div class="filtroProduto">
-
-                    <span>Produto</span>
-
-                    <select name="filtroProduto" id="filtroProd">
-                        <option value="todos">Todos os produtos</option>
-                        <option value="blend 1">Blend 1</option>
-                        <option value="aromatizador 1">aromatizador 1</option>
-                    </select>
-
-                </div>
             </div>
 
             <div class="tabela">
 
-                <select name="" id="">
-                    <option value="maiorFaturamento">Maior Faturamento</option>
-                    <option value="menorFaturamento">Menor Faturamento</option>
-                    <option value="dataRecente">Data mais recente</option>
-                    <option value="dataLonge">Data mais longe</option>
-                    <option value="maiorTicket">Maior Ticket</option>
-                    <option value="menorTicket">Menor Ticket</option>
-                </select>
+                <div class="topoDaTabela">
+
+                    <input type="text" placeholder="Busque item..." class="buscarProduto">
+
+                    <div class="Ordenamento">
+
+                        <span class="ordenar">Ordenar por:</span>
+
+                        <select name="" id="" class="escolhaOrdenar">
+                            <option value="maiorFaturamento">Maior Faturamento</option>
+                            <option value="menorFaturamento">Menor Faturamento</option>
+                            <option value="dataRecente">Data mais recente</option>
+                            <option value="dataLonge">Data mais longe</option>
+                            <option value="maiorTicket">Maior Ticket</option>
+                            <option value="menorTicket">Menor Ticket</option>
+
+                        </select>
+                    </div>
+
+                </div>
 
                 <table>
 
-                    <thead>
+                    <thead class="topoTabelaVerdadeira">
                         <tr>
                             <th>Data</th>
                             <th>Faturamento(R$)</th>
@@ -228,6 +278,18 @@
                             <td>5</td>
                         </tr>
                     </tbody>
+
+                    <tfoot class="totais">
+                        <tr>
+                            <th>Totais</th>
+                            <th>R$ 650,00</th>
+                            <th>2</th>
+                            <th>R$ 325,00</th>
+                            <th>100%</th>
+                            <th>2</th>
+                            <th>5</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
                 

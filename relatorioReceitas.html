@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relátorios</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styleEstoque.css">
+    <link rel="stylesheet" href="styleRelatorios.css">
 </head>
 <body>
     
         <header class="topoEstoque">
             <div class="caminho">
                 <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-                <a href="estoque.html" class="LinkEstoque"> > Relatórios </a>
-                <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Relatórios receitas</a>
+                <a href="relatorio.html" class="primeiroCaminho"> > Relatórios </a>
+                <a href="relatorioReceitas.html" class="segundoCaminho">> Relatórios receitas</a>
             </div>
             <div class="notfUser">
                 <div class="notificacao">
@@ -137,134 +138,157 @@
     
         <main class="conteudo">
         
-            <h1 class="tituloPagina">Relatótio receitas</h1>
-            <h3 class="subtituloPagina">Visão completa da lucratividade, custo e rentabilidade dos produtos</h3>
+            <div class="titulos">
+                <h1 class="tituloPagina">Relatótio receitas</h1>
+                <h3 class="subtituloPagina">Visão completa da lucratividade, custo e rentabilidade dos produtos</h3>
+            </div>
 
             <section class="conteinerRelatorios">
 
                     <div class="conteinerFiltros">
 
-                        <div class="filtroPeriodo">
+                        <div class="conjuntoFiltros">
 
-                            <span>Periodo</span>
+                            <div class="filtro">
 
-                            <label for="dataInicio"></label>
-                            <input type="date" class="campoData">
+                                <span>Periodo</span>
 
-                            <label for="dataFim"></label>
-                            <input type="date" class="campoData">
+                                <div class="periodo">
+
+                                    <label for="dataInicio"></label>
+                                    <input type="date" class="campoData">
+
+                                    <label for="dataFim"></label>
+                                    <input type="date" class="campoData">
+
+                                </div>
+
+                            </div>
+
+                            <div class="filtro">
+
+                                <span class="nomeFiltro">Insumos</span>
+
+                                <select name="filtrar" class="filtrar" id="">
+                                    <option value="todos">Todos</option>
+                                    <option value="insumo1">Insumo 1</option>
+                                    <option value="insumo2">Insumo 2</option>
+                                    <option value="insumo3">Insumo 3</option>
+                                    <option value="insumo4">Insumo 4</option>
+                                </select>
+
+                            </div>
 
                         </div>
 
-                        <div class="filtroInsumo">
+                        <div class="acoesFiltro">
 
-                            <label for="insumos">Insumos</label>
-
-                            <select name="" id="">
-                                <option value="todos">Todos</option>
-                                <option value="insumo1">Insumo 1</option>
-                                <option value="insumo2">Insumo 2</option>
-                                <option value="insumo3">Insumo 3</option>
-                                <option value="insumo4">Insumo 4</option>
-                            </select>
-
-                        </div>
-
-                        <div class="filtrar">
-
-                            <button class="botaoFiltar">
-                                <span class="iconeFiltro"></span>
-                                <span class="nomeBotaoFiltar">Filtar</span>
+                            <button class="botaoFiltrar">
+                                <i class="iconeFiltro"></i>
+                                <span>Filtrar</span>
                             </button>
 
-                            <button class="botaoFiltar">
-                                <span class="iconeCarregando"></span>
-                                <span class="nomeBotaoFiltar">Limpar filtro</span>
+                            <button class="botaoLimparFiltro">
+                                <i class="iconeCarregar"></i>
+                                <span>Limpar Filtro</span>
                             </button>
-
                         </div>
 
                     </div>
 
+                    <div class="demostracoes">
 
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconeSetaCimaDemo"></span>
+                        <div class="demo">
+                            <div class="iconeDemo">
+                                <span class="iconeSetaCimaDemo"></span>
+                            </div>
+                            <div class="textoDemo">
+                                <span class="demoSemiTitulo">Destaque do período</span>
+                                <span class="demoTitulo">Receita 1</span>
+                                <span class="demoTextoNormal">Do periodo analisado</span>
+                            </div>
                         </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Destaque do período</span>
-                            <span class="demoTitulo">Receita 1</span>
-                            <span class="demoTextoNormal">Do periodo analisado</span>
+
+                        <div class="demo">
+                            <div class="iconeDemo">
+                                <span class="iconeDinehiroDemo"></span>
+                            </div>
+                            <div class="textoDemo">
+                                <span class="demoSemiTitulo">Receita total</span>
+                                <span class="demoTitulo">R$ 22.413,00</span>
+                                <span class="demoTextoNormal">Do período</span>
+                            </div>
                         </div>
+
+                        <div class="demo">
+                            <div class="iconeDemo">
+                                <span class="iconeCarrinhoDemo"></span>
+                            </div>
+                            <div class="textoDemo">
+                                <span class="demoSemiTitulo">Custo total</span>
+                                <span class="demoTitulo">R$ 21.385,33</span>
+                                <span class="demoTextoNormal">Do período</span>
+                            </div>
+                        </div>
+
+                        <div class="demo">
+                            <div class="iconeDemo">
+                                <span class="iconeMoedasDemo"></span>
+                            </div>
+                            <div class="textoDemo">
+                                <span class="demoSemiTitulo">Lucro bruto</span>
+                                <span class="demoTitulo">R$ 20.652,50</span>
+                                <span class="demoTextoNormal">Do período</span>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconeDinehiroDemo"></span>
-                        </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Receita total</span>
-                            <span class="demoTitulo">R$ 22.413,00</span>
-                            <span class="demoTextoNormal">Do período</span>
-                        </div>
-                    </div>
-
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconeCarrinhoDemo"></span>
-                        </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Custo total</span>
-                            <span class="demoTitulo">R$ 21.385,33</span>
-                            <span class="demoTextoNormal">Do período</span>
-                        </div>
-                    </div>
-
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconeMoedasDemo"></span>
-                        </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Lucro bruto</span>
-                            <span class="demoTitulo">R$ 20.652,50</span>
-                            <span class="demoTextoNormal">Do período</span>
-                        </div>
-                    </div>
-
-                </div>
+                
             
                 <div class="graficos">
 
                     <div class="cardGrafico">
 
                         <div class="topoGrafico">
-                            <button class="olharTabela"></button>
                             <h2 class="tituloGrafico">Evolução da receita</h2>
+
+                            <a href="evolucaoReceitaInsumo.html">
+                                <button class="olharTabela"></button>
+                            </a>
+
                         </div>
 
-                        <canvas class="graficoAnaliseLucratividade"></canvas>
+                        <canvas class="graficoEvolucaoReceita"></canvas>
 
                     </div>
 
                     <div class="cardGrafico">
 
                         <div class="topoGrafico">
-                            <button class="olharTabela"></button>
                             <h2 class="tituloGrafico">Composição da receita por categoria</h2>
+
+                            <a href="composicaoReceitaCategoria.html">
+                                <button class="olharTabela"></button>
+                            </a>
+
                         </div>
 
-                        <canvas class="graficoEvolucaoMargemLucro"></canvas>
+                        <canvas class="graficoComposicaoReceita"></canvas>
 
                     </div>
 
                     <div class="cardGrafico">
 
-                        <div class="topoGrafico"></div>
-                            <button class="olharTabela"></button>
+                        <div class="topoGrafico">
                             <h2 class="tituloGrafico">Rentabilidade média por periodo</h2>
+
+                            <a href="rentabilidadeMedia.html">
+                                <button class="olharTabela"></button>
+                            </a>
+
                         </div>
 
-                        <canvas class="graficoMargemContribuicaoReceita"></canvas>
+                        <canvas class="graficoRentabilidadeMedia"></canvas>
 
                     </div>
 
@@ -272,11 +296,13 @@
             
                 <div class="conteinerTabela">
 
-                    <h2 class="tituloTabela">Desempenho e rendabilidade dos insumos</h2>
+                    <div class="tituloTabela">
+                        <h2>Desempenho e rendabilidade dos insumos</h2>
+                    </div>
 
-                    <table>
+                    <table class="tabela">
 
-                        <thead>
+                        <thead class="topoTabelaVerdadeira">
                             <tr>
                                 <th>Insumos</th>
                                 <th>Unidades ultilizadas</th>
@@ -289,12 +315,20 @@
                         
                         <tbody>
                             <tr>
-                                <td>Insumo 1</td>
+
+                                <td>
+                                    <div class="Produto">
+                                        <span class="fotoProduto"></span>
+                                        <span>Insumo 1</span>
+                                    </div>
+                                </td>
+
                                 <td>10</td>
                                 <td>R$ 750,00</td>
                                 <td>R$ 75,00</td>
                                 <td>R$ 700,00</td>
                                 <td>30%</td>
+
                             </tr>
                         </tbody>
                     </table>
