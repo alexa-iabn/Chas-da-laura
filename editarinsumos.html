@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar Insumo — Chás da Laura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="insumos.css" />
+</head>
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-icon">🍃</div>
+      <div class="sidebar-logo-text">Chás da<span>Laura</span></div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Painel de início
+      </a>
+      <div class="nav-item active open">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Cadastros
+        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="nav-sub">
+        <a href="#" class="nav-item">• Clientes</a>
+        <a href="FornecedoresCadastrados.html" class="nav-item">• Fornecedores</a>
+        <a href="InsumosCadastrados.html" class="nav-item active">• Insumos</a>
+        <a href="#" class="nav-item">• Produtos</a>
+        <a href="#" class="nav-item">• Receitas</a>
+        <a href="#" class="nav-item">• Parceiros</a>
+      </div>
+      <div class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        Estoque
+        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <a href="#" class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Relatórios
+      </a>
+      <a href="#" class="nav-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        Produção
+      </a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <header class="topbar">
+      <button class="topbar-menu-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <nav class="breadcrumb">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <a href="#">Cadastros</a><span class="sep">›</span>
+        <a href="InsumosCadastrados.html">Insumos</a><span class="sep">›</span>
+        <span class="current">Editar insumo</span>
+      </nav>
+      <div class="topbar-actions">
+        <button class="bell-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="bell-dot"></span>
+        </button>
+        <div class="user-badge">
+          <div class="user-avatar">L</div>
+          Laura
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Editar insumo</h1>
+          <p class="page-subtitle">Modifique as informações do insumo</p>
+        </div>
+        <a href="InsumosCadastrados.html" class="btn btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Ver insumos cadastrados
+        </a>
+      </div>
+
+      <div class="edit-layout">
+        <!-- Form -->
+        <form id="formEditar" onsubmit="handleSave(event)">
+          <div class="form-section">
+            <div class="form-section-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Identificação
+            </div>
+            <div class="form-body">
+              <div class="form-grid form-grid-2" style="margin-bottom:16px">
+                <div class="form-group">
+                  <label class="form-label" for="eNome">Nome do insumo</label>
+                  <input class="form-control" id="eNome" type="text" placeholder="Digite seu nome completo" oninput="syncPreview()" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="eValor">Valor (R$)</label>
+                  <input class="form-control" id="eValor" type="number" min="0" step="0.01" placeholder="0,00" oninput="syncPreview()" />
+                </div>
+              </div>
+              <div class="form-grid form-grid-2" style="margin-bottom:16px">
+                <div class="form-group">
+                  <label class="form-label">Quantidade</label>
+                  <div class="qty-wrap">
+                    <input class="form-control" id="eQtd" type="number" min="0" step="0.01" placeholder="Quantidade..." oninput="syncPreview()" />
+                    <select class="form-control" id="eUnidade" onchange="syncPreview()">
+                      <option>KG</option><option>G</option><option>L</option>
+                      <option>ML</option><option selected>UN</option><option>CX</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="eFornecedor">Fornecedor</label>
+                  <select class="form-control" id="eFornecedor" onchange="syncPreview()">
+                    <option value="">Selecione o fornecedor</option>
+                    <option>Nutribom alimentos LTDA</option>
+                    <option>Ervas do Campo Ltda</option>
+                    <option>Embalagens Verde Natural</option>
+                    <option>Chás Premium do Brasil</option>
+                    <option>Agrotech Especiarias</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-grid form-grid-2" style="margin-bottom:16px">
+                <div class="form-group">
+                  <label class="form-label" for="eValidade">Validade</label>
+                  <input class="form-control" id="eValidade" type="date" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="eEstoqueMin">Estoque mínimo</label>
+                  <input class="form-control" id="eEstoqueMin" type="text" placeholder="Ex: 25" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="eCategoria">Categoria</label>
+                <select class="form-control" id="eCategoria" onchange="syncPreview()">
+                  <option value="">Selecione...</option>
+                  <option value="ervas">Ervas</option>
+                  <option value="flor">Flor</option>
+                  <option value="especiaria">Especiarias</option>
+                  <option value="fruta">Frutas</option>
+                  <option value="raiz">Raízes</option>
+                  <option value="outro">Outros</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Descrição
+            </div>
+            <div class="form-body">
+              <div class="form-group">
+                <label class="form-label" for="eDesc">Descrição</label>
+                <textarea class="form-control" id="eDesc" rows="4" placeholder="Descreva o insumo, características, qualidade, origem, etc..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <a href="InsumosCadastrados.html" class="btn btn-outline">Cancelar</a>
+            <button type="submit" class="btn btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Salvar insumo
+            </button>
+          </div>
+        </form>
+
+        <!-- Side preview -->
+        <div>
+          <div class="edit-side-card">
+            <div class="edit-side-head">
+              <div class="edit-side-initials" id="previewInitials">FC</div>
+              <div>
+                <div class="edit-side-name" id="previewName">Flor de camomila</div>
+                <span class="cat-badge cat-ervas" id="previewCatBadge" style="margin-top:3px">Erva</span>
+              </div>
+            </div>
+            <div class="edit-side-body">
+              <div class="edit-side-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                <span id="previewCat">Erva</span>
+              </div>
+              <div class="edit-side-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                <span id="previewQtd">4 KG</span>
+              </div>
+              <div class="edit-side-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                <span id="previewForn">Nutribom alimentos LTDA</span>
+              </div>
+              <div class="edit-side-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Cadastrado em <span id="previewData" style="margin-left:4px">—</span>
+              </div>
+            </div>
+
+            <button class="edit-side-btn-danger" onclick="openDeleteFromEdit()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
+              Excluir Insumo
+            </button>
+
+            <!-- Resumo financeiro -->
+            <div class="resumo-card">
+              <div class="resumo-title">Resumo do Insumo</div>
+              <div class="resumo-row"><span>Total em estoque</span><strong id="resumoTotal">20</strong></div>
+              <div class="resumo-row"><span>Valor total em estoque</span><strong id="resumoValorTotal">R$ 2.040,00</strong></div>
+              <div class="resumo-row"><span>Válido até</span><strong id="resumoValidade">10/09/2023</strong></div>
+              <div class="resumo-row" style="margin-top:6px"><span>Status</span>
+                <span class="resumo-status status-ok" id="resumoStatus">Disponível</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- DELETE MODAL -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal">
+    <div class="modal-icon-ring">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <polyline points="3 6 5 6 21 6"/>
+        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+        <path d="M10 11v6"/><path d="M14 11v6"/>
+        <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+      </svg>
+    </div>
+    <div class="modal-title">Excluir Insumo</div>
+    <p class="modal-subtitle">Tem certeza que deseja excluir este insumo?<br>Essa ação não pode ser desfeita.</p>
+    <div class="modal-insumo-card">
+      <div class="modal-insumo-initials" id="modalInit">FC</div>
+      <div class="modal-insumo-info">
+        <div class="modal-insumo-name" id="modalNm">Flor de camomila</div>
+        <div class="modal-insumo-detail">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          <span id="modalCt">Erva</span>
+        </div>
+        <div class="modal-insumo-detail">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          <span id="modalQt">4 KG</span>
+        </div>
+        <div class="modal-insumo-detail">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          <span id="modalFn">—</span>
+        </div>
+      </div>
+    </div>
+    <div class="modal-warning">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span>Todas as informações e históricos relacionados a este insumo serão permanentemente apagados do sistema</span>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeModal()">Cancelar</button>
+      <button class="btn btn-danger" onclick="window.location.href='InsumosCadastrados.html'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+        Excluir Insumo
+      </button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
