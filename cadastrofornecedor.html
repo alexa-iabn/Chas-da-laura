@@ -232,57 +232,5 @@
   </div><!-- /main -->
 </div><!-- /layout -->
 
-<script>
-  /* CNPJ mask */
-  document.getElementById('cnpj').addEventListener('input', function(e) {
-    let v = e.target.value.replace(/\D/g, '').slice(0, 14);
-    v = v.replace(/^(\d{2})(\d)/, '$1.$2');
-    v = v.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
-    v = v.replace(/\.(\d{3})(\d)/, '.$1/$2');
-    v = v.replace(/(\d{4})(\d)/, '$1-$2');
-    e.target.value = v;
-  });
-
-  /* Phone mask */
-  document.getElementById('telefone').addEventListener('input', function(e) {
-    let v = e.target.value.replace(/\D/g, '').slice(0, 11);
-    if (v.length <= 10) v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
-    else v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-    e.target.value = v;
-  });
-
-  /* Populate cities based on state (simplified) */
-  const citiesMap = {
-    'PR': ['Curitiba','Londrina','Maringá','Foz do Iguaçu','Cascavel','Ponta Grossa'],
-    'SP': ['São Paulo','Campinas','Santos','Ribeirão Preto','Sorocaba','São Bernardo do Campo'],
-    'RJ': ['Rio de Janeiro','Niterói','Petrópolis','Nova Friburgo','Campos dos Goytacazes'],
-    'MG': ['Belo Horizonte','Uberlândia','Contagem','Juiz de Fora','Betim'],
-    'SC': ['Florianópolis','Joinville','Blumenau','Chapecó','Itajaí'],
-    'RS': ['Porto Alegre','Caxias do Sul','Pelotas','Santa Maria','Canoas'],
-    'BA': ['Salvador','Feira de Santana','Vitória da Conquista','Camaçari'],
-    'GO': ['Goiânia','Aparecida de Goiânia','Anápolis','Rio Verde'],
-  };
-
-  document.getElementById('estado').addEventListener('change', function() {
-    const cidadeEl = document.getElementById('cidade');
-    const cities = citiesMap[this.value] || [];
-    cidadeEl.innerHTML = '<option value="">Selecione...</option>';
-    cities.forEach(c => {
-      const opt = document.createElement('option');
-      opt.textContent = c;
-      cidadeEl.appendChild(opt);
-    });
-  });
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('[type=submit]');
-    btn.textContent = '✓ Salvo!';
-    btn.style.background = 'var(--green-500)';
-    setTimeout(() => {
-      window.location.href = 'FornecedoresCadastrados.html';
-    }, 1000);
-  }
-</script>
 </body>
 </html>
