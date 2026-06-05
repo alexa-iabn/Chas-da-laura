@@ -888,3 +888,306 @@ td {
  
     .modal-actions { display: flex; gap: 10px; }
     .modal-actions .btn { flex: 1; justify-content: center; font-size: 13.5px; padding: 10px 16px; }
+
+    /* ===== INSUMOS — extensão do styles.css ===== */
+
+/* ---- Sidebar: item Insumos ativo ---- */
+.nav-item.active { background: rgba(255,255,255,.10); color: var(--white); }
+
+/* ---- Badge de categoria ---- */
+.cat-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 50px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.cat-ervas      { background: #dcfce7; color: #166534; }
+.cat-flor       { background: #fce7f3; color: #9d174d; }
+.cat-especiaria { background: #fef9c3; color: #854d0e; }
+.cat-fruta      { background: #ffedd5; color: #9a3412; }
+.cat-raiz       { background: #ede9fe; color: #5b21b6; }
+.cat-outro      { background: var(--gray-100); color: var(--gray-600); }
+
+/* ---- Quantity unit select ---- */
+.qty-wrap { display: flex; gap: 0; }
+.qty-wrap .form-control:first-child {
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  border-right: none;
+  flex: 1;
+}
+.qty-wrap select.form-control {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  width: 72px;
+  flex-shrink: 0;
+}
+
+/* ---- Cards grid (insumos) ---- */
+.insumo-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.insumo-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow .15s, transform .15s;
+}
+.insumo-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.insumo-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.insumo-initials {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.insumo-card-name {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--gray-900);
+  line-height: 1.2;
+}
+
+.insumo-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12.5px;
+  color: var(--gray-500);
+}
+
+.insumo-card-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.insumo-card-row svg { color: var(--green-500); flex-shrink: 0; }
+
+.insumo-card-footer {
+  display: flex;
+  gap: 7px;
+  border-top: 1px solid var(--gray-100);
+  padding-top: 10px;
+}
+.insumo-card-footer .btn { flex: 1; justify-content: center; font-size: 12px; padding: 6px 8px; }
+
+/* ---- Edit sidebar panel (Editar insumo) ---- */
+.edit-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 20px;
+  align-items: start;
+}
+
+.edit-side-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.edit-side-head {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.edit-side-initials {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.edit-side-name { font-weight: 700; font-size: 14px; color: var(--gray-900); }
+
+.edit-side-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-side-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--gray-500);
+}
+.edit-side-row svg { color: var(--green-500); flex-shrink: 0; }
+
+.edit-side-btn-danger {
+  margin: 4px 16px 16px;
+  width: calc(100% - 32px);
+  background: var(--red-100);
+  color: var(--red-500);
+  border: 1px solid #fca5a5;
+  border-radius: var(--radius-sm);
+  padding: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: background .12s;
+}
+.edit-side-btn-danger:hover { background: var(--red-500); color: var(--white); border-color: var(--red-500); }
+
+/* resumo financeiro */
+.resumo-card {
+  background: var(--green-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  margin: 0 16px 16px;
+  padding: 12px 14px;
+}
+.resumo-title { font-size: 12px; font-weight: 700; color: var(--green-800); margin-bottom: 8px; letter-spacing: .3px; }
+.resumo-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-bottom: 4px;
+}
+.resumo-row strong { color: var(--gray-700); }
+.resumo-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.status-ok    { background: var(--green-100); color: var(--green-800); }
+.status-baixo { background: #fef9c3; color: #854d0e; }
+.status-zero  { background: var(--red-100); color: var(--red-500); }
+
+/* ---- Delete modal (insumos) ---- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open { display: flex; animation: fadeIn .15s ease; }
+
+.modal {
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.18);
+  padding: 32px 28px 24px;
+  width: 360px;
+  max-width: 94vw;
+  text-align: center;
+  animation: slideUp .2s ease;
+}
+
+.modal-icon-ring {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: #fee2e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.modal-icon-ring svg { color: var(--red-500); }
+
+.modal-title { font-size: 20px; font-weight: 800; color: var(--gray-900); margin-bottom: 6px; }
+.modal-subtitle { font-size: 13.5px; color: var(--gray-500); margin-bottom: 20px; line-height: 1.5; }
+
+.modal-insumo-card {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.modal-insumo-initials {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modal-insumo-info { flex: 1; }
+.modal-insumo-name { font-weight: 700; font-size: 14px; color: var(--gray-900); margin-bottom: 5px; }
+.modal-insumo-detail {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12.5px; color: var(--gray-500); margin-bottom: 3px;
+}
+.modal-insumo-detail svg { color: var(--gray-400); flex-shrink: 0; }
+
+.modal-warning {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  margin-bottom: 22px;
+  font-size: 12.5px;
+  color: #92400e;
+  line-height: 1.4;
+}
+.modal-warning svg { color: #f97316; flex-shrink: 0; margin-top: 1px; }
+
+.modal-actions { display: flex; gap: 10px; }
+.modal-actions .btn { flex: 1; justify-content: center; font-size: 13.5px; padding: 10px 16px; }
+
+/* responsive */
+@media (max-width: 860px) {
+  .edit-layout { grid-template-columns: 1fr; }
+}
