@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de insumos</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styleEstoque.css">
 </head>
 <body>
     
         <header class="topoEstoque">
+
             <div class="caminho">
                 <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-                <a href="estoque.html" class="LinkEstoque"> > Estoque </a>
-                <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Insumos</a>
+                <a href="EstoqueInsumos.html" class="primeiroCaminho"> > Estoque > Estoque Insumos</a>
             </div>
+
             <div class="notfUser">
+
                 <div class="notificacao">
+
                     <i class="sino"></i>
                     <span class="bolinha"></span>
+
                 </div>
 
                 <div class="PerfilUsuario">
@@ -40,6 +44,7 @@
             <div class="logoMenuLateral">
                 <img src="Imagens/Logo.png" alt="Logo chás da laura">
             </div>
+
             <nav class="menu">
                 <ul>
 
@@ -131,6 +136,8 @@
                     </li>
                 </ul>
             </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
         </aside>
     
@@ -271,8 +278,8 @@
 
                             <td>
                                 <div class="Acao">
-                                    <span class="iconeLapisTabela"></span>
-                                    <span class="iconeLixeira"></span>
+                                    <i class="iconeLapisTabela"></i>
+                                    <i class="iconeLixeira abrirModalExcluir"></i>
                                 </div>
                             </td>
                         </tr>
@@ -313,10 +320,70 @@
 
                         <div class="acoesCarta">
                             <button class="editarCartas"></button>
-                            <button class="exluircartas"></button>
+                            <button class="exluircartas abrirModalExcluir"></button>
                         </div>
                     </div>
                 </Article>
+            </section>
+
+            <section class="modalExcluirProduto escondido">
+                <div class="conteinerExcluir">
+
+                    <div class="topoExluir">
+
+                        <div class="circuloExcluir">
+                            <i class="iconeLixeira iconeExcluir"></i>
+                        </div>
+
+                        <h1 class="tituloExcluir">Excluir Insumo</h1>
+                        <p class="textoExcluir">Tem certeza que deseja excluir este insumo? Essa ação não pode ser desfeita.</p>
+
+                    </div>
+
+                    <div class="BlocoinformacoesExcluir">
+
+                        <div class="segundoBloco">
+
+                            <div class="avatarExcluir">
+                                <span>I1</span>
+                            </div>
+
+                            <div class="informacoesExcluir">
+
+                                <span class="nomeExcluir">Insumo 1</span>
+
+                                <div class="info">
+                                    <i class="iconeEtiqueta"></i>
+                                    <span>Erva</span>
+                                </div>
+
+                                <div class="info">
+                                    <i class="iconeBalanca"></i>
+                                    <span>4 kg</span>
+                                </div>
+
+                                <div class="info">
+                                    <i class="iconeMaoDinheiro"></i>
+                                    <span>Fornecedor 1</span>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
+                            <div class="alertaExcluir">
+                                <i class="iconeAlerta"></i>
+                                <p class="textoExcluir2">Todas as informações e histórico relacionados a este insumo serão permanentemente apagados do sistema</p>
+                            </div>
+
+                            <div class="BotoesExcluir">
+                                <button class="cancelar">Cancelar</button>
+                                <button class="excluir">Excluir Insumo</button>
+
+                            </div>
+
+                    </div>
+                </div>
             </section>
         </main>
         <script src="arquivo.js"></script>

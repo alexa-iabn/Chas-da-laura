@@ -1,0 +1,315 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes Cadastrados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topoEstoque">
+    <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+
+    <a href="#" class="LinkEstoque">
+        Cadastros
+    </a>
+
+    <a href="#" class="linkEstoqueProdutos">
+        > Clientes
+    </a>
+
+    <div class="notificacao">
+        <i class="sino"></i>
+    </div>
+
+    <div class="PerfilUsuario">
+        <div class="avatar">
+            <span class="L">L</span>
+        </div>
+
+        <h2 class="nomeUsuario">
+            Laura
+        </h2>
+
+        <span class="seta">
+            ⌄
+        </span>
+    </div>
+</header>
+
+<aside class="menuLateral">
+
+    <div class="logoMenuLateral">
+        <img src="Imagens/Logo.png" alt="Logo Chás da Laura">
+    </div>
+
+    <nav class="menu">
+
+        <ul>
+
+            <li>
+                <a href="paineldeinicio.html" class="itemMenu">
+                    <span class="iconeCasa"></span>
+                    <span class="tituloMenu">Painel inicial</span>
+                </a>
+            </li>
+
+            <li>
+
+                <details open>
+
+                    <summary class="itemMenu">
+                        <span class="iconeLapis"></span>
+                        <span class="tituloMenu">Cadastros</span>
+                    </summary>
+
+                    <ul class="subMenu">
+                        <li><a href="CadastroClientes.html">Clientes</a></li>
+                        <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                        <li><a href="CadastroInsumos.html">Insumos</a></li>
+                        <li><a href="cadastroprodutos.html">Produtos</a></li>
+                        <li><a href="cadastroreceitas.html">Receitas</a></li>
+                        <li><a href="cadastroparceiros.html">Parceiros</a></li>
+                    </ul>
+
+                </details>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</aside>
+
+<main>
+
+    <div class="topoPaginaReceita">
+
+        <div>
+
+            <h1 class="tituloPagina">
+                Clientes cadastrados
+            </h1>
+
+            <h3 class="subtituloPagina">
+                Gerencie e visualize todos os clientes cadastrados
+            </h3>
+
+        </div>
+
+        <a href="CadastroClientes.html">
+
+            <button class="botaoSalvar">
+                Novo cliente
+            </button>
+
+        </a>
+
+    </div>
+
+    <section class="conteinerTabela">
+
+        <div class="acoesTabela">
+
+            <input
+                type="search"
+                placeholder="Buscar cliente..."
+            >
+
+            <div class="alternadorVisualizacao">
+
+                <button>
+                    Lista
+                </button>
+
+                <button>
+                    Cards
+                </button>
+
+            </div>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Nome</th>
+                    <th>CPF/CNPJ</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>Maria Silva</td>
+                    <td>123.456.789-00</td>
+                    <td>(11) 98765-4321</td>
+                    <td>maria@email.com</td>
+
+                    <td>
+
+                        <a href="EditarCliente.html">
+                            ✏️
+                        </a>
+
+                        <button>
+                            🗑️
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>João Souza</td>
+                    <td>987.654.321-00</td>
+                    <td>(45) 99999-9999</td>
+                    <td>joao@email.com</td>
+
+                    <td>
+
+                        <a href="EditarCliente.html">
+                            ✏️
+                        </a>
+
+                        <button>
+                            🗑️
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <section class="gradeClientes">
+
+        <article class="cardCliente">
+
+            <div class="avatarGrande">
+                MS
+            </div>
+
+            <h3>Maria Silva</h3>
+
+            <p>(11) 98765-4321</p>
+
+            <p>maria@email.com</p>
+
+            <p>Rua X, 123</p>
+
+            <p>12/05/2025</p>
+
+            <div class="acoesCard">
+
+                <a href="EditarCliente.html">
+                    ✏️
+                </a>
+
+                <button>
+                    🗑️
+                </button>
+
+            </div>
+
+        </article>
+
+        <article class="cardCliente">
+
+            <div class="avatarGrande">
+                JS
+            </div>
+
+            <h3>João Souza</h3>
+
+            <p>(45) 99999-9999</p>
+
+            <p>joao@email.com</p>
+
+            <p>Rua Y, 456</p>
+
+            <p>15/05/2025</p>
+
+            <div class="acoesCard">
+
+                <a href="EditarCliente.html">
+                    ✏️
+                </a>
+
+                <button>
+                    🗑️
+                </button>
+
+            </div>
+
+        </article>
+
+    </section>
+
+</main>
+
+<div class="modalExcluir">
+
+    <div class="conteudoModalExcluir">
+
+        <h2>
+            Excluir cliente
+        </h2>
+
+        <p>
+            Tem certeza que deseja excluir este cliente?
+        </p>
+
+        <div class="clienteExcluir">
+
+            <h4>
+                Maria Silva
+            </h4>
+
+            <p>
+                (11) 98765-4321
+            </p>
+
+            <p>
+                maria@email.com
+            </p>
+
+        </div>
+
+        <div class="botoesFormulario">
+
+            <button class="botaoCancelar">
+                Cancelar
+            </button>
+
+            <button class="botaoExcluir">
+                Excluir cliente
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+```

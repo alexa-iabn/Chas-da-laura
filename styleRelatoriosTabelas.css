@@ -1,0 +1,132 @@
+/* BAIXAR ARQUIVOS */
+
+.baixarArquivos{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vh;
+
+    width: 170vh;
+    height: 5vh;
+
+    margin-top: 3vh;
+}
+
+.botaoBaixarExcel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 1vh;
+    background-color: transparent;
+    border-color: #144621;
+    color: #144621;
+}
+
+.botaoBaixarPdf{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 1vh;
+    background-color: transparent;
+    border-color: red;
+    color: red;
+}
+
+.iconeExcel{
+    width: 4vh;
+    height: 4vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/excel.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconePdf{
+    width: 4vh;
+    height: 4vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/pdf.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(17%)
+    sepia(98%)
+    saturate(7476%)
+    hue-rotate(356deg)
+    brightness(96%)
+    contrast(118%);
+}
+
+/* TABELA */
+
+.tabela{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    border-radius: 1.5vh;
+
+    width: 170vh;
+    height: auto;
+}
+
+.topoDaTabela{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 170vh;
+    height: auto;
+
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.buscarProduto{
+    border-radius: 1vh;
+    margin-left: 4vh;
+
+    width: 40vh;
+    height: 3vh;
+}
+
+.Ordenamento{
+    margin-right: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+
+    font-weight: bolder;
+}
+
+.escolhaOrdenar{
+    border-radius: 1vh;
+
+    width: 30vh;
+    height: 4vh;
+    border-color: black;
+}
+
+.totais{
+    background-color: #144621;
+    color: white;
+}

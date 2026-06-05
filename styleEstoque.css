@@ -37,7 +37,7 @@ body{
     background-position: center;
 }
 
-.LinkEstoque{
+.primeiroCaminho{
     text-decoration: none;
     color: black;
     margin-top: 1vh;
@@ -45,7 +45,15 @@ body{
     font-size: 120%;
 }
 
-.linkEstoqueProdutos{
+.segundoCaminho{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
+}
+
+.terceiroCaminho{
     text-decoration: none;
     color: black;
     margin-top: 1vh;
@@ -124,13 +132,15 @@ body{
     margin-left: 1vh;
 }
 
+/* MENU LATERAL */
+
 .menuLateral{
     width: 30vh;
     height: 100vh;
 
     background-color: #144621;
 
-    position:absolute;
+    position:fixed;
     top: 0;
     left: 0;
 
@@ -178,7 +188,20 @@ body.sidebarFechado .tituloMenu{
 }
 
 body.sidebarFechado .conteudo{
-    margin-left: -20vh;
+    margin-left: 23vh;
+}
+
+body.sidebarFechado .caminho{
+    margin-left: 25vh;
+}
+
+body.sidebarFechado .imagemCha{
+    width: 13vh;
+
+    transform:
+    translateX(-2vh)
+    translateY(31vh)
+    scale(0.7);
 }
 
 .logoMenuLateral img{
@@ -344,6 +367,20 @@ body.sidebarFechado .conteudo{
     margin: 1vh;
 }
 
+.imagemCha{
+    width: 32vh;
+    height: auto;
+
+    margin-top: 4vh;
+    margin-right: 5vh;
+
+    transition: 
+    transform 0.4s ease,
+    width 0.4s ease;
+
+    transform-origin: top center;
+}
+
 /* CONTEUDO PRINCIPAL */
 
 /* TITULO DA PÁGINA */
@@ -351,13 +388,24 @@ body.sidebarFechado .conteudo{
 main{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: first baseline;
+    justify-content: first baseline;
+}
+
+.conteudo{
+
+    width: 170vh;
+    height: 100vh;
+
+    margin-left: 35vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: first baseline;
 }
 
 .titulos{
-    margin-right: 73vh;
-
     display: flex;
     flex-direction: column;
 }
@@ -374,9 +422,6 @@ main{
 .demonstracoes{
     width: 165vh;
     height: 20vh;
-
-    margin-left: 35vh;
-    margin-right: 10vh;
     margin-top: 3vh;
 
     display: flex;
@@ -503,19 +548,26 @@ main{
 
     font-weight: bolder;
     margin: 0;
+    font-size: 2.2vh;
 }
 
 .demoTitulo{
-    font-size: 5vh;
+    font-size: 4vh;
     font-weight: bolder;
+}
+
+.demoTextoNormal{
+    font-size: 1.8vh;
 }
 
 /* TITULO TABELA E BOTÕES CARD, LIST E NOVO PRODUTO */
 
 .menuTabela{
-    margin-left: 25vh;
     display: flex;
-    gap:2vh
+    gap:2vh;
+    justify-content: space-between;
+
+    width: 165vh;
 }
 
 .titulosTabela{
@@ -545,8 +597,6 @@ main{
     border-color: #6c6d6c;
     border-radius: 1vh;
     background-color: transparent;
-
-    margin-left: 75vh;
 }
 
 .iconeLista{
@@ -610,7 +660,7 @@ main{
     display: flex;
     align-items: center;
 
-    width: 22vh;
+    width: 24vh;
     height: 5vh;
 
     border-color: #144621;
@@ -641,7 +691,7 @@ main{
 
     box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
     border-radius: 1.5vh;
-    margin-left: 25vh;
+    margin-left: 3vh;
 }
 
 .topoTabela{
@@ -774,3 +824,453 @@ main{
     contrast(118%);
 }
 
+.conteinerCartas{
+    display: none;
+}
+
+.conteinerTabela.ativo, .conteinerCartas.ativo{
+    display: block;
+}
+
+.conteinerCartas.escondido, .conteinerTabela.escondido{
+    display: none;
+}
+
+/* CONTEINER CARTAS */
+
+.conteinerCartas{
+    width: 165vh;
+    height: 44vh;
+
+    margin-left: 25vh;
+}
+
+.carta{
+    background-color: rgb(255, 254, 255);
+
+    width: 40vh;
+    height: 20vh;
+
+    border-radius: 1.5vh;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    margin: 2vh;
+}
+
+.conteucoCarta{
+    display: flex;
+    align-items: center;
+}
+
+.imagemCarta{
+    background-color: #A3FF69;
+
+    width: 10vh;
+    height: 8vh;
+    border-radius: 1vh;
+    margin: 2vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagemCarta img{
+    width: 4vh;
+    height: auto;
+
+    margin: 1vh;
+}
+
+.infoCarta{
+    width: 11vh;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1;
+
+    margin-left: 2vh;
+}
+
+.TituloCarta{
+    font-size: 3vh;
+    width: 11vh;
+}
+
+.tipo{
+    font-size: 2.5vh;
+    background-color: #A3FF69;
+    margin-top: -2vh;
+
+    width: 8vh;
+    border-radius: 1.5vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status{
+    font-size: 2.5vh;
+    background-color: #A3FF69;
+
+    width: 8vh;
+    border-radius: 1.5vh;
+    margin-top: 1vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalhesCarta{
+
+    border-left: 1px solid #ddd;
+    padding-left: 1vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.detalhesNome{
+    font-size: 1.6vh;
+}
+
+.nome1{
+    margin-top: 2vh;
+}
+
+.acoesCarta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vh;
+    margin-top: 2vh;
+}
+
+.editarCartas{
+    width: 3vh;
+    height: 3vh;
+    margin-top: -1vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/lapiz_2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.exluircartas{
+    width: 3vh;
+    height: 3vh;
+    margin-top: -1vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/lixeira.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(17%)
+    sepia(98%)
+    saturate(7476%)
+    hue-rotate(356deg)
+    brightness(96%)
+    contrast(118%);
+}
+
+.modalExcluirProduto{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(0,0,0,0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+.modalExcluirProduto.escondido{
+    display: none;
+}
+
+.conteinerExcluir{
+    background-color: white;
+    width: 55vh;
+    height: 70vh;
+
+    border-radius: 2vh;
+    padding: 3vh;
+
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+}
+
+.topoExluir{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circuloExcluir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffbdb8;
+
+    width: 10vh;
+    height: 10vh;
+
+    border-radius: 20vh;
+}
+
+.iconeExcluir{
+    width: 7vh;
+    height: 7vh;
+}
+
+.textoExcluir{
+    margin: 0;
+    margin-top: -2vh;
+    font-size: 3vh;
+    text-align: center;
+}
+
+.BlocoinformacoesExcluir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.segundoBloco{
+    display: flex;
+    align-items: first baseline;
+    justify-content: first baseline;
+    margin-top: 3vh;
+
+    height: 20vh;
+    width: 55vh;
+
+    border: 0.3vh solid rgb(146, 146, 146) ;
+    border-radius: 1.5vh;
+}
+
+.informacoesExcluir{
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: center;
+
+    margin-left: 1vh;
+}
+
+.avatarExcluir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 8vh;
+    height: 8vh;
+    border-radius: 20vh;
+    margin-left: 3vh;
+
+    background-color: #A3FF69;
+}
+
+.nomeExcluir{
+    font-weight: bolder;
+
+    margin-top: 3vh;
+}
+
+.info{
+    display: flex;
+    align-items: first baseline;
+    justify-content: center;
+}
+
+.info span{
+    margin-left: 1vh;
+
+}
+
+.iconeEtiqueta{
+    width: 3vh;
+    height: 3vh;
+    margin: 0vh;
+    margin-top: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/etiqueta.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+
+}
+
+.iconeBalanca{
+    width: 3vh;
+    height: 3vh;
+    margin: 0vh;
+    margin-top: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/balanca.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeDinheiro{
+    width: 3vh;
+    height: 3vh;
+    margin: 0vh;
+    margin-top: ;
+
+    display: block;
+
+    background-image: url(Imagens/dinheiro_circulo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.alertaExcluir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vh;
+
+    height: 10vh;
+    width: 55vh;
+
+    background-color: #ffbdb8;
+    border: 0.3vh solid rgb(255, 0, 0) ;
+    border-radius: 1.5vh;
+
+    font-size: 2vh;
+}
+
+.iconeAlerta{
+    width: 10vh;
+    height: 10vh;
+    margin-top: 3vh;
+    margin-left: 1vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/aviso.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(17%)
+    sepia(98%)
+    saturate(7476%)
+    hue-rotate(356deg)
+    brightness(96%)
+    contrast(118%);
+}
+
+.iconeMaoDinheiro{
+    width: 3vh;
+    height: 3vh;
+    margin: 0vh;
+    margin-top: ;
+
+    display: block;
+
+    background-image: url(Imagens/maoDinheiro.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.textoExcluir2{
+    margin-left: 1vh;
+    color: rgb(255, 0, 0);
+}
+
+.BotoesExcluir{
+    margin-top: 2vh;
+}
+
+.excluir{
+    border-color: red;
+    background-color: red;
+    color: white;
+
+    width: 20vh;
+    height: 5vh;
+    border-radius: 1vh;
+}
+
+.cancelar{
+    border-color: #6c6d6c;
+    background-color: transparent;
+    color: black;
+
+    width: 20vh;
+    height: 5vh;
+    border-radius: 1vh;
+}

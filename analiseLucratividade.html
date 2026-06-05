@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de produtos</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styleEstoque.css">
+    <link rel="stylesheet" href="styleRelatorios.css">
+    <link rel="stylesheet" href="styleRelatoriosTabelas.css">
 </head>
 <body>
     
         <header class="topoEstoque">
             <div class="caminho">
                 <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-                <a href="estoque.html" class="LinkEstoque"> > Estoque </a>
-                <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Produtos</a>
+                <a href="relatorios.html" class="primeiroCaminho"> > Relatórios </a>
+                <a href="relatoriosMargemLucro.html" class="segundoCaminho">> Relatório Margem de lucro</a>
+                <a href="analiseLucratividade.html" class="terceiroCaminho">> Análise de lucratividade</a>
             </div>
             <div class="notfUser">
                 <div class="notificacao">
@@ -137,7 +140,7 @@
     
         <main class="conteudo">
 
-            <div class="titulosPaginaTabela">
+            <div class="titulos">
                 <h1 class="tituloPagina">Análise de lucratividade</h1>
                 <h3 class="subtituloPagina">Visualize o lucratividade, margem de contribuição e performacepor período</h3>
             </div>
@@ -158,56 +161,66 @@
 
             <div class="conteinerFiltros">
 
-                <div class="filtroPeriodo">
+                <div class="conjuntoFiltros">
 
-                    <span>Periodo</span>
+                    <div class="filtro">
 
-                    <label for="dataInicio"></label>
-                    <input type="date" class="campoData">
+                        <span class="nomeFiltro">Periodo</span>
 
-                    <label for="dataFim"></label>
-                    <input type="date" class="campoData">
+                        <div class="periodo">
 
-                </div>
+                            <label for="dataInicio"></label>
+                            <input type="date" class="campoData">
 
-                <div class="filtrar">
+                            <label for="dataFim"></label>
+                            <input type="date" class="campoData">
 
-                    <button class="botaoFiltar">
-                        <span class="iconeFiltro"></span>
-                        <span class="nomeBotaoFiltar">Filtar</span>
-                    </button>
+                        </div>
 
-                    <button class="botaoFiltar">
-                        <span class="iconeCarregando"></span>
-                        <span class="nomeBotaoFiltar">Limpar filtro</span>
-                    </button>
+                    </div>
 
                 </div>
 
+                <div class="acoesFiltro">
+
+                    <button class="botaoFiltrar">
+                        <i class="iconeFiltro"></i>
+                        <span>Filtrar</span>
+                    </button>
+
+                    <button class="botaoLimparFiltro">
+                        <i class="iconeCarregar"></i>
+                        <span>Limpar Filtro</span>
+                    </button>
+                </div>
             </div>
 
             <div class="tabela">
 
-                <input type="Busque item..." class="buscarProduto">
+                <div class="topoDaTabela">
 
-                <div class="Ordenamento">
+                    <input type="text" placeholder="Busque item..." class="buscarProduto">
 
-                    <span class="ordenar">Ordenar por:</span>
+                    <div class="Ordenamento">
 
-                    <select name="" id="">
-                        <option value="maiorFaturamento">Maior Faturamento</option>
-                        <option value="menorFaturamento">Menor Faturamento</option>
-                        <option value="dataRecente">Data mais recente</option>
-                        <option value="dataLonge">Data mais longe</option>
-                        <option value="maiorTicket">Maior Ticket</option>
-                        <option value="menorTicket">Menor Ticket</option>
+                        <span class="ordenar">Ordenar por:</span>
 
-                    </select>
+                        <select name="" id="" class="escolhaOrdenar">
+                            <option value="maiorcusto">Maior custo variável</option>
+                            <option value="menorcusto">Menor custo variável</option>
+                            <option value="dataRecente">Data mais recente</option>
+                            <option value="dataLonge">Data mais longe</option>
+                            <option value="maiorLucro">Maior lucro líquido</option>
+                            <option value="menorLucro">Menor lucro líquido</option>
+
+                        </select>
+                    </div>
+
                 </div>
 
                 <table>
 
-                    <thead>
+                    <thead class="topoTabelaVerdadeira">
                         <tr>
                             <th>Produto</th>
                             <th>Categoria</th>
@@ -234,6 +247,20 @@
                             <td>35%</td>
                         </tr>
                     </tbody>
+
+                    <tfoot class="totais">
+                        <tr>
+                            <th>Totais</th>
+                            <th>--</th>
+                            <th>R$ 700,00</th>
+                            <th>R$ 30,00</th>
+                            <th>R$ 5,00</th>
+                            <th>R$ 35,00</th>
+                            <th>R$ 100,00</th>
+                            <th>R$ 400,00</th>
+                            <th>35%</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
                 

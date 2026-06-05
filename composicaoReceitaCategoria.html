@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de produtos</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styleEstoque.css">
+    <link rel="stylesheet" href="styleRelatorios.css">
+    <link rel="stylesheet" href="styleRelatoriosTabelas.css">
 </head>
 <body>
     
         <header class="topoEstoque">
             <div class="caminho">
                 <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-                <a href="estoque.html" class="LinkEstoque"> > Estoque </a>
-                <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Produtos</a>
+                <a href="relatorios.html" class="primeiroCaminho"> > Relatórios </a>
+                <a href="relatorioReceitas.html" class="segundoCaminho"> > Relatório Receita  </a>
+                <a href="composicaoReceitaCategoria.html" class="terceiroCaminho"> > Composição da receita por categoria  </a>
             </div>
             <div class="notfUser">
                 <div class="notificacao">
@@ -41,6 +44,7 @@
             <div class="logoMenuLateral">
                 <img src="Imagens/Logo.png"  alt="Logo chás da laura">
             </div>
+
             <nav class="menu">
                 <ul>
 
@@ -132,12 +136,17 @@
                     </li>
                 </ul>
             </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
         </aside>
     
         <main class="conteudo">
-            <h1 class="tituloPagina">Composição da receita por categoria</h1>
-            <h3 class="subtituloPagina">Visualize a composição da receita por categoria e por período</h3>
+
+            <div class="titulos">
+                <h1 class="tituloPagina">Composição da receita por categoria</h1>
+                <h3 class="subtituloPagina">Visualize a composição da receita por categoria e por período</h3>
+            </div>
             
             <div class="baixarArquivos">
 
@@ -155,71 +164,81 @@
 
             <div class="conteinerFiltros">
 
-                <div class="filtroPeriodo">
+                <div class="conjuntoFiltros">
 
-                    <span>Periodo</span>
+                    <div class="filtro">
 
-                    <label for="dataInicio"></label>
-                    <input type="date" class="campoData">
+                        <span class="nomeFiltro">Periodo</span>
 
-                    <label for="dataFim"></label>
-                    <input type="date" class="campoData">
+                        <div class="periodo">
+
+                            <label for="dataInicio"></label>
+                            <input type="date" class="campoData">
+
+                            <label for="dataFim"></label>
+                            <input type="date" class="campoData">
+
+                        </div>
+
+                    </div>
+
+                    <div class="filtro">
+
+                        <span class="nomeFiltro">Categoria</span>
+
+                        <select name="filtrar" class="filtrar" id="">
+                            <option value="todos">Todas</option>
+                            <option value="flor">Flor</option>
+                            <option value="erva">Erva</option>
+                            <option value="raiz">Raiz</option>
+                            <option value="caule">Caule</option>
+                        </select>
+
+                    </div>
 
                 </div>
 
-                <div class="filtroCategoria">
+                <div class="acoesFiltro">
 
-                    <label for="Categoria">Categoria</label>
-
-                        <select name="" id="">
-                        <option value="todos">Todas</option>
-                        <option value="flor">Flor</option>
-                        <option value="erva">Erva</option>
-                        <option value="raiz">Raiz</option>
-                        <option value="caule">Caule</option>
-                        
-                    </select>
-
-                 </div>
-
-                <div class="filtrar">
-
-                    <button class="botaoFiltar">
-                        <span class="iconeFiltro"></span>
-                        <span class="nomeBotaoFiltar">Filtar</span>
+                     <button class="botaoFiltrar">
+                        <i class="iconeFiltro"></i>
+                        <span>Filtrar</span>
                     </button>
 
-                    <button class="botaoFiltar">
-                        <span class="iconeCarregando"></span>
-                        <span class="nomeBotaoFiltar">Limpar filtro</span>
+                    <button class="botaoLimparFiltro">
+                        <i class="iconeCarregar"></i>
+                        <span>Limpar Filtro</span>
                     </button>
-
                 </div>
 
             </div>
 
             <div class="tabela">
 
-                <input type="Busque item..." class="buscarProduto">
+                <div class="topoDaTabela">
 
-                <div class="Ordenamento">
+                    <input type="text" placeholder="Busque item..." class="buscarProduto">
 
-                    <span class="ordenar">Ordenar por:</span>
+                    <div class="Ordenamento">
 
-                    <select name="" id="">
-                        <option value="maiorFaturamento">Maior Faturamento</option>
-                        <option value="menorFaturamento">Menor Faturamento</option>
-                        <option value="dataRecente">Data mais recente</option>
-                        <option value="dataLonge">Data mais longe</option>
-                        <option value="maiorTicket">Maior Ticket</option>
-                        <option value="menorTicket">Menor Ticket</option>
+                        <span class="ordenar">Ordenar por:</span>
 
-                    </select>
+                        <select name="" id="" class="escolhaOrdenar">
+                            <option value="maiorFaturamento">Maior Faturamento</option>
+                            <option value="menorFaturamento">Menor Faturamento</option>
+                            <option value="dataRecente">Data mais recente</option>
+                            <option value="dataLonge">Data mais longe</option>
+                            <option value="maiorTicket">Maior Ticket</option>
+                            <option value="menorTicket">Menor Ticket</option>
+
+                        </select>
+                    </div>
+
                 </div>
 
                 <table>
 
-                    <thead>
+                    <thead class="topoTabelaVerdadeira">
                         <tr>
                             <th>Categoria de insumo</th>
                             <th>Receita gerada(R$)</th>
@@ -241,7 +260,7 @@
                         </tr>
                     </tbody>
 
-                    <tfoot>
+                    <tfoot class="totais">
                         <tr>
                             <th>Totais</th>
                             <th>R$ 5.800,00</th>
@@ -255,5 +274,7 @@
             </div>
                 
         </main>
+
+    <script src="arquivo.js"></script>
 </body>
 </html>

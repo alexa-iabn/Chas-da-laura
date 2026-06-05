@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chás da Laura - Relatórios de Insumos</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    
+    <header class="topoEstoque">
+        <div class="caminho">
+            <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
+            <a href="estoque.html" class="LinkEstoque"> > Relatórios </a>
+            <a href="relatorioInsumos.html" class="linkEstoqueProdutos">> Relatórios de Insumos</a>
+        </div>
+        <div class="notfUser">
+            <div class="notificacao">
+                <i class="sino"></i>
+                <span class="bolinha"></span>
+            </div>
+            <div class="PerfilUsuario">
+                <div class="avatar">
+                    <span class="L"> L </span>
+                </div>
+                <h2 class="nomeUsuario">Laura</h2>
+                <span class="seta">⌄</span>
+            </div>
+        </div>
+    </header>
+
+    <aside class="menuLateral">
+        <button id="botaoRetratil" class="botaoRetratil"></button>
+        <div class="logoMenuLateral">
+            <img src="Imagens/Logo.png" alt="Logo chás da laura">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="blocoOpcao">
+                    <a href="paginaInicial.html" class="itemMenu">
+                        <div class="circulo"><span class="iconeCasa"></span></div>
+                        <span class="tituloMenu">Painel inicial</span>
+                    </a>
+                </li>
+                <li>
+                    <details>
+                        <summary class="blocoOpcao">
+                            <div class="itemMenu">
+                                <div class="circulo"><span class="iconeLapis"></span></div>
+                                <span class="tituloMenu">Cadastros</span>
+                            </div>
+                        </summary>
+                        <ul class="subMenu">
+                            <li><a href="CadastroClientes.html">Clientes</a></li>
+                            <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                            <li><a href="CadastroInsumos.html">Insumos</a></li>
+                            <li><a href="CadastroProdutos.html">Produtos</a></li>
+                            <li><a href="CadastroReceitas.html">Receitas</a></li>
+                            <li><a href="CadastroParceiros.html">parceiros</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary class="blocoOpcao">
+                            <div class="itemMenu">
+                                <div class="circulo"><span class="iconeCaixa"></span></div>
+                                <span class="tituloMenu">Estoque</span>
+                            </div>
+                        </summary>
+                        <ul class="subMenu">
+                            <li><a href="estoqueProdutos.html">Produtos</a></li>
+                            <li><a href="estoqueInsumos.html">Insumos</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li class="blocoOpcao">
+                    <a href="PaginaRelatorios.html" class="itemMenu">
+                        <div class="circulo"><span class="iconeGrafico"></span></div>
+                        <span class="tituloMenu">Relatórios</span>
+                    </a>
+                </li>
+                <li class="blocoOpcao">
+                    <a href="PaginaProducao.html" class="itemMenu">
+                        <div class="circulo"><span class="iconePrancheta"></span></div>
+                        <span class="tituloMenu">Produção</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="conteudo">
+        <h1 class="tituloPagina">Relatórios de Insumos</h1>
+        <h3 class="subtituloPagina">Acompanhe a situação atual de todos os itens em estoque</h3>
+
+        <section class="conteinerFiltros">
+            <div class="filtroItem">
+                <label for="periodo">Período</label>
+                <select id="periodo">
+                    <option>01/05/2025 - 31/05/2026</option>
+                </select>
+            </div>
+            <div class="filtroItem">
+                <label for="categoria">Categoria</label>
+                <select id="categoria">
+                    <option>Todas as categorias</option>
+                </select>
+            </div>
+            <div class="filtroItem">
+                <label for="tipoItem">Tipo de item</label>
+                <select id="tipoItem">
+                    <option>Todos os tipos</option>
+                </select>
+            </div>
+            <div class="botoesFiltro">
+                <button class="botaoFiltrar"><span class="iconeFiltro"></span> Filtrar</button>
+                <button class="botaoLimpar"><span class="iconeLimpar"></span> Limpar Filtros</button>
+            </div>
+        </section>
+
+        <section class="conteinerCardsKpi">
+            <div class="cardKpi">
+                <div class="iconeKpi verde"></div>
+                <div class="infoKpi">
+                    <span class="labelKpi">Valor total em estoque</span>
+                    <span class="valorKpi">R$ 48.756,33</span>
+                    <span class="subtextKpi verde">▲ 8,7% vs período anterior</span>
+                </div>
+            </div>
+            <div class="cardKpi">
+                <div class="iconeKpi amarelo"></div>
+                <div class="infoKpi">
+                    <span class="labelKpi">Itens com estoque baixo</span>
+                    <span class="valorKpi alerta">16</span>
+                    <span class="subtextKpi">Itens</span>
+                </div>
+            </div>
+            <div class="cardKpi">
+                <div class="iconeKpi vermelho"></div>
+                <div class="infoKpi">
+                    <span class="labelKpi">Itens sem estoque</span>
+                    <span class="valorKpi critico">3</span>
+                    <span class="subtextKpi">Itens</span>
+                </div>
+            </div>
+            <div class="cardKpi">
+                <div class="iconeKpi verdeSecundario"></div>
+                <div class="infoKpi">
+                    <span class="labelKpi">Total de itens</span>
+                    <span class="valorKpi">147</span>
+                    <span class="subtextKpi">Produtos e insumos</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="graficos">
+            <div class="cardGrafico">
+                <div class="topoGrafico">
+                    <h2 class="tituloGrafico">Valor do estoque por tipo</h2>
+                    <button class="btnExportarCard"></button>
+                </div>
+                <canvas id="graficoValorTipo"></canvas> </div>
+
+            <div class="cardGrafico">
+                <div class="topoGrafico">
+                    <h2 class="tituloGrafico">Situação de estoque <small>(quantidade de itens)</small></h2>
+                    <button class="btnExportarCard"></button>
+                </div>
+                <canvas id="graficoSituacaoEstoque"></canvas>
+            </div>
+
+            <div class="cardGrafico">
+                <div class="topoGrafico">
+                    <h2 class="tituloGrafico">Entradas x Saídas <small>(quantidade)</small></h2>
+                    <button class="btnExportarCard"></button>
+                </div>
+                <canvas id="graficoEntradasSaidas"></canvas>
+            </div>
+        </section>
+
+        <section class="conteinerTabela">
+            <h2 class="tituloTabela">Detalhamento do estoque</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Item</th>
+                        <th>Estoque atual</th>
+                        <th>Estoque mínimo</th>
+                        <th>Valor unitário</th>
+                        <th>Valor total</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="tag tipoProduto">Produto</span></td>
+                        <td>Bled 1 - 50g</td>
+                        <td>25 UN</td>
+                        <td>10 UN</td>
+                        <td>R$ 50,00 UN</td>
+                        <td>R$ 1.250,00</td>
+                        <td><span class="status normal">Normal</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tipoProduto">Produto</span></td>
+                        <td>Bled 2 - 50g</td>
+                        <td>0 UN</td>
+                        <td>10 UN</td>
+                        <td>R$ 50,00 UN</td>
+                        <td>R$ 0,00</td>
+                        <td><span class="status zerado">Zerado</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tipoInsumo">Insumo</span></td>
+                        <td>Flor de camomila</td>
+                        <td>100g</td>
+                        <td>500 g</td>
+                        <td>R$ 20,00 KG</td>
+                        <td>R$ 2,00</td>
+                        <td><span class="status baixo">Estoque baixo</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tipoInsumo">Insumo</span></td>
+                        <td>Flor de hibisco</td>
+                        <td>2 KG</td>
+                        <td>500 g</td>
+                        <td>R$ 20,00 KG</td>
+                        <td>R$ 40,00</td>
+                        <td><span class="status normal">Normal</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

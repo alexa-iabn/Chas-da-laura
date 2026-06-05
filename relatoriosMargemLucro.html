@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de produtos</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styleEstoque.css">
+    <link rel="stylesheet" href="styleRelatorios.css">
 </head>
 <body>
     
         <header class="topoEstoque">
+
             <div class="caminho">
+
                 <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-                <a href="estoque.html" class="LinkEstoque"> > Estoque </a>
-                <a href="estoqueProdutos.html" class="linkEstoqueProdutos">> Estoque Produtos</a>
+                <a href="relatorios.html" class="primeiroCaminho"> > Relatórios </a>
+                <a href="relatoriosMargemLucro.html" class="segundoCaminho">> Margem de lucro</a>
+
             </div>
+
             <div class="notfUser">
                 <div class="notificacao">
                     <i class="sino"></i>
@@ -41,6 +46,7 @@
             <div class="logoMenuLateral">
                 <img src="Imagens/Logo.png"  alt="Logo chás da laura">
             </div>
+
             <nav class="menu">
                 <ul>
 
@@ -132,97 +138,129 @@
                     </li>
                 </ul>
             </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
         </aside>
     
         <main class="conteudo">
-        
-            <h1 class="tituloPagina">Margem de lucro</h1>
-            <h3 class="subtituloPagina">Acompanhe a margem de lucro da empresa no período selecionado</h3>
+            <div class="titulos">
+                <h1 class="tituloPagina">Margem de lucro</h1>
+                <h3 class="subtituloPagina">Acompanhe a margem de lucro da empresa no período selecionado</h3>
+            </div>
 
             <section class="conteinerRelatorios">
 
                     <div class="conteinerFiltros">
 
-                        <div class="filtroPeriodo">
+                        <div class="conjuntoFiltros">
 
-                            <span>Periodo</span>
+                            <div class="filtro">
 
-                            <label for="dataInicio"></label>
-                            <input type="date" class="campoData">
+                                <span class="nomeFiltro">Periodo</span>
 
-                            <label for="dataFim"></label>
-                            <input type="date" class="campoData">
+                                <div class="periodo">
+
+                                    <label for="dataInicio"></label>
+                                    <input type="date" class="campoData">
+
+                                    <label for="dataFim"></label>
+                                    <input type="date" class="campoData">
+
+                                </div>
+
+                            </div>
+
+                            <div class="filtro">
+
+                                <span class="nomeFiltro">Produto</span>
+
+                                <select name="filtroProduto" class="filtrar" id="filtroProd">
+                                    <option value="todos">Todos os produtos</option>
+                                    <option value="blend 1">Blend 1</option>
+                                    <option value="aromatizador 1">aromatizador 1</option>
+                                </select>
+
+                            </div>
 
                         </div>
 
-                        <div class="filtroProduto">
+                        <div class="acoesFiltro">
 
-                            <span>Produto</span>
+                            <button class="botaoFiltrar">
+                                <i class="iconeFiltro"></i>
+                                <span>Filtrar</span>
+                            </button>
 
-                            <select name="filtroProduto" id="filtroProd">
-                                <option value="todos">Todos os produtos</option>
-                                <option value="blend 1">Blend 1</option>
-                                <option value="aromatizador 1">aromatizador 1</option>
-                            </select>
+                            <button class="botaoLimparFiltro">
+                                <i class="iconeCarregar"></i>
+                                <span>Limpar Filtro</span>
+                            </button>
 
                         </div>
+
                     </div>
 
+                    <div class="demostracoes">
 
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconeDinheiroDemo"></span>
+                        <div class="demo">
+                            <div class="iconeDemo">
+                                <span class="iconeDinheiroDemo"></span>
+                            </div>
+                            <div class="textoDemo">
+                                <span class="demoSemiTitulo">Receita bruta</span>
+                                <span class="demoTitulo">R$ 48.756,30</span>
+                                <span class="demoTextoNormal">Valor total bruto</span>
+                            </div>
                         </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Receita bruta</span>
-                            <span class="demoTitulo">R$ 48.756,30</span>
-                            <span class="demoTextoNormal">Valor total bruto</span>
+
+                        <div class="demo">
+                            <div class="iconeDemo">
+                                <span class="iconeGraficoRedondoDemo"></span>
+                            </div>
+                            <div class="textoDemo">
+                                <span class="demoSemiTitulo">Custos variavel</span>
+                                <span class="demoTitulo">R$ 22.413,00</span>
+                                <span class="demoTextoNormal">Valor total</span>
+                            </div>
                         </div>
+
+                        <div class="demo">
+                            <div class="iconeDemo">
+                                <span class="iconeMoedasDemo"></span>
+                            </div>
+                            <div class="textoDemo">
+                                <span class="demoSemiTitulo">Margem de contribuição</span>
+                                <span class="demoTitulo">R$ 21.385,33</span>
+                                <span class="demoTextoNormal">Total de contribuição</span>
+                            </div>
+                        </div>
+
+                        <div class="demo">
+                            <div class="iconeDemo">
+                                <span class="iconePorcentagemDemo"></span>
+                            </div>
+                            <div class="textoDemo">
+                                <span class="demoSemiTitulo">Margem de lucro</span>
+                                <span class="demoTitulo">57,0%</span>
+                                <span class="demoTextoNormal">do periodo</span>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconeGraficoRedondoDemo"></span>
-                        </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Custos variavel</span>
-                            <span class="demoTitulo">R$ 22.413,00</span>
-                            <span class="demoTextoNormal">Valor total</span>
-                        </div>
-                    </div>
-
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconeMoedasDemo"></span>
-                        </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Margem de contribuição</span>
-                            <span class="demoTitulo">R$ 21.385,33</span>
-                            <span class="demoTextoNormal">Total de contribuição</span>
-                        </div>
-                    </div>
-
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconePorcentagemDemo"></span>
-                        </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Margem de lucro</span>
-                            <span class="demoTitulo">57,0%</span>
-                            <span class="demoTextoNormal">do periodo</span>
-                        </div>
-                    </div>
-
-                </div>
             
                 <div class="graficos">
 
                     <div class="cardGrafico">
 
                         <div class="topoGrafico">
-                            <button class="olharTabela"></button>
+
                             <h2 class="tituloGrafico">Análise de lucratividade</h2>
+
+                            <a href="analiseLucratividade.html">
+                                <button class="olharTabela"></button>
+                            </a>
+
                         </div>
 
                         <canvas class="graficoAnaliseLucratividade"></canvas>
@@ -232,8 +270,12 @@
                     <div class="cardGrafico">
 
                         <div class="topoGrafico">
-                            <button class="olharTabela"></button>
                             <h2 class="tituloGrafico">Evolução da margem de lucro</h2>
+
+                            <a href="evolucaoMargemLucro.html">
+                                <button class="olharTabela"></button>
+                            </a>
+
                         </div>
 
                         <canvas class="graficoEvolucaoMargemLucro"></canvas>
@@ -242,9 +284,16 @@
 
                     <div class="cardGrafico">
 
-                        <div class="topoGrafico"></div>
-                            <button class="olharTabela"></button>
-                            <h2 class="tituloGrafico">Margem de contribuição X receita</h2>
+                        <div class="topoGrafico">
+
+                            <h2 class="tituloGrafico">
+                                Margem de contribuição X receita
+                            </h2>
+
+                            <a href="margemContribuicaoReceita.html">
+                                <button class="olharTabela"></button>
+                            </a>
+
                         </div>
 
                         <canvas class="graficoMargemContribuicaoReceita"></canvas>
@@ -255,12 +304,14 @@
             
                 <div class="conteinerTabela">
 
-                    <h2 class="tituloTabela">Performace dos produtos</h2>
+                    <div class="tituloTabela">
+                        <h2>Performace dos produtos</h2>
+                    </div>
 
                     <table>
 
-                        <thead>
-                            <tr>
+                        <thead class="tabela">
+                            <tr class="topoTabelaVerdadeira">
                                 <th>#</th>
                                 <th>Produtos</th>
                                 <th>Receita(R$)</th>
@@ -274,7 +325,14 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Blend 1</td>
+
+                                <td>
+                                    <div class="Produto">
+                                        <span class="fotoProduto"></span>
+                                        <span>blend 1</span>
+                                    </div>
+                                </td>
+
                                 <td>R$ 750,00</td>
                                 <td>R$ 50,00</td>
                                 <td>R$ 700,00</td>
@@ -286,5 +344,7 @@
                 </div>
             </section>
         </main>
+
+        <script src="arquivo.js"></script>
 </body>
 </html>
