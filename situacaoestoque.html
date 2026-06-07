@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Situação do Estoque — Chás da Laura</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===================== SIDEBAR ===================== -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-placeholder">CHÁS DA<br><span>LAURA</span></div>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="paineldeinicio.html" class="nav-item">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Painel de início
+    </a>
+    <div class="nav-group" onclick="this.classList.toggle('open')">
+      <div class="nav-group-title">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          Cadastros
+        </div>
+        <svg class="chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="nav-subitems">
+        <a href="#">Produtos</a><a href="#">Insumos</a><a href="#">Parceiros</a><a href="#">Receitas</a>
+      </div>
+    </div>
+    <div class="nav-group" onclick="this.classList.toggle('open')">
+      <div class="nav-group-title">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73L12 2 4 6.27A2 2 0 003 8v8a2 2 0 001 1.73L12 22l8-4.27A2 2 0 0021 16z"/></svg>
+          Estoque
+        </div>
+        <svg class="chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="nav-subitems">
+        <a href="EstoqueProdutos.html">Produtos</a><a href="EstoqueInsumos.html">Insumos</a>
+      </div>
+    </div>
+    <a href="relatorios-estoque.html" class="nav-item active">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Relatórios
+    </a>
+    <a href="PaginaProducao.html" class="nav-item">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      Produção
+    </a>
+  </nav>
+</aside>
+
+<!-- ===================== TOPBAR ===================== -->
+<div class="topbar">
+  <div class="topbar-left">
+    <h1>Situação do estoque</h1>
+    <p>Visualize todos os itens do estoque agrupados por situação</p>
+  </div>
+  <div class="topbar-right">
+    <button class="btn-export btn-export-excel">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      Exportar Excel (.xlsx)
+    </button>
+    <button class="btn-export btn-export-pdf">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      Baixar PDF (.pdf)
+    </button>
+    <button class="notif-btn">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+      <span class="notif-dot"></span>
+    </button>
+    <div class="user-avatar">
+      <div class="avatar-circle">L</div>
+      <span class="user-name">Laura</span>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MAIN ===================== -->
+<main class="main-content">
+
+  <!-- FILTROS -->
+  <div class="filtros-bar">
+    <div class="filtro-group">
+      <label>Período</label>
+      <input type="text" value="01/05/2025 - 31/05/2026" />
+    </div>
+    <div class="filtro-group">
+      <label>Tipo de estoque</label>
+      <select><option>Todos os estoques</option><option>Produtos</option><option>Insumos</option></select>
+    </div>
+    <div class="filtro-group">
+      <label>Status</label>
+      <select><option>Todos</option><option>Em estoque</option><option>Estoque baixo</option><option>Sem estoque</option></select>
+    </div>
+    <div class="filtros-acoes">
+      <button class="btn-filtrar">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        Filtrar
+      </button>
+      <button class="btn-limpar">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        Limpar Filtros
+      </button>
+    </div>
+  </div>
+
+  <!-- TABELA SITUAÇÃO DO ESTOQUE -->
+  <div class="tabela-card">
+    <div class="tabela-card-header">
+      <span class="tabela-card-title">Itens por situação do estoque</span>
+    </div>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Situação</th>
+            <th>Tipo do estoque</th>
+            <th>Itens</th>
+            <th>Quantidade total</th>
+            <th>% do total</th>
+            <th>Valor total (R$)</th>
+            <th>Valor médio unitário</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Em estoque -->
+          <tr style="background:#f0fdf4;">
+            <td><span class="badge-status badge-normal">Em estoque</span></td>
+            <td>Produtos</td>
+            <td>90</td>
+            <td>3.245 un</td>
+            <td>67,2%</td>
+            <td>R$ 20.875,40</td>
+            <td>R$ 10,12</td>
+          </tr>
+          <tr style="background:#f0fdf4;">
+            <td><span class="badge-status badge-normal">Em estoque</span></td>
+            <td>Insumos</td>
+            <td>36</td>
+            <td>R$ 30,10 kg/l/un</td>
+            <td>32,6%</td>
+            <td>R$ 13.582,90</td>
+            <td>R$ 18,04</td>
+          </tr>
+          <tr class="grupo-em-estoque">
+            <td colspan="2"><strong>Total – Em estoque</strong></td>
+            <td><strong>128</strong></td>
+            <td>—</td>
+            <td><strong>99,8%</strong></td>
+            <td><strong>R$ 48.856,90</strong></td>
+            <td>—</td>
+          </tr>
+
+          <!-- Estoque baixo -->
+          <tr style="background:#fffbeb;">
+            <td><span class="badge-status badge-baixo">Estoque baixo</span></td>
+            <td>Produtos</td>
+            <td>11</td>
+            <td>143 un</td>
+            <td>4,9%</td>
+            <td>R$ 7.493,60</td>
+            <td>R$ 13,025</td>
+          </tr>
+          <tr style="background:#fffbeb;">
+            <td><span class="badge-status badge-baixo">Estoque baixo</span></td>
+            <td>Insumos</td>
+            <td>8</td>
+            <td>0,40 kg/l/un</td>
+            <td>2,6%</td>
+            <td>R$ 1.290,38</td>
+            <td>R$ 19,54</td>
+          </tr>
+          <tr class="grupo-estoque-baixo">
+            <td colspan="2"><strong>Total – Estoque baixo</strong></td>
+            <td><strong>19</strong></td>
+            <td>—</td>
+            <td><strong>7,5%</strong></td>
+            <td><strong>R$ 3.700,00</strong></td>
+            <td>—</td>
+          </tr>
+
+          <!-- Sem estoque -->
+          <tr style="background:#fef2f2;">
+            <td><span class="badge-status badge-zerado">Sem estoque</span></td>
+            <td>Produtos</td>
+            <td>4</td>
+            <td>0 un</td>
+            <td>0%</td>
+            <td>R$ 0,00</td>
+            <td>—</td>
+          </tr>
+          <tr style="background:#fef2f2;">
+            <td><span class="badge-status badge-zerado">Sem estoque</span></td>
+            <td>Insumos</td>
+            <td>3</td>
+            <td>0 kg/l/un</td>
+            <td>0%</td>
+            <td>R$ 0,00</td>
+            <td>—</td>
+          </tr>
+          <tr class="grupo-sem-estoque">
+            <td colspan="2"><strong>Total – Sem estoque</strong></td>
+            <td><strong>7</strong></td>
+            <td>—</td>
+            <td><strong>0%</strong></td>
+            <td><strong>R$ 0,00</strong></td>
+            <td>—</td>
+          </tr>
+
+          <!-- Total Geral -->
+          <tr class="grupo-total-geral">
+            <td colspan="2"><strong>TOTAL GERAL</strong></td>
+            <td><strong>154</strong></td>
+            <td>—</td>
+            <td><strong>100%</strong></td>
+            <td><strong>R$ 52.537,00</strong></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  document.querySelectorAll('.nav-group-title').forEach(btn => {
+    btn.addEventListener('click', () => btn.closest('.nav-group').classList.toggle('open'));
+  });
+</script>
+</body>
+</html>
