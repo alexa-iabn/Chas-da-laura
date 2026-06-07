@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entradas x Saídas — Chás da Laura</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Cabeçalhos coloridos especiais para entradas/saídas */
+    .th-entradas { background: #d1fae5; color: #065f46; text-align: center; }
+    .th-saidas   { background: #fee2e2; color: #991b1b; text-align: center; }
+    .th-saldo    { background: #e0e7ff; color: #3730a3; text-align: center; }
+    .td-center   { text-align: center; }
+    .cel-entrada { color: #16a34a; font-weight: 600; }
+    .cel-saida   { color: #ef4444; font-weight: 600; }
+    .cel-saldo   { color: #4338ca; font-weight: 600; }
+    .total-row-entradas td { background: #d1fae5; font-weight: 800; color: #065f46; border-top: 2px solid #a7d7b8; }
+  </style>
+</head>
+<body>
+
+<!-- ===================== SIDEBAR ===================== -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-placeholder">CHÁS DA<br><span>LAURA</span></div>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="paineldeinicio.html" class="nav-item">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Painel de início
+    </a>
+    <div class="nav-group" onclick="this.classList.toggle('open')">
+      <div class="nav-group-title">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          Cadastros
+        </div>
+        <svg class="chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="nav-subitems">
+        <a href="#">Produtos</a><a href="#">Insumos</a><a href="#">Parceiros</a><a href="#">Receitas</a>
+      </div>
+    </div>
+    <div class="nav-group" onclick="this.classList.toggle('open')">
+      <div class="nav-group-title">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73L12 2 4 6.27A2 2 0 003 8v8a2 2 0 001 1.73L12 22l8-4.27A2 2 0 0021 16z"/></svg>
+          Estoque
+        </div>
+        <svg class="chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="nav-subitems">
+        <a href="EstoqueProdutos.html">Produtos</a><a href="EstoqueInsumos.html">Insumos</a>
+      </div>
+    </div>
+    <a href="relatorios-estoque.html" class="nav-item active">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Relatórios
+    </a>
+    <a href="PaginaProducao.html" class="nav-item">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      Produção
+    </a>
+  </nav>
+</aside>
+
+<!-- ===================== TOPBAR ===================== -->
+<div class="topbar">
+  <div class="topbar-left">
+    <h1>Entradas x saídas</h1>
+    <p>Visualize o movimento de entradas e saídas do estoque no período selecionado</p>
+  </div>
+  <div class="topbar-right">
+    <button class="btn-export btn-export-excel">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      Exportar Excel (.xlsx)
+    </button>
+    <button class="btn-export btn-export-pdf">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      Baixar PDF (.pdf)
+    </button>
+    <button class="notif-btn">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+      <span class="notif-dot"></span>
+    </button>
+    <div class="user-avatar">
+      <div class="avatar-circle">L</div>
+      <span class="user-name">Laura</span>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MAIN ===================== -->
+<main class="main-content">
+
+  <!-- FILTROS -->
+  <div class="filtros-bar">
+    <div class="filtro-group">
+      <label>Período</label>
+      <input type="text" value="01/05/2025 - 31/05/2026" />
+    </div>
+    <div class="filtro-group">
+      <label>Tipo de estoque</label>
+      <select><option>Todos os estoques</option><option>Produtos</option><option>Insumos</option></select>
+    </div>
+    <div class="filtro-group">
+      <label>Status</label>
+      <select><option>Todos</option><option>Entrada</option><option>Saída</option></select>
+    </div>
+    <div class="filtros-acoes">
+      <button class="btn-filtrar">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        Filtrar
+      </button>
+      <button class="btn-limpar">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        Limpar Filtros
+      </button>
+    </div>
+  </div>
+
+  <!-- TABELA ENTRADAS X SAÍDAS -->
+  <div class="tabela-card">
+    <div class="tabela-card-header">
+      <div class="search-input-wrap">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Buscar item..." />
+      </div>
+      <div class="ordenar-select">
+        <span>Ordenar por:</span>
+        <select>
+          <option>Maior quantidade em estoque</option>
+          <option>Menor quantidade em estoque</option>
+          <option>Maior valor total</option>
+        </select>
+      </div>
+    </div>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Tipo</th>
+            <th rowspan="2">Item</th>
+            <th colspan="2" class="th-entradas">Entradas</th>
+            <th colspan="2" class="th-saidas">Saídas</th>
+            <th colspan="2" class="th-saldo">Saldo</th>
+          </tr>
+          <tr>
+            <th class="th-entradas">Quantidade</th>
+            <th class="th-entradas">Valor total (R$)</th>
+            <th class="th-saidas">Quantidade</th>
+            <th class="th-saidas">Valor total (R$)</th>
+            <th class="th-saldo">Quantidade</th>
+            <th class="th-saldo">Valor total (R$)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge-tipo badge-produto">Produto</span></td>
+            <td>Ered 1 - 90g</td>
+            <td class="td-center cel-entrada">25 un</td>
+            <td class="td-center cel-entrada">R$ 1.250,00</td>
+            <td class="td-center cel-saida">18,75 un</td>
+            <td class="td-center cel-saida">R$ 937,50</td>
+            <td class="td-center cel-saldo">6,25 un</td>
+            <td class="td-center cel-saldo">R$ 312,50</td>
+          </tr>
+          <tr>
+            <td><span class="badge-tipo badge-produto">Produto</span></td>
+            <td>Ered 2 - 90g</td>
+            <td class="td-center cel-entrada">25 un</td>
+            <td class="td-center cel-entrada">R$ 1.240,00</td>
+            <td class="td-center cel-saida">18,75 un</td>
+            <td class="td-center cel-saida">R$ 937,50</td>
+            <td class="td-center cel-saldo">6,25 un</td>
+            <td class="td-center cel-saldo">R$ 312,93</td>
+          </tr>
+          <tr>
+            <td><span class="badge-tipo badge-insumo">Insumo</span></td>
+            <td>🌿 Flor de camomila</td>
+            <td class="td-center cel-entrada">15 kg</td>
+            <td class="td-center cel-entrada">R$ 400,00</td>
+            <td class="td-center cel-saida">8,30 kg</td>
+            <td class="td-center cel-saida">R$ 498,00</td>
+            <td class="td-center cel-saldo">4,70 kg</td>
+            <td class="td-center cel-saldo">R$ 401,85</td>
+          </tr>
+          <tr>
+            <td><span class="badge-tipo badge-insumo">Insumo</span></td>
+            <td>🌿 Flor de hibisco</td>
+            <td class="td-center cel-entrada">3 kg</td>
+            <td class="td-center cel-entrada">R$ 450,00</td>
+            <td class="td-center cel-saida">2,25 kg</td>
+            <td class="td-center cel-saida">R$ 337,50</td>
+            <td class="td-center cel-saldo">0,75 kg</td>
+            <td class="td-center cel-saldo">R$ 112,50</td>
+          </tr>
+          <tr>
+            <td><span class="badge-tipo badge-produto">Produto</span></td>
+            <td>Ered 1 - 50g</td>
+            <td class="td-center cel-entrada">25 un</td>
+            <td class="td-center cel-entrada">R$ 1.253,00</td>
+            <td class="td-center cel-saida">18,75 un</td>
+            <td class="td-center cel-saida">R$ 927,50</td>
+            <td class="td-center cel-saldo">6,25 un</td>
+            <td class="td-center cel-saldo">R$ 312,95</td>
+          </tr>
+          <tr>
+            <td><span class="badge-tipo badge-insumo">Insumo</span></td>
+            <td>🌿 Flor de camomila</td>
+            <td class="td-center cel-entrada">15 kg</td>
+            <td class="td-center cel-entrada">R$ 500,00</td>
+            <td class="td-center cel-saida">8,30 kg</td>
+            <td class="td-center cel-saida">R$ 498,00</td>
+            <td class="td-center cel-saldo">4,70 kg</td>
+            <td class="td-center cel-saldo">R$ 401,85</td>
+          </tr>
+          <tr>
+            <td><span class="badge-tipo badge-insumo">Insumo</span></td>
+            <td>🌿 Flor de hibisco</td>
+            <td class="td-center cel-entrada">15 kg</td>
+            <td class="td-center cel-entrada">R$ 400,00</td>
+            <td class="td-center cel-saida">8,30 kg</td>
+            <td class="td-center cel-saida">R$ 386,10</td>
+            <td class="td-center cel-saldo">4,75 kg</td>
+            <td class="td-center cel-saldo">R$ 402,65</td>
+          </tr>
+          <tr>
+            <td><span class="badge-tipo badge-produto">Produto</span></td>
+            <td>Ered 1 - 50g</td>
+            <td class="td-center cel-entrada">25 un</td>
+            <td class="td-center cel-entrada">R$ 1.255,00</td>
+            <td class="td-center cel-saida">18,75 un</td>
+            <td class="td-center cel-saida">R$ 937,50</td>
+            <td class="td-center cel-saldo">6,25 un</td>
+            <td class="td-center cel-saldo">R$ 312,95</td>
+          </tr>
+          <tr>
+            <td><span class="badge-tipo badge-insumo">Insumo</span></td>
+            <td>🌿 Flor de camomila</td>
+            <td class="td-center cel-entrada">15 kg</td>
+            <td class="td-center cel-entrada">R$ 500,00</td>
+            <td class="td-center cel-saida">8,30 kg</td>
+            <td class="td-center cel-saida">R$ 498,00</td>
+            <td class="td-center cel-saldo">4,70 kg</td>
+            <td class="td-center cel-saldo">R$ 401,85</td>
+          </tr>
+          <tr>
+            <td><span class="badge-tipo badge-insumo">Insumo</span></td>
+            <td>🌿 Flor de hibisco</td>
+            <td class="td-center cel-entrada">15 kg</td>
+            <td class="td-center cel-entrada">R$ 400,00</td>
+            <td class="td-center cel-saida">8,30 kg</td>
+            <td class="td-center cel-saida">R$ 498,00</td>
+            <td class="td-center cel-saldo">4,70 kg</td>
+            <td class="td-center cel-saldo">R$ 401,85</td>
+          </tr>
+          <tr>
+            <td><span class="badge-tipo badge-insumo">Insumo</span></td>
+            <td>🌿 Flor de camomila</td>
+            <td class="td-center cel-entrada">15 kg</td>
+            <td class="td-center cel-entrada">R$ 400,00</td>
+            <td class="td-center cel-saida">8,30 kg</td>
+            <td class="td-center cel-saida">R$ 498,00</td>
+            <td class="td-center cel-saldo">4,70 kg</td>
+            <td class="td-center cel-saldo">R$ 401,85</td>
+          </tr>
+
+          <!-- Total Geral -->
+          <tr class="total-row-entradas">
+            <td colspan="2"><strong>TOTAL GERAL</strong></td>
+            <td class="td-center"><strong>7.740,00</strong></td>
+            <td class="td-center"><strong>R$ 13.450,90</strong></td>
+            <td class="td-center" style="color:#ef4444;"><strong>4.011,25</strong></td>
+            <td class="td-center" style="color:#ef4444;"><strong>R$ 8.041,50</strong></td>
+            <td class="td-center" style="color:#4338ca;"><strong>3.728,75</strong></td>
+            <td class="td-center" style="color:#4338ca;"><strong>R$ 5.400,92</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  document.querySelectorAll('.nav-group-title').forEach(btn => {
+    btn.addEventListener('click', () => btn.closest('.nav-group').classList.toggle('open'));
+  });
+</script>
+</body>
+</html>
