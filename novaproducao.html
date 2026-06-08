@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Produção — Chás da Laura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="stylenovaproducaomatheus.css" />
+</head>
+<body>
+<div class="layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/Logo.png"
+           alt="Chás da Laura" onerror="this.style.display='none'" />
+      <div class="sidebar-logo-text">CHÁS DA<span>LAURA</span></div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" class="nav-icon" alt="" />
+        Painel de início
+      </a>
+
+      <div class="nav-group" id="navCadastros">
+        <button class="nav-group-title" onclick="toggleGroup('navCadastros')">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" class="nav-icon" alt="" />
+          Cadastros
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="nav-arrow" alt="" />
+        </button>
+        <div class="nav-subitems">
+          <a href="#">• Clientes</a>
+          <a href="#">• Fornecedores</a>
+          <a href="#">• Insumos</a>
+          <a href="#">• Produtos</a>
+          <a href="#">• Receitas</a>
+        </div>
+      </div>
+
+      <div class="nav-group" id="navEstoque">
+        <button class="nav-group-title" onclick="toggleGroup('navEstoque')">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" class="nav-icon" alt="" />
+          Estoque
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="nav-arrow" alt="" />
+        </button>
+        <div class="nav-subitems">
+          <a href="#">• Entradas</a>
+          <a href="#">• Saídas</a>
+        </div>
+      </div>
+
+      <a href="#" class="nav-item">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" class="nav-icon" alt="" />
+        Relatórios
+      </a>
+
+      <a href="#" class="nav-item active">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lista.svg" class="nav-icon" alt="" />
+        Produção
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/ChaImagemMenu.png"
+           alt="Chá" onerror="this.style.display='none'" />
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <button class="topbar-menu-btn" onclick="toggleSidebar()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="breadcrumb">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" class="bc-icon" alt="" />
+        <a href="#">Produção</a>
+        <span class="sep">›</span>
+        <span class="current">Nova produção</span>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="bell-btn">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg" alt="Notificações" />
+          <span class="bell-dot"></span>
+        </button>
+        <div class="user-badge">
+          <div class="user-avatar">L</div>
+          Laura
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <main class="page-content">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Nova produção</h1>
+          <p class="page-subtitle">Registre a produção realizada utilizando uma receita cadastrada</p>
+        </div>
+      </div>
+
+      <!-- Main two-column -->
+      <div class="prod-layout">
+
+        <!-- ===== COLUNA FORM ===== -->
+        <div class="form-col">
+
+          <!-- SEÇÃO 1: Informações de produção -->
+          <div class="form-section">
+            <div class="form-section-header">
+              <span class="section-num">1.</span>
+              Informações de produção
+            </div>
+            <div class="form-body">
+
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">Receita</label>
+                  <select class="form-control" id="receita" onchange="atualizarReceita()">
+                    <option value="">Selecione uma receita...</option>
+                    <option value="blend1" selected>Blend 1 - 500g</option>
+                    <option value="blend2">Blend 2 - 250g</option>
+                    <option value="camomila">Chá de Camomila - 100g</option>
+                    <option value="hortelã">Chá de Hortelã - 100g</option>
+                    <option value="hibisco">Chá de Hibisco - 200g</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Data de produção</label>
+                  <input type="date" class="form-control" id="dataProd" value="2025-05-12" onchange="atualizarResumo()" />
+                </div>
+              </div>
+
+              <div class="form-grid form-grid-2" style="margin-top:14px;">
+                <div class="form-group">
+                  <label class="form-label">Quantidade produzida</label>
+                  <div class="qty-wrap">
+                    <input type="number" class="form-control qty-input" id="quantidade" value="50" min="1" oninput="atualizarResumo()" />
+                    <select class="form-control qty-unit" id="unidade" onchange="atualizarResumo()">
+                      <option value="lata50">Lata - 50g</option>
+                      <option value="lata100">Lata - 100g</option>
+                      <option value="caixa50">Caixa 50g</option>
+                      <option value="caixa250">Caixa 250g</option>
+                      <option value="saco500">Saco - 500g</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Responsável</label>
+                  <select class="form-control" id="responsavel">
+                    <option value="laura" selected>Laura</option>
+                    <option value="ana">Ana</option>
+                    <option value="carlos">Carlos</option>
+                    <option value="marcia">Márcia</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-top:14px;">
+                <label class="form-label">Observações</label>
+                <textarea class="form-control" id="observacoes" rows="3"
+                  placeholder="Adicione observação sobre esse produto..."></textarea>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- SEÇÃO 2: Resumo de insumos -->
+          <div class="form-section">
+            <div class="form-section-header">
+              <span class="section-num">2.</span>
+              Resumo de insumos utilizados
+              <span class="section-sub">Os insumos abaixo serão reservados do estoque conforme quantidade produzida</span>
+            </div>
+            <div class="form-body" style="padding:0;">
+              <div class="table-wrap">
+                <table id="insumosTable">
+                  <thead>
+                    <tr>
+                      <th>Insumos</th>
+                      <th>Quantidade por unidade</th>
+                      <th>Quantidade total utilizada</th>
+                    </tr>
+                  </thead>
+                  <tbody id="insumosBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /form-col -->
+
+        <!-- ===== PAINEL LATERAL ===== -->
+        <aside class="side-panel">
+
+          <div class="resumo-card">
+            <div class="resumo-card-title">Resumo de produção</div>
+
+            <!-- Banner de sucesso (oculto inicialmente) -->
+            <div class="resumo-banner" id="resumoBanner">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/certo.svg" alt="" />
+              Produção registrada, uma adicionada ao estoque de produto.
+            </div>
+
+            <div class="resumo-rows">
+              <div class="resumo-row">
+                <span class="resumo-label">Produto final</span>
+                <span class="resumo-val" id="rProduto">Blend 1 - Lata 50g</span>
+              </div>
+              <div class="resumo-row">
+                <span class="resumo-label">Quantidade produzida</span>
+              </div>
+              <div class="resumo-qty" id="rQtd">50 Caixas 50g</div>
+
+              <div class="resumo-row" style="margin-top:6px;">
+                <span class="resumo-label">Data de produção</span>
+                <span class="resumo-val" id="rData">12/05/2025</span>
+              </div>
+              <div class="resumo-row">
+                <span class="resumo-label">Rendimento da receita</span>
+                <span class="resumo-val" id="rRendimento">10 Latas 50g</span>
+              </div>
+            </div>
+
+            <div class="estoque-add-label">Estoque que sera adicionado</div>
+            <div class="estoque-add-val" id="rEstoque">+ 50 Caixas 50g</div>
+
+            <button class="btn-registrar" onclick="registrarProducao()">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/certo.svg" alt="" />
+              Registrar produção
+            </button>
+          </div>
+
+        </aside>
+      </div><!-- /prod-layout -->
+
+    </main>
+  </div><!-- /main -->
+</div><!-- /layout -->
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  /* ── Dados das receitas ── */
+  const receitas = {
+    blend1: {
+      nome: 'Blend 1 - Lata 50g',
+      rendimento: '10 Latas 50g',
+      insumos: [
+        { nome: 'Flor de camomila', porUnidade: '20,00 g' },
+        { nome: 'Flor de liz',      porUnidade: '20,00 g' },
+        { nome: 'Flor de calendula',porUnidade: '20,00 g' },
+        { nome: 'Semente de mamão', porUnidade: '5,00 g'  },
+        { nome: 'Lata',             porUnidade: '1 uni'   },
+      ],
+    },
+    blend2: {
+      nome: 'Blend 2 - Caixa 250g',
+      rendimento: '8 Caixas 250g',
+      insumos: [
+        { nome: 'Erva-doce',   porUnidade: '30,00 g' },
+        { nome: 'Hortelã',     porUnidade: '15,00 g' },
+        { nome: 'Gengibre',    porUnidade: '10,00 g' },
+        { nome: 'Caixa 250g',  porUnidade: '1 uni'   },
+      ],
+    },
+    camomila: {
+      nome: 'Chá de Camomila - 100g',
+      rendimento: '5 Sacos 100g',
+      insumos: [
+        { nome: 'Camomila seca', porUnidade: '100,00 g' },
+        { nome: 'Saco kraft',    porUnidade: '1 uni'    },
+      ],
+    },
+    'hortelã': {
+      nome: 'Chá de Hortelã - 100g',
+      rendimento: '5 Sacos 100g',
+      insumos: [
+        { nome: 'Hortelã seca',  porUnidade: '100,00 g' },
+        { nome: 'Saco kraft',    porUnidade: '1 uni'    },
+      ],
+    },
+    hibisco: {
+      nome: 'Chá de Hibisco - 200g',
+      rendimento: '6 Sacos 200g',
+      insumos: [
+        { nome: 'Hibisco seco',  porUnidade: '200,00 g' },
+        { nome: 'Saco kraft',    porUnidade: '1 uni'    },
+      ],
+    },
+  };
+
+  /* ── Render tabela de insumos ── */
+  function renderInsumos() {
+    const key = document.getElementById('receita').value;
+    const qty = parseInt(document.getElementById('quantidade').value) || 0;
+    const tbody = document.getElementById('insumosBody');
+    tbody.innerHTML = '';
+
+    if (!key || !receitas[key]) return;
+
+    receitas[key].insumos.forEach(ins => {
+      const tr = document.createElement('tr');
+      const isUni = ins.porUnidade.includes('uni');
+
+      let totalStr = '—';
+      if (qty > 0) {
+        if (isUni) {
+          totalStr = `${qty} uni`;
+        } else {
+          const valNum = parseFloat(ins.porUnidade.replace(',', '.'));
+          const total = (valNum * qty).toFixed(2).replace('.', ',');
+          const unit = ins.porUnidade.replace(/[\d,. ]+/, '').trim();
+          totalStr = `${total} ${unit}`;
+        }
+      }
+
+      tr.innerHTML = `
+        <td>${ins.nome}</td>
+        <td>${ins.porUnidade}</td>
+        <td>${totalStr}</td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  /* ── Atualizar resumo lateral ── */
+  function atualizarResumo() {
+    const key = document.getElementById('receita').value;
+    const qty = parseInt(document.getElementById('quantidade').value) || 0;
+    const unitLabel = document.getElementById('unidade').options[document.getElementById('unidade').selectedIndex]?.text || '';
+    const dataVal = document.getElementById('dataProd').value;
+
+    const rec = receitas[key];
+
+    document.getElementById('rProduto').textContent = rec ? rec.nome : '—';
+    document.getElementById('rRendimento').textContent = rec ? rec.rendimento : '—';
+
+    const qtyText = qty && unitLabel ? `${qty} ${unitLabel}` : '—';
+    document.getElementById('rQtd').textContent = qtyText;
+    document.getElementById('rEstoque').textContent = qty ? `+ ${qty} ${unitLabel}` : '—';
+
+    if (dataVal) {
+      const [y, m, d] = dataVal.split('-');
+      document.getElementById('rData').textContent = `${d}/${m}/${y}`;
+    }
+
+    renderInsumos();
+  }
+
+  function atualizarReceita() {
+    atualizarResumo();
+  }
+
+  /* ── Registrar produção ── */
+  function registrarProducao() {
+    const key = document.getElementById('receita').value;
+    const qty = parseInt(document.getElementById('quantidade').value) || 0;
+
+    if (!key) { showToast('Selecione uma receita!', 'error'); return; }
+    if (!qty || qty < 1) { showToast('Informe a quantidade produzida!', 'error'); return; }
+
+    document.getElementById('resumoBanner').classList.add('show');
+    showToast('Produção registrada com sucesso!', 'success');
+  }
+
+  /* ── Toast ── */
+  function showToast(msg, type = 'success') {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast show ' + type;
+    setTimeout(() => t.classList.remove('show'), 3200);
+  }
+
+  /* ── Sidebar / grupos ── */
+  function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+  }
+
+  function toggleGroup(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  /* ── Init ── */
+  atualizarResumo();
+</script>
+</body>
+</html>
