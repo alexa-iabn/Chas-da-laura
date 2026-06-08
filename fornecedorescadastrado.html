@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fornecedores Cadastrados — Chás da Laura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Reutilize seu base.css aqui -->
+  <!-- <link rel="stylesheet" href="stylebasematheus.css" /> -->
+  <link rel="stylesheet" href="stylebasematheus.css" />
+  <link rel="stylesheet" href="stylefornecedoresmatheus.css" />
+</head>
+<body>
+<div class="layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/Logo.png"
+           alt="Chás da Laura" onerror="this.style.display='none'" />
+      <div class="sidebar-logo-text">CHÁS DA<span>LAURA</span></div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" class="nav-icon" alt="" />
+        Painel de início
+      </a>
+
+      <div class="nav-group open" id="navCadastros">
+        <button class="nav-group-title" onclick="toggleGroup('navCadastros')">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" class="nav-icon" alt="" />
+          Cadastros
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="nav-arrow" alt="" />
+        </button>
+        <div class="nav-subitems">
+          <a href="#">• Clientes</a>
+          <a href="#" class="active">• Fornecedores</a>
+          <a href="#">• Insumos</a>
+          <a href="#">• Produtos</a>
+          <a href="#">• Receitas</a>
+        </div>
+      </div>
+
+      <div class="nav-group" id="navEstoque">
+        <button class="nav-group-title" onclick="toggleGroup('navEstoque')">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" class="nav-icon" alt="" />
+          Estoque
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="nav-arrow" alt="" />
+        </button>
+        <div class="nav-subitems">
+          <a href="#">• Entradas</a>
+          <a href="#">• Saídas</a>
+        </div>
+      </div>
+
+      <a href="#" class="nav-item">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" class="nav-icon" alt="" />
+        Relatórios
+      </a>
+
+      <a href="#" class="nav-item">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lista.svg" class="nav-icon" alt="" />
+        Produção
+      </a>
+
+      <a href="#" class="nav-item">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/etiqueta.svg" class="nav-icon" alt="" />
+        Produtos
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/ChaImagemMenu.png"
+           alt="Chá" onerror="this.style.display='none'" />
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <button class="topbar-menu-btn" onclick="toggleSidebar()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="breadcrumb">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" class="bc-icon" alt="" />
+        <a href="#">Cadastros</a>
+        <span class="sep">›</span>
+        <a href="#">Fornecedores</a>
+        <span class="sep">›</span>
+        <span class="current">Fornecedores cadastrados</span>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="bell-btn">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg" alt="Notificações" />
+          <span class="bell-dot"></span>
+        </button>
+        <div class="user-badge">
+          <div class="user-avatar">L</div>
+          Laura
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main class="page-content">
+
+      <!-- Page header -->
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Fornecedores cadastrados</h1>
+          <p class="page-subtitle">Gerencie e visualize todos os fornecedores do sistema</p>
+        </div>
+        <div class="page-header-actions">
+          <button class="btn btn-voltar" onclick="history.back()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Voltar
+          </button>
+          <div class="view-toggle">
+            <button class="view-btn active" id="btnLista" onclick="setView('lista')">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/listaSemPonto.svg" alt="" />
+              Lista
+            </button>
+            <button class="view-btn" id="btnCards" onclick="setView('cards')">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/verTabela.svg" alt="" />
+              Card
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toolbar: busca + novo -->
+      <div class="toolbar">
+        <div class="search-wrap">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg" class="search-icon" alt="" />
+          <input id="searchInput" type="text" placeholder="Buscar fornecedor..." oninput="filterAndRender()" />
+        </div>
+        <a href="CadastroFornecedor.html" class="btn btn-primary">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/mais.svg" alt="" />
+          Novo fornecedor
+        </a>
+      </div>
+
+      <!-- ===== LISTA VIEW ===== -->
+      <div id="listaView" class="table-section">
+        <div class="table-wrap">
+          <table id="fornecedoresTable">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>CNPJ</th>
+                <th>Telefone</th>
+                <th>Endereço</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+          <div id="emptyList" class="empty-state" style="display:none">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg" alt="" style="width:40px;opacity:.35;margin-bottom:10px;" />
+            <p>Nenhum fornecedor encontrado.</p>
+          </div>
+        </div>
+        <div class="pagination">
+          <span id="paginationInfo" class="pg-info"></span>
+          <div class="pagination-btns" id="paginationBtns"></div>
+        </div>
+      </div>
+
+      <!-- ===== CARDS VIEW ===== -->
+      <div id="cardsView" style="display:none">
+        <div class="cards-grid" id="cardsGrid"></div>
+        <div id="emptyCards" class="empty-state" style="display:none">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg" alt="" style="width:40px;opacity:.35;margin-bottom:10px;" />
+          <p>Nenhum fornecedor encontrado.</p>
+        </div>
+        <div class="pagination">
+          <span id="paginationInfoCards" class="pg-info"></span>
+          <div class="pagination-btns" id="paginationBtnsCards"></div>
+        </div>
+      </div>
+
+    </main>
+  </div><!-- /main -->
+</div><!-- /layout -->
+
+<!-- ===== MODAL EXCLUIR ===== -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal">
+    <div class="modal-icon-ring">
+      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt="" style="width:32px;filter:invert(27%) sepia(99%) saturate(2000%) hue-rotate(340deg);" />
+    </div>
+    <div class="modal-title">Excluir Fornecedor</div>
+    <p class="modal-subtitle">Tem certeza que deseja excluir este fornecedor?<br>Essa ação não pode ser desfeita.</p>
+
+    <div class="modal-supplier-card">
+      <div class="modal-supplier-initials" id="modalInitials">NB</div>
+      <div class="modal-supplier-info">
+        <div class="modal-supplier-name" id="modalName">—</div>
+        <div class="modal-supplier-detail">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.62 4.45 2 2 0 0 1 3.59 2.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          <span id="modalTel">—</span>
+        </div>
+        <div class="modal-supplier-detail">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="modalAddr">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-warning">
+      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/aviso.svg" alt="" style="width:16px;flex-shrink:0;" />
+      <span>Todas as informações e históricos relacionados a este fornecedor serão permanentemente apagados do sistema</span>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-cancelar" onclick="closeModal()">Cancelar</button>
+      <button class="btn btn-danger" onclick="confirmDelete()">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt="" style="width:14px;filter:brightness(0) invert(1);" />
+        Excluir fornecedor
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* =========================================================
+     DADOS DE EXEMPLO
+  ========================================================= */
+  let fornecedores = Array.from({ length: 15 }, (_, i) => ({
+    id: i + 1,
+    nome: 'Nutri bom alimentos LTDA',
+    cnpj: '12.345.678/0001-90',
+    telefone: '(11) 98765-4321',
+    email: 'nutri.bom@gmail.com',
+    endereco: 'rua x, 134',
+    cidade: 'Foz do Iguaçu - PR',
+    cadastrado: '10/05/2025',
+  }));
+
+  let currentView = 'lista';
+  let currentPage = 1;
+  const perPage = 10;
+  let toDeleteId = null;
+  let filtered = [...fornecedores];
+
+  /* =========================================================
+     VIEW TOGGLE
+  ========================================================= */
+  function setView(v) {
+    currentView = v;
+    currentPage = 1;
+    document.getElementById('listaView').style.display = v === 'lista' ? '' : 'none';
+    document.getElementById('cardsView').style.display = v === 'cards' ? '' : 'none';
+    document.getElementById('btnLista').classList.toggle('active', v === 'lista');
+    document.getElementById('btnCards').classList.toggle('active', v === 'cards');
+    render();
+  }
+
+  /* =========================================================
+     FILTRO
+  ========================================================= */
+  function filterAndRender() {
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    filtered = fornecedores.filter(f =>
+      f.nome.toLowerCase().includes(q) ||
+      f.cnpj.includes(q) ||
+      f.telefone.includes(q) ||
+      f.endereco.toLowerCase().includes(q)
+    );
+    currentPage = 1;
+    render();
+  }
+
+  /* =========================================================
+     RENDER
+  ========================================================= */
+  function render() {
+    const total = filtered.length;
+    const totalPages = Math.max(1, Math.ceil(total / perPage));
+    if (currentPage > totalPages) currentPage = totalPages;
+    const start = (currentPage - 1) * perPage;
+    const slice = filtered.slice(start, start + perPage);
+
+    if (currentView === 'lista') renderLista(slice, total, totalPages);
+    else renderCards(slice, total, totalPages);
+  }
+
+  /* --- Lista --- */
+  function renderLista(slice, total, totalPages) {
+    const tbody = document.getElementById('tableBody');
+    const empty = document.getElementById('emptyList');
+    tbody.innerHTML = '';
+
+    if (!slice.length) { empty.style.display = ''; return; }
+    empty.style.display = 'none';
+
+    slice.forEach(f => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><strong>${f.nome}</strong></td>
+        <td>${f.cnpj}</td>
+        <td>${f.telefone}</td>
+        <td>${f.endereco}</td>
+        <td class="td-actions">
+          <button class="action-btn edit" title="Editar" onclick="editarFornecedor(${f.id})">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lapiz.svg" alt="Editar" />
+          </button>
+          <button class="action-btn delete" title="Excluir" onclick="openModal(${f.id})">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt="Excluir" />
+          </button>
+        </td>`;
+      tbody.appendChild(tr);
+    });
+
+    renderPagination('paginationInfo', 'paginationBtns', total, totalPages);
+  }
+
+  /* --- Cards --- */
+  function renderCards(slice, total, totalPages) {
+    const grid = document.getElementById('cardsGrid');
+    const empty = document.getElementById('emptyCards');
+    grid.innerHTML = '';
+
+    if (!slice.length) { empty.style.display = ''; return; }
+    empty.style.display = 'none';
+
+    slice.forEach(f => {
+      const initials = f.nome.split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
+      const div = document.createElement('div');
+      div.className = 'supplier-card';
+      div.innerHTML = `
+        <div class="sc-head">
+          <div class="sc-initials">${initials}</div>
+          <div>
+            <div class="sc-name">${f.nome}</div>
+            <div class="sc-cnpj">${f.cnpj}</div>
+          </div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-row">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.62 4.45 2 2 0 0 1 3.59 2.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+            ${f.telefone}
+          </div>
+          <div class="sc-row">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            ${f.email}
+          </div>
+          <div class="sc-row">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ${f.endereco} - ${f.cidade}
+          </div>
+          <div class="sc-row">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            ${f.cadastrado}
+          </div>
+        </div>
+        <div class="sc-footer">
+          <button class="sc-btn sc-edit" onclick="editarFornecedor(${f.id})">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lapiz.svg" alt="" />
+          </button>
+          <button class="sc-btn sc-del" onclick="openModal(${f.id})">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt="" />
+          </button>
+        </div>`;
+      grid.appendChild(div);
+    });
+
+    renderPagination('paginationInfoCards', 'paginationBtnsCards', total, totalPages);
+  }
+
+  /* --- Paginação --- */
+  function renderPagination(infoId, btnsId, total, totalPages) {
+    const start = (currentPage - 1) * perPage + 1;
+    const end = Math.min(currentPage * perPage, total);
+    document.getElementById(infoId).textContent =
+      total ? `Exibindo ${start}–${end} de ${total} fornecedores` : '';
+
+    const cont = document.getElementById(btnsId);
+    cont.innerHTML = '';
+
+    // Prev
+    const prev = document.createElement('button');
+    prev.className = 'pg-btn';
+    prev.innerHTML = '‹';
+    prev.disabled = currentPage === 1;
+    prev.onclick = () => { currentPage--; render(); };
+    cont.appendChild(prev);
+
+    for (let i = 1; i <= totalPages; i++) {
+      if (totalPages > 7 && i > 2 && i < totalPages - 1 && Math.abs(i - currentPage) > 1) {
+        if (i === 3 || i === totalPages - 2) {
+          const dots = document.createElement('span');
+          dots.className = 'pg-dots';
+          dots.textContent = '…';
+          cont.appendChild(dots);
+        }
+        continue;
+      }
+      const btn = document.createElement('button');
+      btn.className = 'pg-btn' + (i === currentPage ? ' active' : '');
+      btn.textContent = i;
+      btn.onclick = ((p) => () => { currentPage = p; render(); })(i);
+      cont.appendChild(btn);
+    }
+
+    // Next
+    const next = document.createElement('button');
+    next.className = 'pg-btn';
+    next.innerHTML = '›';
+    next.disabled = currentPage === totalPages;
+    next.onclick = () => { currentPage++; render(); };
+    cont.appendChild(next);
+  }
+
+  /* =========================================================
+     AÇÕES
+  ========================================================= */
+  function editarFornecedor(id) {
+    window.location.href = `EditarFornecedor.html?id=${id}`;
+  }
+
+  function openModal(id) {
+    toDeleteId = id;
+    const f = fornecedores.find(x => x.id === id);
+    if (!f) return;
+    const initials = f.nome.split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
+    document.getElementById('modalInitials').textContent = initials;
+    document.getElementById('modalName').textContent = f.nome;
+    document.getElementById('modalTel').textContent = f.telefone;
+    document.getElementById('modalAddr').textContent = `${f.endereco} - ${f.cidade}`;
+    document.getElementById('deleteModal').classList.add('open');
+  }
+
+  function closeModal() {
+    document.getElementById('deleteModal').classList.remove('open');
+    toDeleteId = null;
+  }
+
+  function confirmDelete() {
+    if (!toDeleteId) return;
+    fornecedores = fornecedores.filter(f => f.id !== toDeleteId);
+    filtered = filtered.filter(f => f.id !== toDeleteId);
+    closeModal();
+    render();
+  }
+
+  /* Fechar clicando fora */
+  document.getElementById('deleteModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  /* =========================================================
+     SIDEBAR TOGGLE (mobile)
+  ========================================================= */
+  function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+  }
+
+  /* =========================================================
+     NAV GROUPS
+  ========================================================= */
+  function toggleGroup(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  /* =========================================================
+     INIT
+  ========================================================= */
+  filterAndRender();
+</script>
+</body>
+</html>
