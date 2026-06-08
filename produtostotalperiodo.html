@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chás da Laura – Relatórios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="stylebasematheus.css"/>
+  <link rel="stylesheet" href="styleproducaomatheus.css"/>
+</head>
+<body>
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar__logo">
+      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/Logo.png" alt="Chás da Laura" onerror="this.style.display='none'"/>
+    </div>
+
+    <nav class="nav">
+      <a class="nav__item" href="#">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" alt=""/>
+        Painel de inicio
+      </a>
+      <a class="nav__item" href="#">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lapiz.svg" alt=""/>
+        Cadastros
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" class="nav__arrow" style="transform:rotate(180deg)"/>
+      </a>
+      <a class="nav__item" href="#">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" alt=""/>
+        Estoque
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" class="nav__arrow" style="transform:rotate(180deg)"/>
+      </a>
+      <a class="nav__item active" href="#">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" alt=""/>
+        Relatórios
+      </a>
+      <a class="nav__item" href="#">
+        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" alt=""/>
+        Produção
+      </a>
+    </nav>
+
+    <div class="sidebar__bottom">
+      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/ChaImagemMenu.png" alt="Chá" onerror="this.style.display='none'"/>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Produtos total por periodo</h1>
+        <p>Visualize o total produzido por produto no período selecionado</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="btn-export btn-excel">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/excel.svg" alt=""/>
+          Exportar Excel (.xlsx)
+        </button>
+        <button class="btn-export btn-pdf">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/pdf.svg" alt=""/>
+          Baixar PDF (.pdf)
+        </button>
+        <div class="topbar__user">
+          <div class="topbar__bell">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg" alt="Notificações"/>
+          </div>
+          <div class="topbar__avatar">L</div>
+          <span class="topbar__username">Laura</span>
+          <div class="topbar__arrow">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)"/>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+      <!-- FILTROS -->
+      <div class="filtros-card">
+        <div class="filtro-group">
+          <label>Periodo</label>
+          <div class="filtro-select">
+            <select>
+              <option>01/05/2025 - 31/05/2026</option>
+            </select>
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)"/>
+          </div>
+        </div>
+        <div class="filtro-group">
+          <label>Produto</label>
+          <div class="filtro-select">
+            <select>
+              <option>Todos os produtos</option>
+            </select>
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)"/>
+          </div>
+        </div>
+        <div class="filtro-group">
+          <label>Status</label>
+          <div class="filtro-select">
+            <select>
+              <option>Todos</option>
+            </select>
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)"/>
+          </div>
+        </div>
+        <button class="btn-filtrar">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/filtro.svg" alt=""/>
+          Filtrar
+        </button>
+        <button class="btn-limpar">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt=""/>
+          Limpar Filtros
+        </button>
+      </div>
+
+      <!-- TABELA -->
+      <div class="tabela-card">
+        <div class="tabela-toolbar">
+          <div class="search-box">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg" alt=""/>
+            <input type="text" placeholder="Buscar produto..."/>
+          </div>
+          <div class="sort-box">
+            Ordenar por:
+            <div class="sort-select">
+              Maior quantidade produzida
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabela-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Semana</th>
+                <th>produto</th>
+                <th>Quantidade produzida</th>
+                <th>Receita utilizada</th>
+                <th>Custo da produção</th>
+                <th>Responsável</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script>
+  const produtos = ['Bled 1 - 50g', 'Bled 2 - 50g', 'Bled 3 - 50g', 'Bled 4 - 50g'];
+  const receitas = ['Receita 1', 'Receita 2', 'Receita 3', 'Receita 4'];
+
+  const rows = Array.from({length: 19}, (_, i) => ({
+    semana: '20/05 - 26/05',
+    produto: produtos[i % 4],
+    qtd: '50 un',
+    receita: receitas[i % 4],
+    custo: 'R$ 294,00',
+    responsavel: 'Laura'
+  }));
+
+  const tbody = document.getElementById('tableBody');
+
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${r.semana}</td>
+      <td>
+        <div class="produto-cell">
+          <span class="produto-dot"></span>
+          ${r.produto}
+        </div>
+      </td>
+      <td>${r.qtd}</td>
+      <td>${r.receita}</td>
+      <td>${r.custo}</td>
+      <td>${r.responsavel}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  const totalTr = document.createElement('tr');
+  totalTr.className = 'row-total';
+  totalTr.innerHTML = `
+    <td>TOTAL GERAL</td>
+    <td></td>
+    <td>950 UN</td>
+    <td></td>
+    <td>R$ 5.586,00</td>
+    <td></td>
+  `;
+  tbody.appendChild(totalTr);
+
+  document.querySelector('.search-box input').addEventListener('input', function() {
+    const val = this.value.toLowerCase();
+    document.querySelectorAll('#tableBody tr:not(.row-total)').forEach(tr => {
+      tr.style.display = tr.textContent.toLowerCase().includes(val) ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
