@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produtos mais produzidos — Chás da Laura</title>
+  <link rel="stylesheet" href="stylebasematheus.css"/>
+  <link rel="stylesheet" href="styleRelatorios.css"/>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+
+    <div class="sidebar-logo">
+      <img
+        src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/Logo.png"
+        alt="Chás da Laura"
+      />
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+
+        <!-- Painel de início -->
+        <li>
+          <a href="#" class="nav-item">
+            <img class="nav-icon"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg"
+              alt="" />
+            Painel de início
+          </a>
+        </li>
+
+        <!-- Cadastros com submenu -->
+        <li class="nav-group" id="group-cadastros">
+          <button class="nav-group-title" onclick="toggleGroup('group-cadastros')">
+            <img class="nav-icon"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lapiz.svg"
+              alt="" />
+            Cadastros
+            <img class="nav-arrow"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg"
+              alt="" />
+          </button>
+          <div class="nav-subitems">
+            <a href="#">Fornecedores</a>
+            <a href="#">Insumos</a>
+            <a href="#">Produtos</a>
+            <a href="#">Receitas</a>
+          </div>
+        </li>
+
+        <!-- Estoque com submenu -->
+        <li class="nav-group" id="group-estoque">
+          <button class="nav-group-title" onclick="toggleGroup('group-estoque')">
+            <img class="nav-icon"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg"
+              alt="" />
+            Estoque
+            <img class="nav-arrow"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg"
+              alt="" />
+          </button>
+          <div class="nav-subitems">
+            <a href="#">Insumos</a>
+            <a href="#">Produtos</a>
+          </div>
+        </li>
+
+        <!-- Relatórios — ACTIVE com submenu aberto -->
+        <li class="nav-group open" id="group-relatorios">
+          <button class="nav-group-title" onclick="toggleGroup('group-relatorios')">
+            <img class="nav-icon"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg"
+              alt="" />
+            Relatórios
+            <img class="nav-arrow"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg"
+              alt="" />
+          </button>
+          <div class="nav-subitems">
+            <a href="#">Estoque</a>
+            <a href="#" class="active">Produção</a>
+            <a href="#">Financeiro</a>
+          </div>
+        </li>
+
+        <!-- Produção -->
+        <li>
+          <a href="#" class="nav-item">
+            <img class="nav-icon"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg"
+              alt="" />
+            Produção
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- Imagem decorativa chá -->
+    <div class="sidebar-bottom">
+      <img
+        src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/ChaImagemMenu.png"
+        alt="Chá"
+      />
+    </div>
+
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <div class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1>Produtos mais produzidos</h1>
+        <p>Veja quais produtos tiveram maior volume de produção no período selecionado</p>
+      </div>
+
+      <div class="topbar-right">
+
+        <!-- Sino -->
+        <button class="btn-bell">
+          <img
+            src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg"
+            alt="Notificações"
+          />
+          <span class="bell-dot"></span>
+        </button>
+
+        <!-- Usuário -->
+        <div class="user-badge">
+          <div class="user-avatar">L</div>
+          Laura
+          <img class="user-chevron"
+            src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg"
+            alt="" style="transform:rotate(180deg); opacity:.4;" />
+        </div>
+
+        <!-- Exportar Excel -->
+        <button class="btn-export btn-export-excel">
+          <img
+            src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/excel.svg"
+            alt="" />
+          <span>Exportar Excel (.xlsx)</span>
+        </button>
+
+        <!-- Baixar PDF -->
+        <button class="btn-export btn-export-pdf">
+          <img
+            src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/pdf.svg"
+            alt="" />
+          <span>Baixar PDF (.pdf)</span>
+        </button>
+
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <main class="page-content">
+
+      <!-- FILTERS CARD -->
+      <div class="filters-card">
+
+        <div class="filter-group">
+          <span class="filter-label">Período</span>
+          <div class="filter-select-wrap">
+            <select id="filtroPeriodo">
+              <option>01/05/2025 - 31/05/2026</option>
+              <option>01/01/2026 - 31/01/2026</option>
+              <option>01/02/2026 - 28/02/2026</option>
+              <option>01/03/2026 - 31/03/2026</option>
+              <option>01/04/2026 - 30/04/2026</option>
+              <option>01/05/2026 - 31/05/2026</option>
+            </select>
+            <img class="select-chevron"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg"
+              alt="" style="transform:translateY(-50%) rotate(180deg);" />
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Produto</span>
+          <div class="filter-select-wrap">
+            <select id="filtroProduto">
+              <option value="">Todos os produtos</option>
+              <option value="Bled 1 - 50g">Blend 1 - 50g</option>
+              <option value="Bled 2 - 50g">Blend 2 - 50g</option>
+              <option value="Bled 3 - 50g">Blend 3 - 50g</option>
+              <option value="Bled 4 - 50g">Blend 4 - 50g</option>
+            </select>
+            <img class="select-chevron"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg"
+              alt="" style="transform:translateY(-50%) rotate(180deg);" />
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Status</span>
+          <div class="filter-select-wrap">
+            <select id="filtroStatus">
+              <option value="">Todos</option>
+              <option value="Concluído">Concluído</option>
+              <option value="Em andamento">Em andamento</option>
+              <option value="Cancelado">Cancelado</option>
+            </select>
+            <img class="select-chevron"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg"
+              alt="" style="transform:translateY(-50%) rotate(180deg);" />
+          </div>
+        </div>
+
+        <div class="filter-actions">
+          <button class="btn-filtrar" onclick="applyFilters()">
+            <img
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/filtro.svg"
+              alt="" />
+            Filtrar
+          </button>
+          <button class="btn-limpar" onclick="clearFilters()">
+            Limpar Filtros
+          </button>
+        </div>
+
+      </div><!-- /filters-card -->
+
+      <!-- TABLE SECTION -->
+      <div class="table-section">
+
+        <div class="table-toolbar">
+          <div class="search-wrap">
+            <img class="search-icon"
+              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg"
+              alt="" />
+            <input
+              type="text"
+              placeholder="Buscar produto..."
+              id="searchInput"
+              oninput="filterTable()"
+            />
+          </div>
+
+          <div class="order-wrap">
+            <span>Ordenar por:</span>
+            <select id="ordenar" onchange="sortTable(this.value)">
+              <option value="qty-desc">Maior quantidade produzida</option>
+              <option value="qty-asc">Menor quantidade produzida</option>
+              <option value="valor-desc">Maior valor total</option>
+              <option value="valor-asc">Menor valor total</option>
+              <option value="pct-desc">Maior % do total</option>
+              <option value="week">Semana</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table id="mainTable">
+            <thead>
+              <tr>
+                <th style="text-align:left">Semana</th>
+                <th style="text-align:left">Produto</th>
+                <th>Quantidade produzida</th>
+                <th>% do total</th>
+                <th>Valor total (R$)</th>
+                <th>Média por unidade (R$)</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Preenchido pelo JS -->
+            </tbody>
+            <tfoot>
+              <tr class="total-row" id="totalRow">
+                <td colspan="2" style="text-align:left;font-weight:800;">TOTAL GERAL</td>
+                <td id="totalQty">—</td>
+                <td id="totalPct">—</td>
+                <td id="totalValor">—</td>
+                <td id="totalMedia">—</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+      </div><!-- /table-section -->
+
+    </main>
+  </div><!-- /.main -->
+
+</div><!-- /.layout -->
+
+<script>
+/* ============================================================
+   DADOS
+============================================================ */
+const COLORS = {
+  'Bled 1 - 50g': '#1a5c1a',
+  'Bled 2 - 50g': '#c8952c',
+  'Bled 3 - 50g': '#6aab3a',
+  'Bled 4 - 50g': '#7b3fbe',
+};
+
+const SOURCE = [
+  { semana: '20/05 - 26/05', produto: 'Bled 1 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 2 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 3 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 4 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 1 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 2 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 3 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 4 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 1 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 2 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 3 - 50g', qty: 50, custo: 294.00, status: 'Em andamento' },
+  { semana: '20/05 - 26/05', produto: 'Bled 4 - 50g', qty: 50, custo: 294.00, status: 'Em andamento' },
+  { semana: '20/05 - 26/05', produto: 'Bled 1 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 2 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 3 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 4 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 1 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 2 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+  { semana: '20/05 - 26/05', produto: 'Bled 3 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
+];
+
+/* Utilitários */
+const brl = v =>
+  'R$ ' + v.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+let activeData = [...SOURCE];
+
+/* ============================================================
+   RENDER
+============================================================ */
+function renderTable(data) {
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = '';
+
+  const totalQty = data.reduce((s, r) => s + r.qty, 0);
+
+  data.forEach(r => {
+    const color = COLORS[r.produto] || '#888';
+    const pct   = totalQty ? ((r.qty / totalQty) * 100).toFixed(1) : '0.0';
+    const media = r.qty ? r.custo / r.qty : 0;
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${r.semana}</td>
+      <td>
+        <div class="product-cell">
+          <span class="product-dot" style="background:${color}"></span>
+          ${r.produto}
+        </div>
+      </td>
+      <td>${r.qty} un</td>
+      <td><span class="pct-badge">${pct}%</span></td>
+      <td>${brl(r.custo)}</td>
+      <td>${brl(media)}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  /* Totais */
+  const totalValor = data.reduce((s, r) => s + r.custo, 0);
+  const totalMediaGlobal = totalQty ? totalValor / totalQty : 0;
+
+  document.getElementById('totalQty').textContent   = totalQty + ' UN';
+  document.getElementById('totalPct').textContent   = '100%';
+  document.getElementById('totalValor').textContent = brl(totalValor);
+  document.getElementById('totalMedia').textContent = brl(totalMediaGlobal);
+}
+
+/* ============================================================
+   FILTROS
+============================================================ */
+function applyFilters() {
+  const produto = document.getElementById('filtroProduto').value;
+  const status  = document.getElementById('filtroStatus').value;
+
+  activeData = SOURCE.filter(r => {
+    const okProduto = produto ? r.produto === produto : true;
+    const okStatus  = status  ? r.status  === status  : true;
+    return okProduto && okStatus;
+  });
+
+  renderTable(activeData);
+}
+
+function clearFilters() {
+  document.getElementById('filtroProduto').value = '';
+  document.getElementById('filtroStatus').value  = '';
+  document.getElementById('searchInput').value   = '';
+  activeData = [...SOURCE];
+  renderTable(activeData);
+}
+
+/* ============================================================
+   BUSCA
+============================================================ */
+function filterTable() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const filtered = activeData.filter(r =>
+    r.produto.toLowerCase().includes(q) ||
+    r.semana.toLowerCase().includes(q)
+  );
+  renderTable(filtered);
+}
+
+/* ============================================================
+   ORDENAÇÃO
+============================================================ */
+function sortTable(val) {
+  const sorted = [...activeData];
+  if      (val === 'qty-desc')   sorted.sort((a,b) => b.qty - a.qty);
+  else if (val === 'qty-asc')    sorted.sort((a,b) => a.qty - b.qty);
+  else if (val === 'valor-desc') sorted.sort((a,b) => b.custo - a.custo);
+  else if (val === 'valor-asc')  sorted.sort((a,b) => a.custo - b.custo);
+  else if (val === 'pct-desc')   sorted.sort((a,b) => b.qty - a.qty);
+  else if (val === 'week')       sorted.sort((a,b) => a.semana.localeCompare(b.semana));
+  renderTable(sorted);
+}
+
+/* ============================================================
+   ACCORDION SIDEBAR
+============================================================ */
+function toggleGroup(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+/* ============================================================
+   INIT
+============================================================ */
+renderTable(activeData);
+</script>
+
+</body>
+</html>
