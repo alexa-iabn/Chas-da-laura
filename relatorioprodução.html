@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatórios de Produção - Chás da Laura</title>
+  <link rel="stylesheet" href="stylebasematheus.css"/>
+  <link rel="stylesheet" href="styleproducaomatheus.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ── SIDEBAR ────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/Logo.png" alt="Chás da Laura"/>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a href="paineldeinicio.html" class="nav-item">
+            <span class="nav-icon">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" alt="Painel"/>
+            </span>
+            <span>Painel de início</span>
+          </a>
+        </li>
+
+        <!-- Cadastros (dropdown) -->
+        <li class="nav-group" id="group-cadastros">
+          <button class="nav-group-title" onclick="toggleGroup('group-cadastros')">
+            <span class="nav-icon">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lapiz.svg" alt="Cadastros"/>
+            </span>
+            <span>Cadastros</span>
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" class="nav-arrow"/>
+          </button>
+          <div class="nav-subitems">
+            <a href="cadastro.html">Clientes</a>
+            <a href="cadastroparceiros.html">Parceiros</a>
+            <a href="cadastroprodutos.html">Produtos</a>
+            <a href="cadastroreceitas.html">Receitas</a>
+          </div>
+        </li>
+
+        <!-- Estoque (dropdown) -->
+        <li class="nav-group" id="group-estoque">
+          <button class="nav-group-title" onclick="toggleGroup('group-estoque')">
+            <span class="nav-icon">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" alt="Estoque"/>
+            </span>
+            <span>Estoque</span>
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" class="nav-arrow"/>
+          </button>
+          <div class="nav-subitems">
+            <a href="EstoqueProdutos.html">Produtos</a>
+            <a href="EstoqueInsumos.html">Insumos</a>
+          </div>
+        </li>
+
+        <li>
+          <a href="relatoriosProducao.html" class="nav-item active">
+            <span class="nav-icon">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" alt="Relatórios"/>
+            </span>
+            <span>Relatórios</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-item">
+            <span class="nav-icon">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" alt="Produção"/>
+            </span>
+            <span>Produção</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/ChaImagemMenu.png" alt=""/>
+    </div>
+  </aside>
+
+  <!-- ── MAIN ───────────────────────────────────────────── -->
+  <div class="main-wrapper">
+    <main class="content">
+
+      <!-- PAGE HEADER (dentro do conteúdo, sem topbar separado) -->
+      <div class="page-head">
+        <div class="page-head-left">
+          <h1 class="page-title">Relatórios de produção</h1>
+          <p class="page-subtitle">Acompanhe o desempenho da produção no período selecionado</p>
+        </div>
+        <div class="page-head-right">
+          <button class="btn-notif" aria-label="Notificações">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg" alt=""/>
+          </button>
+          <div class="user-pill">
+            <div class="user-avatar-circle">L</div>
+            <span class="user-pill-name">Laura</span>
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" class="user-pill-arrow"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILTERS CARD -->
+      <section class="filters-card">
+        <div class="filter-group">
+          <label class="filter-label">Período</label>
+          <div class="filter-select-wrap">
+            <input type="text" class="filter-input" value="01/05/2025 - 31/05/2026" readonly/>
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="select-chevron" alt="" style="transform:rotate(180deg)"/>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Produto</label>
+          <div class="filter-select-wrap">
+            <select class="filter-select">
+              <option>Todos os produtos</option>
+            </select>
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="select-chevron" alt="" style="transform:rotate(180deg)"/>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Status</label>
+          <div class="filter-select-wrap">
+            <select class="filter-select">
+              <option>Todos</option>
+            </select>
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="select-chevron" alt="" style="transform:rotate(180deg)"/>
+          </div>
+        </div>
+        <div class="filter-actions">
+          <button class="btn-filtrar">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/filtro.svg" alt=""/> Filtrar
+          </button>
+          <button class="btn-limpar">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt=""/> Limpar Filtros
+          </button>
+        </div>
+      </section>
+
+      <!-- KPI CARDS -->
+      <section class="kpi-cards">
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-icon--green">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lista.svg" alt=""/>
+          </div>
+          <div class="kpi-info">
+            <p class="kpi-label">Produção total do período</p>
+            <p class="kpi-value">1.250</p>
+            <p class="kpi-sub">unidades</p>
+            <p class="kpi-trend positive">↑ 12,5% vs mês anterior</p>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-icon--green">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lista.svg" alt=""/>
+          </div>
+          <div class="kpi-info">
+            <p class="kpi-label">Produtos produzidos</p>
+            <p class="kpi-value">12</p>
+            <p class="kpi-sub">produtos diferentes</p>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-icon--yellow">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/dinheiro_circulo.svg" alt=""/>
+          </div>
+          <div class="kpi-info">
+            <p class="kpi-label">Custo total da produção</p>
+            <p class="kpi-value">R$ 2.450,00</p>
+            <p class="kpi-sub">Custo médio: R$ 1,96/ un</p>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon kpi-icon--green">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/balanca.svg" alt=""/>
+          </div>
+          <div class="kpi-info">
+            <p class="kpi-label">Insumos consumidos</p>
+            <p class="kpi-value">18,75 kg</p>
+            <p class="kpi-sub">de insumos</p>
+            <p class="kpi-trend positive">↑ 8,4% vs mês anterior</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHARTS ROW -->
+      <section class="charts-row">
+
+        <!-- Gráfico de barras -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Produção semanal <span class="chart-header-sub">(unidades)</span></h3>
+            <button class="btn-download" title="Exportar XLS">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/excel.svg" alt="XLS"/>
+            </button>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-y-labels">
+              <span>600</span>
+              <span>450</span>
+              <span>300</span>
+              <span>150</span>
+              <span>0</span>
+            </div>
+            <div class="bars-container">
+              <div class="bar-group">
+                <div class="bar-value">120</div>
+                <div class="bar-col" style="height:20%"><div class="bar-fill"></div></div>
+                <div class="bar-label">Semana 1<br><small>26/04-02/05</small></div>
+              </div>
+              <div class="bar-group">
+                <div class="bar-value">340</div>
+                <div class="bar-col" style="height:57%"><div class="bar-fill"></div></div>
+                <div class="bar-label">Semana 2<br><small>05/05-12/05</small></div>
+              </div>
+              <div class="bar-group">
+                <div class="bar-value">210</div>
+                <div class="bar-col" style="height:35%"><div class="bar-fill"></div></div>
+                <div class="bar-label">Semana 3<br><small>13/05-19/05</small></div>
+              </div>
+              <div class="bar-group highlight">
+                <div class="bar-value">580</div>
+                <div class="bar-col" style="height:97%"><div class="bar-fill"></div></div>
+                <div class="bar-label">Semana 4<br><small>20/05-26/05</small></div>
+              </div>
+              <div class="bar-group">
+                <div class="bar-value">0</div>
+                <div class="bar-col" style="height:2%"><div class="bar-fill bar-fill--empty"></div></div>
+                <div class="bar-label">Semana 5<br><small>27/05-02/06</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <span class="legend-dot"></span> Unidades produzidas
+          </div>
+        </div>
+
+        <!-- Donut -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Produtos mais produzidos</h3>
+            <button class="btn-download" title="Exportar">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" alt=""/>
+            </button>
+          </div>
+          <div class="donut-wrapper">
+            <div class="donut-chart">
+              <svg viewBox="0 0 120 120" class="donut-svg">
+                <circle class="donut-segment seg-1" cx="60" cy="60" r="45"
+                  stroke-dasharray="183.8 99.3" stroke-dashoffset="0"/>
+                <circle class="donut-segment seg-2" cx="60" cy="60" r="45"
+                  stroke-dasharray="56.5 226.2" stroke-dashoffset="-183.8"/>
+                <circle class="donut-segment seg-3" cx="60" cy="60" r="45"
+                  stroke-dasharray="28.3 254.5" stroke-dashoffset="-240.3"/>
+                <circle class="donut-segment seg-4" cx="60" cy="60" r="45"
+                  stroke-dasharray="8.5 274.9" stroke-dashoffset="-268.6"/>
+                <circle class="donut-segment seg-5" cx="60" cy="60" r="45"
+                  stroke-dasharray="5.7 277.1" stroke-dashoffset="-277.1"/>
+              </svg>
+              <div class="donut-center">
+                <span>Total</span>
+                <strong>1.250</strong>
+              </div>
+            </div>
+            <ul class="donut-legend">
+              <li><span class="dot dot-1"></span><span class="dl-name">Chá</span><strong>65%</strong><small>(813 un)</small></li>
+              <li><span class="dot dot-2"></span><span class="dl-name">Chá Funcionais</span><strong>20%</strong><small>(250 un)</small></li>
+              <li><span class="dot dot-3"></span><span class="dl-name">Kits</span><strong>10%</strong><small>(125 un)</small></li>
+              <li><span class="dot dot-4"></span><span class="dl-name">Chá Soltos</span><strong>3%</strong><small>(37 un)</small></li>
+              <li><span class="dot dot-5"></span><span class="dl-name">Outros</span><strong>2%</strong><small>(25 un)</small></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Barras horizontais -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Consumo de insumos <span class="chart-header-sub">(kg)</span></h3>
+            <button class="btn-download" title="Exportar">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" alt=""/>
+            </button>
+          </div>
+          <div class="hbar-chart">
+            <div class="hbar-item">
+              <span class="hbar-label">Camomila</span>
+              <div class="hbar-track"><div class="hbar-fill" style="width:100%"></div></div>
+              <span class="hbar-value">6,10 kg</span>
+            </div>
+            <div class="hbar-item">
+              <span class="hbar-label">Hibisco</span>
+              <div class="hbar-track"><div class="hbar-fill" style="width:67%"></div></div>
+              <span class="hbar-value">4,10 kg</span>
+            </div>
+            <div class="hbar-item">
+              <span class="hbar-label">Erva-doce</span>
+              <div class="hbar-track"><div class="hbar-fill" style="width:54%"></div></div>
+              <span class="hbar-value">3,30 kg</span>
+            </div>
+            <div class="hbar-item">
+              <span class="hbar-label">Capim-limão</span>
+              <div class="hbar-track"><div class="hbar-fill" style="width:46%"></div></div>
+              <span class="hbar-value">2,80 kg</span>
+            </div>
+            <div class="hbar-item">
+              <span class="hbar-label">Gengibre</span>
+              <div class="hbar-track"><div class="hbar-fill" style="width:30%"></div></div>
+              <span class="hbar-value">1,80 kg</span>
+            </div>
+            <div class="hbar-item">
+              <span class="hbar-label">Outros</span>
+              <div class="hbar-track"><div class="hbar-fill hbar-fill--light" style="width:9%"></div></div>
+              <span class="hbar-value">0,55 kg</span>
+            </div>
+          </div>
+          <div class="hbar-axis">
+            <span>0</span><span>2</span><span>4</span><span>6</span><span>8</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- PRODUCTION TABLE -->
+      <section class="table-section">
+        <h2 class="table-title">Detalhamento da produção</h2>
+        <div class="table-wrapper">
+          <table class="production-table">
+            <thead>
+              <tr>
+                <th>Semana</th>
+                <th>Produto</th>
+                <th>Quantidade produzida</th>
+                <th>Receita utilizada</th>
+                <th>Custo da produção</th>
+                <th>Responsável</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>20/05 - 26/05</td>
+                <td><span class="product-dot dot-a"></span>Blend 1 - 50g</td>
+                <td>50 un</td>
+                <td>Receita 1</td>
+                <td>R$ 294,00</td>
+                <td>Laura</td>
+              </tr>
+              <tr>
+                <td>20/05 - 26/05</td>
+                <td><span class="product-dot dot-b"></span>Blend 2 - 50g</td>
+                <td>50 un</td>
+                <td>Receita 2</td>
+                <td>R$ 294,00</td>
+                <td>Laura</td>
+              </tr>
+              <tr>
+                <td>20/05 - 26/05</td>
+                <td><span class="product-dot dot-c"></span>Blend 3 - 50g</td>
+                <td>50 un</td>
+                <td>Receita 3</td>
+                <td>R$ 254,40</td>
+                <td>Laura</td>
+              </tr>
+              <tr>
+                <td>20/05 - 26/05</td>
+                <td><span class="product-dot dot-d"></span>Blend 4 - 50g</td>
+                <td>50 un</td>
+                <td>Receita 4</td>
+                <td>R$ 274,35</td>
+                <td>Laura</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function toggleGroup(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
