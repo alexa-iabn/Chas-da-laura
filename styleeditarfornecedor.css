@@ -1,0 +1,902 @@
+/* ==========================================================================
+   1. VARIÁVEIS GLOBAIS E RESETS
+   ========================================================================== */
+:root {
+  --color-bg-main: #F4F5F2;
+  --color-sidebar-bg: #124526;
+  --color-sidebar-active: #1D5C35;
+  --color-white: #ffffff;
+
+  --color-text-secondary: #666666;
+  --color-border: #E2E4E0;
+  
+  --color-brand-green: #124526;
+  --color-accent-green: #25D366; /* WhatsApp Green */
+  --color-light-green: #E2F5E4;
+  --color-text-green: #155724;
+  
+  --color-danger: #FF4D4D;
+  --color-danger-bg: #FFF5F5;
+  
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   2. ESTRUTURA DE LAYOUT PRINCIPAL (GRID)
+   ========================================================================== */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ===== SIDEBAR BAR ===== */
+/* ===== SIDEBAR (ESTILO FIEL AO PROTÓTIPO) ===== */
+.sidebar {
+  width: 260px;
+  background-color: #0B2916; /* Verde floresta super escuro de fundo */
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  z-index: 99;
+}
+
+.sidebar-logo {
+  padding: 32px 24px 20px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-logo img {
+  max-width: 130px;
+  height: auto;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 0 12px; /* Margem interna para os botões não colarem nas bordas */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Itens normais de menu (Painel, Estoque, Relatórios) */
+.nav-item, .nav-group-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700; /* Texto mais espesso como no design */
+  border-radius: 10px;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover, .nav-group-title:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* CASO ESPECIAL: Quando o grupo "Cadastros" está aberto */
+.nav-group.open .nav-group-title {
+  background-color: #2E6B40; /* Verde médio idêntico ao destaque do protótipo */
+  color: #FFFFFF;
+  border-radius: 10px 10px 0 0; /* Arredonda só em cima para emendar com os subitens */
+}
+
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1); /* Garante que os ícones fiquem 100% brancos */
+  opacity: 0.9;
+}
+
+.nav-arrow {
+  margin-left: auto;
+  width: 14px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s;
+}
+
+.nav-group:not(.open) .nav-arrow {
+  transform: rotate(180deg); /* Controla a inversão da setinha */
+}
+
+/* CAIXA DOS SUBITENS (O grande segredo do design) */
+.nav-subitems {
+  display: none;
+  background-color: #071C0F; /* Verde ainda mais escuro que o fundo para dar profundidade */
+  padding: 8px 0;
+  border-radius: 0 0 10px 10px; /* Arredonda só as pontas de baixo */
+  margin-bottom: 8px;
+  flex-direction: column;
+}
+
+.nav-group.open .nav-subitems {
+  display: flex; /* Exibe os itens quando a classe 'open' estiver ativa */
+}
+
+/* Links internos (Clientes, Fornecedores...) */
+.nav-subitems a {
+  padding: 8px 28px;
+  font-size: 15px;
+  color: #BACBCE; /* Cor secundária levemente esverdeada/acinzentada */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+/* Quando passar o mouse ou for a página ativa (ex: Fornecedores) */
+.nav-subitems a:hover, 
+.nav-subitems a.active {
+  color: #FFFFFF;
+  font-weight: 800; /* Negrito bem marcado no item ativo */
+}
+
+/* Imagem do Chá no fundo da Sidebar */
+.sidebar-bottom {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-bottom img {
+  max-width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   3. TOPBAR (HEADER SUPERIOR)
+   ========================================================================== */
+.topbar {
+  height: 70px;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.topbar-menu-btn {
+  display: none;
+  color: var(--color-text-primary);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.bc-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-brand-green);
+}
+
+.breadcrumb .sep {
+  color: #B0B5B1;
+}
+
+.breadcrumb .current {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bell-btn {
+  position: relative;
+  padding: 4px;
+}
+
+.bell-btn img {
+  width: 22px;
+  height: 22px;
+}
+
+.bell-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-danger);
+  border-radius: 50%;
+  border: 1.5px solid var(--color-white);
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-text-primary);
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-brand-green);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   4. CONTEÚDO DA PÁGINA & CABEÇALHO
+   ========================================================================== */
+.page-content {
+  padding: 32px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.page-header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* BOTÕES GERAIS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+
+.btn-voltar {
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-voltar:hover {
+  background-color: #F8F9F6;
+}
+
+.btn-ver-clientes {
+  background-color: var(--color-brand-green);
+  color: var(--color-white);
+}
+
+.btn-ver-clientes:hover {
+  background-color: var(--color-sidebar-active);
+}
+
+/* ==========================================================================
+   5. LAYOUT DE DUAS COLUNAS (FORMULÁRIO + CARDS)
+   ========================================================================== */
+.edit-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* SEÇÃO DO FORMULÁRIO (CARD BRANCO) */
+.form-section {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+  border: 1px solid rgba(0,0,0,0.01);
+}
+
+.form-section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-brand-green);
+  margin-bottom: 20px;
+}
+
+/* GRIDS DO FORMULÁRIO */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.form-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-grid-4-addr {
+  grid-template-columns: 1.2fr 1.2fr 2fr 0.8fr;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* CONTROLES DE INPUT */
+.form-control {
+  width: 100%;
+  height: 44px;
+  padding: 10px 14px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--color-brand-green);
+}
+
+.form-control::placeholder {
+  color: #A0A5A1;
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+textarea.form-control {
+  height: auto;
+  resize: vertical;
+}
+
+/* INPUT COMPORTAMENTO COM ÍCONE SUFIXO (WHATSAPP) */
+.input-suffix-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-suffix-wrap .form-control {
+  padding-right: 44px;
+}
+
+.input-suffix {
+  position: absolute;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.input-suffix img {
+  width: 18px;
+  height: 18px;
+}
+
+/* AÇÕES INFERIORES DO FORMULÁRIO */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn-cancelar {
+  background-color: var(--color-white);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  padding: 12px 24px;
+}
+
+.btn-cancelar:hover {
+  background-color: #F8F9F6;
+}
+
+.btn-salvar {
+  background-color: var(--color-brand-green);
+  color: var(--color-white);
+  padding: 12px 24px;
+}
+
+.btn-salvar:hover {
+  background-color: var(--color-sidebar-active);
+}
+
+/* ==========================================================================
+   6. PAINEL LATERAL (CARDS DE INFORMAÇÃO)
+   ========================================================================== */
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* CARD INFORMATIVO DO FORNECEDOR */
+.supplier-info-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+}
+
+.sic-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.sic-avatar {
+  width: 48px;
+  height: 48px;
+  background-color: #C3E6CB;
+  color: var(--color-text-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.sic-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.sic-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #E6F4EA;
+  color: #137333;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-top: 4px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #137333;
+  border-radius: 50%;
+}
+
+.sic-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.sic-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.sic-row svg {
+  color: var(--color-text-secondary);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.sic-row small {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.sic-link:hover {
+  color: var(--color-brand-green);
+  text-decoration: underline;
+}
+
+.btn-excluir-forn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.btn-excluir-forn:hover {
+  background-color: var(--color-danger-bg);
+}
+
+/* CARD RESUMO VERDE SUAVE */
+.resumo-card {
+  background-color: var(--color-light-green);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.resumo-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-brand-green);
+  margin-bottom: 16px;
+}
+
+.resumo-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.resumo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.resumo-label {
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.resumo-value {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.resumo-value.green {
+  font-weight: 800;
+}
+
+.badge-ativo {
+  background-color: #C3E6CB;
+  color: var(--color-text-green);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+/* ==========================================================================
+   7. MODAL OVERLAY & POPUP DE CONFIRMAÇÃO
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 460px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.open .modal {
+  transform: scale(1);
+}
+
+.modal-icon-ring {
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-danger-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.modal-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* CARD DE PREVIEW DENTRO DO MODAL */
+.modal-supplier-card {
+  background-color: var(--color-bg-main);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.modal-initials {
+  width: 40px;
+  height: 40px;
+  background-color: #D0D5D1;
+  color: var(--color-text-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modal-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.modal-detail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.modal-warning {
+  display: flex;
+  gap: 8px;
+  background-color: #FFF9E6;
+  border: 1px solid #FFE0B2;
+  border-radius: var(--radius-md);
+  padding: 12px;
+  text-align: left;
+  font-size: 12px;
+  color: #B78103;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.modal-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.btn-cancelar-modal {
+  background-color: var(--color-white);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  justify-content: center;
+  padding: 12px;
+}
+
+.btn-cancelar-modal:hover {
+  background-color: var(--color-bg-main);
+}
+
+.btn-danger-modal {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  justify-content: center;
+  padding: 12px;
+}
+
+.btn-danger-modal:hover {
+  background-color: #E53935;
+}
+
+/* ==========================================================================
+   8. TOAST NOTIFICATION SYSTEM
+   ========================================================================== */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #323232;
+  color: var(--color-white);
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast.success {
+  background-color: #137333;
+}
+
+.toast.error {
+  background-color: var(--color-danger);
+}
+
+/* ==========================================================================
+   9. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .edit-layout {
+    grid-template-columns: 1fr;
+  }
+  .side-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transform: translateX(-100%);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .topbar-menu-btn {
+    display: block;
+    margin-right: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-grid-2, .form-grid-4-addr, .side-panel {
+    grid-template-columns: 1fr;
+  }
+  .page-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .topbar {
+    padding: 0 16px;
+  }
+  .page-content {
+    padding: 16px;
+  }
+}
