@@ -6,7 +6,6 @@
   <title>Cadastro de Insumos — Chás da Laura</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="stylebasematheus.css" />
   <link rel="stylesheet" href="styleinsumosmatheus.css" />
 </head>
 <body>
@@ -18,52 +17,53 @@
       <img
         src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/Logo.png"
         alt="Logo Chás da Laura"
-        style="width:44px;height:44px;border-radius:50%;object-fit:cover;"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
       />
-      <span style="display:none;font-size:1.4rem;">🍃</span>
-      <div class="sidebar-logo-text">Chás da<span>Laura</span></div>
+      <div class="sidebar-logo-text">
+        CHÁS DA<span>LAURA</span>
+      </div>
     </div>
+
     <nav class="sidebar-nav">
       <a href="#" class="nav-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <img class="nav-icon" src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" alt="" />
         Painel de início
       </a>
-      <div class="nav-item active open">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+
+      <div class="nav-item active open" id="cadastrosToggle" onclick="toggleNav(this)">
+        <img class="nav-icon" src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" alt="" />
         Cadastros
-        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        <img class="chevron" src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" />
       </div>
-      <div class="nav-sub">
-        <a href="#" class="nav-item">• Clientes</a>
-        <a href="FornecedoresCadastrados.html" class="nav-item">• Fornecedores</a>
-        <a href="InsumosCadastrados.html" class="nav-item active">• Insumos</a>
-        <a href="#" class="nav-item">• Produtos</a>
-        <a href="#" class="nav-item">• Receitas</a>
-        <a href="#" class="nav-item">• Parceiros</a>
+      <div class="nav-sub-list" id="cadastrosSub">
+        <a href="#" class="nav-sub-item">Clientes</a>
+        <a href="FornecedoresCadastrados.html" class="nav-sub-item">Fornecedores</a>
+        <a href="InsumosCadastrados.html" class="nav-sub-item active">Insumos</a>
+        <a href="#" class="nav-sub-item">Produtos</a>
+        <a href="#" class="nav-sub-item">Receitas</a>
+        <a href="#" class="nav-sub-item">Parceiros</a>
       </div>
-      <div class="nav-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+
+      <div class="nav-item" id="estoqueToggle" onclick="toggleNav(this)">
+        <img class="nav-icon" src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" alt="" />
         Estoque
-        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        <img class="chevron" src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" />
       </div>
+      <div class="nav-sub-list" id="estoqueSub" style="display:none"></div>
+
       <a href="#" class="nav-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <img class="nav-icon" src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" alt="" />
         Relatórios
       </a>
       <a href="#" class="nav-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        <img class="nav-icon" src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/carregando.svg" alt="" />
         Produção
       </a>
     </nav>
 
-    <!-- Imagem decorativa no rodapé da sidebar -->
-    <div style="padding:16px 12px 12px;margin-top:auto;">
+    <div class="sidebar-footer-img">
       <img
         src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/ChaImagemMenu.png"
         alt="Chá decorativo"
-        style="width:100%;border-radius:8px;opacity:.85;"
-        onerror="this.style.display='none'"
       />
     </div>
   </aside>
@@ -71,183 +71,142 @@
   <!-- MAIN -->
   <div class="main">
     <header class="topbar">
-      <button class="topbar-menu-btn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-      <nav class="breadcrumb">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-        <a href="#">Cadastros</a><span class="sep">›</span>
-        <a href="InsumosCadastrados.html">Insumos</a><span class="sep">›</span>
-        <span class="current">Novo insumo</span>
-      </nav>
+      <div class="topbar-left">
+        <button class="topbar-menu-btn">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/listaSemPonto.svg" alt="Menu" />
+        </button>
+        <nav class="breadcrumb">
+          <img class="bc-home" src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" alt="" />
+          <a href="#">Cadastros</a>
+          <span class="sep">›</span>
+          <a href="InsumosCadastrados.html">Insumos</a>
+          <span class="sep">›</span>
+          <span class="current">Novo insumo</span>
+        </nav>
+      </div>
       <div class="topbar-actions">
         <button class="bell-btn" aria-label="Notificações">
-          <img
-            src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg"
-            alt="Sino" width="18" height="18"
-            onerror="this.outerHTML='<svg width=\'18\' height=\'18\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><path d=\'M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9\'/><path d=\'M13.73 21a2 2 0 0 1-3.46 0\'/></svg>'"
-          />
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg" alt="Notificações" />
           <span class="bell-dot"></span>
         </button>
         <div class="user-badge">
           <div class="user-avatar">L</div>
           Laura
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          <img class="chevron" src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)" />
         </div>
       </div>
     </header>
 
     <main class="page-content">
+
+      <!-- Page Header -->
       <div class="page-header">
         <div>
           <h1 class="page-title">Cadastro de Insumos</h1>
           <p class="page-subtitle">Preencha as informações essenciais para cadastrar um novo insumo</p>
         </div>
-        <a href="InsumosCadastrados.html" class="btn btn-outline">
-          <img
-            src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/listaSemPonto.svg"
-            alt="" width="14" height="14"
-            onerror="this.outerHTML='<svg width=\'14\' height=\'14\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><path d=\'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\'/><circle cx=\'9\' cy=\'7\' r=\'4\'/></svg>'"
-          />
+        <a href="InsumosCadastrados.html" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Ver insumos cadastrados
         </a>
       </div>
 
-      <form id="formInsumo" onsubmit="handleSubmit(event)">
+      <!-- Form Card -->
+      <div class="form-card">
+        <form id="formInsumo" onsubmit="handleSubmit(event)">
 
-        <!-- Identificação -->
-        <div class="form-section">
-          <div class="form-section-header">
-            <img
-              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/etiqueta.svg"
-              alt="" width="16" height="16"
-              onerror="this.outerHTML='<svg width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><line x1=\'12\' y1=\'8\' x2=\'12\' y2=\'12\'/><line x1=\'12\' y1=\'16\' x2=\'12.01\' y2=\'16\'/></svg>'"
-            />
-            Identificação
-          </div>
-          <div class="form-body">
-            <div class="form-grid form-grid-2" style="margin-bottom:16px">
-              <div class="form-group">
-                <label class="form-label" for="nomeInsumo">Nome do insumo</label>
-                <input class="form-control" id="nomeInsumo" type="text" placeholder="Digite seu nome completo" required />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="valorInsumo">Valor (R$)</label>
-                <input class="form-control" id="valorInsumo" type="number" min="0" step="0.01" placeholder="0,00" />
-              </div>
+          <!-- Row 1: Nome + Valor -->
+          <div class="form-grid form-grid-2" style="margin-bottom:14px">
+            <div class="form-group">
+              <label class="form-label" for="nomeInsumo">Nome do insumo</label>
+              <input class="form-control" id="nomeInsumo" type="text" placeholder="Digite seu nome completo" required />
             </div>
+            <div class="form-group">
+              <label class="form-label" for="valorInsumo">Valor</label>
+              <input class="form-control" id="valorInsumo" type="number" min="0" step="0.01" placeholder="0,00" />
+            </div>
+          </div>
 
-            <div class="form-grid form-grid-2" style="margin-bottom:16px">
-              <div class="form-group">
-                <label class="form-label" for="qtdInsumo">Quantidade</label>
-                <div class="qty-wrap">
-                  <input class="form-control" id="qtdInsumo" type="number" min="0" step="0.01" placeholder="Digite a quantidade do insumo..." />
-                  <select class="form-control" id="unidadeInsumo">
-                    <option>KG</option>
-                    <option>G</option>
-                    <option>L</option>
-                    <option>ML</option>
-                    <option>UN</option>
-                    <option>CX</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="fornecedorInsumo">Fornecedor</label>
-                <select class="form-control" id="fornecedorInsumo">
-                  <option value="">Selecione o fornecedor</option>
-                  <option>Nutri bom alimentos LTDA</option>
-                  <option>Ervas do Campo Ltda</option>
-                  <option>Embalagens Verde Natural</option>
-                  <option>Chás Premium do Brasil</option>
-                  <option>Agrotech Especiarias</option>
+          <!-- Row 2: Quantidade + Fornecedor -->
+          <div class="form-grid form-grid-2" style="margin-bottom:14px">
+            <div class="form-group">
+              <label class="form-label" for="qtdInsumo">Quantidade</label>
+              <div class="qty-wrap">
+                <input class="form-control" id="qtdInsumo" type="number" min="0" step="0.01" placeholder="Digite a quantidade do insumo..." />
+                <select class="form-control" id="unidadeInsumo">
+                  <option>KG</option>
+                  <option>G</option>
+                  <option>L</option>
+                  <option>ML</option>
+                  <option>UN</option>
+                  <option>CX</option>
                 </select>
               </div>
             </div>
-
-            <div class="form-grid form-grid-2" style="margin-bottom:16px">
-              <div class="form-group">
-                <label class="form-label" for="validadeInsumo">Validade</label>
-                <input class="form-control" id="validadeInsumo" type="date" />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="estoqueMin">Estoque mínimo</label>
-                <input class="form-control" id="estoqueMin" type="text" placeholder="Ex: 25" />
-              </div>
-            </div>
-
             <div class="form-group">
-              <label class="form-label" for="categoriaInsumo">Categoria</label>
-              <select class="form-control" id="categoriaInsumo">
-                <option value="">Selecione uma categoria...</option>
-                <option value="ervas">Ervas</option>
-                <option value="flor">Flor</option>
-                <option value="especiaria">Especiarias</option>
-                <option value="fruta">Frutas</option>
-                <option value="raiz">Raízes</option>
-                <option value="outro">Outros</option>
+              <label class="form-label" for="fornecedorInsumo">Fornecedor</label>
+              <select class="form-control" id="fornecedorInsumo">
+                <option value="">Selecione o fornecedor</option>
+                <option>Nutribom alimentos LTDA</option>
+                <option>Ervas do Campo Ltda</option>
+                <option>Embalagens Verde Natural</option>
+                <option>Chás Premium do Brasil</option>
+                <option>Agrotech Especiarias</option>
               </select>
             </div>
           </div>
-        </div>
 
-        <!-- Descrição -->
-        <div class="form-section">
-          <div class="form-section-header">
-            <img
-              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lista.svg"
-              alt="" width="16" height="16"
-              onerror="this.outerHTML='<svg width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><rect x=\'2\' y=\'3\' width=\'20\' height=\'14\' rx=\'2\'/><line x1=\'8\' y1=\'21\' x2=\'16\' y2=\'21\'/><line x1=\'12\' y1=\'17\' x2=\'12\' y2=\'21\'/></svg>'"
-            />
-            Descrição
-          </div>
-          <div class="form-body">
+          <!-- Row 3: Validade + Estoque mínimo -->
+          <div class="form-grid form-grid-2" style="margin-bottom:14px">
             <div class="form-group">
-              <label class="form-label" for="descInsumo">Descrição</label>
-              <textarea class="form-control" id="descInsumo" rows="4" placeholder="Descreva o insumo, características, qualidade, origem, etc..."></textarea>
+              <label class="form-label" for="validadeInsumo">Validade</label>
+              <input class="form-control" id="validadeInsumo" type="date" placeholder="Ex: 22/08/2026" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="estoqueMin">Estoque mínimo</label>
+              <input class="form-control" id="estoqueMin" type="text" placeholder="Ex: 05" />
             </div>
           </div>
-        </div>
 
-        <div class="form-actions">
-          <a href="InsumosCadastrados.html" class="btn btn-outline">Cancelar</a>
-          <button type="submit" class="btn btn-primary">
-            <img
-              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/certo.svg"
-              alt="" width="14" height="14"
-              onerror="this.outerHTML='<svg width=\'14\' height=\'14\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2.5\'><polyline points=\'20 6 9 17 4 12\'/></svg>'"
-            />
-            Salvar insumo
-          </button>
-        </div>
-      </form>
-
-      <!-- Mini lista prévia -->
-      <div style="margin-top:32px">
-        <div style="margin-bottom:14px">
-          <p class="page-title" style="font-size:17px">Insumos cadastrados</p>
-          <p class="page-subtitle">Gerencie os insumos do sistema</p>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
-          <div class="search-wrap" style="max-width:280px">
-            <span class="search-icon">
-              <img
-                src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg"
-                alt="Buscar" width="14" height="14"
-                onerror="this.outerHTML='<svg width=\'14\' height=\'14\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><circle cx=\'11\' cy=\'11\' r=\'8\'/><line x1=\'21\' y1=\'21\' x2=\'16.65\' y2=\'16.65\'/></svg>'"
-              />
-            </span>
-            <input id="miniSearch" type="text" placeholder="Buscar insumos..." oninput="filterMini()" />
+          <!-- Row 4: Descrição -->
+          <div class="form-group">
+            <label class="form-label" for="descInsumo">Descrição</label>
+            <textarea class="form-control" id="descInsumo" rows="4"
+              placeholder="Descreva o insumo, características, qualidade, origem, etc..."></textarea>
           </div>
-          <a href="InsumosCadastrados.html" class="btn btn-primary" style="margin-left:auto">
-            <img
-              src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/mais.svg"
-              alt="" width="14" height="14"
-              onerror="this.outerHTML='<svg width=\'14\' height=\'14\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2.5\'><line x1=\'12\' y1=\'5\' x2=\'12\' y2=\'19\'/><line x1=\'5\' y1=\'12\' x2=\'19\' y2=\'12\'/></svg>'"
-            />
-            Novo insumo
-          </a>
+
+          <!-- Actions -->
+          <div class="form-actions">
+            <a href="InsumosCadastrados.html" class="btn btn-outline">Cancelar</a>
+            <button type="submit" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Salvar insumo
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Table Section -->
+      <div class="table-section">
+        <div class="table-section-header">
+          <div>
+            <p class="table-section-title">Insumos cadastrados</p>
+            <p class="table-section-sub">Gerencie os insumos do sistema</p>
+          </div>
+          <div class="table-section-controls">
+            <div class="search-wrap">
+              <span class="search-icon">
+                <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg" alt="" width="14" height="14" />
+              </span>
+              <input id="miniSearch" type="text" placeholder="Buscar insumos..." oninput="filterMini()" />
+            </div>
+            <button class="btn btn-primary" onclick="scrollToForm()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Novo insumo
+            </button>
+          </div>
         </div>
+
         <div class="table-wrap">
           <table>
             <thead>
@@ -263,8 +222,97 @@
           </table>
         </div>
       </div>
+
     </main>
   </div>
 </div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  Insumo salvo com sucesso!
+</div>
+
+<script>
+  /* ── Dados iniciais de exemplo ── */
+  let insumos = [
+    { nome:'Folha de camomila', categoria:'Ervas',      qtd:'4 Kg',   fornecedor:'Nutribom alimentos LTDA' },
+    { nome:'Hibisco flor',      categoria:'Flor',       qtd:'20 und', fornecedor:'Nutribom alimentos LTDA' },
+    { nome:'Canela em pau',     categoria:'Especiarias',qtd:'500 g',  fornecedor:'Nutribom alimentos LTDA' },
+  ];
+
+  function renderTable(list) {
+    const tbody = document.getElementById('miniTableBody');
+    tbody.innerHTML = list.length === 0
+      ? `<tr><td colspan="5" style="text-align:center;color:var(--gray-text);padding:20px">Nenhum insumo encontrado.</td></tr>`
+      : list.map((r, i) => `
+          <tr>
+            <td>${r.nome}</td>
+            <td>${r.categoria}</td>
+            <td>${r.qtd}</td>
+            <td>${r.fornecedor}</td>
+            <td>
+              <div class="td-actions">
+                <button class="action-btn edit" title="Editar">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7c74" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </button>
+                <button class="action-btn del" title="Excluir" onclick="deleteRow(${i})">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+                </button>
+              </div>
+            </td>
+          </tr>`).join('');
+  }
+
+  function filterMini() {
+    const q = document.getElementById('miniSearch').value.toLowerCase();
+    renderTable(insumos.filter(r =>
+      r.nome.toLowerCase().includes(q) ||
+      r.categoria.toLowerCase().includes(q) ||
+      r.fornecedor.toLowerCase().includes(q)
+    ));
+  }
+
+  function deleteRow(i) {
+    insumos.splice(i, 1);
+    renderTable(insumos);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const nome = document.getElementById('nomeInsumo').value.trim();
+    const qtd  = document.getElementById('qtdInsumo').value;
+    const un   = document.getElementById('unidadeInsumo').value;
+    const forn = document.getElementById('fornecedorInsumo').value || '—';
+    if (!nome) return;
+    insumos.unshift({ nome, categoria:'—', qtd: qtd ? `${qtd} ${un}` : '—', fornecedor: forn });
+    renderTable(insumos);
+    e.target.reset();
+    showToast();
+  }
+
+  function showToast() {
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+
+  function scrollToForm() {
+    document.getElementById('formInsumo').scrollIntoView({ behavior:'smooth' });
+    document.getElementById('nomeInsumo').focus();
+  }
+
+  function toggleNav(el) {
+    const map = { cadastrosToggle: 'cadastrosSub', estoqueToggle: 'estoqueSub' };
+    const sub = document.getElementById(map[el.id]);
+    if (!sub) return;
+    const open = sub.style.display !== 'none';
+    sub.style.display = open ? 'none' : 'block';
+    el.classList.toggle('open', !open);
+  }
+
+  /* Init */
+  renderTable(insumos);
+</script>
 </body>
 </html>
