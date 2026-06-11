@@ -277,8 +277,8 @@
 /* Sino — suporta .topbar__bell e .btn-notif */
 .topbar__bell,
 .btn-notif {
-  width: 40px;
-  height: 40px;
+  width: 32px; /* Reduzido de 40px para 32px */
+  height: 32px; /* Reduzido de 40px para 32px */
   border-radius: 50%;
   background: var(--gray-50);
   border: 1px solid var(--gray-200);
@@ -292,21 +292,26 @@
 .topbar__bell:hover,
 .btn-notif:hover { background: var(--gray-100); }
 .topbar__bell img,
-.btn-notif img { width: 20px; height: 20px; opacity: .6; }
+.btn-notif img { width: 16px; height: 16px; opacity: .6; } /* Ícone reduzido de 20px para 16px */
 
 /* Avatar + nome — suporta .topbar__user e .user-pill */
 .topbar__user,
-.user-pill { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.user-pill { 
+  display: flex; 
+  align-items: center; 
+  gap: 6px; /* Espaçamento reduzido de 8px para 6px */
+  cursor: pointer; 
+}
 
 .topbar__avatar,
 .user-avatar-circle {
-  width: 40px;
-  height: 40px;
+  width: 32px; /* Reduzido de 40px para 32px */
+  height: 32px; /* Reduzido de 40px para 32px */
   border-radius: 50%;
   background: var(--green-700);
   color: var(--white);
   font-weight: 800;
-  font-size: 16px;
+  font-size: 14px; /* Letra reduzida de 16px para 14px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -314,10 +319,10 @@
 }
 
 .topbar__username,
-.user-pill-name { font-size: 15px; font-weight: 700; color: var(--gray-900); }
+.user-pill-name { font-size: 14px; font-weight: 700; color: var(--gray-900); } /* Fonte reduzida de 15px para 14px */
 
 .topbar__arrow img,
-.user-pill-arrow { width: 13px; height: 13px; opacity: .4; }
+.user-pill-arrow { width: 11px; height: 11px; opacity: .4; } /* Setinha reduzida de 13px para 11px */
 
 
 /* =====================================================================
@@ -748,4 +753,25 @@ tr:nth-child(4n+0) .produto-dot { background: #10b981; }
 
 @media (max-width: 480px) {
   .kpi-cards { grid-template-columns: 1fr; }
+}
+
+/* Container principal do cabeçalho */
+.page-head {
+  display: flex;
+  justify-content: space-between; /* Empurra o lado esquerdo para a esquerda e o direito para a direita */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  width: 100%;
+}
+
+/* Opcional: Garante que o lado esquerdo fique organizado em coluna */
+.page-head-left {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container da parte direita (Sino e Perfil) */
+.page-head-right {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Espaço entre o sino de notificação e o botão de usuário */
 }
