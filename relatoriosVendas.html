@@ -159,10 +159,10 @@
                             <div class="periodo">
 
                                 <label for="dataInicio"></label>
-                                <input type="date" class="campoData">
+                                <input type="date" class="campoData" id="dataInicioVendas">
 
                                 <label for="dataFim"></label>
-                                <input type="date" class="campoData">
+                                <input type="date" class="campoData" id="dataFimVendas">
 
                             </div>
 
@@ -172,10 +172,11 @@
 
                             <span class="nomeFiltro">Categoria</span>
 
-                            <select name="filtrar" class="filtrar" id="filtroCateg">
+                            <select name="filtrar" class="filtrar" id="filtroVendasCategorias">
                                 <option value="todas">Todas as categorias</option>
-                                <option value="cha">Chá</option>
-                                <option value="aromatizador">Armoatizador</option>
+                                <option value="cha">Blend</option>
+                                <option value="aromatizador">Home spray</option>
+                                <option value="acessorio">Acessorios</option>
                             </select>
 
                         </div>
@@ -185,7 +186,7 @@
 
                         <span class="nomeFiltro">Produto</span>
 
-                        <select name="filtrar" class="filtrar" id="filtroProd">
+                        <select name="filtrar" class="filtrar" id="filtroVendasProdutos">
                             <option value="todos">Todos os produtos</option>
                             <option value="blend 1">Blend 1</option>
                             <option value="aromatizador 1">aromatizador 1</option>
@@ -195,19 +196,19 @@
 
                     <div class="acoesFiltro">
 
-                        <button class="botaoFiltrar">
+                        <button class="botaoFiltrar" id="botaoFiltrarVendas">
                             <i class="iconeFiltro"></i>
                             <span>Filtrar</span>
                         </button>
 
-                        <button class="botaoLimparFiltro">
+                        <button class="botaoLimparFiltro" id="botaoLimparFiltroVendas">
                             <i class="iconeCarregar"></i>
                             <span>Limpar Filtro</span>
                         </button>
                     </div>
                 </div>
 
-                <div class="demostracoes">
+                <div class="demostracoes" id="demostracoesVenda">
 
                     <div class="demo">
                         <div class="iconeDemo">
@@ -313,7 +314,7 @@
                         <h2>Detalhamento do estoque</h2>
                     </div>
 
-                    <table class="tabela">
+                    <table class="tabela" id="tabelaVendas">
 
                         <thead class="topoTabelaVerdadeira">
                             <tr>
@@ -326,31 +327,6 @@
                             </tr>
                         </thead>
                         
-                        <tbody>
-                            <tr>
-
-                                <td>25/04/2026</td>
-
-                                <td>
-                                    <div class="Categoria">
-                                        <span>Chá</span>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div class="Produto">
-                                        <span class="fotoProduto"></span>
-                                        <span>blend 1</span>
-                                    </div>
-                                </td>
-
-                                <td>10 un</td>
-
-                                <td>R$ 50,00 un</td>
-
-                                <td>R$ 500,00</td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </section>
