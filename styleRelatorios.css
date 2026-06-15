@@ -229,6 +229,47 @@
     contrast(93%);
 }
 
+.iconeGraficoRedondoDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/graficoRedondo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconePorcentagemDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/percentual.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+
 
 
 /* GRAFICOS */

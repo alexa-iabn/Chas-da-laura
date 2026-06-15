@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styleEstoque.css">
     <link rel="stylesheet" href="styleRelatorios.css">
     <link rel="stylesheet" href="styleRelatoriosTabelas.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
@@ -157,12 +158,12 @@
             
             <div class="baixarArquivos">
 
-                <button class="botaoBaixarExcel">
+                <button class="botaoBaixarExcel" id="botaoBaixarExcelDiario">
                     <span class="iconeExcel"></span>
                     <span>Exportar em excel(.xlsx)</span>
                 </button>
 
-                <button class="botaoBaixarPdf">
+                <button class="botaoBaixarPdf" id="botaoBaixarPdfDiario">
                     <span class="iconePdf"></span>
                     <span>Exportar em PDF(.pfd)</span>
                 </button>
@@ -180,10 +181,10 @@
                         <div class="periodo">
 
                             <label for="dataInicio"></label>
-                            <input type="date" class="campoData">
+                            <input type="date" class="campoData" id="dataInicioDiario">
 
                             <label for="dataFim"></label>
-                            <input type="date" class="campoData">
+                            <input type="date" class="campoData" id="dataFimDiario">
 
                         </div>
 
@@ -192,12 +193,12 @@
 
                 <div class="acoesFiltro">
 
-                     <button class="botaoFiltrar">
+                     <button class="botaoFiltrar" id="botaoFiltrarDiario">
                         <i class="iconeFiltro"></i>
                         <span>Filtrar</span>
                     </button>
 
-                    <button class="botaoLimparFiltro">
+                    <button class="botaoLimparFiltro" id="botaoLimparFiltroDiario">
                         <i class="iconeCarregar"></i>
                         <span>Limpar Filtro</span>
                     </button>
@@ -209,13 +210,13 @@
 
                 <div class="topoDaTabela">
 
-                    <input type="text" placeholder="Busque item..." class="buscarProduto">
+                    <input type="text" placeholder="Busque item..." class="buscarProduto" id="buscarProdutoDiario">
 
                     <div class="Ordenamento">
 
                         <span class="ordenar">Ordenar por:</span>
 
-                        <select name="" id="" class="escolhaOrdenar">
+                        <select name="" id="ordenarDiario" class="escolhaOrdenar">
                             <option value="maiorFaturamento">Maior Faturamento</option>
                             <option value="menorFaturamento">Menor Faturamento</option>
                             <option value="dataRecente">Data mais recente</option>
@@ -228,7 +229,7 @@
 
                 </div>
 
-                <table>
+                <table id="tabelaDiario">
 
                     <thead class="topoTabelaVerdadeira">
                         <tr>
@@ -241,30 +242,12 @@
                         </tr>
                     </thead>
                         
-                    <tbody>
-                        <tr>
-                            <td>25/04/2026</td>
-                            <td>R$ 650,00</td>
-                            <td>2</td>
-                            <td>R$ 325,00</td>
-                            <td>2</td>
-                            <td>4</td>
-                        </tr>
-                    </tbody>
-
-                    <tfoot class="totais">
-                        <tr>
-                            <th>Totais</th>
-                            <th>R$ 650,00</th>
-                            <th>2</th>
-                            <th>R$ 325,00</th>
-                            <th>2</th>
-                            <th>4</th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
                 
         </main>
+
+        <script src="relatoriosVendas.js"></script>
+        <script src="arquivo.js"></script>
 </body>
 </html>

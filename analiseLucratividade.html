@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styleEstoque.css">
     <link rel="stylesheet" href="styleRelatorios.css">
     <link rel="stylesheet" href="styleRelatoriosTabelas.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
@@ -147,12 +148,12 @@
             
             <div class="baixarArquivos">
 
-                <button class="botaoBaixarExcel">
+                <button class="botaoBaixarExcel" id="botaoBaixarExcelAnalise">
                     <span class="iconeExcel"></span>
                     <span>Exportar em excel(.xlsx)</span>
                 </button>
 
-                <button class="botaoBaixarPdf">
+                <button class="botaoBaixarPdf" id="botaoBaixarPdfAnalise">
                     <span class="iconePdf"></span>
                     <span>Exportar em PDF(.pfd)</span>
                 </button>
@@ -170,10 +171,10 @@
                         <div class="periodo">
 
                             <label for="dataInicio"></label>
-                            <input type="date" class="campoData">
+                            <input type="date" class="campoData" id="dataInicioAnalise">
 
                             <label for="dataFim"></label>
-                            <input type="date" class="campoData">
+                            <input type="date" class="campoData" id="dataFimAnalise">
 
                         </div>
 
@@ -183,12 +184,12 @@
 
                 <div class="acoesFiltro">
 
-                    <button class="botaoFiltrar">
+                    <button class="botaoFiltrar" id="botaoFiltrarAnalise">
                         <i class="iconeFiltro"></i>
                         <span>Filtrar</span>
                     </button>
 
-                    <button class="botaoLimparFiltro">
+                    <button class="botaoLimparFiltro" id="botaoLimparFiltroAnalise">
                         <i class="iconeCarregar"></i>
                         <span>Limpar Filtro</span>
                     </button>
@@ -199,26 +200,26 @@
 
                 <div class="topoDaTabela">
 
-                    <input type="text" placeholder="Busque item..." class="buscarProduto">
+                    <input type="text" placeholder="Busque item..." class="buscarProduto" id="buscarProdutoAnalise">
 
                     <div class="Ordenamento">
 
                         <span class="ordenar">Ordenar por:</span>
 
-                        <select name="" id="" class="escolhaOrdenar">
-                            <option value="maiorcusto">Maior custo variável</option>
-                            <option value="menorcusto">Menor custo variável</option>
+                        <select name="" id="OrdenarAnalise" class="escolhaOrdenar">
+                            <option value="maiorLucroLiquido">Maior Lucro Líquido</option>
+                            <option value="menorLucroLiquido">Menor Lucro Líquido</option>
                             <option value="dataRecente">Data mais recente</option>
                             <option value="dataLonge">Data mais longe</option>
-                            <option value="maiorLucro">Maior lucro líquido</option>
-                            <option value="menorLucro">Menor lucro líquido</option>
+                            <option value="maiorCusto">Maior Custo</option>
+                            <option value="menorCusto">Menor Custo</option>
 
                         </select>
                     </div>
 
                 </div>
 
-                <table>
+                <table id="tabelaAnalise">
 
                     <thead class="topoTabelaVerdadeira">
                         <tr>
@@ -234,36 +235,14 @@
                         </tr>
                     </thead>
                         
-                    <tbody>
-                        <tr>
-                            <td>Blend 1</td>
-                            <td>Relaxante</td>
-                            <td>R$ 700,00</td>
-                            <td>R$ 30,00</td>
-                            <td>R$ 5,00</td>
-                            <td>R$ 35,00</td>
-                            <td>R$ 100,00</td>
-                            <td>R$ 400,00</td>
-                            <td>35%</td>
-                        </tr>
-                    </tbody>
-
-                    <tfoot class="totais">
-                        <tr>
-                            <th>Totais</th>
-                            <th>--</th>
-                            <th>R$ 700,00</th>
-                            <th>R$ 30,00</th>
-                            <th>R$ 5,00</th>
-                            <th>R$ 35,00</th>
-                            <th>R$ 100,00</th>
-                            <th>R$ 400,00</th>
-                            <th>35%</th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
                 
         </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+        <script src="relatoriosMargemLucro.js"></script>
+        <script src="arquivo.js"></script>
 </body>
 </html>

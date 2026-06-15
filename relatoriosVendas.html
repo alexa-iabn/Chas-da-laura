@@ -6,6 +6,7 @@
     <title>Estoque de produtos</title>
     <link rel="stylesheet" href="styleEstoque.css">
     <link rel="stylesheet" href="styleRelatorios.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
@@ -174,9 +175,6 @@
 
                             <select name="filtrar" class="filtrar" id="filtroVendasCategorias">
                                 <option value="todas">Todas as categorias</option>
-                                <option value="cha">Blend</option>
-                                <option value="aromatizador">Home spray</option>
-                                <option value="acessorio">Acessorios</option>
                             </select>
 
                         </div>
@@ -188,8 +186,6 @@
 
                         <select name="filtrar" class="filtrar" id="filtroVendasProdutos">
                             <option value="todos">Todos os produtos</option>
-                            <option value="blend 1">Blend 1</option>
-                            <option value="aromatizador 1">aromatizador 1</option>
                         </select>
 
                     </div>
@@ -209,50 +205,6 @@
                 </div>
 
                 <div class="demostracoes" id="demostracoesVenda">
-
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconePranchetaDemo"></span>
-                        </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Total de produtos</span>
-                            <span class="demoTitulo">12</span>
-                            <span class="demoTextoNormal">Produtos cadastrados</span>
-                        </div>
-                    </div>
-
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconeCertoDemo"></span>
-                        </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Produtos ativos</span>
-                            <span class="demoTitulo">10</span>
-                            <span class="demoTextoNormal">Produtos ativos</span>
-                        </div>
-                    </div>
-
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconeCaixaDemo"></span>
-                        </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Estoque total</span>
-                            <span class="demoTitulo">1.250</span>
-                            <span class="demoTextoNormal">Unidades em estoque</span>
-                        </div>
-                    </div>
-
-                    <div class="demo">
-                        <div class="iconeDemo">
-                            <span class="iconeDinheiroDemo"></span>
-                        </div>
-                        <div class="textoDemo">
-                            <span class="demoSemiTitulo">Valor total em estoque</span>
-                            <span class="demoTitulo">R$ 2.487,50</span>
-                            <span class="demoTextoNormal">Custo total dos produtos</span>
-                        </div>
-                    </div>
 
                 </div>
 
@@ -331,5 +283,9 @@
                 </div>
             </section>
         </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="relatoriosVendas.js"></script>
+        <script src="arquivo.js"></script>
 </body>
 </html>

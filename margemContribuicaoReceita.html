@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styleEstoque.css">
     <link rel="stylesheet" href="styleRelatorios.css">
     <link rel="stylesheet" href="styleRelatoriosTabelas.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
@@ -154,12 +155,12 @@
 
             <div class="baixarArquivos">
 
-                <button class="botaoBaixarExcel">
+                <button class="botaoBaixarExcel" id="botaoBaixarExcelReceita">
                     <span class="iconeExcel"></span>
                     <span>Exportar em excel(.xlsx)</span>
                 </button>
 
-                <button class="botaoBaixarPdf">
+                <button class="botaoBaixarPdf" id="botaoBaixarPdfReceita">
                     <span class="iconePdf"></span>
                     <span>Exportar em PDF(.pfd)</span>
                 </button>
@@ -177,10 +178,10 @@
                         <div class="periodo">
 
                             <label for="dataInicio"></label>
-                            <input type="date" class="campoData">
+                            <input type="date" class="campoData" id="dataInicioReceita">
 
                             <label for="dataFim"></label>
-                            <input type="date" class="campoData">
+                            <input type="date" class="campoData" id="dataFimReceita">
 
                         </div>
 
@@ -190,12 +191,12 @@
 
                 <div class="acoesFiltro">
 
-                     <button class="botaoFiltrar">
+                     <button class="botaoFiltrar" id="botaoFiltrarReceita">
                         <i class="iconeFiltro"></i>
                         <span>Filtrar</span>
                     </button>
 
-                    <button class="botaoLimparFiltro">
+                    <button class="botaoLimparFiltro" id="botaoLimparFiltroReceita">
                         <i class="iconeCarregar"></i>
                         <span>Limpar Filtro</span>
                     </button>
@@ -207,13 +208,13 @@
 
                 <div class="topoDaTabela">
 
-                    <input type="text" placeholder="Busque item..." class="buscarProduto">
+                    <input type="text" placeholder="Busque item..." class="buscarProduto" id="buscarProdutoReceita">
 
                     <div class="Ordenamento">
 
                         <span class="ordenar">Ordenar por:</span>
 
-                        <select name="" id="" class="escolhaOrdenar">
+                        <select name="" id="ordenarReceita" class="escolhaOrdenar">
                             <option value="maiorFaturamento">Maior Faturamento</option>
                             <option value="menorFaturamento">Menor Faturamento</option>
                             <option value="dataRecente">Data mais recente</option>
@@ -226,7 +227,7 @@
 
                 </div>
 
-                <table>
+                <table id="tabelaReceita">
 
                     <thead class="topoTabelaVerdadeira">
                         <tr>
@@ -241,34 +242,15 @@
                         </tr>
                     </thead>
                         
-                    <tbody>
-                        <tr>
-                            <td>25/05/2026</td>
-                            <td>Blend 1</td>
-                            <td>Relaxante</td>
-                            <td>R$ 700,00</td>
-                            <td>R$ 35,00</td>
-                            <td>R$ 100,00</td>
-                            <td>25%</td>
-                            <td>35%</td>
-                        </tr>
-                    </tbody>
-
-                    <tfoot class="totais">
-                        <tr>
-                            <th>Totais</th>
-                            <th>--</th>
-                            <th>--</th>
-                            <th>R$ 700,00</th>
-                            <th>R$ 35,00</th>
-                            <th>R$ 100,00</th>
-                            <th>100%</th>
-                            <th>100%</th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
                 
         </main>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+        <script src="relatoriosMargemLucro.js"></script>
+        <script src="arquivo.js"></script>
 </body>
 </html>

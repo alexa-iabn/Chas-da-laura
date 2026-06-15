@@ -1341,7 +1341,6 @@ if(tabelaComposicao){
 
 /*===================================== TABELA DO TERCEIRO GRAFICO ========================================*/
 
-/*===================================== TABELA RENTABILIDADE MÉDIA ========================================*/
 
 const tabelaRentabilidade = document.querySelector("#tabelaRentabilidade");
 const dataInicioRentabilidade = document.querySelector("#dataInicioRentabilidade");

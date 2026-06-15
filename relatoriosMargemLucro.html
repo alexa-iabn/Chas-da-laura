@@ -6,6 +6,7 @@
     <title>Estoque de produtos</title>
     <link rel="stylesheet" href="styleEstoque.css">
     <link rel="stylesheet" href="styleRelatorios.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
@@ -162,24 +163,12 @@
                                 <div class="periodo">
 
                                     <label for="dataInicio"></label>
-                                    <input type="date" class="campoData">
+                                    <input type="date" class="campoData" id="dataInicioMargem">
 
                                     <label for="dataFim"></label>
-                                    <input type="date" class="campoData">
+                                    <input type="date" class="campoData" id="dataFimMargem">
 
                                 </div>
-
-                            </div>
-
-                            <div class="filtro">
-
-                                <span class="nomeFiltro">Produto</span>
-
-                                <select name="filtroProduto" class="filtrar" id="filtroProd">
-                                    <option value="todos">Todos os produtos</option>
-                                    <option value="blend 1">Blend 1</option>
-                                    <option value="aromatizador 1">aromatizador 1</option>
-                                </select>
 
                             </div>
 
@@ -187,12 +176,12 @@
 
                         <div class="acoesFiltro">
 
-                            <button class="botaoFiltrar">
+                            <button class="botaoFiltrar" id="botaoFiltrarMargem">
                                 <i class="iconeFiltro"></i>
                                 <span>Filtrar</span>
                             </button>
 
-                            <button class="botaoLimparFiltro">
+                            <button class="botaoLimparFiltro" id="botaoLimparFiltroMargem">
                                 <i class="iconeCarregar"></i>
                                 <span>Limpar Filtro</span>
                             </button>
@@ -201,51 +190,7 @@
 
                     </div>
 
-                    <div class="demostracoes">
-
-                        <div class="demo">
-                            <div class="iconeDemo">
-                                <span class="iconeDinheiroDemo"></span>
-                            </div>
-                            <div class="textoDemo">
-                                <span class="demoSemiTitulo">Receita bruta</span>
-                                <span class="demoTitulo">R$ 48.756,30</span>
-                                <span class="demoTextoNormal">Valor total bruto</span>
-                            </div>
-                        </div>
-
-                        <div class="demo">
-                            <div class="iconeDemo">
-                                <span class="iconeGraficoRedondoDemo"></span>
-                            </div>
-                            <div class="textoDemo">
-                                <span class="demoSemiTitulo">Custos variavel</span>
-                                <span class="demoTitulo">R$ 22.413,00</span>
-                                <span class="demoTextoNormal">Valor total</span>
-                            </div>
-                        </div>
-
-                        <div class="demo">
-                            <div class="iconeDemo">
-                                <span class="iconeMoedasDemo"></span>
-                            </div>
-                            <div class="textoDemo">
-                                <span class="demoSemiTitulo">Margem de contribuição</span>
-                                <span class="demoTitulo">R$ 21.385,33</span>
-                                <span class="demoTextoNormal">Total de contribuição</span>
-                            </div>
-                        </div>
-
-                        <div class="demo">
-                            <div class="iconeDemo">
-                                <span class="iconePorcentagemDemo"></span>
-                            </div>
-                            <div class="textoDemo">
-                                <span class="demoSemiTitulo">Margem de lucro</span>
-                                <span class="demoTitulo">57,0%</span>
-                                <span class="demoTextoNormal">do periodo</span>
-                            </div>
-                        </div>
+                    <div class="demostracoes" id="demostracoesMargem">
 
                     </div>
             
@@ -302,13 +247,13 @@
 
                 </div>
             
-                <div class="conteinerTabela">
+                <div class="conteinerTabela tabela">
 
                     <div class="tituloTabela">
                         <h2>Performace dos produtos</h2>
                     </div>
 
-                    <table>
+                    <table id="tabelaMargem">
 
                         <thead class="tabela">
                             <tr class="topoTabelaVerdadeira">
@@ -322,29 +267,13 @@
                             </tr>
                         </thead>
                         
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-
-                                <td>
-                                    <div class="Produto">
-                                        <span class="fotoProduto"></span>
-                                        <span>blend 1</span>
-                                    </div>
-                                </td>
-
-                                <td>R$ 750,00</td>
-                                <td>R$ 50,00</td>
-                                <td>R$ 700,00</td>
-                                <td>R$ 600,00</td>
-                                <td>30%</td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </section>
         </main>
 
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="arquivo.js"></script>
+        <script src="relatoriosMargemLucro.js"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
     <title>Relátorios</title>
     <link rel="stylesheet" href="styleEstoque.css">
     <link rel="stylesheet" href="styleRelatorios.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
@@ -139,7 +140,7 @@
         <main class="conteudo">
         
             <div class="titulos">
-                <h1 class="tituloPagina">Relatótio clientes</h1>
+                <h1 class="tituloPagina">Relatório clientes</h1>
                 <h3 class="subtituloPagina">Avalie o desempenho dos clientes frequência de compra e ticket médio</h3>
             </div>
 
@@ -156,10 +157,10 @@
                                 <div class="periodo">
 
                                     <label for="dataInicio"></label>
-                                    <input type="date" class="campoData">
+                                    <input type="date" class="campoData" id="dataInicioClientes">
 
                                     <label for="dataFim"></label>
-                                    <input type="date" class="campoData">
+                                    <input type="date" class="campoData" id="dataFimClientes">
 
                                 </div>
 
@@ -169,12 +170,12 @@
 
                         <div class="acoesFiltro">
 
-                            <button class="botaoFiltrar">
+                            <button class="botaoFiltrar" id="botaoFiltrarClientes">
                                 <i class="iconeFiltro"></i>
                                 <span>Filtrar</span>
                             </button>
 
-                            <button class="botaoLimparFiltro">
+                            <button class="botaoLimparFiltro" id="botaoLimparFiltroClientes">
                                 <i class="iconeCarregar"></i>
                                 <span>Limpar Filtro</span>
                             </button>
@@ -183,7 +184,7 @@
                     </div>
 
 
-                    <div class="demostracoes">
+                    <div class="demostracoes" id="demostracoesClientes">
                         <div class="demo">
                             <div class="iconeDemo">
                                 <span class="iconeUsuariosDemo"></span>
@@ -236,7 +237,7 @@
 
                         <div class="topoGrafico">
 
-                            <h2 class="tituloGrafico">Cliente com maior faturamentoj</h2>
+                            <h2 class="tituloGrafico">Cliente com maior faturamento</h2>
 
                             <a href="">
                                 <button class="olharTabela"></button>
@@ -288,7 +289,7 @@
                         <h2>Desempenho dos clientes</h2>
                     </div>
 
-                    <table class="tabela tabelaRelatoriosVendas">
+                    <table class="tabela" id="tabelaVendas">
 
                         <thead class="topoTabelaVerdadeira">
                             <tr>
@@ -307,7 +308,7 @@
             </section>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="relatorios.js"></script>
+        <script src="relatoriosClientes.js"></script>
         <script src="arquivo.js"></script>
 </body>
 </html>

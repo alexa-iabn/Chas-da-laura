@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styleEstoque.css">
     <link rel="stylesheet" href="styleRelatorios.css">
     <link rel="stylesheet" href="styleRelatoriosTabelas.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
@@ -151,18 +152,18 @@
         <main class="conteudo">
 
             <div class="titulos">
-                <h1 class="tituloPagina">Faturamento po categoria</h1>
+                <h1 class="tituloPagina">Faturamento por categoria</h1>
                 <h3 class="subtituloPagina">Visualize o valor total do faturamento por categoria por periodo</h3>
             </div>
 
             <div class="baixarArquivos">
 
-                <button class="botaoBaixarExcel">
+                <button class="botaoBaixarExcel" id="botaoBaixarExcelCategoria">
                     <span class="iconeExcel"></span>
                     <span>Exportar em excel(.xlsx)</span>
                 </button>
 
-                <button class="botaoBaixarPdf">
+                <button class="botaoBaixarPdf" id="botaoBaixarPdfCategoria">
                     <span class="iconePdf"></span>
                     <span>Exportar em PDF(.pfd)</span>
                 </button>
@@ -180,36 +181,12 @@
                         <div class="periodo">
 
                             <label for="dataInicio"></label>
-                            <input type="date" class="campoData">
+                            <input type="date" class="campoData" id="dataInicioCategoria">
 
                             <label for="dataFim"></label>
-                            <input type="date" class="campoData">
+                            <input type="date" class="campoData" id="dataFimCategoria">
 
                         </div>
-
-                    </div>
-
-                    <div class="filtro">
-
-                        <span>Categoria</span>
-
-                        <select name="filtroCategoria" class="filtrar" id="filtroCateg">
-                            <option value="todas">Todas as categorias</option>
-                            <option value="cha">Chá</option>
-                            <option value="aromatizador">Armoatizador</option>
-                        </select>
-
-                    </div>
-
-                    <div class="filtro">
-
-                        <span>Produto</span>
-
-                        <select name="filtroProduto" class="filtrar" id="filtroProd">
-                            <option value="todos">Todos os produtos</option>
-                            <option value="blend 1">Blend 1</option>
-                            <option value="aromatizador 1">aromatizador 1</option>
-                        </select>
 
                     </div>
 
@@ -217,12 +194,12 @@
 
                 <div class="acoesFiltro">
 
-                     <button class="botaoFiltrar">
+                     <button class="botaoFiltrar" id="botaoFiltrarCategoria">
                         <i class="iconeFiltro"></i>
                         <span>Filtrar</span>
                     </button>
 
-                    <button class="botaoLimparFiltro">
+                    <button class="botaoLimparFiltro" id="botaoLimparFiltroCategoria">
                         <i class="iconeCarregar"></i>
                         <span>Limpar Filtro</span>
                     </button>
@@ -234,13 +211,13 @@
 
                 <div class="topoDaTabela">
 
-                    <input type="text" placeholder="Busque item..." class="buscarProduto">
+                    <input type="text" placeholder="Busque item..." class="buscarProduto" id="buscarProdutoCategoria">
 
                     <div class="Ordenamento">
 
                         <span class="ordenar">Ordenar por:</span>
 
-                        <select name="" id="" class="escolhaOrdenar">
+                        <select name="" id="ordenarCategoria" class="escolhaOrdenar">
                             <option value="maiorFaturamento">Maior Faturamento</option>
                             <option value="menorFaturamento">Menor Faturamento</option>
                             <option value="dataRecente">Data mais recente</option>
@@ -253,46 +230,29 @@
 
                 </div>
 
-                <table>
+                <table id="tabelaCategoria">
 
                     <thead class="topoTabelaVerdadeira">
                         <tr>
                             <th>Data</th>
+                            <th>Clientes</th>
                             <th>Faturamento(R$)</th>
-                            <th>Pedidos realizados</th>
+                            <th>Compras</th>
                             <th>Ticket médio</th>
                             <th>% do todo</th>
-                            <th>unidades vendidas</th>
-                            <th>clientes atendidos</th>
+                            <th>un vendidas</th>
+                            <th>atendimentos</th>
                         </tr>
                     </thead>
-                        
-                    <tbody>
-                        <tr>
-                            <td>25/04/2026</td>
-                            <td>R$ 650,00</td>
-                            <td>2</td>
-                            <td>R$ 325,00</td>
-                            <td>2,5%</td>
-                            <td>2</td>
-                            <td>5</td>
-                        </tr>
-                    </tbody>
-
-                    <tfoot class="totais">
-                        <tr>
-                            <th>Totais</th>
-                            <th>R$ 650,00</th>
-                            <th>2</th>
-                            <th>R$ 325,00</th>
-                            <th>100%</th>
-                            <th>2</th>
-                            <th>5</th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
                 
         </main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+        <script src="relatoriosVendas.js"></script>
+        <script src="arquivo.js"></script>
 </body>
 </html>
