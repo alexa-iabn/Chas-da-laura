@@ -1,182 +1,255 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos Cadastrados</title>
-    <link rel="stylesheet" href="stylesabrina.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="stylesabrina.css">
+<title>Produtos Cadastrados</title>
 </head>
 
 <body>
 
 <header class="topoEstoque">
-    <a href="paineldeinicio.html" class="paginaPrincipal"></a>
-    <a href="#" class="LinkEstoque">Cadastros</a>
-    <a href="#" class="linkEstoqueProdutos"> > Produtos > Produtos cadastrados</a>
+  <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+  <a href="#" class="LinkEstoque">Cadastros</a>
+  <a href="#" class="linkEstoqueProdutos"> > Produtos > Produtos cadastrados</a>
 
-    <div class="notificacao">
-        <i class="sino"></i>
-    </div>
+  <div class="notificacao">
+    <i class="sino"></i>
+  </div>
 
-    <div class="PerfilUsuario">
-        <div class="avatar"><span class="L">L</span></div>
-        <h2 class="nomeUsuario">Laura</h2>
-        <span class="seta">⌄</span>
-    </div>
+  <div class="PerfilUsuario">
+    <div class="avatar">L</div>
+    <h2 class="nomeUsuario">Laura</h2>
+  </div>
 </header>
 
 <aside class="menuLateral">
-    <div class="logoMenuLateral">
-        <img src="Imagens/Logo.png" alt="Logo Chás da Laura">
-    </div>
+  <div class="logoMenuLateral">
+    <img src="Imagens/Logo.png" alt="Logo">
+  </div>
 
-    <nav class="menu">
+      <nav class="menu">
         <ul>
             <li>
                 <a href="paineldeinicio.html" class="itemMenu">
                     <img src="Imagens/casa.svg" class="iconeMenu" alt="">
-                    <span class="tituloMenu">Painel de início</span>
+                    <span class="tituloMenu">Painel inicial</span>
                 </a>
             </li>
-
             <li>
-                <details open>
-                    <summary class="itemMenu ativo">
+                <details>
+                    <summary class="itemMenu">
                         <img src="Imagens/lapiz.svg" class="iconeMenu" alt="">
                         <span class="tituloMenu">Cadastros</span>
-                        <span class="iconeSeta">⌄</span>
+                        <span class="iconeSeta">&#9662;</span>
                     </summary>
-
                     <ul class="subMenu">
-                        <li><a href="CadastroClientes.html">Clientes</a></li>
-                        <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                        <li><a href="CadastroInsumos.html">Insumos</a></li>
-                        <li><a href="cadastroprodutos.html" class="ativoSubmenu">Produtos</a></li>
+                        <li><a href="cadastroclientes.html">Clientes</a></li>
+                        <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                        <li><a href="cadastroinsumos.html">Insumos</a></li>
+                        <li><a href="cadastroprodutos.html">Produtos</a></li>
                         <li><a href="cadastroreceitas.html">Receitas</a></li>
+                        <li><a href="cadastroparceiros.html">Parceiros</a></li>
                     </ul>
                 </details>
             </li>
-
             <li>
                 <details>
                     <summary class="itemMenu">
                         <img src="Imagens/caixa.svg" class="iconeMenu" alt="">
                         <span class="tituloMenu">Estoque</span>
-                        <span class="iconeSeta">⌄</span>
+                        <span class="iconeSeta">&#9662;</span>
                     </summary>
+                    <ul class="subMenu">
+                        <li><a href="EstoqueProdutos.html">Produtos</a></li>
+                        <li><a href="EstoqueInsumos.html">Insumos</a></li>
+                    </ul>
                 </details>
             </li>
-
             <li>
-                <a href="relatoriosVendas.html" class="itemMenu">
-                    <img src="Imagens/grafico.svg" class="iconeMenu" alt="">
-                    <span class="tituloMenu">Relatórios</span>
+                <details>
+                    <summary class="itemMenu">
+                        <img src="Imagens/grafico.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Relat&#243;rios</span>
+                        <span class="iconeSeta">&#9662;</span>
+                    </summary>
+                    <ul class="subMenu">
+                        <li><a href="relatoriosVendas.html">Vendas</a></li>
+                        <li><a href="relatorioReceitas.html">Receitas</a></li>
+                        <li><a href="relatorioestoque.html">Estoque</a></li>
+                        <li><a href="relatoriosResumoGeral.html">Resumo Geral</a></li>
+                        <li><a href="relatoriosFornecedores.html">Fornecedores</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <a href="producao.html" class="itemMenu">
+                    <img src="Imagens/prancheta.svg" class="iconeMenu" alt="">
+                    <span class="tituloMenu">Produ&#231;&#227;o</span>
                 </a>
             </li>
-
             <li>
-                <a href="PaginaProducao.html" class="itemMenu">
-                    <img src="Imagens/prancheta.svg" class="iconeMenu" alt="">
-                    <span class="tituloMenu">Produção</span>
-                </a>
+                <details>
+                    <summary class="itemMenu">
+                        <img src="Imagens/setaCima.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Sa&#237;das</span>
+                        <span class="iconeSeta">&#9662;</span>
+                    </summary>
+                    <ul class="subMenu">
+                        <li><a href="saidasClientes.html">Clientes</a></li>
+                        <li><a href="saidaParceiro.html">Parceiros</a></li>
+                    </ul>
+                </details>
             </li>
         </ul>
     </nav>
 
-    <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+  <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
 </aside>
 
 <main class="conteudoPrincipal">
 
-    <section class="topoProdutosCadastrados">
-        <div>
-            <h1 class="tituloPagina">Produtos cadastrados</h1>
-            <h3 class="subtituloPagina">Gerencie e visualize todos os produtos do sistema</h3>
-        </div>
+  <h1 class="tituloPagina">Produtos cadastrados</h1>
+  <h3 class="subtituloPagina">Gerencie e visualize todos os produtos do sistema</h3>
 
-        <div class="botoesVisualizacaoProdutos">
-            <a href="cadastroprodutos.html">
-                <button class="botaoVoltarProduto">← Voltar</button>
-            </a>
+  <div class="conteinerTabela">
 
-            <button class="botaoLista">☷ Lista</button>
-            <button class="botaoCards ativoBotao">▣ Cards</button>
-        </div>
-    </section>
+    <div class="topoCardsReceitas">
+      <div>
+        <a href="paineldeinicio.html"><button>← Voltar</button></a>
+        <button>☰ Lista</button>
+        <button>▣ Cards</button>
+      </div>
 
-    <section class="conteinerTabela tabelaProdutosCadastrados">
+      <div>
+        <input type="text" placeholder="Buscar produto...">
+        <a href="cadastroprodutos.html"><button>+ Novo produto</button></a>
+      </div>
+    </div>
 
-        <div class="barraBuscaProdutos">
-            <input type="text" placeholder="🔍  Buscar produto...">
+    <table class="tabelaGeral">
+      <thead>
+        <tr>
+          <th>Nome do produto</th>
+          <th>Categoria</th>
+          <th>Unidade</th>
+          <th>Preço de venda</th>
+          <th>Estoque</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
 
-            <a href="cadastroprodutos.html">
-                <button class="btnVerde">+ Novo produto</button>
-            </a>
-        </div>
+      <tbody>
+        <tr>
+          <td>Blend 1</td>
+          <td>Chá</td>
+          <td>Lata 50g</td>
+          <td>R$ 50,00</td>
+          <td>10 un</td>
+          <td>
+            <a href="editarproduto.html">✏️</a>
+            <button class="botaoAbrirModal">🗑️</button>
+          </td>
+        </tr>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome do insumo</th>
-                    <th>Categoria</th>
-                    <th>quantidade</th>
-                    <th>preço</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
+        <tr>
+          <td>Chá de Camomila</td>
+          <td>Chá</td>
+          <td>Lata 50g</td>
+          <td>R$ 45,00</td>
+          <td>8 un</td>
+          <td>
+            <a href="editarproduto.html">✏️</a>
+            <button class="botaoAbrirModal">🗑️</button>
+          </td>
+        </tr>
 
-            <tbody>
-                <tr><td>Blend 1</td><td>relaxante</td><td>5 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 2</td><td>floral</td><td>8 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 3</td><td>energético</td><td>20 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 4</td><td>relaxante</td><td>5 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 5</td><td>floral</td><td>8 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 6</td><td>energético</td><td>20 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 7</td><td>relaxante</td><td>5 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 8</td><td>floral</td><td>8 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 9</td><td>energético</td><td>20 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 10</td><td>relaxante</td><td>5 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 11</td><td>floral</td><td>8 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 12</td><td>floral</td><td>20 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 13</td><td>energetico</td><td>5 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 14</td><td>relaxante</td><td>8 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-                <tr><td>blend 15</td><td>floral</td><td>20 un</td><td>R$ 12,90</td><td><a href="editarproduto.html">✎</a><button class="botaoAbrirModal">🗑</button></td></tr>
-            </tbody>
-        </table>
+        <tr>
+          <td>Blend Relaxante</td>
+          <td>Blend</td>
+          <td>Saco 100g</td>
+          <td>R$ 60,00</td>
+          <td>15 un</td>
+          <td>
+            <a href="editarproduto.html">✏️</a>
+            <button class="botaoAbrirModal">🗑️</button>
+          </td>
+        </tr>
 
-    </section>
+        <tr>
+          <td>Aromatizador Lavanda</td>
+          <td>Aromatizador</td>
+          <td>Unidade</td>
+          <td>R$ 35,00</td>
+          <td>20 un</td>
+          <td>
+            <a href="editarproduto.html">✏️</a>
+            <button class="botaoAbrirModal">🗑️</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Chá Verde Premium</td>
+          <td>Chá</td>
+          <td>Lata 50g</td>
+          <td>R$ 55,00</td>
+          <td>6 un</td>
+          <td>
+            <a href="editarproduto.html">✏️</a>
+            <button class="botaoAbrirModal">🗑️</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Blend Energizante</td>
+          <td>Blend</td>
+          <td>Saco 100g</td>
+          <td>R$ 65,00</td>
+          <td>12 un</td>
+          <td>
+            <a href="editarproduto.html">✏️</a>
+            <button class="botaoAbrirModal">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 
 </main>
 
 <div class="fundoModal">
-    <div class="modalExcluir">
-        <div class="iconeModal">🗑</div>
+  <div class="modalExcluir">
 
-        <h2>Excluir produto</h2>
+    <div class="iconeModal">🗑️</div>
 
-        <p>Tem certeza que deseja excluir este produto?</p>
-        <p>Essa ação não pode ser desfeita.</p>
+    <h2>Excluir produto</h2>
 
-        <div class="cardModalReceita">
-            <div class="bolinhaReceita">B1</div>
+    <p>Tem certeza que deseja excluir este produto?</p>
+    <p>Essa ação não pode ser desfeita.</p>
 
-            <div>
-                <h3>Blend 1</h3>
-                <p>📦 Relaxante</p>
-                <p>💰 R$ 12,90</p>
-                <p>📊 5 un</p>
-            </div>
-        </div>
+    <div class="cardModalReceita">
+      <div class="bolinhaReceita">B1</div>
 
-        <div class="alertaModal">
-            ⚠️ Todas as informações e históricos relacionados a este produto serão permanentemente apagados do sistema.
-        </div>
-
-        <div class="botoesModal">
-            <button class="botaoCancelar">Cancelar</button>
-            <button class="botaoConfirmarExcluir">Excluir produto</button>
-        </div>
+      <div>
+        <h3>Blend 1</h3>
+        <p>📦 Chá</p>
+        <p>💰 R$ 50,00</p>
+        <p>📊 10 un</p>
+      </div>
     </div>
+
+    <div class="alertaModal">
+      ⚠️ Todas as informações e históricos relacionados a este produto serão permanentemente apagados do sistema.
+    </div>
+
+    <div class="botoesModal">
+      <button class="botaoCancelar">Cancelar</button>
+      <button class="botaoConfirmarExcluir">Excluir produto</button>
+    </div>
+
+  </div>
 </div>
 
 </body>

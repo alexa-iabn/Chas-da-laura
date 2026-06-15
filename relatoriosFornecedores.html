@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Fornecedores</title>
+    <link rel="stylesheet" href="stylesabrina.css">
+</head>
+<body>
+
+<header class="topoEstoque">
+    <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+    <a href="relatoriosVendas.html" class="LinkEstoque">Relatórios</a>
+    <a href="relatoriosFornecedores.html" class="linkEstoqueProdutos"> &gt; Fornecedores</a>
+    <div class="notificacao"><i class="sino"></i></div>
+    <div class="PerfilUsuario">
+        <div class="avatar"><span>L</span></div>
+        <span class="nomeUsuario">Laura</span>
+    </div>
+</header>
+
+<aside class="menuLateral">
+    <div class="logoMenuLateral">
+        <img src="Imagens/Logo.png" alt="Logo Chás da Laura">
+    </div>
+    <nav class="menu">
+        <ul>
+            <li>
+                <a href="paineldeinicio.html" class="itemMenu">
+                    <img src="Imagens/casa.svg" class="iconeMenu" alt="">
+                    <span class="tituloMenu">Painel inicial</span>
+                </a>
+            </li>
+            <li>
+                <details>
+                    <summary class="itemMenu">
+                        <img src="Imagens/lapiz.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Cadastros</span>
+                        <span class="iconeSeta">&#9662;</span>
+                    </summary>
+                    <ul class="subMenu">
+                        <li><a href="cadastroclientes.html">Clientes</a></li>
+                        <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                        <li><a href="cadastroinsumos.html">Insumos</a></li>
+                        <li><a href="cadastroprodutos.html">Produtos</a></li>
+                        <li><a href="cadastroreceitas.html">Receitas</a></li>
+                        <li><a href="cadastroparceiros.html">Parceiros</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary class="itemMenu">
+                        <img src="Imagens/caixa.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Estoque</span>
+                        <span class="iconeSeta">&#9662;</span>
+                    </summary>
+                    <ul class="subMenu">
+                        <li><a href="EstoqueProdutos.html">Produtos</a></li>
+                        <li><a href="EstoqueInsumos.html">Insumos</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details open>
+                    <summary class="itemMenu">
+                        <img src="Imagens/grafico.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Relatórios</span>
+                        <span class="iconeSeta">&#9662;</span>
+                    </summary>
+                    <ul class="subMenu">
+                        <li><a href="relatoriosVendas.html">Vendas</a></li>
+                        <li><a href="relatorioReceitas.html">Receitas</a></li>
+                        <li><a href="relatorioestoque.html">Estoque</a></li>
+                        <li><a href="relatoriosResumoGeral.html">Resumo Geral</a></li>
+                        <li><a href="relatoriosFornecedores.html">Fornecedores</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <a href="producao.html" class="itemMenu">
+                    <img src="Imagens/prancheta.svg" class="iconeMenu" alt="">
+                    <span class="tituloMenu">Produção</span>
+                </a>
+            </li>
+            <li>
+                <details>
+                    <summary class="itemMenu">
+                        <img src="Imagens/setaCima.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Saídas</span>
+                        <span class="iconeSeta">&#9662;</span>
+                    </summary>
+                    <ul class="subMenu">
+                        <li><a href="saidasClientes.html">Clientes</a></li>
+                        <li><a href="saidaParceiro.html">Parceiros</a></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </nav>
+    <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+</aside>
+
+<main class="conteudoPrincipal">
+
+    <div class="topoPagina">
+        <div>
+            <h1 class="tituloPagina">Relatório de Fornecedores</h1>
+            <p class="subtituloPagina">Analise o desempenho, volume de compras e confiabilidade dos fornecedores.</p>
+        </div>
+        <div class="grupoBotoes">
+            <select id="selectPeriodoForn" class="filtrar">
+                <option value="30" selected>Últimos 30 dias</option>
+                <option value="90">Últimos 90 dias</option>
+                <option value="180">Últimos 6 meses</option>
+                <option value="365">Último ano</option>
+            </select>
+            <button class="btnVerde" id="btnFiltrarForn">Filtrar</button>
+            <button class="btnVoltar" id="btnExportarForn">&#8659; Exportar</button>
+        </div>
+    </div>
+
+    <!-- Cards resumo de fornecedores -->
+    <section class="cardsResumo" id="cardsResumoForn">
+        <div class="cardResumo">
+            <span class="cardSubtitulo">Total de fornecedores</span>
+            <strong class="cardNumero" id="cardTotalForn">—</strong>
+            <a href="fornecedorescadastrado.html">Ver cadastros</a>
+        </div>
+        <div class="cardResumo">
+            <span class="cardSubtitulo">Fornecedores ativos</span>
+            <strong class="cardNumero" id="cardFornAtivos">—</strong>
+            <a href="#">Ver detalhes</a>
+        </div>
+        <div class="cardResumo">
+            <span class="cardSubtitulo">Total em compras</span>
+            <strong class="cardNumero" id="cardTotalCompras">—</strong>
+            <a href="#">Ver compras</a>
+        </div>
+        <div class="cardResumo">
+            <span class="cardSubtitulo">Insumos fornecidos</span>
+            <strong class="cardNumero" id="cardInsumosForn">—</strong>
+            <a href="EstoqueInsumos.html">Ver insumos</a>
+        </div>
+    </section>
+
+    <!-- Layout dois painéis: tabela principal + card lateral -->
+    <div class="areaDoisPaineis" style="margin-top: 24px; align-items: flex-start;">
+
+        <div class="painelPrincipal">
+
+            <!-- Busca + tabela de fornecedores -->
+            <div class="conteinerTabela">
+                <div class="barraBusca">
+                    <div>
+                        <h2 class="tituloTabela" style="margin:0;">Fornecedores</h2>
+                        <p class="subtituloTabela">Volume de compras e insumos por fornecedor</p>
+                    </div>
+                    <input type="text" placeholder="Buscar fornecedor..." id="buscaFornecedor" style="width:220px; padding:9px 12px; border:1px solid #ddd; border-radius:6px; font-size:13px;">
+                </div>
+                <table class="tabelaGeral" id="tabelaFornecedores">
+                    <thead>
+                        <tr>
+                            <th>Fornecedor</th>
+                            <th>Insumos fornecidos</th>
+                            <th>Última compra</th>
+                            <th>Total comprado</th>
+                            <th>Valor total</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyFornecedores">
+                        <tr><td colspan="7" style="text-align:center; color:#aaa;">Carregando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tabela de insumos por fornecedor -->
+            <div class="conteinerTabela" style="margin-top: 20px;">
+                <div class="barraBusca">
+                    <div>
+                        <h2 class="tituloTabela" style="margin:0;">Insumos por fornecedor</h2>
+                        <p class="subtituloTabela">Detalhe dos insumos e preços de cada fornecedor</p>
+                    </div>
+                    <select id="filtroFornecedorInsumos" class="filtrar" style="width: 200px;">
+                        <option value="">Todos os fornecedores</option>
+                    </select>
+                </div>
+                <table class="tabelaGeral" id="tabelaInsumosForn">
+                    <thead>
+                        <tr>
+                            <th>Insumo</th>
+                            <th>Fornecedor</th>
+                            <th>Unidade</th>
+                            <th>Preço unitário</th>
+                            <th>Qtd. comprada</th>
+                            <th>Total gasto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyInsumosForn">
+                        <tr><td colspan="6" style="text-align:center; color:#aaa;">Carregando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Painel lateral -->
+        <div class="painelLateral">
+
+            <div class="cardInfoLateral">
+                <div class="topoCard">
+                    <div class="avatarCircular">F1</div>
+                    <div>
+                        <h3 id="fornDestaqueName">Fornecedor destaque</h3>
+                        <span class="badgeAtivo">Ativo</span>
+                    </div>
+                </div>
+                <div class="itemInfoCard">
+                    <span>Total comprado</span>
+                    <strong id="fornDestaqueTotalComprado">—</strong>
+                </div>
+                <div class="itemInfoCard">
+                    <span>Valor total</span>
+                    <strong id="fornDestaqueValor">—</strong>
+                </div>
+                <div class="itemInfoCard">
+                    <span>Insumos</span>
+                    <strong id="fornDestaqueInsumos">—</strong>
+                </div>
+                <div class="itemInfoCard">
+                    <span>Última compra</span>
+                    <strong id="fornDestaqueUltima">—</strong>
+                </div>
+            </div>
+
+            <div class="cardResumoVerde2">
+                <h3>Resumo de compras</h3>
+                <div class="linhaResumo">
+                    <span>Compras no período</span>
+                    <strong id="resumoComprasPeriodo">—</strong>
+                </div>
+                <div class="linhaResumo">
+                    <span>Ticket médio / compra</span>
+                    <strong id="resumoTicketMedioForn">—</strong>
+                </div>
+                <div class="linhaResumo">
+                    <span>Fornecedor mais barato</span>
+                    <strong id="resumoFornMaisBarato">—</strong>
+                </div>
+                <div class="linhaResumo">
+                    <span>Insumo mais comprado</span>
+                    <strong id="resumoInsumoMaisComprado">—</strong>
+                </div>
+            </div>
+
+            <div class="cardAtividades" style="background:white; border-radius:10px; padding:20px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+                <h3 style="margin:0 0 14px 0; font-size:15px;">Últimas compras</h3>
+                <div id="listaUltimasCompras">
+                    <p style="font-size:13px; color:#aaa;">Carregando...</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
