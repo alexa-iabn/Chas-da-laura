@@ -775,3 +775,24 @@ tr:nth-child(4n+0) .produto-dot { background: #10b981; }
   align-items: center;
   gap: 16px; /* Espaço entre o sino de notificação e o botão de usuário */
 }
+
+.filtro-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filtro-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 28px;
+  width: 100%;
+}
+
+.filtro-select svg {
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  color: var(--gray-400);
+}
+
