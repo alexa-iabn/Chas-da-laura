@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Receita</title>
-    <link rel="stylesheet" href="stylesabrina.css">
+<link rel="stylesheet" href="stylesabrina.css">
+<title>Editar Receita</title>
 </head>
 
 <body>
@@ -35,74 +35,76 @@
         <img src="Imagens/Logo.png" alt="Logo chás da laura">
     </div>
 
-    <nav class="menu">
+        <nav class="menu">
         <ul>
             <li>
                 <a href="paineldeinicio.html" class="itemMenu">
-                    <span class="iconeCasa"></span>
+                    <img src="Imagens/casa.svg" class="iconeMenu" alt="">
                     <span class="tituloMenu">Painel inicial</span>
                 </a>
             </li>
-
-            <li>
-                <details open>
-                    <summary class="itemMenu ativo">
-                        <span class="iconeLapis"></span>
-                        <span class="tituloMenu">Cadastros</span>
-                        <span class="iconeSeta"></span>
-                    </summary>
-
-                    <ul class="subMenu">
-                        <li><a href="CadastroClientes.html">Clientes</a></li>
-                        <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                        <li><a href="CadastroInsumos.html">Insumos</a></li>
-                        <li><a href="CadastroProdutos.html">Produtos</a></li>
-                        <li><a href="cadastroreceitas.html">Receitas</a></li>
-                        <li><a href="CadastroParceiros.html">Parceiros</a></li>
-                    </ul>
-                </details>
-            </li>
-
             <li>
                 <details>
                     <summary class="itemMenu">
-                        <span class="iconeLapis"></span>
-                        <span class="tituloMenu">Estoque</span>
-                        <span class="iconeSeta"></span>
+                        <img src="Imagens/lapiz.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Cadastros</span>
+                        <span class="iconeSeta">&#9662;</span>
                     </summary>
-
+                    <ul class="subMenu">
+                        <li><a href="cadastroclientes.html">Clientes</a></li>
+                        <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                        <li><a href="cadastroinsumos.html">Insumos</a></li>
+                        <li><a href="cadastroprodutos.html">Produtos</a></li>
+                        <li><a href="cadastroreceitas.html">Receitas</a></li>
+                        <li><a href="cadastroparceiros.html">Parceiros</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary class="itemMenu">
+                        <img src="Imagens/caixa.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Estoque</span>
+                        <span class="iconeSeta">&#9662;</span>
+                    </summary>
                     <ul class="subMenu">
                         <li><a href="EstoqueProdutos.html">Produtos</a></li>
                         <li><a href="EstoqueInsumos.html">Insumos</a></li>
                     </ul>
                 </details>
             </li>
-
-            <li>
-                <a href="relatoriosVendas.html" class="itemMenu">
-                    <span class="iconeGrafico"></span>
-                    <span class="tituloMenu">Relatórios</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="PaginaProducao.html" class="itemMenu">
-                    <span class="iconePrancheta"></span>
-                    <span class="tituloMenu">Produção</span>
-                </a>
-            </li>
-
             <li>
                 <details>
                     <summary class="itemMenu">
-                        <span class="iconeSetaCima"></span>
-                        <span class="tituloMenu">Saídas</span>
-                        <span class="iconeSeta"></span>
+                        <img src="Imagens/grafico.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Relat&#243;rios</span>
+                        <span class="iconeSeta">&#9662;</span>
                     </summary>
-
                     <ul class="subMenu">
-                        <li><a href="SaidasCliente.html">Clientes</a></li>
-                        <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                        <li><a href="relatoriosVendas.html">Vendas</a></li>
+                        <li><a href="relatorioReceitas.html">Receitas</a></li>
+                        <li><a href="relatorioestoque.html">Estoque</a></li>
+                        <li><a href="relatoriosResumoGeral.html">Resumo Geral</a></li>
+                        <li><a href="relatoriosFornecedores.html">Fornecedores</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <a href="producao.html" class="itemMenu">
+                    <img src="Imagens/prancheta.svg" class="iconeMenu" alt="">
+                    <span class="tituloMenu">Produ&#231;&#227;o</span>
+                </a>
+            </li>
+            <li>
+                <details>
+                    <summary class="itemMenu">
+                        <img src="Imagens/setaCima.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Sa&#237;das</span>
+                        <span class="iconeSeta">&#9662;</span>
+                    </summary>
+                    <ul class="subMenu">
+                        <li><a href="saidasClientes.html">Clientes</a></li>
+                        <li><a href="saidaParceiro.html">Parceiros</a></li>
                     </ul>
                 </details>
             </li>
@@ -127,7 +129,7 @@
         </a>
     </div>
 
-    <section class="areaEditarReceita">
+    <section class="areaDoisPaineis">
 
         <div class="conteinerTabela formularioEditar">
 
@@ -136,7 +138,7 @@
                 <option>Chá de camomila - lata 50g</option>
             </select>
 
-            <div class="linhaFormulario">
+            <div class="linhaForm2">
                 <div>
                     <label>Rendimento da receita</label>
                     <input type="number" value="1">
@@ -157,8 +159,8 @@
             <textarea class="campoGrande" rows="5" placeholder="Descreva o insumo, característica, qualidade, origem, etc..."></textarea>
 
             <div class="botoesFormulario">
-                <button class="botaoCancelar">Cancelar</button>
-                <button class="botaoSalvar">Salvar receita</button>
+                <button class="btnVoltar">Cancelar</button>
+                <button class="btnVerde">Salvar receita</button>
             </div>
 
         </div>
@@ -199,5 +201,7 @@
 
 </main>
 
+<script src="app.js"></script>
+<script src="js/editarreceita.js"></script>
 </body>
 </html>
