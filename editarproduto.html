@@ -1,75 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editar Produto</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Produto</title>
+    <link rel="stylesheet" href="stylesabrina.css">
 </head>
 
 <body>
 
 <header class="topoEstoque">
-  <a href="paineldeinicio.html" class="paginaPrincipal"></a>
-  <a href="#" class="LinkEstoque">Cadastros</a>
-  <a href="#" class="linkEstoqueProdutos"> > Produtos > Editar produto</a>
+    <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+    <a href="#" class="LinkEstoque">Cadastros</a>
+    <a href="#" class="linkEstoqueProdutos"> > Produtos > Editar produto</a>
 
-  <div class="notificacao">
-    <i class="sino"></i>
-  </div>
+    <div class="notificacao">
+        <i class="sino"></i>
+    </div>
 
-  <div class="PerfilUsuario">
-    <div class="avatar">L</div>
-    <h2 class="nomeUsuario">Laura</h2>
-  </div>
+    <div class="PerfilUsuario">
+        <div class="avatar"><span class="L">L</span></div>
+        <h2 class="nomeUsuario">Laura</h2>
+        <span class="seta">⌄</span>
+    </div>
 </header>
 
 <aside class="menuLateral">
 
-  <div class="logoMenuLateral">
-    <img src="Imagens/Logo.png" alt="Logo">
-  </div>
+    <div class="logoMenuLateral">
+        <img src="Imagens/Logo.png" alt="Logo Chás da Laura">
+    </div>
 
-  <nav class="menu">
-    <ul>
-      <li><a href="paineldeinicio.html" class="itemMenu">Painel inicial</a></li>
+    <nav class="menu">
+        <ul>
 
-      <li>
-        <details open>
-          <summary class="itemMenu">Cadastros</summary>
+            <li>
+                <a href="paineldeinicio.html" class="itemMenu">
+                    <img src="Imagens/casa.svg" class="iconeMenu" alt="">
+                    <span class="tituloMenu">Painel inicial</span>
+                </a>
+            </li>
 
-          <ul class="subMenu">
-            <li><a href="cadastroprodutos.html">Produtos</a></li>
-            <li><a href="cadastroreceitas.html">Receitas</a></li>
-            <li><a href="cadastroparceiros.html">Parceiros</a></li>
-          </ul>
-        </details>
-      </li>
-    </ul>
-  </nav>
+            <li>
+                <details open>
+                    <summary class="itemMenu">
+                        <img src="Imagens/lapiz.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Cadastros</span>
+                    </summary>
 
-  <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+                    <ul class="subMenu">
+                        <li><a href="CadastroClientes.html">Clientes</a></li>
+                        <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                        <li><a href="CadastroInsumos.html">Insumos</a></li>
+                        <li><a href="cadastroprodutos.html">Produtos</a></li>
+                        <li><a href="cadastroreceitas.html">Receitas</a></li>
+                        <li><a href="cadastroparceiros.html">Parceiros</a></li>
+                    </ul>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary class="itemMenu">
+                        <img src="Imagens/caixa.svg" class="iconeMenu" alt="">
+                        <span class="tituloMenu">Estoque</span>
+                    </summary>
+
+                    <ul class="subMenu">
+                        <li><a href="EstoqueProdutos.html">Produtos</a></li>
+                        <li><a href="EstoqueInsumos.html">Insumos</a></li>
+                    </ul>
+                </details>
+            </li>
+
+            <li>
+                <a href="relatoriosVendas.html" class="itemMenu">
+                    <img src="Imagens/grafico.svg" class="iconeMenu" alt="">
+                    <span class="tituloMenu">Relatórios</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="PaginaProducao.html" class="itemMenu">
+                    <img src="Imagens/prancheta.svg" class="iconeMenu" alt="">
+                    <span class="tituloMenu">Produção</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
 
 </aside>
 
-<main>
+<main class="conteudoPrincipal">
 
-  <div class="topoPaginaReceita">
+    <div class="topoPaginaReceita">
 
-    <div>
-      <h1 class="tituloPagina">Editar produto</h1>
-      <h3 class="subtituloPagina">
-        Modifique as informações do produto
-      </h3>
+        <div>
+            <h1 class="tituloPagina">Editar produto</h1>
+            <h3 class="subtituloPagina">
+                Modifique as informações do produto
+            </h3>
+        </div>
+
+        <div class="botoesTopoProduto">
+
+            <a href="calcularpreco.html">
+                <button class="botaoTabela">
+                    Calcular preço
+                </button>
+            </a>
+
+            <a href="produtoscadastrados.html">
+                <button class="botaoTabela">
+                    Ver produtos cadastrados
+                </button>
+            </a>
+
+        </div>
+
     </div>
-
-    <a href="produtoscadastrados.html">
-      <button class="botaoTabela">
-        Ver produtos cadastrados
-      </button>
-    </a>
-
-  </div>
 
   <section class="areaEditarReceita">
 
@@ -135,7 +187,10 @@ Blend especial de chás aromáticos, ideal para relaxamento.
 
       <div class="botoesFormulario">
         <button class="botaoCancelar">Cancelar</button>
-        <button class="botaoSalvar">Salvar produto</button>
+        <button class="botaoSalvar">
+        <img src="Imagens/save.svg" alt="">
+        Salvar produto
+        </button>
       </div>
 
     </div>
@@ -161,26 +216,36 @@ Blend especial de chás aromáticos, ideal para relaxamento.
         <strong>10/01/2026</strong>
 
         <button class="botaoExcluir">
-          Excluir produto
+          🗑 Excluir produto
         </button>
 
       </div>
 
-      <div class="cardResumoVerde">
+     <div class="cardResumoVerde">
 
-        <h3>Resumo de custo</h3>
+    <h3>Resumo do Produto</h3>
 
-        <p>Custo de produção <strong>R$ 21,50</strong></p>
-
-        <p>Preço atual <strong>R$ 50,00</strong></p>
-
-        <p>Margem de lucro <strong>57%</strong></p>
-
-        <p>Lucro por unidade <strong>R$ 28,50</strong></p>
-
-      </div>
-
+    <div class="linhaResumo">
+        <span>Total de em estoque</span>
+        <strong>20</strong>
     </div>
+
+    <div class="linhaResumo">
+        <span>Valor total em estoque</span>
+        <strong>R$ 2.845,00</strong>
+    </div>
+
+    <div class="linhaResumo">
+        <span>Último saída</span>
+        <strong>18/08/2025</strong>
+    </div>
+
+    <div class="linhaResumo">
+        <span>Status</span>
+        <span class="statusDisponivel">Disponível</span>
+    </div>
+
+</div>
 
   </section>
 

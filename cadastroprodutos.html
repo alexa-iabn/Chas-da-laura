@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Produtos</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylesabrina.css">
 </head>
 
 <body>
@@ -34,54 +34,67 @@
 
   <nav class="menu">
     <ul>
-      <li>
-        <a href="paineldeinicio.html" class="itemMenu">
-          <span class="iconeCasa"></span>
-          <span class="tituloMenu">Painel inicial</span>
-        </a>
-      </li>
+        <li>
+            <a href="paineldeinicio.html" class="itemMenu">
+                <img src="Imagens/casa.svg" class="iconeMenu" alt="">
+                <span class="tituloMenu">Painel inicial</span>
+            </a>
+        </li>
 
-      <li>
-        <details open>
-          <summary class="itemMenu">
-            <span class="iconeLapis"></span>
-            <span class="tituloMenu">Cadastros</span>
-          </summary>
+        <li>
+            <details open>
+                <summary class="itemMenu ativo">
+                    <img src="Imagens/lapiz.svg" class="iconeMenu" alt="">
+                    <span class="tituloMenu">Cadastros</span>
+                    <span class="iconeSeta">⌄</span>
+                </summary>
 
-          <ul class="subMenu">
-            <li><a href="CadastroClientes.html">Clientes</a></li>
-            <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-            <li><a href="CadastroInsumos.html">Insumos</a></li>
-            <li><a href="cadastroprodutos.html">Produtos</a></li>
-            <li><a href="cadastroreceitas.html">Receitas</a></li>
-            <li><a href="cadastroparceiros.html">Parceiros</a></li>
-          </ul>
-        </details>
-      </li>
+                <ul class="subMenu">
+                    <li><a href="CadastroClientes.html">Clientes</a></li>
+                    <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                    <li><a href="CadastroInsumos.html">Insumos</a></li>
+                    <li><a href="cadastroprodutos.html" class="ativoSubmenu">Produtos</a></li>
+                    <li><a href="cadastroreceitas.html">Receitas</a></li>
+                    <li><a href="cadastroparceiros.html">Parceiros</a></li>
+                </ul>
+            </details>
+        </li>
 
-      <li>
-        <details>
-          <summary class="itemMenu">
-            <span class="iconeLapis"></span>
-            <span class="tituloMenu">Estoque</span>
-          </summary>
+        <li>
+            <details>
+                <summary class="itemMenu">
+                    <img src="Imagens/caixa.svg" class="iconeMenu" alt="">
+                    <span class="tituloMenu">Estoque</span>
+                    <span class="iconeSeta">⌄</span>
+                </summary>
 
-          <ul class="subMenu">
-            <li><a href="EstoqueProdutos.html">Produtos</a></li>
-            <li><a href="EstoqueInsumos.html">Insumos</a></li>
-          </ul>
-        </details>
-      </li>
+                <ul class="subMenu">
+                    <li><a href="EstoqueProdutos.html">Produtos</a></li>
+                    <li><a href="EstoqueInsumos.html">Insumos</a></li>
+                </ul>
+            </details>
+        </li>
 
-      <li><a href="relatoriosVendas.html" class="itemMenu">Relatórios</a></li>
-      <li><a href="PaginaProducao.html" class="itemMenu">Produção</a></li>
+        <li>
+            <a href="relatoriosVendas.html" class="itemMenu">
+                <img src="Imagens/grafico.svg" class="iconeMenu" alt="">
+                <span class="tituloMenu">Relatórios</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="PaginaProducao.html" class="itemMenu">
+                <img src="Imagens/prancheta.svg" class="iconeMenu" alt="">
+                <span class="tituloMenu">Produção</span>
+            </a>
+        </li>
     </ul>
-  </nav>
+</nav>
 
   <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
 </aside>
 
-<main>
+<main class="conteudoPrincipal">
 
   <div class="topoPaginaReceita">
     <div>
@@ -89,9 +102,17 @@
       <h3 class="subtituloPagina">Preencha as informações essenciais para cadastrar um novo produto</h3>
     </div>
 
-    <a href="produtoscadastrados.html">
-      <button class="botaoTabela">Ver produtos cadastrados</button>
+    <div class="botoesTopoProduto">
+
+    <a href="calcularpreco.html">
+        <button class="botaoTabela">Calcular preço</button>
     </a>
+
+    <a href="produtoscadastrados.html">
+        <button class="botaoTabela">Ver produtos cadastrados</button>
+    </a>
+
+</div>
   </div>
 
   <section class="conteinerTabela formularioParceiros">
@@ -147,12 +168,83 @@
     <label>Descrição</label>
     <textarea class="campoGrande" rows="4" placeholder="Descreva o produto, características, qualidade, origem, etc..."></textarea>
 
-    <div class="botoesFormulario">
-      <button class="botaoCancelar">Cancelar</button>
-      <button class="botaoSalvar">Salvar produto</button>
+        <div class="botoesFormulario">
+        <button class="botaoCancelar">Cancelar</button>
+        <button class="botaoSalvar">
+        <img src="Imagens/save.svg" alt="">
+        Salvar produto
+        </button>
     </div>
 
-  </section>
+</section>
+
+<section class="conteinerTabela tabelaProdutos">
+
+    <div class="barraProdutos">
+
+    <div>
+        <h2>Produtos cadastrados</h2>
+        <p>Gerencie os produtos do sistema</p>
+    </div>
+
+    <div class="acoesProdutos">
+        <input type="text" placeholder="Buscar produto...">
+
+        <button class="btnVerde">
+            + Novo produto
+        </button>
+    </div>
+
+</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Quantidade</th>
+                <th>Preço de venda</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Blend 1</td>
+                <td>Relaxante</td>
+                <td>5 uni</td>
+                <td>R$ 12,90</td>
+                <td>
+                    <a href="editarproduto.html">✎</a>
+                    <button class="botaoAbrirModal">🗑</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Blend 2</td>
+                <td>Floral</td>
+                <td>8 uni</td>
+                <td>R$ 12,90</td>
+                <td>
+                    <a href="editarproduto.html">✎</a>
+                    <button class="botaoAbrirModal">🗑</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Blend 3</td>
+                <td>Energético</td>
+                <td>20 uni</td>
+                <td>R$ 12,90</td>
+                <td>
+                    <a href="editarproduto.html">✎</a>
+                    <button class="botaoAbrirModal">🗑</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
 
 </main>
 

@@ -3,33 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login - Chás da Laura</title>
+    <link rel="stylesheet" href="stylesabrina.css">
 </head>
 
-<body class="paginaCadastro">
+<body class="paginaLogin">
 
-    <section class="ladoCadastroImagem">
-        <img src="Imagens/Logo.png" class="logoCadastro" alt="Logo Chás da Laura">
+    <!-- LADO ESQUERDO -->
+    <section class="ladoLoginImagem">
 
-        <h1>Sistema de Gestão<br>de Estoque</h1>
+        <img src="Imagens/Logo.png" class="logoLogin" alt="Logo Chás da Laura">
+
+        <h1>
+            Sistema de Gestão<br>
+            de Estoque
+        </h1>
 
         <p>
             Organize, controle e acompanhe seu estoque em<br>
             tempo real de forma simples e inteligente
         </p>
 
-        <img src="Imagens/ChaImagemMenu.png" class="imagemCadastroCha" alt="Chá da Laura">
+        <img src="Imagens/ChaImagemMenu.png" class="chaLogin" alt="Chá da Laura">
+
     </section>
 
-    <section class="ladoCadastroFormulario">
+    <!-- LADO DIREITO -->
+    <section class="ladoLoginFormulario">
 
         <div class="cardLogin">
 
             <h2>Bem-vindo de volta!</h2>
-            <p>Faça login para acessar sua conta</p>
+
+            <p class="subtituloLogin">
+                Faça login para acessar sua conta
+            </p>
 
             <form>
+
                 <label>E-mail</label>
                 <input type="email" placeholder="Digite seu e-mail">
 
@@ -37,19 +48,27 @@
                 <input type="password" placeholder="Digite sua senha">
 
                 <div class="linhaLogin">
+
                     <label class="lembrar">
-                        <input type="checkbox"> Lembrar-me
+                        <input type="checkbox">
+                        Lembrar-me
                     </label>
 
-                    <a href="redefinirsenha.html">Esqueci minha senha</a>
+                    <a href="redefinirsenha.html">
+                        Esqueci minha senha
+                    </a>
+
                 </div>
 
-                <button class="botaoCadastrar">Entrar</button>
+                <button type="submit" class="botaoEntrar">
+                    Entrar
+                </button>
 
-                <p class="textoEntrar">
+                <p class="textoCadastro">
                     Não tem uma conta?
                     <a href="cadastro.html">Cadastrar-se</a>
                 </p>
+
             </form>
 
         </div>
