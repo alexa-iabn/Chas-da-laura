@@ -6,6 +6,7 @@
     <title>Relátorios</title>
     <link rel="stylesheet" href="styleEstoque.css">
     <link rel="stylesheet" href="styleRelatorios.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
@@ -156,26 +157,12 @@
                                 <div class="periodo">
 
                                     <label for="dataInicio"></label>
-                                    <input type="date" class="campoData">
+                                    <input type="date" class="campoData" id="dataInicio">
 
                                     <label for="dataFim"></label>
-                                    <input type="date" class="campoData">
+                                    <input type="date" class="campoData" id="dataFim">
 
                                 </div>
-
-                            </div>
-
-                            <div class="filtro">
-
-                                <span class="nomeFiltro">Insumos</span>
-
-                                <select name="filtrar" class="filtrar" id="">
-                                    <option value="todos">Todos</option>
-                                    <option value="insumo1">Insumo 1</option>
-                                    <option value="insumo2">Insumo 2</option>
-                                    <option value="insumo3">Insumo 3</option>
-                                    <option value="insumo4">Insumo 4</option>
-                                </select>
 
                             </div>
 
@@ -183,12 +170,12 @@
 
                         <div class="acoesFiltro">
 
-                            <button class="botaoFiltrar">
+                            <button class="botaoFiltrar" id="botaoFiltrarReceita">
                                 <i class="iconeFiltro"></i>
                                 <span>Filtrar</span>
                             </button>
 
-                            <button class="botaoLimparFiltro">
+                            <button class="botaoLimparFiltro" id="botaoLimparFiltroReceita">
                                 <i class="iconeCarregar"></i>
                                 <span>Limpar Filtro</span>
                             </button>
@@ -196,51 +183,7 @@
 
                     </div>
 
-                    <div class="demostracoes">
-
-                        <div class="demo">
-                            <div class="iconeDemo">
-                                <span class="iconeSetaCimaDemo"></span>
-                            </div>
-                            <div class="textoDemo">
-                                <span class="demoSemiTitulo">Destaque do período</span>
-                                <span class="demoTitulo">Receita 1</span>
-                                <span class="demoTextoNormal">Do periodo analisado</span>
-                            </div>
-                        </div>
-
-                        <div class="demo">
-                            <div class="iconeDemo">
-                                <span class="iconeDinehiroDemo"></span>
-                            </div>
-                            <div class="textoDemo">
-                                <span class="demoSemiTitulo">Receita total</span>
-                                <span class="demoTitulo">R$ 22.413,00</span>
-                                <span class="demoTextoNormal">Do período</span>
-                            </div>
-                        </div>
-
-                        <div class="demo">
-                            <div class="iconeDemo">
-                                <span class="iconeCarrinhoDemo"></span>
-                            </div>
-                            <div class="textoDemo">
-                                <span class="demoSemiTitulo">Custo total</span>
-                                <span class="demoTitulo">R$ 21.385,33</span>
-                                <span class="demoTextoNormal">Do período</span>
-                            </div>
-                        </div>
-
-                        <div class="demo">
-                            <div class="iconeDemo">
-                                <span class="iconeMoedasDemo"></span>
-                            </div>
-                            <div class="textoDemo">
-                                <span class="demoSemiTitulo">Lucro bruto</span>
-                                <span class="demoTitulo">R$ 20.652,50</span>
-                                <span class="demoTextoNormal">Do período</span>
-                            </div>
-                        </div>
+                    <div class="demostracoes" id="demostracoesReceita">
 
                     </div>
                 
@@ -294,13 +237,13 @@
 
                 </div>
             
-                <div class="conteinerTabela">
+                <div class="conteinerTabela ">
 
                     <div class="tituloTabela">
                         <h2>Desempenho e rendabilidade dos insumos</h2>
                     </div>
 
-                    <table class="tabela">
+                    <table class="tabela" id="tabelaReceita">
 
                         <thead class="topoTabelaVerdadeira">
                             <tr>
@@ -313,27 +256,12 @@
                             </tr>
                         </thead>
                         
-                        <tbody>
-                            <tr>
-
-                                <td>
-                                    <div class="Produto">
-                                        <span class="fotoProduto"></span>
-                                        <span>Insumo 1</span>
-                                    </div>
-                                </td>
-
-                                <td>10</td>
-                                <td>R$ 750,00</td>
-                                <td>R$ 75,00</td>
-                                <td>R$ 700,00</td>
-                                <td>30%</td>
-
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </section>
         </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="relatoriosReceita.js"></script>
 </body>
 </html>

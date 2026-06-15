@@ -165,20 +165,6 @@
 
                             </div>
 
-                            <div class="filtro">
-
-                                <label for="insumos">Clientes</label>
-
-                                <select name="" id="">
-                                    <option value="todos">Todos</option>
-                                    <option value="insumo1">Cliente 1</option>
-                                    <option value="insumo2">Cliente 2</option>
-                                    <option value="insumo3">Cliente 3</option>
-                                    <option value="insumo4">Cliente 4</option>
-                                </select>
-
-                            </div>
-
                         </div>
 
                         <div class="acoesFiltro">
@@ -302,7 +288,7 @@
                         <h2>Desempenho dos clientes</h2>
                     </div>
 
-                    <table class="tabela">
+                    <table class="tabela tabelaRelatoriosVendas">
 
                         <thead class="topoTabelaVerdadeira">
                             <tr>
@@ -310,26 +296,18 @@
                                 <th>Primeira compra</th>
                                 <th>Ultima compra</th>
                                 <th>Total de compras</th>
-                                <th>Frauramento(R$)</th>
+                                <th>Faturamento(R$)</th>
                                 <th>Ticket médio(R$)</th>
                                 <th>Produtos comprados</th>
                             </tr>
                         </thead>
                         
-                        <tbody>
-                            <tr>
-                                <td>Cliente 1</td>
-                                <td>31/05/2026</td>
-                                <td>05/06/2026</td>
-                                <td>10</td>
-                                <td>R$ 700,00</td>
-                                <td>R$ 140,00</td>
-                                <td>10</td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </section>
         </main>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="relatorios.js"></script>
+        <script src="arquivo.js"></script>
 </body>
 </html>

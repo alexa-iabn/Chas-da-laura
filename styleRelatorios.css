@@ -87,6 +87,8 @@
     align-items: center;
     justify-content: center;
     gap: 1vh;
+
+    cursor: pointer;
 }
 
 .botaoLimparFiltro{
@@ -102,6 +104,8 @@
     align-items: center;
     justify-content: center;
     gap: 1vh;
+
+    cursor: pointer;
 }
 
 .iconeFiltro{
@@ -145,6 +149,88 @@
     gap: 3vh;
 }
 
+.iconeSetaCimaDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/setaCima.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeDinehiroDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/dinheiro_circulo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeCarrinhoDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/carrinho.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeMoedasDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/moedas.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+
+
 /* GRAFICOS */
 
 .graficos{
@@ -152,6 +238,16 @@
     align-items: center;
     justify-content: center;
     gap: 3.2vh;
+}
+
+.cardGrafico{
+    height: 24vh;
+}
+
+.cardGrafico canvas{
+    align-self: center;
+    width: 80% !important;
+    height: 20vh !important;
 }
 
 .cardGrafico{

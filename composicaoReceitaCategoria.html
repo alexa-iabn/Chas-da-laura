@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styleEstoque.css">
     <link rel="stylesheet" href="styleRelatorios.css">
     <link rel="stylesheet" href="styleRelatoriosTabelas.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
@@ -150,12 +151,12 @@
             
             <div class="baixarArquivos">
 
-                <button class="botaoBaixarExcel">
+                <button class="botaoBaixarExcel" id="botaoBaixarExcelComposicao">
                     <span class="iconeExcel"></span>
                     <span>Exportar em excel(.xlsx)</span>
                 </button>
 
-                <button class="botaoBaixarPdf">
+                <button class="botaoBaixarPdf" id="botaoBaixarPdfComposicao">
                     <span class="iconePdf"></span>
                     <span>Exportar em PDF(.pfd)</span>
                 </button>
@@ -173,26 +174,12 @@
                         <div class="periodo">
 
                             <label for="dataInicio"></label>
-                            <input type="date" class="campoData">
+                            <input type="date" class="campoData" id="dataInicioComposicao">
 
                             <label for="dataFim"></label>
-                            <input type="date" class="campoData">
+                            <input type="date" class="campoData" id="dataFimComposicao">
 
                         </div>
-
-                    </div>
-
-                    <div class="filtro">
-
-                        <span class="nomeFiltro">Categoria</span>
-
-                        <select name="filtrar" class="filtrar" id="">
-                            <option value="todos">Todas</option>
-                            <option value="flor">Flor</option>
-                            <option value="erva">Erva</option>
-                            <option value="raiz">Raiz</option>
-                            <option value="caule">Caule</option>
-                        </select>
 
                     </div>
 
@@ -200,12 +187,12 @@
 
                 <div class="acoesFiltro">
 
-                     <button class="botaoFiltrar">
+                     <button class="botaoFiltrar" id="botaoFiltrarComposicao">
                         <i class="iconeFiltro"></i>
                         <span>Filtrar</span>
                     </button>
 
-                    <button class="botaoLimparFiltro">
+                    <button class="botaoLimparFiltro" id="botaoLimparFiltroComposicao">
                         <i class="iconeCarregar"></i>
                         <span>Limpar Filtro</span>
                     </button>
@@ -217,26 +204,24 @@
 
                 <div class="topoDaTabela">
 
-                    <input type="text" placeholder="Busque item..." class="buscarProduto">
+                    <input type="text" placeholder="Busque item..." class="buscarProduto" id="buscarProdutoComposicao">
 
                     <div class="Ordenamento">
 
                         <span class="ordenar">Ordenar por:</span>
 
-                        <select name="" id="" class="escolhaOrdenar">
-                            <option value="maiorFaturamento">Maior Faturamento</option>
-                            <option value="menorFaturamento">Menor Faturamento</option>
-                            <option value="dataRecente">Data mais recente</option>
-                            <option value="dataLonge">Data mais longe</option>
-                            <option value="maiorTicket">Maior Ticket</option>
-                            <option value="menorTicket">Menor Ticket</option>
+                        <select name="" id="ordenarComposicao" class="escolhaOrdenar">
+                            <option value="maiorLucro">Maior Lucro</option>
+                            <option value="menorLucro">Menor Lucro</option>
+                            <option value="maiorRentabilidade">Maior Rentabilidade</option>
+                            <option value="menorRentabilidade">Menor Rentabilidade</option>
 
                         </select>
                     </div>
 
                 </div>
 
-                <table>
+                <table id="tabelaComposicao">
 
                     <thead class="topoTabelaVerdadeira">
                         <tr>
@@ -249,16 +234,6 @@
                         </tr>
                     </thead>
                         
-                    <tbody>
-                        <tr>
-                            <td>Flor</td>
-                            <td>R$ 700,00</td>
-                            <td>2,5%</td>
-                            <td>R$ 500,00</td>
-                            <td>R$ 350,00</td>
-                            <td>70%</td>
-                        </tr>
-                    </tbody>
 
                     <tfoot class="totais">
                         <tr>
@@ -275,6 +250,10 @@
                 
         </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
     <script src="arquivo.js"></script>
+    <script src="relatoriosReceita.js"></script>
 </body>
 </html>

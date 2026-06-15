@@ -20,6 +20,8 @@
     background-color: transparent;
     border-color: #144621;
     color: #144621;
+
+    cursor: pointer;
 }
 
 .botaoBaixarPdf{
@@ -31,6 +33,8 @@
     background-color: transparent;
     border-color: red;
     color: red;
+
+    cursor: pointer;
 }
 
 .iconeExcel{
