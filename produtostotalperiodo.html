@@ -185,57 +185,6 @@
   </div>
 </div>
 
-<script>
-  const produtos = ['Bled 1 - 50g', 'Bled 2 - 50g', 'Bled 3 - 50g', 'Bled 4 - 50g'];
-  const receitas = ['Receita 1', 'Receita 2', 'Receita 3', 'Receita 4'];
-
-  const rows = Array.from({length: 19}, (_, i) => ({
-    semana: '20/05 - 26/05',
-    produto: produtos[i % 4],
-    qtd: '50 un',
-    receita: receitas[i % 4],
-    custo: 'R$ 294,00',
-    responsavel: 'Laura'
-  }));
-
-  const tbody = document.getElementById('tableBody');
-
-  rows.forEach(r => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${r.semana}</td>
-      <td>
-        <div class="produto-cell">
-          <span class="produto-dot"></span>
-          ${r.produto}
-        </div>
-      </td>
-      <td>${r.qtd}</td>
-      <td>${r.receita}</td>
-      <td>${r.custo}</td>
-      <td>${r.responsavel}</td>
-    `;
-    tbody.appendChild(tr);
-  });
-
-  const totalTr = document.createElement('tr');
-  totalTr.className = 'row-total';
-  totalTr.innerHTML = `
-    <td>TOTAL GERAL</td>
-    <td></td>
-    <td>950 UN</td>
-    <td></td>
-    <td>R$ 5.586,00</td>
-    <td></td>
-  `;
-  tbody.appendChild(totalTr);
-
-  document.querySelector('.search-box input').addEventListener('input', function() {
-    const val = this.value.toLowerCase();
-    document.querySelectorAll('#tableBody tr:not(.row-total)').forEach(tr => {
-      tr.style.display = tr.textContent.toLowerCase().includes(val) ? '' : 'none';
-    });
-  });
-</script>
+<script src="produtostotalperiodo.js"></script>
 </body>
 </html>
