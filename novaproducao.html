@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="stylenovaproducaomatheus.css" />
+  <script src="novaproducao.js"></script>
 </head>
 <body>
 <div class="layout">
@@ -16,7 +17,7 @@
     <div class="sidebar-logo">
       <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/Logo.png"
            alt="Chás da Laura" onerror="this.style.display='none'" />
-      <div class="sidebar-logo-text">CHÁS DA<span>LAURA</span></div>
+      <div class="sidebar-logo-text"></span></div>
     </div>
 
     <nav class="sidebar-nav">
@@ -29,7 +30,10 @@
         <button class="nav-group-title" onclick="toggleGroup('navCadastros')">
           <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" class="nav-icon" alt="" />
           Cadastros
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="nav-arrow" alt="" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" 
+       fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
         </button>
         <div class="nav-subitems">
           <a href="#">• Clientes</a>
@@ -44,11 +48,14 @@
         <button class="nav-group-title" onclick="toggleGroup('navEstoque')">
           <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" class="nav-icon" alt="" />
           Estoque
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="nav-arrow" alt="" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" 
+       fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
         </button>
         <div class="nav-subitems">
-          <a href="#">• Entradas</a>
-          <a href="#">• Saídas</a>
+          <a href="#">• Produots</a>
+          <a href="#">• Insumos</a>
         </div>
       </div>
 
@@ -251,149 +258,5 @@
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
-
-<script>
-  /* ── Dados das receitas ── */
-  const receitas = {
-    blend1: {
-      nome: 'Blend 1 - Lata 50g',
-      rendimento: '10 Latas 50g',
-      insumos: [
-        { nome: 'Flor de camomila', porUnidade: '20,00 g' },
-        { nome: 'Flor de liz',      porUnidade: '20,00 g' },
-        { nome: 'Flor de calendula',porUnidade: '20,00 g' },
-        { nome: 'Semente de mamão', porUnidade: '5,00 g'  },
-        { nome: 'Lata',             porUnidade: '1 uni'   },
-      ],
-    },
-    blend2: {
-      nome: 'Blend 2 - Caixa 250g',
-      rendimento: '8 Caixas 250g',
-      insumos: [
-        { nome: 'Erva-doce',   porUnidade: '30,00 g' },
-        { nome: 'Hortelã',     porUnidade: '15,00 g' },
-        { nome: 'Gengibre',    porUnidade: '10,00 g' },
-        { nome: 'Caixa 250g',  porUnidade: '1 uni'   },
-      ],
-    },
-    camomila: {
-      nome: 'Chá de Camomila - 100g',
-      rendimento: '5 Sacos 100g',
-      insumos: [
-        { nome: 'Camomila seca', porUnidade: '100,00 g' },
-        { nome: 'Saco kraft',    porUnidade: '1 uni'    },
-      ],
-    },
-    'hortelã': {
-      nome: 'Chá de Hortelã - 100g',
-      rendimento: '5 Sacos 100g',
-      insumos: [
-        { nome: 'Hortelã seca',  porUnidade: '100,00 g' },
-        { nome: 'Saco kraft',    porUnidade: '1 uni'    },
-      ],
-    },
-    hibisco: {
-      nome: 'Chá de Hibisco - 200g',
-      rendimento: '6 Sacos 200g',
-      insumos: [
-        { nome: 'Hibisco seco',  porUnidade: '200,00 g' },
-        { nome: 'Saco kraft',    porUnidade: '1 uni'    },
-      ],
-    },
-  };
-
-  /* ── Render tabela de insumos ── */
-  function renderInsumos() {
-    const key = document.getElementById('receita').value;
-    const qty = parseInt(document.getElementById('quantidade').value) || 0;
-    const tbody = document.getElementById('insumosBody');
-    tbody.innerHTML = '';
-
-    if (!key || !receitas[key]) return;
-
-    receitas[key].insumos.forEach(ins => {
-      const tr = document.createElement('tr');
-      const isUni = ins.porUnidade.includes('uni');
-
-      let totalStr = '—';
-      if (qty > 0) {
-        if (isUni) {
-          totalStr = `${qty} uni`;
-        } else {
-          const valNum = parseFloat(ins.porUnidade.replace(',', '.'));
-          const total = (valNum * qty).toFixed(2).replace('.', ',');
-          const unit = ins.porUnidade.replace(/[\d,. ]+/, '').trim();
-          totalStr = `${total} ${unit}`;
-        }
-      }
-
-      tr.innerHTML = `
-        <td>${ins.nome}</td>
-        <td>${ins.porUnidade}</td>
-        <td>${totalStr}</td>`;
-      tbody.appendChild(tr);
-    });
-  }
-
-  /* ── Atualizar resumo lateral ── */
-  function atualizarResumo() {
-    const key = document.getElementById('receita').value;
-    const qty = parseInt(document.getElementById('quantidade').value) || 0;
-    const unitLabel = document.getElementById('unidade').options[document.getElementById('unidade').selectedIndex]?.text || '';
-    const dataVal = document.getElementById('dataProd').value;
-
-    const rec = receitas[key];
-
-    document.getElementById('rProduto').textContent = rec ? rec.nome : '—';
-    document.getElementById('rRendimento').textContent = rec ? rec.rendimento : '—';
-
-    const qtyText = qty && unitLabel ? `${qty} ${unitLabel}` : '—';
-    document.getElementById('rQtd').textContent = qtyText;
-    document.getElementById('rEstoque').textContent = qty ? `+ ${qty} ${unitLabel}` : '—';
-
-    if (dataVal) {
-      const [y, m, d] = dataVal.split('-');
-      document.getElementById('rData').textContent = `${d}/${m}/${y}`;
-    }
-
-    renderInsumos();
-  }
-
-  function atualizarReceita() {
-    atualizarResumo();
-  }
-
-  /* ── Registrar produção ── */
-  function registrarProducao() {
-    const key = document.getElementById('receita').value;
-    const qty = parseInt(document.getElementById('quantidade').value) || 0;
-
-    if (!key) { showToast('Selecione uma receita!', 'error'); return; }
-    if (!qty || qty < 1) { showToast('Informe a quantidade produzida!', 'error'); return; }
-
-    document.getElementById('resumoBanner').classList.add('show');
-    showToast('Produção registrada com sucesso!', 'success');
-  }
-
-  /* ── Toast ── */
-  function showToast(msg, type = 'success') {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.className = 'toast show ' + type;
-    setTimeout(() => t.classList.remove('show'), 3200);
-  }
-
-  /* ── Sidebar / grupos ── */
-  function toggleSidebar() {
-    document.querySelector('.sidebar').classList.toggle('open');
-  }
-
-  function toggleGroup(id) {
-    document.getElementById(id).classList.toggle('open');
-  }
-
-  /* ── Init ── */
-  atualizarResumo();
-</script>
 </body>
 </html>
