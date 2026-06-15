@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="stylefornecedoresmatheus.css" />
+   <script src="cadastrofornecedor.js"></script>
 </head>
 <body>
 <div class="layout">
@@ -69,8 +70,8 @@
         </svg>
       </div>
       <div class="nav-sub" id="sub-estoque" style="display:none;">
-        <a href="#" class="nav-item">• Insumos</a>
         <a href="#" class="nav-item">• Produtos</a>
+        <a href="#" class="nav-item">• Insumos</a>
       </div>
 
       <!-- Relatórios -->
@@ -119,7 +120,7 @@
         </svg>
         <a href="#">Cadastros</a>
         <span class="sep">›</span>
-        <a href="FornecedoresCadastrados.html">Fornecedores</a>
+        <a href="fornecedorescadastrado.html">Fornecedores</a>
         <span class="sep">›</span>
         <span class="current">Novo fornecedor</span>
       </nav>
@@ -152,7 +153,7 @@
           <h1 class="page-title">Cadastro de fornecedores</h1>
           <p class="page-subtitle">Preencha as informações essenciais para cadastrar um novo fornecedor</p>
         </div>
-        <a href="FornecedoresCadastrados.html" class="btn-ver-fornecedores">
+        <a href="fornecedorescadastrado.html" class="btn-ver-fornecedores">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
             <circle cx="9" cy="7" r="4"/>
@@ -330,7 +331,7 @@
 
         <!-- Ações -->
         <div class="form-actions">
-          <a href="FornecedoresCadastrados.html" class="btn btn-outline">Cancelar</a>
+          <a href="fornecedorescadastrado.html" class="btn btn-outline">Cancelar</a>
           <button type="submit" class="btn btn-primary">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2.5">
@@ -344,146 +345,5 @@
     </main>
   </div><!-- /main -->
 </div><!-- /layout -->
-
-
-<!-- ===== SCRIPTS ===== -->
-<script>
-  /* ── Máscara CNPJ ── */
-  document.getElementById('cnpj').addEventListener('input', function () {
-    let v = this.value.replace(/\D/g, '').substring(0, 14);
-    v = v.replace(/^(\d{2})(\d)/, '$1.$2');
-    v = v.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
-    v = v.replace(/\.(\d{3})(\d)/, '.$1/$2');
-    v = v.replace(/(\d{4})(\d)/, '$1-$2');
-    this.value = v;
-  });
-
-  /* ── Máscara Telefone ── */
-  document.getElementById('telefone').addEventListener('input', function () {
-    let v = this.value.replace(/\D/g, '').substring(0, 11);
-    if (v.length <= 10)
-      v = v.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
-    else
-      v = v.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-    this.value = v;
-  });
-
-  /* ── Toggle sub-menu sidebar ── */
-  function toggleSub(el) {
-    const isOpen = el.classList.contains('open');
-    document.querySelectorAll('.nav-item.open').forEach(function(i) {
-      i.classList.remove('open');
-    });
-    document.querySelectorAll('.nav-sub').forEach(function(s) {
-      s.style.display = 'none';
-    });
-    if (!isOpen) {
-      el.classList.add('open');
-      const target = el.nextElementSibling;
-      if (target && target.classList.contains('nav-sub'))
-        target.style.display = 'flex';
-    }
-  }
-
-  /* Garante que o sub-menu de Cadastros começa aberto */
-  (function () {
-    const subCad = document.getElementById('sub-cadastros');
-    if (subCad) subCad.style.display = 'flex';
-  })();
-
-  /* ── Carrega cidades via IBGE ── */
-  const cidadesCache = {};
-
-  function carregarCidades() {
-    const estado = document.getElementById('estado').value;
-    const selectCidade = document.getElementById('cidade');
-    selectCidade.innerHTML = '<option value="">Carregando...</option>';
-
-    if (!estado) {
-      selectCidade.innerHTML = '<option value="">Selecione...</option>';
-      return;
-    }
-
-    if (cidadesCache[estado]) {
-      preencherCidades(cidadesCache[estado]);
-      return;
-    }
-
-    fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/' + estado + '/municipios')
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        const cidades = data.map(function (c) { return c.nome; }).sort();
-        cidadesCache[estado] = cidades;
-        preencherCidades(cidades);
-      })
-      .catch(function () {
-        selectCidade.innerHTML = '<option value="">Erro ao carregar</option>';
-      });
-  }
-
-  function preencherCidades(lista) {
-    const sel = document.getElementById('cidade');
-    sel.innerHTML = '<option value="">Selecione...</option>';
-    lista.forEach(function (c) {
-      const opt = document.createElement('option');
-      opt.textContent = c;
-      sel.appendChild(opt);
-    });
-  }
-
-  /* ── Submit ── */
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    const nome = document.getElementById('nomeCompleto').value.trim();
-    if (!nome) {
-      document.getElementById('nomeCompleto').focus();
-      showToast('⚠️  Informe o nome completo do fornecedor.', true);
-      return;
-    }
-
-    console.log('Fornecedor salvo:', {
-      nome:      nome,
-      cnpj:      document.getElementById('cnpj').value,
-      telefone:  document.getElementById('telefone').value,
-      email:     document.getElementById('email').value,
-      razaoSocial: document.getElementById('razaoSocial').value,
-      estado:    document.getElementById('estado').value,
-      cidade:    document.getElementById('cidade').value,
-      endereco:  document.getElementById('endereco').value,
-      numero:    document.getElementById('numero').value,
-      categoria: document.getElementById('categoria').value,
-      pagamento: document.getElementById('pagamento').value,
-      observacao: document.getElementById('observacao').value,
-    });
-
-    showToast('✓  Fornecedor cadastrado com sucesso!');
-    setTimeout(function () {
-      window.location.href = 'FornecedoresCadastrados.html';
-    }, 1600);
-  }
-
-  /* ── Toast ── */
-  function showToast(msg, erro) {
-    const existing = document.querySelector('.toast');
-    if (existing) existing.remove();
-
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    if (erro) toast.style.background = 'var(--red-500)';
-    toast.innerHTML =
-      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">' +
-      (erro
-        ? '<circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>'
-        : '<polyline points="20 6 9 17 4 12"/>') +
-      '</svg>' + msg;
-    document.body.appendChild(toast);
-
-    setTimeout(function () {
-      toast.classList.add('hide');
-      setTimeout(function () { toast.remove(); }, 300);
-    }, 3000);
-  }
-</script>
 </body>
 </html>
