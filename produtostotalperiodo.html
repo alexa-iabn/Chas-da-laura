@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="stylebasematheus.css"/>
   <link rel="stylesheet" href="styleproducaomatheus.css"/>
+  <script src="produtostotalperiodo.js"></script>
 </head>
 <body>
 <div class="app">
@@ -25,12 +26,18 @@
       <a class="nav__item" href="#">
         <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lapiz.svg" alt=""/>
         Cadastros
-        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" class="nav__arrow" style="transform:rotate(180deg)"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" 
+       fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
       </a>
       <a class="nav__item" href="#">
         <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" alt=""/>
         Estoque
-        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" class="nav__arrow" style="transform:rotate(180deg)"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" 
+       fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
       </a>
       <a class="nav__item active" href="#">
         <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" alt=""/>
@@ -72,7 +79,10 @@
           <div class="topbar__avatar">L</div>
           <span class="topbar__username">Laura</span>
           <div class="topbar__arrow">
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" 
+       fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"> 
+    <polyline points="6 9 12 15 18 9"/>
+  </svg> 
           </div>
         </div>
       </div>
@@ -83,42 +93,51 @@
 
       <!-- FILTROS -->
       <div class="filtros-card">
-        <div class="filtro-group">
-          <label>Periodo</label>
-          <div class="filtro-select">
-            <select>
-              <option>01/05/2025 - 31/05/2026</option>
-            </select>
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)"/>
-          </div>
-        </div>
-        <div class="filtro-group">
-          <label>Produto</label>
-          <div class="filtro-select">
-            <select>
-              <option>Todos os produtos</option>
-            </select>
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)"/>
-          </div>
-        </div>
-        <div class="filtro-group">
-          <label>Status</label>
-          <div class="filtro-select">
-            <select>
-              <option>Todos</option>
-            </select>
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)"/>
-          </div>
-        </div>
-        <button class="btn-filtrar">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/filtro.svg" alt=""/>
-          Filtrar
-        </button>
-        <button class="btn-limpar">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt=""/>
-          Limpar Filtros
-        </button>
-      </div>
+  <div class="filtro-group">
+    <label>Periodo</label>
+    <div class="filtro-select">
+      <select>
+        <option>01/05/2025 - 31/05/2026</option>
+      </select>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </div>
+  <div class="filtro-group">
+    <label>Produto</label>
+    <div class="filtro-select">
+      <select>
+        <option>Todos os produtos</option>
+      </select>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </div>
+  <div class="filtro-group">
+    <label>Status</label>
+    <div class="filtro-select">
+      <select>
+        <option>Todos</option>
+      </select>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </div>
+  <button class="btn-filtrar">
+    <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/filtro.svg" alt=""/>
+    Filtrar
+  </button>
+  <button class="btn-limpar">
+    <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt=""/>
+    Limpar Filtros
+  </button>
+</div>
 
       <!-- TABELA -->
       <div class="tabela-card">
@@ -130,11 +149,20 @@
           <div class="sort-box">
             Ordenar por:
             <div class="sort-select">
-              Maior quantidade produzida
-              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" alt="" style="transform:rotate(180deg)"/>
-            </div>
-          </div>
-        </div>
+           <select>
+      <option>Maior quantidade produzida</option>
+      <option>Menor quantidade produzida</option>
+      <option>Maior custo</option>
+      <option>Menor custo</option>
+    </select>
+               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+     </div>
+</div>
+ </div>
+
 
         <div class="tabela-wrap">
           <table>
