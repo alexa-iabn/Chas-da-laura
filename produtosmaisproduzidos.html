@@ -6,7 +6,7 @@
   <title>Produtos mais produzidos — Chás da Laura</title>
   <link rel="stylesheet" href="stylebasematheus.css"/>
   <link rel="stylesheet" href="styleproducaomatheus.css"/>
-  <script src="produtosmaisproduzidos.js"></script>
+  
 </head>
 <body>
 
@@ -284,148 +284,7 @@
 
 </div><!-- /.layout -->
 
-<script>
-/* ============================================================
-   DADOS
-============================================================ */
-const COLORS = {
-  'Bled 1 - 50g': '#1a5c1a',
-  'Bled 2 - 50g': '#c8952c',
-  'Bled 3 - 50g': '#6aab3a',
-  'Bled 4 - 50g': '#7b3fbe',
-};
-
-const SOURCE = [
-  { semana: '20/05 - 26/05', produto: 'Bled 1 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 2 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 3 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 4 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 1 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 2 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 3 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 4 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 1 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 2 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 3 - 50g', qty: 50, custo: 294.00, status: 'Em andamento' },
-  { semana: '20/05 - 26/05', produto: 'Bled 4 - 50g', qty: 50, custo: 294.00, status: 'Em andamento' },
-  { semana: '20/05 - 26/05', produto: 'Bled 1 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 2 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 3 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 4 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 1 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 2 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-  { semana: '20/05 - 26/05', produto: 'Bled 3 - 50g', qty: 50, custo: 294.00, status: 'Concluído' },
-];
-
-/* Utilitários */
-const brl = v =>
-  'R$ ' + v.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-
-let activeData = [...SOURCE];
-
-/* ============================================================
-   RENDER
-============================================================ */
-function renderTable(data) {
-  const tbody = document.getElementById('tableBody');
-  tbody.innerHTML = '';
-
-  const totalQty = data.reduce((s, r) => s + r.qty, 0);
-
-  data.forEach(r => {
-    const color = COLORS[r.produto] || '#888';
-    const pct   = totalQty ? ((r.qty / totalQty) * 100).toFixed(1) : '0.0';
-    const media = r.qty ? r.custo / r.qty : 0;
-
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${r.semana}</td>
-      <td>
-        <div class="product-cell">
-          <span class="product-dot" style="background:${color}"></span>
-          ${r.produto}
-        </div>
-      </td>
-      <td>${r.qty} un</td>
-      <td><span class="pct-badge">${pct}%</span></td>
-      <td>${brl(r.custo)}</td>
-      <td>${brl(media)}</td>
-    `;
-    tbody.appendChild(tr);
-  });
-
-  /* Totais */
-  const totalValor = data.reduce((s, r) => s + r.custo, 0);
-  const totalMediaGlobal = totalQty ? totalValor / totalQty : 0;
-
-  document.getElementById('totalQty').textContent   = totalQty + ' UN';
-  document.getElementById('totalPct').textContent   = '100%';
-  document.getElementById('totalValor').textContent = brl(totalValor);
-  document.getElementById('totalMedia').textContent = brl(totalMediaGlobal);
-}
-
-/* ============================================================
-   FILTROS
-============================================================ */
-function applyFilters() {
-  const produto = document.getElementById('filtroProduto').value;
-  const status  = document.getElementById('filtroStatus').value;
-
-  activeData = SOURCE.filter(r => {
-    const okProduto = produto ? r.produto === produto : true;
-    const okStatus  = status  ? r.status  === status  : true;
-    return okProduto && okStatus;
-  });
-
-  renderTable(activeData);
-}
-
-function clearFilters() {
-  document.getElementById('filtroProduto').value = '';
-  document.getElementById('filtroStatus').value  = '';
-  document.getElementById('searchInput').value   = '';
-  activeData = [...SOURCE];
-  renderTable(activeData);
-}
-
-/* ============================================================
-   BUSCA
-============================================================ */
-function filterTable() {
-  const q = document.getElementById('searchInput').value.toLowerCase();
-  const filtered = activeData.filter(r =>
-    r.produto.toLowerCase().includes(q) ||
-    r.semana.toLowerCase().includes(q)
-  );
-  renderTable(filtered);
-}
-
-/* ============================================================
-   ORDENAÇÃO
-============================================================ */
-function sortTable(val) {
-  const sorted = [...activeData];
-  if      (val === 'qty-desc')   sorted.sort((a,b) => b.qty - a.qty);
-  else if (val === 'qty-asc')    sorted.sort((a,b) => a.qty - b.qty);
-  else if (val === 'valor-desc') sorted.sort((a,b) => b.custo - a.custo);
-  else if (val === 'valor-asc')  sorted.sort((a,b) => a.custo - b.custo);
-  else if (val === 'pct-desc')   sorted.sort((a,b) => b.qty - a.qty);
-  else if (val === 'week')       sorted.sort((a,b) => a.semana.localeCompare(b.semana));
-  renderTable(sorted);
-}
-
-/* ============================================================
-   ACCORDION SIDEBAR
-============================================================ */
-function toggleGroup(id) {
-  document.getElementById(id).classList.toggle('open');
-}
-
-/* ============================================================
-   INIT
-============================================================ */
-renderTable(activeData);
-</script>
+<script src="produtosmaisproduzidos.js"></script>
 
 </body>
 </html>
