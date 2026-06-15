@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insumos Total por Período — Chás da Laura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styleinsumostotalperiodo.css" />
+  <script src="insumostotalperiodo.js"></script>
+</head>
+<body>
+
+<!-- ===================== LAYOUT ===================== -->
+<div class="layout">
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img
+        src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/Logo.png"
+        alt="Chás da Laura"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+      />
+      <div class="sidebar-logo-text" style="display:none">CHÁS DA <span>LAURA</span></div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+
+        <li>
+          <a href="paineldeinicio.html" class="nav-item">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" alt="" />
+            Painel de início
+          </a>
+        </li>
+
+        <li class="nav-group" id="group-cadastros">
+          <div class="nav-group-title" onclick="toggleGroup('group-cadastros')">
+            <div class="nav-title-left">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lapiz.svg" alt="" />
+              Cadastros
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+          <div class="nav-subitems">
+            <a href="#">Produtos</a>
+            <a href="#">Insumos</a>
+            <a href="#">Parceiros</a>
+            <a href="#">Receitas</a>
+          </div>
+        </li>
+
+        <li class="nav-group" id="group-estoque">
+          <div class="nav-group-title" onclick="toggleGroup('group-estoque')">
+            <div class="nav-title-left">
+              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" alt="" />
+              Estoque
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+          <div class="nav-subitems">
+            <a href="EstoqueProdutos.html">Produtos</a>
+            <a href="EstoqueInsumos.html">Insumos</a>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="nav-item active">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" alt="" />
+            Relatórios
+          </a>
+        </li>
+
+        <li>
+          <a href="PaginaProducao.html" class="nav-item">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" alt="" />
+            Produção
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="sidebar-tea-img">
+      <img
+        src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/ChaImagemMenu.png"
+        alt="Chá decorativo"
+        onerror="this.style.display='none'"
+      />
+    </div>
+  </aside>
+
+  <!-- ===================== MAIN ===================== -->
+  <div class="main-wrapper">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <h1>Insumos total por periodo</h1>
+        <p>Visualize o total de insumos utilizados no período selecionado</p>
+      </div>
+      <div class="topbar-right">
+        <button class="btn-export btn-export-excel" id="btnExcel">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/excel.svg" alt="" />
+          Exportar Excel (.xlsx)
+        </button>
+        <button class="btn-export btn-export-pdf" id="btnPdf">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/pdf.svg" alt="" />
+          Baixar PDF (.pdf)
+        </button>
+        <button class="notif-btn">
+          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg" alt="Notificações" />
+          <span class="notif-dot"></span>
+        </button>
+        <div class="user-badge">
+          <div class="avatar-circle">L</div>
+          <span>Laura</span>
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <main class="page-content">
+
+      <!-- FILTROS -->
+      <div class="filters-card">
+        <div class="filter-group">
+          <label class="filter-label">Período</label>
+          <div class="filter-select-wrap">
+            <select id="filtroPeriodo">
+              <option>01/05/2025 - 31/05/2026</option>
+              <option>01/01/2026 - 31/01/2026</option>
+              <option>01/02/2026 - 28/02/2026</option>
+              <option>01/03/2026 - 31/03/2026</option>
+              <option>01/04/2026 - 30/04/2026</option>
+              <option>01/05/2026 - 31/05/2026</option>
+            </select>
+            <svg class="select-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Insumos</label>
+          <div class="filter-select-wrap">
+            <select id="filtroInsumo">
+              <option value="">Todos os insumos</option>
+              <option value="Flor de camomila">Flor de camomila</option>
+              <option value="Flor de hibisco">Flor de hibisco</option>
+              <option value="Erva-doce">Erva-doce</option>
+              <option value="Capim-limão">Capim-limão</option>
+              <option value="Gengibre">Gengibre</option>
+            </select>
+            <svg class="select-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Status</label>
+          <div class="filter-select-wrap">
+            <select id="filtroStatus">
+              <option value="">Todos</option>
+              <option value="Concluído">Concluído</option>
+              <option value="Em andamento">Em andamento</option>
+              <option value="Cancelado">Cancelado</option>
+            </select>
+            <svg class="select-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="filter-actions">
+          <button class="btn-filtrar" id="btnFiltrar">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/filtro.svg" alt="" />
+            Filtrar
+          </button>
+          <button class="btn-limpar" id="btnLimpar">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/carregando.svg" alt="" />
+            Limpar Filtros
+          </button>
+        </div>
+      </div>
+
+      <!-- TABELA -->
+      <div class="table-card">
+        <div class="table-toolbar">
+          <div class="search-wrap">
+            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg" alt="" />
+            <input type="text" id="searchInput" placeholder="Buscar produto..." />
+          </div>
+          <div class="order-wrap">
+            <span>Ordenar por:</span>
+            <select id="ordenar">
+              <option value="qty-desc">Maior quantidade produzida</option>
+              <option value="qty-asc">Menor quantidade produzida</option>
+              <option value="custo-desc">Maior custo total</option>
+              <option value="custo-asc">Menor custo total</option>
+              <option value="insumo">Insumo (A–Z)</option>
+              <option value="week">Semana</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table id="mainTable">
+            <thead>
+              <tr>
+                <th>Semana</th>
+                <th>Insumo</th>
+                <th>Unidade</th>
+                <th>Quantidade consumida</th>
+                <th>Custo unitário(R$)</th>
+                <th>Custo total(R$)</th>
+                <th>Utilizados em produção</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+            <tfoot>
+              <tr class="total-row">
+                <td colspan="3">TOTAL GERAL</td>
+                <td id="totalQty">—</td>
+                <td>—</td>
+                <td id="totalCusto">—</td>
+                <td id="totalUtilizados">—</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div id="paginacao"></div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="insumos-total-periodo.js"></script>
+</body>
+</html>
