@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styleinsumosmatheus.css" />
+  <script src="insumoscadastrados.js"></script>
 </head>
 
 <body>
@@ -38,7 +39,10 @@
       <div class="nav-item active open" onclick="toggleSub('sub-cadastros', this)">
         <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" width="18" height="18" alt="" onerror="this.style.display='none'" />
         Cadastros
-        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="chevron" width="14" height="14" alt="" onerror="this.style.display='none'" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" 
+       fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
       </div>
       <div class="nav-sub open" id="sub-cadastros">
         <a href="#" class="nav-sub-item">Clientes</a>
@@ -52,12 +56,14 @@
       <div class="nav-item" onclick="toggleSub('sub-estoque', this)">
         <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" width="18" height="18" alt="" onerror="this.style.display='none'" />
         Estoque
-        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="chevron" width="14" height="14" alt="" onerror="this.style.display='none'" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" 
+       fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
       </div>
       <div class="nav-sub" id="sub-estoque">
-        <a href="#" class="nav-sub-item">Entradas</a>
-        <a href="#" class="nav-sub-item">Saídas</a>
-        <a href="#" class="nav-sub-item">Inventário</a>
+        <a href="#" class="nav-sub-item">Produtos</a>
+        <a href="#" class="nav-sub-item">Insumos</a>
       </div>
 
       <!-- Relatórios -->
@@ -252,227 +258,5 @@
     </div>
   </div>
 </div>
-
-<script>
-  // ── DADOS DE EXEMPLO ──
-  let insumos = [
-    { id: 1,  nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 2,  nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 3,  nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 4,  nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 5,  nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 6,  nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 7,  nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 8,  nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 9,  nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 10, nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 11, nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-    { id: 12, nome: 'Folha de camomila', categoria: 'Erva', quantidade: '4 KG', fornecedor: 'Nutribom alimentos LTDA', data: '12/05/2026' },
-  ];
-
-  let filtered    = [...insumos];
-  let currentPage = 1;
-  const perPage   = 10;
-  let currentView = 'lista';
-  let deleteTarget = null;
-
-  // ── FILTRO ──
-  function filterData() {
-    const q = document.getElementById('searchInput').value.toLowerCase();
-    filtered = insumos.filter(i =>
-      i.nome.toLowerCase().includes(q) ||
-      i.categoria.toLowerCase().includes(q) ||
-      i.fornecedor.toLowerCase().includes(q)
-    );
-    currentPage = 1;
-    render();
-  }
-
-  // ── VIEW TOGGLE ──
-  function setView(v) {
-    currentView = v;
-    document.getElementById('listaView').style.display = v === 'lista' ? '' : 'none';
-    document.getElementById('cardsView').style.display = v === 'cards' ? '' : 'none';
-    document.getElementById('btnLista').classList.toggle('active', v === 'lista');
-    document.getElementById('btnCards').classList.toggle('active', v === 'cards');
-    render();
-  }
-
-  // ── INITIALS ──
-  function getInitials(nome) {
-    const parts = nome.trim().split(' ');
-    if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
-    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-  }
-
-  // ── RENDER ──
-  function render() {
-    if (currentView === 'lista') renderLista();
-    else renderCards();
-  }
-
-  function renderLista() {
-    const start = (currentPage - 1) * perPage;
-    const page  = filtered.slice(start, start + perPage);
-    const tbody = document.getElementById('tableBody');
-    const empty = document.getElementById('emptyList');
-
-    if (filtered.length === 0) {
-      tbody.innerHTML = '';
-      empty.style.display = 'flex';
-      document.getElementById('paginationInfo').textContent = '';
-      document.getElementById('paginationBtns').innerHTML   = '';
-      return;
-    }
-
-    empty.style.display = 'none';
-
-    tbody.innerHTML = page.map(i => `
-      <tr>
-        <td>${i.nome}</td>
-        <td>${i.categoria}</td>
-        <td>${i.quantidade}</td>
-        <td>${i.fornecedor}</td>
-        <td>
-          <div class="td-actions">
-            <button class="action-btn edit"   onclick="editItem(${i.id})"  title="Editar">
-              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lapiz.svg" width="14" height="14" alt="Editar" />
-            </button>
-            <button class="action-btn delete" onclick="openModal(${i.id})" title="Excluir">
-              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" width="14" height="14" alt="Excluir" />
-            </button>
-          </div>
-        </td>
-      </tr>
-    `).join('');
-
-    const total = filtered.length;
-    const pages = Math.ceil(total / perPage);
-    document.getElementById('paginationInfo').textContent =
-      `Mostrando ${start + 1}–${Math.min(start + perPage, total)} de ${total} insumos`;
-
-    const btns = document.getElementById('paginationBtns');
-    btns.innerHTML = '';
-
-    const prev = document.createElement('button');
-    prev.className = 'pg-btn';
-    prev.innerHTML = '‹';
-    prev.disabled  = currentPage === 1;
-    prev.onclick   = () => { currentPage--; render(); };
-    btns.appendChild(prev);
-
-    for (let p = 1; p <= pages; p++) {
-      const b = document.createElement('button');
-      b.className  = 'pg-btn' + (p === currentPage ? ' active' : '');
-      b.textContent = p;
-      b.onclick = (pp => () => { currentPage = pp; render(); })(p);
-      btns.appendChild(b);
-    }
-
-    const next = document.createElement('button');
-    next.className = 'pg-btn';
-    next.innerHTML = '›';
-    next.disabled  = currentPage === pages;
-    next.onclick   = () => { currentPage++; render(); };
-    btns.appendChild(next);
-  }
-
-  function renderCards() {
-    const grid  = document.getElementById('cardsGrid');
-    const empty = document.getElementById('emptyCards');
-
-    if (filtered.length === 0) {
-      grid.innerHTML = '';
-      empty.style.display = 'flex';
-      return;
-    }
-
-    empty.style.display = 'none';
-
-    grid.innerHTML = filtered.map(i => `
-      <div class="insumo-card">
-        <div class="card-head">
-          <div class="card-initials">${getInitials(i.nome)}</div>
-          <div class="card-name">${i.nome}</div>
-        </div>
-        <div class="card-body">
-          <div class="card-row">
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/etiqueta.svg" width="13" height="13" alt="" />
-            ${i.categoria}
-          </div>
-          <div class="card-row">
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/balanca.svg" width="13" height="13" alt="" />
-            ${i.quantidade}
-          </div>
-          <div class="card-row">
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" width="13" height="13" alt="" />
-            ${i.fornecedor}
-          </div>
-          <div class="card-row">
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lista.svg" width="13" height="13" alt="" />
-            ${i.data}
-          </div>
-        </div>
-        <div class="card-footer">
-          <button class="card-action-btn edit"   onclick="editItem(${i.id})">
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lapiz.svg" width="14" height="14" alt="Editar" />
-          </button>
-          <button class="card-action-btn delete" onclick="openModal(${i.id})">
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" width="14" height="14" alt="Excluir" />
-          </button>
-        </div>
-      </div>
-    `).join('');
-  }
-
-  // ── MODAL ──
-  function openModal(id) {
-    const i = insumos.find(x => x.id === id);
-    if (!i) return;
-    deleteTarget = id;
-    document.getElementById('modalInitials').textContent = getInitials(i.nome);
-    document.getElementById('modalName').textContent     = i.nome;
-    document.getElementById('modalCat').textContent      = i.categoria;
-    document.getElementById('modalQtd').textContent      = i.quantidade;
-    document.getElementById('modalForn').textContent     = i.fornecedor;
-    document.getElementById('deleteModal').classList.add('open');
-  }
-
-  function closeModal() {
-    document.getElementById('deleteModal').classList.remove('open');
-    deleteTarget = null;
-  }
-
-  function confirmDelete() {
-    if (deleteTarget === null) return;
-    insumos  = insumos.filter(i => i.id !== deleteTarget);
-    filtered = filtered.filter(i => i.id !== deleteTarget);
-    closeModal();
-    render();
-  }
-
-  document.getElementById('deleteModal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-  });
-
-  // ── EDIT ──
-  function editItem(id) {
-    location.href = 'EditarInsumo.html?id=' + id;
-  }
-
-  // ── SIDEBAR TOGGLE ──
-  function toggleSub(id, el) {
-    const sub = document.getElementById(id);
-    sub.classList.toggle('open');
-    el.classList.toggle('open');
-  }
-
-  function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('open');
-  }
-
-  // ── INIT ──
-  render();
-</script>
 </body>
 </html>
