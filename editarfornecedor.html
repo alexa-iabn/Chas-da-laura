@@ -6,9 +6,8 @@
   <title>Editar Fornecedor — Chás da Laura</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <!-- <link rel="stylesheet" href="stylebasematheus.css" /> -->
-
   <link rel="stylesheet" href="stylefornecedoresmatheus.css" />
+  <!-- O JS externo deve vir no fim do body (defer) para garantir que o DOM esteja pronto -->
 </head>
 <body>
 <div class="layout">
@@ -31,7 +30,10 @@
         <button class="nav-group-title" onclick="toggleGroup('navCadastros')">
           <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" class="nav-icon" alt="" />
           Cadastros
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="nav-arrow" alt="" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
         </button>
         <div class="nav-subitems">
           <a href="#">• Clientes</a>
@@ -46,11 +48,14 @@
         <button class="nav-group-title" onclick="toggleGroup('navEstoque')">
           <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" class="nav-icon" alt="" />
           Estoque
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/setaCima.svg" class="nav-arrow" alt="" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
         </button>
         <div class="nav-subitems">
-          <a href="#">• Entradas</a>
-          <a href="#">• Saídas</a>
+          <a href="#">• Produtos</a>
+          <a href="#">• Insumos</a>
         </div>
       </div>
 
@@ -71,8 +76,6 @@
     </div>
   </aside>
 
-  
-
   <!-- ===== MAIN ===== -->
   <div class="main">
 
@@ -88,7 +91,7 @@
         <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" class="bc-icon" alt="" />
         <a href="#">Cadastros</a>
         <span class="sep">›</span>
-        <a href="#">Fornecedor</a>
+        <a href="fornecedorescadastrado.html">Fornecedor</a>
         <span class="sep">›</span>
         <span class="current">Editar fornecedor</span>
       </nav>
@@ -105,7 +108,6 @@
         </div>
       </div>
     </header>
-    
 
     <!-- ===== PAGE CONTENT ===== -->
     <main class="page-content">
@@ -121,9 +123,9 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             Voltar
           </button>
-          <a href="fornecedores-cadastrados.html" class="btn btn-ver-clientes">
+          <a href="cadastrofornecedor.html" class="btn btn-ver-clientes">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            Ver clientes cadastrados
+            Ver fornecedores cadastrados
           </a>
         </div>
       </div>
@@ -144,11 +146,11 @@
               <div class="form-grid form-grid-2">
                 <div class="form-group">
                   <label class="form-label">Nome do Fornecedor</label>
-                  <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite seu nome completo" value="Nutri bom alimentos LTDA" />
+                  <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite o nome completo" />
                 </div>
                 <div class="form-group">
                   <label class="form-label">CNPJ</label>
-                  <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00" value="12.345.678/0001-90"
+                  <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00"
                          oninput="maskCNPJ(this)" maxlength="18" />
                 </div>
               </div>
@@ -157,7 +159,7 @@
                 <div class="form-group">
                   <label class="form-label">Telefone</label>
                   <div class="input-suffix-wrap">
-                    <input type="text" class="form-control" id="telefone" placeholder="(00) 00000-0000" value="(11) 98765-4321"
+                    <input type="text" class="form-control" id="telefone" placeholder="(00) 00000-0000"
                            oninput="maskTel(this)" maxlength="15" />
                     <span class="input-suffix">
                       <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/carta.svg" alt="" />
@@ -166,14 +168,14 @@
                 </div>
                 <div class="form-group">
                   <label class="form-label">E-mail</label>
-                  <input type="email" class="form-control" id="email" placeholder="Exemplo@email.com" value="nutri.bom@gmail.com" />
+                  <input type="email" class="form-control" id="email" placeholder="Exemplo@email.com" />
                 </div>
               </div>
 
               <div class="form-grid" style="margin-top:14px;">
                 <div class="form-group">
                   <label class="form-label">Razão social</label>
-                  <input type="text" class="form-control" id="razaoSocial" placeholder="Ex: fazenda boa vista" value="Nutri Bom Alimentos" />
+                  <input type="text" class="form-control" id="razaoSocial" placeholder="Ex: Fazenda Boa Vista Ltda" />
                 </div>
               </div>
 
@@ -198,35 +200,35 @@
                   <label class="form-label">Estado</label>
                   <select class="form-control" id="estado" onchange="carregarCidades()">
                     <option value="">Selecione...</option>
-                    <option value="PR" selected>Paraná</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="BA">Bahia</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MT">Mato Grosso</option>
+                    <option value="AC">AC</option><option value="AL">AL</option>
+                    <option value="AM">AM</option><option value="AP">AP</option>
+                    <option value="BA">BA</option><option value="CE">CE</option>
+                    <option value="DF">DF</option><option value="ES">ES</option>
+                    <option value="GO">GO</option><option value="MA">MA</option>
+                    <option value="MG">MG</option><option value="MS">MS</option>
+                    <option value="MT">MT</option><option value="PA">PA</option>
+                    <option value="PB">PB</option><option value="PE">PE</option>
+                    <option value="PI">PI</option><option value="PR">PR</option>
+                    <option value="RJ">RJ</option><option value="RN">RN</option>
+                    <option value="RO">RO</option><option value="RR">RR</option>
+                    <option value="RS">RS</option><option value="SC">SC</option>
+                    <option value="SE">SE</option><option value="SP">SP</option>
+                    <option value="TO">TO</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Cidade</label>
                   <select class="form-control" id="cidade">
                     <option value="">Selecione...</option>
-                    <option value="foz" selected>Foz do Iguaçu</option>
-                    <option value="cwb">Curitiba</option>
-                    <option value="lon">Londrina</option>
-                    <option value="mar">Maringá</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Endereço</label>
-                  <input type="text" class="form-control" id="endereco" placeholder="Ex: Rua das flores" value="Rua X" />
+                  <input type="text" class="form-control" id="endereco" placeholder="Ex: Rua das Flores" />
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Numero</label>
-                  <input type="text" class="form-control" id="numero" placeholder="123" value="134" />
+                  <label class="form-label">Número</label>
+                  <input type="text" class="form-control" id="numero" placeholder="123" />
                 </div>
               </div>
             </div>
@@ -244,24 +246,23 @@
                   <label class="form-label">Categoria de fornecimento</label>
                   <select class="form-control" id="categoria">
                     <option value="">Selecione uma categoria...</option>
-                    <option value="ervas" selected>Ervas e chás</option>
-                    <option value="flores">Flores</option>
-                    <option value="especiarias">Especiarias</option>
-                    <option value="frutas">Frutas desidratadas</option>
-                    <option value="raizes">Raízes</option>
-                    <option value="outro">Outro</option>
+                    <option value="Ervas e Plantas">Ervas e Plantas</option>
+                    <option value="Embalagens">Embalagens</option>
+                    <option value="Ingredientes Naturais">Ingredientes Naturais</option>
+                    <option value="Equipamentos">Equipamentos</option>
+                    <option value="Outros">Outros</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Condições de pagamento</label>
-                  <input type="text" class="form-control" id="pagamento" placeholder="Ex: 30 dias, À vista, 15/30/45 dias" value="30 dias, À vista, 15/30/45 dias" />
+                  <input type="text" class="form-control" id="pagamento" placeholder="Ex: 30 dias, À vista, 10/30/45 dias" />
                 </div>
               </div>
 
               <div class="form-group" style="margin-top:14px;">
                 <label class="form-label">Observação</label>
                 <textarea class="form-control" id="observacao" rows="4"
-                  placeholder="Digite alguma observação sobre o cliente..."></textarea>
+                  placeholder="Digite alguma observação sobre o fornecedor..."></textarea>
               </div>
             </div>
           </div>
@@ -283,9 +284,9 @@
           <!-- Card do fornecedor -->
           <div class="supplier-info-card">
             <div class="sic-head">
-              <div class="sic-avatar">MS</div>
+              <div class="sic-avatar">??</div>
               <div>
-                <div class="sic-name" id="sideNome">Maria Silva</div>
+                <div class="sic-name" id="sideNome">—</div>
                 <div class="sic-status">
                   <span class="status-dot"></span>
                   Ativo
@@ -295,19 +296,19 @@
             <div class="sic-body">
               <div class="sic-row">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.62 4.45 2 2 0 0 1 3.59 2.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-                <span id="sideTel">(11) 98765-4321</span>
+                <span id="sideTel">—</span>
               </div>
               <div class="sic-row">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <a href="#" id="sideEmail" class="sic-link">nutri.bom@gmail.com</a>
+                <a href="#" id="sideEmail" class="sic-link">—</a>
               </div>
               <div class="sic-row">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span id="sideAddr">Rua X, 134<br><small>Foz do Iguaçu - PR</small></span>
+                <span id="sideAddr">—</span>
               </div>
               <div class="sic-row">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <span>Cadastrado em<br><small>10/05/2025</small></span>
+                <span>Cadastrado em<br><small>—</small></span>
               </div>
             </div>
             <button class="btn btn-excluir-forn" onclick="openDeleteModal()">
@@ -316,21 +317,21 @@
             </button>
           </div>
 
-          <!-- Resumo do cliente -->
+          <!-- Resumo do fornecedor -->
           <div class="resumo-card">
-            <div class="resumo-title">Resumo do cliente</div>
+            <div class="resumo-title">Resumo do fornecedor</div>
             <div class="resumo-grid">
               <div class="resumo-row">
                 <span class="resumo-label">Total de pedidos</span>
-                <span class="resumo-value">12</span>
+                <span class="resumo-value">—</span>
               </div>
               <div class="resumo-row">
                 <span class="resumo-label">Valor total em compras</span>
-                <span class="resumo-value green">R$ 2.845,80</span>
+                <span class="resumo-value green">—</span>
               </div>
               <div class="resumo-row">
                 <span class="resumo-label">Último pedido</span>
-                <span class="resumo-value">18/08/2025</span>
+                <span class="resumo-value">—</span>
               </div>
               <div class="resumo-row">
                 <span class="resumo-label">Status</span>
@@ -356,16 +357,16 @@
     <div class="modal-title">Excluir Fornecedor</div>
     <p class="modal-subtitle">Tem certeza que deseja excluir este fornecedor?<br>Essa ação não pode ser desfeita.</p>
     <div class="modal-supplier-card">
-      <div class="modal-initials">NB</div>
+      <div class="modal-initials">??</div>
       <div class="modal-info">
-        <div class="modal-name">Nutri bom alimentos LTDA</div>
+        <div class="modal-name">—</div>
         <div class="modal-detail">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.62 4.45 2 2 0 0 1 3.59 2.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-          (11) 98765-4321
+          —
         </div>
         <div class="modal-detail">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Rua X, 134 — Foz do Iguaçu - PR
+          —
         </div>
       </div>
     </div>
@@ -384,117 +385,10 @@
   </div>
 </div>
 
-<!-- ===== TOAST ===== -->
+<!-- Toast estático -->
 <div class="toast" id="toast"></div>
 
-<script>
-  /* ── Sidebar toggle ── */
-  function toggleSidebar() {
-    document.querySelector('.sidebar').classList.toggle('open');
-  }
-
-  function toggleGroup(id) {
-    document.getElementById(id).classList.toggle('open');
-  }
-
-  /* ── Máscaras ── */
-  function maskCNPJ(el) {
-    let v = el.value.replace(/\D/g, '').slice(0, 14);
-    v = v.replace(/^(\d{2})(\d)/, '$1.$2');
-    v = v.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
-    v = v.replace(/\.(\d{3})(\d)/, '.$1/$2');
-    v = v.replace(/(\d{4})(\d)/, '$1-$2');
-    el.value = v;
-  }
-
-  function maskTel(el) {
-    let v = el.value.replace(/\D/g, '').slice(0, 11);
-    if (v.length <= 10) {
-      v = v.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
-    } else {
-      v = v.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-    }
-    el.value = v;
-  }
-
-  /* ── Atualizar painel lateral ao digitar ── */
-  document.getElementById('nomeCompleto').addEventListener('input', function () {
-    document.getElementById('sideNome').textContent = this.value || '—';
-  });
-  document.getElementById('telefone').addEventListener('input', function () {
-    document.getElementById('sideTel').textContent = this.value || '—';
-  });
-  document.getElementById('email').addEventListener('input', function () {
-    document.getElementById('sideEmail').textContent = this.value || '—';
-  });
-  document.getElementById('endereco').addEventListener('input', updateAddr);
-  document.getElementById('numero').addEventListener('input', updateAddr);
-
-  function updateAddr() {
-    const end = document.getElementById('endereco').value;
-    const num = document.getElementById('numero').value;
-    document.getElementById('sideAddr').innerHTML = `${end}${num ? ', ' + num : ''}<br><small>Foz do Iguaçu - PR</small>`;
-  }
-
-  /* ── Cidades por estado (exemplo) ── */
-  const cidadesPorEstado = {
-    PR: ['Curitiba', 'Londrina', 'Maringá', 'Foz do Iguaçu', 'Cascavel'],
-    SP: ['São Paulo', 'Campinas', 'Santos', 'Sorocaba', 'Ribeirão Preto'],
-    RJ: ['Rio de Janeiro', 'Niterói', 'Petrópolis', 'Campos'],
-    MG: ['Belo Horizonte', 'Uberlândia', 'Juiz de Fora'],
-    SC: ['Florianópolis', 'Joinville', 'Blumenau'],
-    RS: ['Porto Alegre', 'Caxias do Sul', 'Pelotas'],
-    BA: ['Salvador', 'Feira de Santana', 'Vitória da Conquista'],
-    GO: ['Goiânia', 'Anápolis'],
-    MS: ['Campo Grande', 'Dourados'],
-    MT: ['Cuiabá', 'Várzea Grande'],
-  };
-
-  function carregarCidades() {
-    const estado = document.getElementById('estado').value;
-    const sel = document.getElementById('cidade');
-    sel.innerHTML = '<option value="">Selecione...</option>';
-    (cidadesPorEstado[estado] || []).forEach(c => {
-      const opt = document.createElement('option');
-      opt.value = c.toLowerCase().replace(/\s/g, '_');
-      opt.textContent = c;
-      sel.appendChild(opt);
-    });
-  }
-
-  /* ── Salvar ── */
-  function salvarAlteracoes() {
-    const nome = document.getElementById('nomeCompleto').value.trim();
-    if (!nome) { showToast('Preencha o nome completo!', 'error'); return; }
-    showToast('Alterações salvas com sucesso!', 'success');
-  }
-
-  /* ── Toast ── */
-  function showToast(msg, type = 'success') {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.className = 'toast show ' + type;
-    setTimeout(() => t.classList.remove('show'), 3000);
-  }
-
-  /* ── Modal excluir ── */
-  function openDeleteModal() {
-    document.getElementById('deleteModal').classList.add('open');
-  }
-
-  function closeDeleteModal() {
-    document.getElementById('deleteModal').classList.remove('open');
-  }
-
-  function excluirFornecedor() {
-    closeDeleteModal();
-    showToast('Fornecedor excluído!', 'error');
-    setTimeout(() => history.back(), 1500);
-  }
-
-  document.getElementById('deleteModal').addEventListener('click', function (e) {
-    if (e.target === this) closeDeleteModal();
-  });
-</script>
+<!-- JS externo no fim do body — carrega depois do DOM -->
+<script src="editarfornecedor.js"></script>
 </body>
 </html>
