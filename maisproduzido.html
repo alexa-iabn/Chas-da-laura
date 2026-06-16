@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chás da Laura - Produtos Mais Produzidos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylemaispdr.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+       <aside class="menuLateral">
+
+            <button id="botaoRetratil" class="botaoRetratil"></button>
+
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            </div>
+
+            <nav class="menu">
+                <ul>
+
+                    <li class="blocoOpcao">
+                        <a href="paginaInicial.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeCasa"></span>
+                            </div>
+                            <span class="tituloMenu">Painel inicial</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class="blocoOpcao">
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeLapis"></span>
+                                    </div>
+                                    <span class="tituloMenu">Cadastros</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="CadastroClientes.html">Clientes</a></li>
+                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                                <li><a href="CadastroInsumos.html">Insumos</a></li>
+                                <li><a href="CadastroProdutos.html">Produtos</a></li>
+                                <li><a href="CadastroReceitas.html">Receitas</a></li>
+                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class=" blocoOpcao">
+                                <div class="div itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeCaixa"></span>
+                                    </div>
+                                    <span class="tituloMenu">Estoque</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="estoqueProdutos.html">Produtos</a></li>
+                                <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    
+                    <li class="blocoOpcao">
+                        <a href="PaginaRelatorios.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeGrafico"></span>
+                            </div>
+                            <span class="tituloMenu">Relatórios</span>
+                        </a>
+                    </li>
+
+                    <li class="blocoOpcao">
+                        <a href="PaginaProducao.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconePrancheta"></span>
+                            </div>
+                            <span class="tituloMenu">Produção</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="blocoOpcao" >
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeSetaCima"></span>
+                                    </div>
+                                    <span class="tituloMenu">Saídas</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="SaidasCliente.html">Clientes</a></li>
+                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+            
+        </aside>
+        <main class="conteudo-principal">
+            
+            <header class="topoEstoque">
+                <div class="caminho">
+                    <a href="paineldeinicio.html">Início</a>
+                    <span>&gt;</span>
+                    <a href="#" class="linkEstoqueProdutos">Relatórios</a>
+                </div>
+                
+                <div class="notfUser">
+                    <div class="notificacao">
+                        <span class="sino">🔔</span>
+                    </div>
+                    <div class="PerfilUsuario">
+                        <div class="avatar">L</div>
+                        <span class="nomeUsuario">Laura</span>
+                        <span class="seta">▼</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="titulo-pagina-container">
+                <div class="texto-titulo">
+                    <h2>Produtos mais produzidos</h2>
+                    <p>Veja quais produtos tiveram maior volume de produção no período selecionado</p>
+                </div>
+                
+                <div class="botoes-exportar">
+                    <button class="btn-excel">
+                        <img src="imagens/excel-icon.svg" alt="" width="16"> Exportar Excel (.xlsx)
+                    </button>
+                    <button class="btn-pdf">
+                        <img src="imagens/pdf-icon.svg" alt="" width="16"> Baixar PDF (.pdf)
+                    </button>
+                </div>
+            </section>
+
+            <section class="filtros-container">
+                <div class="grupo-filtro">
+                    <label>Período</label>
+                    <select>
+                        <option>01/05/2025 - 31/05/2026</option>
+                    </select>
+                </div>
+                <div class="grupo-filtro">
+                    <label>Produto</label>
+                    <select>
+                        <option>Todos os produtos</option>
+                    </select>
+                </div>
+                <div class="grupo-filtro">
+                    <label>Status</label>
+                    <select>
+                        <option>Todos</option>
+                    </select>
+                </div>
+                <div class="botoes-filtro">
+                    <button class="btn-filtrar">Filtrar</button>
+                    <button class="btn-limpar">Limpar Filtros</button>
+                </div>
+            </section>
+
+            <section class="tabela-container">
+                <div class="acoes-tabela">
+                    <input type="text" class="busca-tabela" placeholder="🔍 Buscar produto...">
+                    
+                    <div class="ordenacao">
+                        <span>Ordenar por:</span>
+                        <select>
+                            <option>Maior quantidade produzida</option>
+                            <option>Menor quantidade produzida</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Semana</th>
+                            <th>Produto</th>
+                            <th>Quantidade produzida</th>
+                            <th>% do total</th>
+                            <th>Valor total(R$)</th>
+                            <th>Média por unidade(R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>20/05 - 26/05</td>
+                            <td><span class="indicadorCor b1"></span> Bled 1 - 50g</td>
+                            <td>50 un</td>
+                            <td>5,2%</td>
+                            <td>R$ 294,00</td>
+                            <td>R$ 5,88</td>
+                        </tr>
+                        <tr>
+                            <td>20/05 - 26/05</td>
+                            <td><span class="indicadorCor b2"></span> Bled 2 - 50g</td>
+                            <td>50 un</td>
+                            <td>5,2%</td>
+                            <td>R$ 294,00</td>
+                            <td>R$ 5,88</td>
+                        </tr>
+                        <tr>
+                            <td>20/05 - 26/05</td>
+                            <td><span class="indicadorCor b3"></span> Bled 3 - 50g</td>
+                            <td>50 un</td>
+                            <td>5,2%</td>
+                            <td>R$ 294,00</td>
+                            <td>R$ 5,88</td>
+                        </tr>
+                        <tr>
+                            <td>20/05 - 26/05</td>
+                            <td><span class="indicadorCor b4"></span> Bled 4 - 50g</td>
+                            <td>50 un</td>
+                            <td>5,2%</td>
+                            <td>R$ 294,00</td>
+                            <td>R$ 5,88</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="linha-total">
+                            <td>TOTAL GERAL</td>
+                            <td></td>
+                            <td>950 UN</td>
+                            <td></td>
+                            <td>R$ 5.586,00</td>
+                            <td>R$ 5,88</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </main>
+    </div>
+ <script src="produtos.js"></script>
+    <script src="relatorios-producao.js"></script>
+</body>
+</html>

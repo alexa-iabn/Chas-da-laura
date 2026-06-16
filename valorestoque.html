@@ -4,83 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chás da Laura - Valor de Estoque por Tipo</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styleInsumos.css">
 </head>
 <body>
     
     <header class="topoEstoque">
         <div class="caminho">
-            <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-            <a href="estoque.html" class="LinkEstoque"> > Relatórios </a>
-            <a href="valorEstoqueTipo.html" class="linkEstoqueProdutos">> Valor de estoque por tipo</a>
+            <a href="paineldeinicio.html">Início</a>
+            <span>&gt;</span>
+            <a href="#" class="linkEstoqueProdutos">Relatórios de Produção</a>
         </div>
+        
         <div class="notfUser">
             <div class="notificacao">
-                <i class="sino"></i>
+                <span class="sino"></span>
                 <span class="bolinha"></span>
             </div>
             <div class="PerfilUsuario">
-                <div class="avatar">
-                    <span class="L"> L </span>
-                </div>
-                <h2 class="nomeUsuario">Laura</h2>
-                <span class="seta">⌄</span>
+                <div class="avatar">L</div>
+                <span class="nomeUsuario">Laura</span>
+                <span class="seta">▼</span>
             </div>
         </div>
     </header>
 
     <aside class="menuLateral">
-        <button id="botaoRetratil" class="botaoRetratil"></button>
         <div class="logoMenuLateral">
-            <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            <img src="imagens/Logo.png" alt="Logo Chás da Laura">
         </div>
+
         <nav class="menu">
             <ul>
-                <li class="blocoOpcao">
-                    <a href="paginaInicial.html" class="itemMenu">
-                        <div class="circulo"><span class="iconeCasa"></span></div>
+                <li>
+                    <a href="paineldeinicio.html" class="itemMenu">
+                        <img src="imagens/casa.svg" alt="Painel inicial" class="iconeMenu">
                         <span class="tituloMenu">Painel inicial</span>
                     </a>
                 </li>
+
                 <li>
-                    <details>
-                        <summary class="blocoOpcao">
-                            <div class="itemMenu">
-                                <div class="circulo"><span class="iconeLapis"></span></div>
-                                <span class="tituloMenu">Cadastros</span>
-                            </div>
+                    <details open>
+                        <summary class="itemMenu">
+                            <img src="imagens/lapiz_2.svg" alt="Cadastros" class="iconeMenu">
+                            <span class="tituloMenu">Cadastros</span>
                         </summary>
                         <ul class="subMenu">
-                            <li><a href="CadastroClientes.html">Clientes</a></li>
+                            <li><a href="cadastroclientes.html">Clientes</a></li>
                             <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
                             <li><a href="CadastroInsumos.html">Insumos</a></li>
+                            <li><a href="cadastroprodutos.html">Produtos</a></li>
+                            <li><a href="cadastroreceitas.html">Receitas</a></li>
+                            <li><a href="cadastroparceiros.html">Parceiros</a></li>
                         </ul>
                     </details>
                 </li>
+
                 <li>
                     <details>
-                        <summary class="blocoOpcao">
-                            <div class="itemMenu">
-                                <div class="circulo"><span class="iconeCaixa"></span></div>
-                                <span class="tituloMenu">Estoque</span>
-                            </div>
+                        <summary class="itemMenu">
+                            <img src="imagens/caixa.svg" alt="Estoque" class="iconeMenu"> 
+                            <span class="tituloMenu">Estoque</span>
                         </summary>
                         <ul class="subMenu">
-                            <li><a href="estoqueProdutos.html">Produtos</a></li>
-                            <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            <li><a href="EstoqueProdutos.html">Produtos</a></li>
+                            <li><a href="EstoqueInsumos.html">Insumos</a></li>
                         </ul>
                     </details>
                 </li>
-                <li class="blocoOpcao">
-                    <a href="PaginaRelatorios.html" class="itemMenu">
-                        <div class="circulo"><span class="iconeGrafico"></span></div>
+
+                <li>
+                    <a href="relatoriosVendas.html" class="itemMenu">
+                        <img src="imagens/grafico.svg" alt="Relatórios" class="iconeMenu">
                         <span class="tituloMenu">Relatórios</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="PaginaProducao.html" class="itemMenu">
+                        <img src="imagens/grafico.svg" alt="Produção" class="iconeMenu">
+                        <span class="tituloMenu">Produção</span>
+                    </a>
+                </li>
+
+                <li>
+                    <details>
+                        <summary class="itemMenu">
+                            <img src="imagens/setaCima.svg" alt="Saídas" class="iconeMenu">
+                            <span class="tituloMenu">Saídas</span>
+                        </summary>
+                        <ul class="subMenu">
+                            <li><a href="saidasClientes.html">Clientes</a></li>
+                            <li><a href="saidaParceiro.html">Parceiros</a></li>
+                        </ul>
+                    </details>
+                </li>
             </ul>
         </nav>
-    </aside>
 
+        <img src="imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+    </aside>
     <main class="conteudo">
         
         <section class="topoLayoutRelatorio">
@@ -233,5 +255,8 @@
             </table>
         </section>
     </main>
+    <script src="relatorios.js"></script>
+    <script src="produtos.js"></script>
+    
 </body>
 </html>

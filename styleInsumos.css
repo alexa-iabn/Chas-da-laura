@@ -1,0 +1,549 @@
+/* ==========================================================================
+   ESTRUTURA GLOBAL E BASE
+   ========================================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #F5F7F6; /* Cor de fundo institucional do Figma */
+    color: #333333;
+    display: flex;
+}
+
+/* Área de Conteúdo Dinâmico */
+.conteudo {
+    margin-left: 260px; /* Margem para não sobrepor o menu lateral fixo */
+    margin-top: 70px;  /* Margem para não sobrepor o cabeçalho fixo */
+    padding: 40px;
+    width: calc(100% - 260px);
+    box-sizing: border-box;
+}
+
+/* Títulos das Páginas */
+.tituloPagina {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 4px 0;
+}
+
+.subtituloPagina {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+    margin: 0 0 25px 0;
+}
+
+/* ==========================================================================
+   TOPO / HEADER FIXO
+   ========================================================================== */
+.topoEstoque {
+    position: fixed;
+    top: 0;
+    left: 260px;
+    right: 0;
+    height: 70px;
+    background-color: #F5F7F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    z-index: 99;
+}
+
+.caminho {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.caminho a {
+    text-decoration: none;
+    color: #666666;
+}
+
+.caminho .linkEstoqueProdutos {
+    color: #114224;
+    font-weight: 600;
+}
+
+.notfUser {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notificacao {
+    position: relative;
+    cursor: pointer;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.PerfilUsuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background-color: #114224;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.nomeUsuario {
+    font-size: 16px;
+    color: #333333;
+    margin: 0;
+}
+
+/* ==========================================================================
+   MENU LATERAL FIXO
+   ========================================================================== */
+.menuLateral {
+    width: 260px;
+    height: 100vh;
+    background-color: #114224;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.logoMenuLateral {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logoMenuLateral img {
+    max-width: 120px;
+    height: auto;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.iconeMenu {
+    
+    object-fit: contain;
+    /* Força qualquer imagem escura/vetor a se transformar em branco puro */
+    filter: brightness(0) invert(1); 
+    display: inline-block;
+    vertical-align: middle;
+    transition: opacity 0.2s ease;
+}
+
+.itemMenu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #A3D9B9;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.blocoOpcao:hover .itemMenu,
+.itemMenu:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Submenus recolhíveis */
+.subMenu {
+    list-style: none;
+    padding-left: 20px !important;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.subMenu a {
+    color: #A3D9B9;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 6px 12px;
+}
+
+.subMenu a:hover {
+    color: white;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ==========================================================================
+   SEÇÃO DE SELETORES E FILTROS
+   ========================================================================== */
+.conteinerFiltros {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.filtroItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.filtroItem label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444444;
+}
+
+.filtroItem select {
+    height: 40px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 0 12px;
+    background-color: #FAFAFA;
+    font-size: 14px;
+    color: #555555;
+    outline: none;
+    cursor: pointer;
+}
+
+.botoesFiltro {
+    display: flex;
+    gap: 10px;
+}
+
+.botaoFiltrar {
+    background-color: #114224;
+    color: white;
+    border: none;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.botaoLimpar {
+    background-color: transparent;
+    color: #666666;
+    border: 1px solid #E2E8F0;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Cabeçalho estendido com botões de exportação do PDF/Excel */
+.topoLayoutRelatorio {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.acoesExportacao {
+    display: flex;
+    gap: 12px;
+}
+
+.btnExportar {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btnExportar.excel {
+    background-color: #E6F4EA;
+    color: #137333;
+    border: 1px solid #A3D9B9;
+}
+
+.btnExportar.pdf {
+    background-color: #FCE8E6;
+    color: #C5221F;
+    border: 1px solid #F5C2C1;
+}
+
+/* ==========================================================================
+   CARDS DE INDICADORES (KPIs)
+   ========================================================================== */
+.conteinerCardsKpi {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.cardKpi {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.iconeKpi {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Variações cromáticas dos cards baseados nos status */
+.iconeKpi.verde { background-color: #E6F4EA; color: #137333; }
+.iconeKpi.amarelo { background-color: #FEF7E0; color: #B06000; }
+.iconeKpi.vermelho { background-color: #FCE8E6; color: #C5221F; }
+.iconeKpi.verdeSecundario { background-color: #EAF7F0; color: #114224; }
+
+.infoKpi {
+    display: flex;
+    flex-direction: column;
+}
+
+.labelKpi {
+    font-size: 12px;
+    color: #888888;
+    font-weight: 500;
+}
+
+.valorKpi, .valorKpiBox, .valorKpiAlerta {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111111;
+    margin: 2px 0;
+}
+
+.subtextKpi {
+    font-size: 11px;
+    color: #999999;
+}
+
+.subtextKpi.verde {
+    color: #137333;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   GRID DE GRÁFICOS
+   ========================================================================== */
+.graficos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.cardGrafico {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    min-height: 260px;
+}
+
+.topoGrafico {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.tituloGrafico {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333333;
+    margin: 0;
+}
+
+.tituloGrafico small {
+    font-size: 12px;
+    color: #888888;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   TABELAS DE DADOS (DETALHAMENTO)
+   ========================================================================== */
+.conteinerTabelaCompleta {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.tituloTabela {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 20px 0;
+}
+
+/* Barra interna de pesquisa e ordenação (página de valores) */
+.utilitariosTabela {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.barraBusca input {
+    width: 280px;
+    height: 38px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 0 12px;
+    background-color: #FAFAFA;
+}
+
+.ordenacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.ordenacao select {
+    height: 38px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 0 10px;
+    background-color: #FAFAFA;
+}
+
+/* Estilização Base das Tabelas estruturadas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    font-size: 13px;
+    font-weight: 600;
+    color: #666666;
+    padding: 12px 16px;
+    border-bottom: 2px solid #F0F4F2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    font-size: 14px;
+    color: #444444;
+    padding: 14px 16px;
+    border-bottom: 1px solid #F0F4F2;
+    vertical-align: middle;
+}
+
+/* Efeito de listras alternadas verdes sutis */
+tbody tr:nth-child(even) {
+    background-color: #F9FBFA;
+}
+
+tbody tr:hover {
+    background-color: #F1F5F3;
+}
+
+/* Linha de Total Geral (Rodapé da Tabela) */
+.linhaTotalGeral td {
+    font-weight: 700;
+    color: #114224;
+    background-color: #EAF7F0 !important;
+    border-top: 2px solid #114224;
+    border-bottom: none;
+    padding: 16px;
+}
+
+/* Tags de Categorização (Tipo de Item) */
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tag.tipoProduto {
+    background-color: #E6F4EA;
+    color: #137333;
+}
+
+.tag.tipoInsumo {
+    background-color: #E8F0FE;
+    color: #1A73E8;
+}
+
+/* Badges / Pílulas de Status e Situação */
+.status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.status.normal {
+    background-color: #E6F4EA;
+    color: #137333;
+}
+
+.status.baixo {
+    background-color: #FEF7E0;
+    color: #B06000;
+}
+
+.status.zerado {
+    background-color: #FCE8E6;
+    color: #C5221F;
+}

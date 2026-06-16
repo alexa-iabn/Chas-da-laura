@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chás da Laura - Insumos Total por Período</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="insumototal.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+       <aside class="menuLateral">
+
+            <button id="botaoRetratil" class="botaoRetratil"></button>
+
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            </div>
+
+            <nav class="menu">
+                <ul>
+
+                    <li class="blocoOpcao">
+                        <a href="paginaInicial.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeCasa"></span>
+                            </div>
+                            <span class="tituloMenu">Painel inicial</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class="blocoOpcao">
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeLapis"></span>
+                                    </div>
+                                    <span class="tituloMenu">Cadastros</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="CadastroClientes.html">Clientes</a></li>
+                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                                <li><a href="CadastroInsumos.html">Insumos</a></li>
+                                <li><a href="CadastroProdutos.html">Produtos</a></li>
+                                <li><a href="CadastroReceitas.html">Receitas</a></li>
+                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class=" blocoOpcao">
+                                <div class="div itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeCaixa"></span>
+                                    </div>
+                                    <span class="tituloMenu">Estoque</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="estoqueProdutos.html">Produtos</a></li>
+                                <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    
+                    <li class="blocoOpcao">
+                        <a href="PaginaRelatorios.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeGrafico"></span>
+                            </div>
+                            <span class="tituloMenu">Relatórios</span>
+                        </a>
+                    </li>
+
+                    <li class="blocoOpcao">
+                        <a href="PaginaProducao.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconePrancheta"></span>
+                            </div>
+                            <span class="tituloMenu">Produção</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="blocoOpcao" >
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeSetaCima"></span>
+                                    </div>
+                                    <span class="tituloMenu">Saídas</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="SaidasCliente.html">Clientes</a></li>
+                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+            
+        </aside>
+
+        <main class="conteudo-principal">
+            
+            <header class="topoEstoque">
+                <div class="caminho">
+                    </div>
+                
+                <div class="notfUser">
+                    <button class="notificacao" aria-label="Notificações">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22ZM18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.63 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16ZM16 17H8V11C8 8.52 9.51 6.5 12 6.5C14.49 6.5 16 8.52 16 11V17Z" fill="#0F4324"/>
+                        </svg>
+                    </button>
+                    <div class="PerfilUsuario">
+                        <div class="avatar">L</div>
+                        <span class="nomeUsuario">Laura</span>
+                        <span class="seta">▼</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="titulo-pagina-container">
+                <div class="texto-titulo">
+                    <h2>Insumos total por periodo</h2>
+                    <p>Visualize o total de insumos utilizados no período selecionado</p>
+                </div>
+                
+                <div class="botoes-exportar">
+                    <button class="btn-excel">
+                        <span class="badge-btn">XLS</span> Exportar Excel (.xlsx)
+                    </button>
+                    <button class="btn-pdf">
+                        <span class="badge-btn">PDF</span> Baixar PDF (.pdf)
+                    </button>
+                </div>
+            </section>
+
+            <section class="filtros-container">
+                <div class="grupo-filtro">
+                    <label>Periodo</label>
+                    <select>
+                        <option>01/05/2025 - 31/05/2026</option>
+                    </select>
+                </div>
+                <div class="grupo-filtro">
+                    <label>Insumos</label>
+                    <select>
+                        <option>Todos os insumos</option>
+                    </select>
+                </div>
+                <div class="grupo-filtro">
+                    <label>Status</label>
+                    <select>
+                        <option>Todos</option>
+                    </select>
+                </div>
+                <div class="botoes-filtro">
+                    <button class="btn-filtrar">≡ Filtrar</button>
+                    <button class="btn-limpar">↻ Limpar Filtros</button>
+                </div>
+            </section>
+
+            <section class="tabela-container">
+                <div class="acoes-tabela">
+                    <div class="busca-wrapper">
+                        <input type="text" class="busca-tabela" placeholder="Buscar produto...">
+                    </div>
+                    
+                    <div class="ordenacao">
+                        <span>Ordenar por:</span>
+                        <select>
+                            <option>Maior quantidade produzida</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Semana</th>
+                            <th>Insumo</th>
+                            <th>Unidade</th>
+                            <th>Quantidade consumida</th>
+                            <th>Custo unitário(R$)</th>
+                            <th>Custo total(R$)</th>
+                            <th>Utilizados em produção</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>20/05 - 26/05</td>
+                            <td>Flor de camomila</td>
+                            <td>KG</td>
+                            <td>2,5</td>
+                            <td>R$ 48,00</td>
+                            <td>R$ 600,00</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>20/05 - 26/05</td>
+                            <td>Flor de camomila</td>
+                            <td>KG</td>
+                            <td>2,5</td>
+                            <td>R$ 48,00</td>
+                            <td>R$ 600,00</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>20/05 - 26/05</td>
+                            <td>Flor de camomila</td>
+                            <td>KG</td>
+                            <td>2,5</td>
+                            <td>R$ 48,00</td>
+                            <td>R$ 600,00</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>20/05 - 26/05</td>
+                            <td>Flor de camomila</td>
+                            <td>KG</td>
+                            <td>2,5</td>
+                            <td>R$ 48,00</td>
+                            <td>R$ 600,00</td>
+                            <td>8</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="linha-total">
+                            <td>TOTAL GERAL</td>
+                            <td></td>
+                            <td></td>
+                            <td>47,5 KG</td>
+                            <td></td>
+                            <td>R$ 11.400,00</td>
+                            <td>152</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </main>
+    </div>
+ <script src="produtos.js"></script>
+    <script src="relatorios-producao.js"></script>
+</body>
+</html>
