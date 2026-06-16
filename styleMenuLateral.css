@@ -1,0 +1,246 @@
+.menuLateral{
+    width: 30vh;
+    height: 100vh;
+
+    background-color: #144621;
+
+    position:fixed;
+    top: 0;
+    left: 0;
+
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.menuLateral summary{
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.botaoRetratil{
+    width: 5vh;
+    height: 5vh;
+
+    margin: 2vh;
+    cursor: pointer;
+
+    background-image: url(Imagens/listaSemPonto.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+
+    filter: brightness(0) invert(1);
+}
+
+body.sidebarFechado .menuLateral{
+    width: 8vh;
+}
+
+body.sidebarFechado .blocoOpcao{
+    background-color: transparent;
+}
+
+body.sidebarFechado .logoMenuLateral{
+    display: none;
+}
+
+body.sidebarFechado .tituloMenu{
+    display: none;
+}
+
+body.sidebarFechado .conteudo{
+    margin-left: 23vh;
+}
+
+body.sidebarFechado .caminho{
+    margin-left: 25vh;
+}
+
+body.sidebarFechado .imagemCha{
+    width: 13vh;
+
+    transform:
+    translateX(-2vh)
+    translateY(31vh)
+    scale(0.7);
+}
+
+.logoMenuLateral img{
+    width: 30vh;
+    height: 20vh;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+
+    padding: 0;
+    margin: 0;
+}
+
+.menu li a, .menu summary span{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.menu ul li {
+    margin-left: 1vh;
+}
+
+.menu ul li .itemMenu{
+    margin-left: 1vh;
+}
+
+.itemMenu{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+
+    margin: 0;
+    padding: 0;
+    
+}
+
+.blocoOpcao{
+    width: 27vh;
+    height: 6vh;
+
+    display: flex;
+    align-items: center;
+    border-radius: 1.5vh;
+
+    margin: 0;
+    padding: 0;
+}
+
+.blocoOpcao.ativo{
+    background-color: #53f844a9;
+}
+
+.circulo{
+    width: 5vh;
+    height: 5vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: #027420;
+}
+
+.iconeCasa{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/casa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeLapis{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/lapiz.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeCaixa{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/caixa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeGrafico{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/grafico.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconePrancheta{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/prancheta.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeSetaCima{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/setaCima.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.menuLateral .subMenu{
+    display: flex;
+    gap: 1.5vh;
+
+    color: #ffffff;
+    list-style: disc;
+    margin-top: 1vh;
+    margin-left: 3vh;
+    padding-left: 5vh;
+    padding-bottom: 2vh;
+
+    border-radius: 2vh;
+    background-color: #197e167e;
+}
+
+.seta{
+    margin: 1vh;
+}
+
+.imagemCha{
+    width: 32vh;
+    height: auto;
+
+    margin-top: 4vh;
+    margin-right: 5vh;
+
+    transition: 
+    transform 0.4s ease,
+    width 0.4s ease;
+
+    transform-origin: top center;
+}
