@@ -53,6 +53,7 @@ img { display: inline-block; }
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin-left: 30vh; 
 }
 
 .page-content {
@@ -616,4 +617,8 @@ tbody td {
   .qty-wrap { flex-direction: column; }
   .qty-input { border-radius: var(--radius-sm) !important; border-right: 1.5px solid var(--gray-200) !important; flex: none; }
   .qty-unit  { border-radius: var(--radius-sm) !important; }
+}
+
+body.sidebarFechado .main-content {
+  margin-left: 8vh; /* igual ao width fechado da .menuLateral */
 }
