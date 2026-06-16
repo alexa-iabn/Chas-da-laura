@@ -6,75 +6,117 @@
   <title>Nova Produção — Chás da Laura</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styleMenuLateral.css" />
   <link rel="stylesheet" href="stylenovaproducaomatheus.css" />
   
 </head>
 <body>
 <div class="layout">
 
-  <!-- ===== SIDEBAR ===== -->
-  <aside class="sidebar">
-    <div class="sidebar-logo">
-      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/Logo.png"
-           alt="Chás da Laura" onerror="this.style.display='none'" />
-      <div class="sidebar-logo-text"></span></div>
-    </div>
+<aside class="menuLateral">
 
-    <nav class="sidebar-nav">
-      <a href="#" class="nav-item">
-        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" class="nav-icon" alt="" />
-        Painel de início
-      </a>
+            <button id="botaoRetratil" class="botaoRetratil"></button>
 
-      <div class="nav-group" id="navCadastros">
-        <button class="nav-group-title" onclick="toggleGroup('navCadastros')">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" class="nav-icon" alt="" />
-          Cadastros
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" 
-       fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="6 9 12 15 18 9"/>
-  </svg>
-        </button>
-        <div class="nav-subitems">
-          <a href="#">• Clientes</a>
-          <a href="#">• Fornecedores</a>
-          <a href="#">• Insumos</a>
-          <a href="#">• Produtos</a>
-          <a href="#">• Receitas</a>
-        </div>
-      </div>
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            </div>
 
-      <div class="nav-group" id="navEstoque">
-        <button class="nav-group-title" onclick="toggleGroup('navEstoque')">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" class="nav-icon" alt="" />
-          Estoque
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" 
-       fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="6 9 12 15 18 9"/>
-  </svg>
-        </button>
-        <div class="nav-subitems">
-          <a href="#">• Produots</a>
-          <a href="#">• Insumos</a>
-        </div>
-      </div>
+            <nav class="menu">
+                <ul>
 
-      <a href="#" class="nav-item">
-        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" class="nav-icon" alt="" />
-        Relatórios
-      </a>
+                    <li class="blocoOpcao">
+                        <a href="paginaInicial.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeCasa"></span>
+                            </div>
+                            <span class="tituloMenu">Painel inicial</span>
+                        </a>
+                    </li>
 
-      <a href="#" class="nav-item active">
-        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lista.svg" class="nav-icon" alt="" />
-        Produção
-      </a>
-    </nav>
+                    <li>
+                        <details>
 
-    <div class="sidebar-bottom">
-      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/ChaImagemMenu.png"
-           alt="Chá" onerror="this.style.display='none'" />
-    </div>
-  </aside>
+                            <summary class="blocoOpcao">
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeLapis"></span>
+                                    </div>
+                                    <span class="tituloMenu">Cadastros</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="CadastroClientes.html">Clientes</a></li>
+                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                                <li><a href="CadastroInsumos.html">Insumos</a></li>
+                                <li><a href="CadastroProdutos.html">Produtos</a></li>
+                                <li><a href="CadastroReceitas.html">Receitas</a></li>
+                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class=" blocoOpcao">
+                                <div class="div itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeCaixa"></span>
+                                    </div>
+                                    <span class="tituloMenu">Estoque</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="estoqueProdutos.html">Produtos</a></li>
+                                <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    
+                    <li class="blocoOpcao">
+                        <a href="PaginaRelatorios.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeGrafico"></span>
+                            </div>
+                            <span class="tituloMenu">Relatórios</span>
+                        </a>
+                    </li>
+
+                    <li class="blocoOpcao">
+                        <a href="PaginaProducao.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconePrancheta"></span>
+                            </div>
+                            <span class="tituloMenu">Produção</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="blocoOpcao" >
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeSetaCima"></span>
+                                    </div>
+                                    <span class="tituloMenu">Saídas</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="SaidasCliente.html">Clientes</a></li>
+                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+            
+        </aside>
+
 
   <!-- ===== MAIN ===== -->
   <div class="main">
@@ -260,5 +302,6 @@
 <div class="toast" id="toast"></div>
 
 <script src="novaproducao.js"></script>
+<script src="scriptMenuLateral.js"></script>
 </body>
 </html>
