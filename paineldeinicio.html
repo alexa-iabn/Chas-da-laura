@@ -3,31 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="stylesabrina.css">
+<link rel="stylesheet" href="styleMenuPrincipal.css">
 <link rel="stylesheet" href="styleMenuLateral.css">
 <title>Painel de início</title>
 </head>
 
 <body>
 
-<header class="topoEstoque">
-    <a href="paineldeinicio.html" class="paginaPrincipal"></a>
-    <a href="paineldeinicio.html" class="LinkEstoque">Painel de início</a>
+ <header class="topoEstoque">
 
-    <div class="notificacao">
-        <i class="sino"></i>
-        <span class="bolinha"></span>
-    </div>
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+            </div>
 
-    <div class="PerfilUsuario">
-        <div class="avatar">
-            <span class="L">L</span>
-        </div>
+            <div class="notfUser">
 
-        <h2 class="nomeUsuario">Laura</h2>
-        <span class="seta">⌄</span>
-    </div>
-</header>
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
+
+                </div>
+
+                <div class="PerfilUsuario">
+
+                    <div class="avatar">
+                        <span class="L"> L </span>
+                    </div>
+
+                    <h2 class="nomeUsuario">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                </div>
+            </div>
+        </header>
 
 <aside class="menuLateral">
 
@@ -41,7 +50,7 @@
                 <ul>
 
                     <li class="blocoOpcao">
-                        <a href="paginaInicial.html" class="itemMenu">
+                        <a href="paineldeinicio.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeCasa"></span>
                             </div>
@@ -92,7 +101,7 @@
                     </li>
                     
                     <li class="blocoOpcao">
-                        <a href="PaginaRelatorios.html" class="itemMenu">
+                        <a href="painelrelatorios.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeGrafico"></span>
                             </div>
@@ -101,7 +110,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -121,8 +130,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -133,7 +142,7 @@
             
         </aside>
 
-<main class="conteudoPrincipal">
+<main class="conteudo">
     <h1 class="tituloPagina">Painel de início</h1>
     <h3 class="subtituloPagina">Olá Laura! Veja o resumo do seu estoque</h3>
 
@@ -142,7 +151,7 @@
             <div class="textoDemo">
                 <span class="demoSemiTitulo">Produtos</span>
                 <span class="demoTitulo">128</span>
-                <a href="#">Ver todos</a>
+                <a class="linkDemo" href="produtoscadastrados.html">Ver todos</a>
             </div>
         </div>
 
@@ -150,7 +159,7 @@
             <div class="textoDemo">
                 <span class="demoSemiTitulo">Estoque total</span>
                 <span class="demoTitulo">2.456</span>
-                <a href="#">Ver detalhes</a>
+                <a class="linkDemo" href="EstoqueProdutos.html">Ver detalhes</a>
             </div>
         </div>
 
@@ -158,7 +167,7 @@
             <div class="textoDemo">
                 <span class="demoSemiTitulo">Produtos com &lt; 10 un</span>
                 <span class="demoTitulo">18</span>
-                <a href="#">Ver lista</a>
+                <a class="linkDemo" href="#">Ver lista</a>
             </div>
         </div>
 
@@ -166,117 +175,103 @@
             <div class="textoDemo">
                 <span class="demoSemiTitulo">Produtos zerados</span>
                 <span class="demoTitulo">7</span>
-                <a href="#">Ver lista</a>
+                <a class="linkDemo" href="#">Ver lista</a>
             </div>
         </div>
     </section>
 
-    <section class="conteinerTabela">
-        <h2 class="tituloTabela">Estoque por status</h2>
+    <div class="conjunto2">
 
-        <div class="demonstracoes">
-            <div class="demo">
-                <div class="textoDemo">
-                    <span class="demoSemiTitulo">Normal</span>
-                    <span class="demoTitulo">103</span>
+        <section class="conteinerDemostracoes">
+            <h2 class="titulodemostracao">Estoque por status</h2>
+
+            <div class="demonstracoes2">
+                <div class="demo">
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Normal</span>
+                        <span class="demoTitulo">103</span>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Estoque baixo</span>
+                        <span class="demoTitulo">18</span>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Zerado</span>
+                        <span class="demoTitulo">7</span>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Vencidos</span>
+                        <span class="demoTitulo">4</span>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="demo">
-                <div class="textoDemo">
-                    <span class="demoSemiTitulo">Estoque baixo</span>
-                    <span class="demoTitulo">18</span>
-                </div>
-            </div>
+        <section class="conteinerMovimetacoes">
+            <div class="titulosmovi"><h2 class="tituloTabela">Movimentações <span class="subtituloMovi">(últimos 7 dias)</span></h2></div>
 
-            <div class="demo">
-                <div class="textoDemo">
-                    <span class="demoSemiTitulo">Zerado</span>
-                    <span class="demoTitulo">7</span>
-                </div>
-            </div>
+            <div class="movi"><p>Entradas</p><strong>32</strong></div>
+            <div class="movi"><p>Saídas</p> <strong>45</strong></div>
+            <div class="movi"><p>Produções</p><strong>12</strong></div>
+        </section>
 
-            <div class="demo">
-                <div class="textoDemo">
-                    <span class="demoSemiTitulo">Vencidos</span>
-                    <span class="demoTitulo">4</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <section class="conteinerTabela">
-        <h2 class="tituloTabela">Movimentações <span>(últimos 7 dias)</span></h2>
+    <div class="conjunto3">
+        <section class="conteinerGrafico">
+            <h2 class="tituloGrafico">Produtos mais vendidos <span class="subtituloGrafico">(últimos 30 dias)</span></h2>
 
-        <p>Entradas <strong>32</strong></p>
-        <p>Saídas <strong>45</strong></p>
-        <p>Produções <strong>12</strong></p>
-    </section>
+            <canvas class="graficoProdutosMaisVendidos"></canvas>
+        </section>
 
-    <section class="conteinerTabela">
-        <h2 class="tituloTabela">Produtos mais vendidos <span>(últimos 30 dias)</span></h2>
+        <section class="conteinerTabela">
+            <h2 class="tituloTabela">Produtos parados</h2>
 
-        <div class="graficoBarras">
-            <div class="barraItem">
-                <div class="barra" style="height: 40px;"></div>
-                <span>P1</span>
-            </div>
+            <table class="tabelaGeral">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Dias sem saída</th>
+                    </tr>
+                </thead>
 
-            <div class="barraItem">
-                <div class="barra" style="height: 140px;"></div>
-                <span>P2</span>
-            </div>
+                <tbody>
+                    <tr>
+                        <td>Produto A</td>
+                        <td>45 dias</td>
+                    </tr>
+                    <tr>
+                        <td>Produto B</td>
+                        <td>38 dias</td>
+                    </tr>
+                    <tr>
+                        <td>Produto C</td>
+                        <td>32 dias</td>
+                    </tr>
+                    <tr>
+                        <td>Produto D</td>
+                        <td>45 dias</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <div class="barraItem">
-                <div class="barra" style="height: 120px;"></div>
-                <span>P3</span>
-            </div>
-
-            <div class="barraItem">
-                <div class="barra" style="height: 85px;"></div>
-                <span>P4</span>
-            </div>
-
-            <div class="barraItem">
-                <div class="barra" style="height: 55px;"></div>
-                <span>P5</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="conteinerTabela">
-        <h2 class="tituloTabela">Produtos parados</h2>
-
-        <table class="tabelaGeral">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Dias sem saída</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Produto A</td>
-                    <td>45 dias</td>
-                </tr>
-                <tr>
-                    <td>Produto B</td>
-                    <td>38 dias</td>
-                </tr>
-                <tr>
-                    <td>Produto C</td>
-                    <td>32 dias</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <a href="#">Ver relatório completo</a>
-    </section>
+            <a class="linkTabela" href="#">Ver relatório completo</a>
+        </section>
+    </div>
 </main>
 
-<script src="app.js"></script>
-<script src="js/paineldeinicio.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="paineldeinicio.js"></script>
 <script src="scriptMenuLateral.js"></script>
 </body>
 </html>

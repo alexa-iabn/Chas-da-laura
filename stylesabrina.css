@@ -7,103 +7,146 @@ body{
 }
 
 
-
 .topoEstoque{
-    position:fixed;
-    top:0;
-    left:230px;
-    right:0;
-    height:70px;
-    display:flex;
-    align-items:center;
-    background-color:#F5F3EE;
-    padding:0 35px;
-    box-sizing:border-box;
-    z-index:10;
+    width: 100%;
+    height: 6vh;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* casita del header: negra */
-.topoEstoque .paginaPrincipal{
+.caminho{
+    display: flex;
+    align-items: center;
+
+    margin-left: 35vh;
+}
+
+.paginaPrincipal{
     display: block;
-    width: 35px;
-    height: 35px;
-    background-image: url("Imagens/casa.svg");
+    width: 5vh;
+    height: 5vh;
+
+    background-image: url(Imagens/casa.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    filter: brightness(0) !important;
 }
 
-/* iconos del menú lateral: blancos */
-.menuLateral .iconeMenu{
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-    filter: brightness(0) invert(1) !important;
-}
-.LinkEstoque,
-.linkEstoqueProdutos{
-    text-decoration:none;
-    color:black;
-    margin-left:12px;
-    font-size:16px;
+.primeiroCaminho{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
 }
 
-.notificacao{
-    margin-left:auto;
+.segundoCaminho{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
+}
+
+.terceiroCaminho{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
+}
+
+.notfUser{
+    display: flex;
+    align-items: center;
+    margin-right: 2vh;
+}
+
+.notificacao, .avatar{
+    background-color: rgb(255, 255, 255);
+
+    width: 5vh;
+    height: 5vh;
+    margin-top: 0.3vh;
+    margin-left: 2vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    border-radius: 50%;
+
+    cursor: pointer;
 }
 
 .sino{
-    display:block;
-    width:32px;
-    height:32px;
-    background-image:url(Imagens/sino.svg);
-    background-repeat:no-repeat;
-    background-size:contain;
+    width: 5vh;
+    height: 5vh;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(Imagens/sino.svg);
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.bolinha{
+    width: 2vh;
+    height: 2vh;
+
+    background-color: rgb(231, 3, 3);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0.5vh;
+    right: 0.5vh;
 }
 
 .PerfilUsuario{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-right:35px;
+    display: flex;
 }
 
 .avatar{
-    background-color:#0D4B24;
-    color:white;
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    background-color: #144621;
+}
+
+.L{
+    font-size: 25px;
+    margin: 0;
+    color: #ffffff;
 }
 
 .nomeUsuario{
-    font-size:18px;
+    margin: 0;
+    margin-top: 1vh;
+    margin-left: 1vh;
+
+    cursor: pointer;
 }
 
-.conteudoPrincipal{
-   
-    margin-left:230px;
-    padding:90px 25px 35px;
-    width:calc(100vw - 230px);
-    box-sizing:border-box;
-};
+.conteudo{
+    width: 170vh;
+    height: auto;
 
-.tituloPagina{
-    margin-top:10px;
-    margin-bottom:5px;
+    margin-left: 35vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: first baseline;
 }
-
-.subtituloPagina{
-    margin-top:0;
-    font-weight:normal;
-    color:#555;
-}
-
-/* CARDS SUPERIORES DO PAINEL */
 
 .cardsInicio{
     display:grid;
@@ -263,7 +306,7 @@ th{
     margin-top:20px;
     border-radius:10px;
     box-shadow:0px 2px 10px rgba(0,0,0,0.1);
-    width:100%;
+    width:auto;
     box-sizing:border-box;
 }
 

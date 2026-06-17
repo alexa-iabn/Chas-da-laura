@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Parceiros</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylesabrina.css">
+  <link rel="stylesheet" href="styleMenuLateral.css">
 </head>
 
 <body>
@@ -28,68 +29,108 @@
 </header>
 
 <aside class="menuLateral">
-  <div class="logoMenuLateral">
-    <img src="Imagens/Logo.png" alt="Logo Chás da Laura">
-  </div>
 
-  <nav class="menu">
-    <ul>
-      <li>
-        <a href="paineldeinicio.html" class="itemMenu">
-          <span class="iconeCasa"></span>
-          <span class="tituloMenu">Painel inicial</span>
-        </a>
-      </li>
+    <button id="botaoRetratil" class="botaoRetratil"></button>
 
-      <li>
-        <details open>
-          <summary class="itemMenu">
-            <span class="iconeLapis"></span>
-            <span class="tituloMenu">Cadastros</span>
-          </summary>
+    <div class="logoMenuLateral">
+        <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            </div>
 
-          <ul class="subMenu">
-            <li><a href="CadastroClientes.html">Clientes</a></li>
-            <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-            <li><a href="CadastroInsumos.html">Insumos</a></li>
-            <li><a href="CadastroProdutos.html">Produtos</a></li>
-            <li><a href="cadastroreceitas.html">Receitas</a></li>
-            <li><a href="cadastroparceiros.html">Parceiros</a></li>
-          </ul>
-        </details>
-      </li>
+            <nav class="menu">
+                <ul>
 
-      <li>
-        <details>
-          <summary class="itemMenu">
-            <span class="iconeLapis"></span>
-            <span class="tituloMenu">Estoque</span>
-          </summary>
+                    <li class="blocoOpcao">
+                        <a href="paineldeinicio.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeCasa"></span>
+                            </div>
+                            <span class="tituloMenu">Painel inicial</span>
+                        </a>
+                    </li>
 
-          <ul class="subMenu">
-            <li><a href="EstoqueProdutos.html">Produtos</a></li>
-            <li><a href="EstoqueInsumos.html">Insumos</a></li>
-          </ul>
-        </details>
-      </li>
+                    <li>
+                        <details>
 
-      <li>
-        <a href="relatoriosVendas.html" class="itemMenu">
-          <span class="tituloMenu">Relatórios</span>
-        </a>
-      </li>
+                            <summary class="blocoOpcao">
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeLapis"></span>
+                                    </div>
+                                    <span class="tituloMenu">Cadastros</span>
+                                </div>
+                            </summary>
 
-      <li>
-        <a href="PaginaProducao.html" class="itemMenu">
-          <span class="tituloMenu">Produção</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+                            <ul class="subMenu">
+                                <li><a href="CadastroClientes.html">Clientes</a></li>
+                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                                <li><a href="CadastroInsumos.html">Insumos</a></li>
+                                <li><a href="CadastroProdutos.html">Produtos</a></li>
+                                <li><a href="CadastroReceitas.html">Receitas</a></li>
+                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
 
-  <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
-</aside>
+                    <li>
+                        <details>
 
+                            <summary class=" blocoOpcao">
+                                <div class="div itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeCaixa"></span>
+                                    </div>
+                                    <span class="tituloMenu">Estoque</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="estoqueProdutos.html">Produtos</a></li>
+                                <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    
+                    <li class="blocoOpcao">
+                        <a href="painelrelatorios.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeGrafico"></span>
+                            </div>
+                            <span class="tituloMenu">Relatórios</span>
+                        </a>
+                    </li>
+
+                    <li class="blocoOpcao">
+                        <a href="PaginaProducao.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconePrancheta"></span>
+                            </div>
+                            <span class="tituloMenu">Produção</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="blocoOpcao" >
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeSetaCima"></span>
+                                    </div>
+                                    <span class="tituloMenu">Saídas</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="SaidasCliente.html">Clientes</a></li>
+                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+            
+        </aside>
 <main>
 
   <div class="topoPaginaReceita">
@@ -198,4 +239,5 @@
 </main>
 
 </body>
+<script src="scriptMenuLateral.js"></script>
 </html>

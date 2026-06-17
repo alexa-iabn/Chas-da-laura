@@ -1,60 +1,130 @@
-/* js/paineldeinicio.js — Painel de início */
-document.addEventListener('DOMContentLoaded', function () {
-    const fmt = window.CL?.fmt || {
-        moeda: v => Number(v).toLocaleString('pt-BR', { style:'currency', currency:'BRL' }),
-    };
-
-    /* ---- KPIs principais ---- */
-    const totalProd    = DB.produtos.length;
-    const totalEstoque = DB.produtos.reduce((s, p) => s + p.estoque, 0);
-    const baixos       = DB.produtos.filter(p => p.status === 'baixo').length;
-    const zerados      = DB.produtos.filter(p => p.status === 'zerado').length;
-
-    const demos = document.querySelectorAll('.demo .demoTitulo');
-    if (demos[0]) demos[0].textContent = totalProd;
-    if (demos[1]) demos[1].textContent = totalEstoque.toLocaleString('pt-BR');
-    if (demos[2]) demos[2].textContent = baixos;
-    if (demos[3]) demos[3].textContent = zerados;
-
-    /* ---- Estoque por status ---- */
-    const normal   = DB.produtos.filter(p => p.status === 'normal').length;
-    const statusDemos = document.querySelectorAll('.conteinerTabela .demo .demoTitulo');
-    if (statusDemos[0]) statusDemos[0].textContent = normal;
-    if (statusDemos[1]) statusDemos[1].textContent = baixos;
-    if (statusDemos[2]) statusDemos[2].textContent = zerados;
-
-    /* ---- Tabela de movimentações (últimas vendas) ---- */
-    const tbodyMov = document.querySelector('.tabelaGeral tbody');
-    if (tbodyMov) {
-        const ultimas = DB.vendas.slice(0, 7);
-        tbodyMov.innerHTML = ultimas.map(v => `
-            <tr>
-                <td>${v.data}</td>
-                <td>${v.produto}</td>
-                <td>${v.qtd}</td>
-                <td>${v.tipo}</td>
-                <td>${fmt.moeda(v.valor)}</td>
-            </tr>`).join('') || '<tr><td colspan="5" style="color:#aaa;text-align:center;">Sem movimentações.</td></tr>';
+const produtosVendidos = [
+    {
+        id: 1,
+        nomeProduto: "Calme Lata 30g",
+        categoria: "Blend",
+        quantidadeVendida: 25,
+        valorUnitario: 35.00,
+        valorTotalVendido: 875.00,
+        data: "2026-06-01"
+    },
+    {
+        id: 2,
+        nomeProduto: "Felicitá Lata 80g",
+        categoria: "Blend",
+        quantidadeVendida: 18,
+        valorUnitario: 42.00,
+        valorTotalVendido: 756.00,
+        data: "2026-06-02"
+    },
+    {
+        id: 3,
+        nomeProduto: "Ormoni Lata 40g",
+        categoria: "Blend",
+        quantidadeVendida: 12,
+        valorUnitario: 38.00,
+        valorTotalVendido: 456.00,
+        data: "2026-06-03"
+    },
+    {
+        id: 4,
+        nomeProduto: "MaterniTea Lata 90g",
+        categoria: "Blend",
+        quantidadeVendida: 15,
+        valorUnitario: 48.00,
+        valorTotalVendido: 720.00,
+        data: "2026-06-04"
+    },
+    {
+        id: 5,
+        nomeProduto: "Airmid Lata",
+        categoria: "Blend",
+        quantidadeVendida: 20,
+        valorUnitario: 40.00,
+        valorTotalVendido: 800.00,
+        data: "2026-06-05"
+    },
+    {
+        id: 6,
+        nomeProduto: "Chai Masala",
+        categoria: "Blend",
+        quantidadeVendida: 30,
+        valorUnitario: 32.00,
+        valorTotalVendido: 960.00,
+        data: "2026-06-06"
+    },
+    {
+        id: 7,
+        nomeProduto: "Home Spray Lavanda",
+        categoria: "Home Spray",
+        quantidadeVendida: 10,
+        valorUnitario: 45.00,
+        valorTotalVendido: 450.00,
+        data: "2026-06-07"
+    },
+    {
+        id: 8,
+        nomeProduto: "Home Spray Capim Limão",
+        categoria: "Home Spray",
+        quantidadeVendida: 8,
+        valorUnitario: 45.00,
+        valorTotalVendido: 360.00,
+        data: "2026-06-08"
+    },
+    {
+        id: 9,
+        nomeProduto: "Kit Relaxamento",
+        categoria: "Kit",
+        quantidadeVendida: 6,
+        valorUnitario: 89.90,
+        valorTotalVendido: 539.40,
+        data: "2026-06-09"
+    },
+    {
+        id: 10,
+        nomeProduto: "Infusor Inox",
+        categoria: "Acessório",
+        quantidadeVendida: 14,
+        valorUnitario: 24.90,
+        valorTotalVendido: 348.60,
+        data: "2026-06-10"
     }
+];
 
-    /* ---- Saudação com nome do usuário ---- */
-    const subtitulo = document.querySelector('.subtituloPagina');
-    const usuario = localStorage.getItem('chl_usuario') || 'Laura';
-    if (subtitulo) subtitulo.textContent = `Olá ${usuario}! Veja o resumo do seu estoque`;
 
-    /* ---- Gráfico de barras (se existir) ---- */
-    const grafico = document.querySelector('.graficoBarras');
-    if (grafico && DB.vendas.length) {
-        const meses = {};
-        DB.vendas.forEach(v => {
-            const mes = v.data.slice(0, 7);
-            meses[mes] = (meses[mes] || 0) + v.valor;
-        });
-        const maxVal = Math.max(...Object.values(meses), 1);
-        grafico.innerHTML = Object.entries(meses).slice(-6).map(([mes, val]) => `
-            <div class="barraItem">
-                <div class="barra" style="height:${Math.round((val/maxVal)*160)}px;background:#0D5B2A;border-radius:4px 4px 0 0;"></div>
-                <span style="font-size:10px;margin-top:4px;">${mes.slice(5)}</span>
-            </div>`).join('');
+const canvasProdutosMaisVendidos = document.querySelector('.graficoProdutosMaisVendidos');
+
+const nomesProdutos = produtosVendidos.map(produto => produto.nomeProduto);
+const quantidadesVendidas = produtosVendidos.map(produto => produto.quantidadeVendida);
+
+new Chart(canvasProdutosMaisVendidos, {
+    type: 'bar',
+    data: {
+        labels: nomesProdutos,
+        datasets: [{
+            label: 'Quantidade vendida',
+            data: quantidadesVendidas,
+            backgroundColor: '#0D5B2A',
+            borderRadius: 8
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    precision: 0
+                }
+            }
+        }
     }
 });

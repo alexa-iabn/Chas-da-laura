@@ -1,0 +1,714 @@
+body{
+    background-color:#F5F3EE;
+    margin:0;
+    padding:0;
+    min-height:100vh;
+}
+
+
+.topoEstoque{
+    width: 100%;
+    height: 6vh;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.caminho{
+    display: flex;
+    align-items: center;
+
+    margin-left: 35vh;
+}
+
+.paginaPrincipal{
+    display: block;
+    width: 5vh;
+    height: 5vh;
+
+    background-image: url(Imagens/casa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.primeiroCaminho{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
+}
+
+.segundoCaminho{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
+}
+
+.terceiroCaminho{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
+}
+
+.notfUser{
+    display: flex;
+    align-items: center;
+    margin-right: 2vh;
+}
+
+.notificacao, .avatar{
+    background-color: rgb(255, 255, 255);
+
+    width: 5vh;
+    height: 5vh;
+    margin-top: 0.3vh;
+    margin-left: 2vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.sino{
+    width: 5vh;
+    height: 5vh;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(Imagens/sino.svg);
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.bolinha{
+    width: 2vh;
+    height: 2vh;
+
+    background-color: rgb(231, 3, 3);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0.5vh;
+    right: 0.5vh;
+}
+
+.PerfilUsuario{
+    display: flex;
+}
+
+.avatar{
+    background-color: #144621;
+}
+
+.L{
+    font-size: 25px;
+    margin: 0;
+    color: #ffffff;
+}
+
+.nomeUsuario{
+    margin: 0;
+    margin-top: 1vh;
+    margin-left: 1vh;
+
+    cursor: pointer;
+}
+
+/*================== PAGINA CADASTRO RECEITA =====================*/
+
+.conteudo{
+
+    width: 170vh;
+    height: auto;
+
+    margin-left: 35vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: first baseline;
+}
+
+.tituloReceita{
+    margin-bottom: 0;
+}
+
+.subtituloReceita{
+    font-weight: lighter;
+    font-size: 3vh;
+    margin-top: 1vh;
+}
+
+.botaoTabela{
+    padding: 1.3vh;
+    background-color: #144621;
+
+    color: white;
+    border-radius: 1vh;
+    border: none;
+    align-self: flex-end;
+    cursor: pointer;
+
+    margin-bottom: 3vh;
+}
+
+.blocos{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.conteinerReceita{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+
+    background-color: rgb(255, 255, 255);
+    width: 170vh;
+    height: 55vh;
+
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    border-radius: 1.5vh;
+    padding-top: 3vh;
+}
+.blocoduplo{
+    display: flex;
+    align-items: flex-end;
+    gap: 3vh;
+    width: 150vh;
+}
+
+.blocoduplo .blocoReceita{
+    width: auto;
+    flex: 1;
+}
+
+.blocoduplo .unidadeMedida{
+    width: 25vh;
+    height: 5vh;
+}
+
+.blocoReceita{
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+    width: 150vh;
+}
+
+.conteinerReceita input,
+.conteinerReceita select,
+.conteinerReceita textarea{
+    padding: 1vh;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.5vh;
+    box-sizing: border-box;
+
+    height: 5vh;
+
+    cursor: pointer;
+}
+
+.unidadeMedida{
+    width: 30vh;
+}
+
+.botoes{
+    display: flex;
+    align-self: flex-end;
+    margin-right: 10vh;
+    margin-top: 2vh;
+    gap: 2vh;
+}
+
+.botoes button{
+    background-color: #144621;
+    color: white;
+    border-radius: 0.5vh;
+    border: none;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+
+.conteinerReceitas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+
+    background-color: rgb(255, 255, 255);
+    width: 170vh;
+    height: auto;
+
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    border-radius: 1.5vh;
+    padding-top: 3vh;
+}
+
+.conteinerReceitas input,
+.conteinerReceitas select{
+    padding: 1vh;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.5vh;
+    box-sizing: border-box;
+
+    height: 5vh;
+
+    cursor: pointer;
+}
+
+.adicionarMais{
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 2vh;
+
+    cursor: pointer;
+}
+
+.blocoInsumo{
+    width: 150vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.linhaInsumo{
+    display: flex;
+    gap: 3vh;
+}
+
+.linhaInsumo .blocoReceita{
+    flex: 1;
+}
+
+
+
+/* RECEITAS CASTRADAS */
+
+.topoTabela{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 3vh;
+
+    margin-bottom: 2vh;
+}
+
+.topoTabela button{
+    background-color: #144621;
+    color: white;
+    border: none;
+    padding: 1.5vh;
+    border-radius: 1.5vh;
+
+    cursor: pointer;
+
+}
+
+.tabelaReceitaCastradas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+
+    background-color: rgb(255, 255, 255);
+    width: 170vh;
+    height: auto;
+
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    border-radius: 1.5vh;
+    padding-top: 3vh;
+}
+
+.tabelaReceitaCastradas{
+    align-items: stretch;
+    padding: 3vh;
+    box-sizing: border-box;
+}
+
+.tabelaReceitaCastradas > input{
+    align-self: flex-start;
+    width: 45vh;
+    height: 5vh;
+    padding: 1vh;
+    border: 1px solid #d9d9d9;
+    border-radius: 1vh;
+    box-sizing: border-box;
+}
+
+.tabelaReceitaCastradas > a{
+    align-self: flex-end;
+    margin-top: -6vh;
+    margin-bottom: 2vh;
+}
+
+.tabelaReceitaCastradas > a button{
+    background-color: #144621;
+    color: white;
+    border: none;
+    padding: 1.5vh;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.tabelaGeral{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2vh;
+}
+
+.tabelaGeral th,
+.tabelaGeral td{
+    border: 1px solid #d9d9d9;
+    padding: 1.5vh;
+    text-align: center;
+}
+
+.tabelaGeral th{
+    background-color: #144621;
+    font-weight: bold;
+    color: white;
+}
+
+.tabelaGeral tbody tr:hover{
+    background-color: #f8f8f8;
+}
+
+.editarReceita{
+    width: 4vh;
+    height: 4vh;
+    margin: 0vh;
+
+    display: block;
+
+    background-image: url(Imagens/lapiz_2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.botaoAbrirModal{
+    width: 4vh;
+    height: 4vh;
+    margin: 0vh;
+
+    display: block;
+    border: none;
+
+    background-image: url(Imagens/lixeira.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+
+    filter:
+    invert(17%)
+    sepia(98%)
+    saturate(7476%)
+    hue-rotate(356deg)
+    brightness(96%)
+    contrast(118%);
+}
+
+.acoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+}
+
+
+/*modal excluir produto*/
+
+.fundoModal::backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fundoModal{
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+.modalExcluir{
+    background-color: #ffffff;
+    border-radius: 1.5vh;
+
+    width: 60vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 2vh;
+}
+
+.iconeModal{
+    width: 10vh;
+    height: 10vh;
+    background-color: #fde8da;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconeLixeira{
+    width: 7vh;
+    height: 7vh;
+    margin: 0vh;
+
+    display: block;
+    border: none;
+
+    background-image: url(Imagens/lixeira.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+
+    filter:
+    invert(17%)
+    sepia(98%)
+    saturate(7476%)
+    hue-rotate(356deg)
+    brightness(96%)
+    contrast(118%);
+}
+
+.tituloModal{
+    margin: 0;
+}
+
+.textoModal{
+    margin: 0;
+    text-align: center;
+}
+
+.cardModalReceita{
+    border: 0.3vh solid #949494;
+    border-radius: 1.5vh;
+    width: 50vh;
+    margin-top: 2vh;
+}
+
+.topoModal{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2vh;
+
+    margin-left: 2vh;
+}
+
+.bolinhaReceita{
+    width: 7vh;
+    height: 7vh;
+
+    background-color: #A3FF69;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconeSetaCima{
+    width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/setaCima.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconemoeda{
+     width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/dinheiro_circulo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeMoedas{
+     width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/moedas.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.infosModal{
+    margin-left: 11vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+.alertaModal{
+    width: 50vh;
+
+    display: grid;
+    grid-template-columns: 3vh 1fr;
+    align-items: center;
+    column-gap: 2vh;
+
+    background-color: #FFE5E5;
+    border: 2px solid #D32F2F;
+    border-radius: 1vh;
+
+    padding: 1.5vh;
+    box-sizing: border-box;
+
+    color: #8B0000;
+    font-size: 1.7vh;
+    line-height: 1.4;
+    margin-top: 2vh;
+}
+
+.iconeAlerta{
+    width: 5vh;
+    height: 5vh;
+
+    display: block;
+    margin: 0;
+
+    align-self: center;
+    justify-self: center;
+
+    background-image: url(Imagens/alerta.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    filter:
+    invert(17%)
+    sepia(98%)
+    saturate(7476%)
+    hue-rotate(356deg)
+    brightness(96%)
+    contrast(118%);
+}
+
+.alertaModal span{
+    margin: 0;
+    display: block;
+}
+
+.botoesModal{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vh;
+
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.botaoCancelar{
+    background-color: white;
+    color: black;
+
+    border: 1px solid #CFCFCF;
+    border-radius: 1vh;
+
+    padding: 1.2vh 2.5vh;
+
+    cursor: pointer;
+}
+
+.botaoConfirmarExcluir{
+    background-color: #C62828;
+    color: white;
+
+    border: none;
+    border-radius: 1vh;
+
+    padding: 1.2vh 2.5vh;
+
+    cursor: pointer;
+}
+
