@@ -4,92 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chás da Laura - Relatórios de Insumos</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styleInsumos.css">
 </head>
 <body>
     
-    <header class="topoEstoque">
+   <header class="topoEstoque">
         <div class="caminho">
-            <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-            <a href="estoque.html" class="LinkEstoque"> > Relatórios </a>
-            <a href="relatorioInsumos.html" class="linkEstoqueProdutos">> Relatórios de Insumos</a>
+            <a href="paineldeinicio.html">Início</a>
+            <span>&gt;</span>
+            <a href="#" class="linkEstoqueProdutos">Relatórios de Produção</a>
         </div>
+        
         <div class="notfUser">
             <div class="notificacao">
-                <i class="sino"></i>
+                <span class="sino"></span>
                 <span class="bolinha"></span>
             </div>
             <div class="PerfilUsuario">
-                <div class="avatar">
-                    <span class="L"> L </span>
-                </div>
-                <h2 class="nomeUsuario">Laura</h2>
-                <span class="seta">⌄</span>
+                <div class="avatar">L</div>
+                <span class="nomeUsuario">Laura</span>
+                <span class="seta">▼</span>
             </div>
         </div>
     </header>
 
     <aside class="menuLateral">
-        <button id="botaoRetratil" class="botaoRetratil"></button>
         <div class="logoMenuLateral">
-            <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            <img src="imagens/Logo.png" alt="Logo Chás da Laura">
         </div>
+
         <nav class="menu">
             <ul>
-                <li class="blocoOpcao">
-                    <a href="paginaInicial.html" class="itemMenu">
-                        <div class="circulo"><span class="iconeCasa"></span></div>
+                <li>
+                    <a href="paineldeinicio.html" class="itemMenu">
+                        <img src="imagens/casa.svg" alt="Painel inicial" class="iconeMenu">
                         <span class="tituloMenu">Painel inicial</span>
                     </a>
                 </li>
+
                 <li>
-                    <details>
-                        <summary class="blocoOpcao">
-                            <div class="itemMenu">
-                                <div class="circulo"><span class="iconeLapis"></span></div>
-                                <span class="tituloMenu">Cadastros</span>
-                            </div>
+                    <details open>
+                        <summary class="itemMenu">
+                            <img src="imagens/lapiz_2.svg" alt="Cadastros" class="iconeMenu">
+                            <span class="tituloMenu">Cadastros</span>
                         </summary>
                         <ul class="subMenu">
-                            <li><a href="CadastroClientes.html">Clientes</a></li>
+                            <li><a href="cadastroclientes.html">Clientes</a></li>
                             <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
                             <li><a href="CadastroInsumos.html">Insumos</a></li>
-                            <li><a href="CadastroProdutos.html">Produtos</a></li>
-                            <li><a href="CadastroReceitas.html">Receitas</a></li>
-                            <li><a href="CadastroParceiros.html">parceiros</a></li>
+                            <li><a href="cadastroprodutos.html">Produtos</a></li>
+                            <li><a href="cadastroreceitas.html">Receitas</a></li>
+                            <li><a href="cadastroparceiros.html">Parceiros</a></li>
                         </ul>
                     </details>
                 </li>
+
                 <li>
                     <details>
-                        <summary class="blocoOpcao">
-                            <div class="itemMenu">
-                                <div class="circulo"><span class="iconeCaixa"></span></div>
-                                <span class="tituloMenu">Estoque</span>
-                            </div>
+                        <summary class="itemMenu">
+                            <img src="imagens/caixa.svg" alt="Estoque" class="iconeMenu"> 
+                            <span class="tituloMenu">Estoque</span>
                         </summary>
                         <ul class="subMenu">
-                            <li><a href="estoqueProdutos.html">Produtos</a></li>
-                            <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            <li><a href="EstoqueProdutos.html">Produtos</a></li>
+                            <li><a href="EstoqueInsumos.html">Insumos</a></li>
                         </ul>
                     </details>
                 </li>
-                <li class="blocoOpcao">
-                    <a href="PaginaRelatorios.html" class="itemMenu">
-                        <div class="circulo"><span class="iconeGrafico"></span></div>
+
+                <li>
+                    <a href="relatoriosVendas.html" class="itemMenu">
+                        <img src="imagens/grafico.svg" alt="Relatórios" class="iconeMenu">
                         <span class="tituloMenu">Relatórios</span>
                     </a>
                 </li>
-                <li class="blocoOpcao">
+
+                <li>
                     <a href="PaginaProducao.html" class="itemMenu">
-                        <div class="circulo"><span class="iconePrancheta"></span></div>
+                        <img src="imagens/grafico.svg" alt="Produção" class="iconeMenu">
                         <span class="tituloMenu">Produção</span>
                     </a>
                 </li>
+
+                <li>
+                    <details>
+                        <summary class="itemMenu">
+                            <img src="imagens/setaCima.svg" alt="Saídas" class="iconeMenu">
+                            <span class="tituloMenu">Saídas</span>
+                        </summary>
+                        <ul class="subMenu">
+                            <li><a href="saidasClientes.html">Clientes</a></li>
+                            <li><a href="saidaParceiro.html">Parceiros</a></li>
+                        </ul>
+                    </details>
+                </li>
             </ul>
         </nav>
-    </aside>
 
+        <img src="imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+    </aside>
     <main class="conteudo">
         <h1 class="tituloPagina">Relatórios de Insumos</h1>
         <h3 class="subtituloPagina">Acompanhe a situação atual de todos os itens em estoque</h3>
@@ -104,13 +117,22 @@
             <div class="filtroItem">
                 <label for="categoria">Categoria</label>
                 <select id="categoria">
-                    <option>Todas as categorias</option>
+                    <option value="todos">Todas as categorias</option>
+                    <option value="blend">Blend</option>
+                    <option value="home spray">Home Spray</option>
+                    <option value="kit">Kit</option>
+                    <option value="embalagem">Embalagem</option>
+                    <option value="acessório">Acessório</option>
+                    <option value="chá">Chá (Insumo)</option>
+                    <option value="infusor">Infusor (Insumo)</option>
                 </select>
             </div>
             <div class="filtroItem">
                 <label for="tipoItem">Tipo de item</label>
                 <select id="tipoItem">
-                    <option>Todos os tipos</option>
+                    <option value="todos">Todos os tipos</option>
+                    <option value="produto">Produto</option>
+                    <option value="insumo">Insumo</option>
                 </select>
             </div>
             <div class="botoesFiltro">
@@ -121,18 +143,18 @@
 
         <section class="conteinerCardsKpi">
             <div class="cardKpi">
-                <div class="iconeKpi verde"></div>
+                <img src="imagens/caixa.svg" alt="Painel inicial">
                 <div class="infoKpi">
                     <span class="labelKpi">Valor total em estoque</span>
-                    <span class="valorKpi">R$ 48.756,33</span>
+                    <span class="valorKpi">R$ 0,00</span>
                     <span class="subtextKpi verde">▲ 8,7% vs período anterior</span>
                 </div>
             </div>
             <div class="cardKpi">
-                <div class="iconeKpi amarelo"></div>
+                 <img src="imagens/grafico.svg" alt="Painel inicial">
                 <div class="infoKpi">
                     <span class="labelKpi">Itens com estoque baixo</span>
-                    <span class="valorKpi alerta">16</span>
+                    <span class="valorKpi alerta">0</span>
                     <span class="subtextKpi">Itens</span>
                 </div>
             </div>
@@ -140,7 +162,7 @@
                 <div class="iconeKpi vermelho"></div>
                 <div class="infoKpi">
                     <span class="labelKpi">Itens sem estoque</span>
-                    <span class="valorKpi critico">3</span>
+                    <span class="valorKpiBox critico">0</span>
                     <span class="subtextKpi">Itens</span>
                 </div>
             </div>
@@ -148,7 +170,7 @@
                 <div class="iconeKpi verdeSecundario"></div>
                 <div class="infoKpi">
                     <span class="labelKpi">Total de itens</span>
-                    <span class="valorKpi">147</span>
+                    <span class="valorKpi">0</span>
                     <span class="subtextKpi">Produtos e insumos</span>
                 </div>
             </div>
@@ -158,9 +180,11 @@
             <div class="cardGrafico">
                 <div class="topoGrafico">
                     <h2 class="tituloGrafico">Valor do estoque por tipo</h2>
-                    <button class="btnExportarCard"></button>
+                    <button onclick="window.location.href='valorestoque.html'"class="btnExportarCard" ></button>
+                    
                 </div>
-                <canvas id="graficoValorTipo"></canvas> </div>
+                <canvas id="graficoValorTipo"></canvas>
+            </div>
 
             <div class="cardGrafico">
                 <div class="topoGrafico">
@@ -179,9 +203,10 @@
             </div>
         </section>
 
-        <section class="conteinerTabela">
+        <section class="conteinerTabelaCompleta">
             <h2 class="tituloTabela">Detalhamento do estoque</h2>
-            <table>
+            
+            <table class="tabelaDados">
                 <thead>
                     <tr>
                         <th>Tipo</th>
@@ -194,45 +219,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><span class="tag tipoProduto">Produto</span></td>
-                        <td>Bled 1 - 50g</td>
-                        <td>25 UN</td>
-                        <td>10 UN</td>
-                        <td>R$ 50,00 UN</td>
-                        <td>R$ 1.250,00</td>
-                        <td><span class="status normal">Normal</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag tipoProduto">Produto</span></td>
-                        <td>Bled 2 - 50g</td>
-                        <td>0 UN</td>
-                        <td>10 UN</td>
-                        <td>R$ 50,00 UN</td>
-                        <td>R$ 0,00</td>
-                        <td><span class="status zerado">Zerado</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag tipoInsumo">Insumo</span></td>
-                        <td>Flor de camomila</td>
-                        <td>100g</td>
-                        <td>500 g</td>
-                        <td>R$ 20,00 KG</td>
-                        <td>R$ 2,00</td>
-                        <td><span class="status baixo">Estoque baixo</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="tag tipoInsumo">Insumo</span></td>
-                        <td>Flor de hibisco</td>
-                        <td>2 KG</td>
-                        <td>500 g</td>
-                        <td>R$ 20,00 KG</td>
-                        <td>R$ 40,00</td>
-                        <td><span class="status normal">Normal</span></td>
-                    </tr>
-                </tbody>
+                    </tbody>
             </table>
         </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="produtos.js"></script>
+    <script src="relatorios.js"></script>
 </body>
 </html>

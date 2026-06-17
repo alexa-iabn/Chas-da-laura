@@ -1,13 +1,198 @@
-<a href="saidaParceiro.html" class="linkEstoqueProdutos">> Saída de produtos por parceiros</a>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chás da Laura - Saída por Parceiro</title>
+    <link rel="stylesheet" href="styleSaida.css">
+</head>
+<body>
+    
+  <header class="topoEstoque">
+        <div class="caminho">
+            <a href="paineldeinicio.html">Início</a>
+            <span>&gt;</span>
+            <a href="#" class="linkEstoqueProdutos">Relatórios de Produção</a>
+        </div>
+        
+        <div class="notfUser">
+            <div class="notificacao">
+                <span class="sino"></span>
+                <span class="bolinha"></span>
+            </div>
+            <div class="PerfilUsuario">
+                <div class="avatar">L</div>
+                <span class="nomeUsuario">Laura</span>
+                <span class="seta">▼</span>
+            </div>
+        </div>
+    </header>
+<aside class="menuLateral">
 
-<li><a href="saidaCliente.html">• Clientes</a></li>
-<li><a href="saidaParceiro.html" class="subItemAtivo">• Parceiros</a></li>
+            <button id="botaoRetratil" class="botaoRetratil"></button>
 
-<h1 class="tituloPagina">Saida de produtos por parceiros</h1>
-<h3 class="subtituloPagina">Registre os produtos que estão saindo do estoque para o parceiro selecionado</h3>
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            </div>
 
-<th>Parceiro</th>
+            <nav class="menu">
+                <ul>
 
-<select class="campoSeletor">
-    <option disabled selected>Selecione o parceiro...</option>
-</select>
+                    <li class="blocoOpcao">
+                        <a href="paginaInicial.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeCasa"></span>
+                            </div>
+                            <span class="tituloMenu">Painel inicial</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class="blocoOpcao">
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeLapis"></span>
+                                    </div>
+                                    <span class="tituloMenu">Cadastros</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="CadastroClientes.html">Clientes</a></li>
+                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                                <li><a href="CadastroInsumos.html">Insumos</a></li>
+                                <li><a href="CadastroProdutos.html">Produtos</a></li>
+                                <li><a href="CadastroReceitas.html">Receitas</a></li>
+                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class=" blocoOpcao">
+                                <div class="div itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeCaixa"></span>
+                                    </div>
+                                    <span class="tituloMenu">Estoque</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="estoqueProdutos.html">Produtos</a></li>
+                                <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    
+                    <li class="blocoOpcao">
+                        <a href="PaginaRelatorios.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeGrafico"></span>
+                            </div>
+                            <span class="tituloMenu">Relatórios</span>
+                        </a>
+                    </li>
+
+                    <li class="blocoOpcao">
+                        <a href="PaginaProducao.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconePrancheta"></span>
+                            </div>
+                            <span class="tituloMenu">Produção</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="blocoOpcao" >
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeSetaCima"></span>
+                                    </div>
+                                    <span class="tituloMenu">Saídas</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="SaidasCliente.html">Clientes</a></li>
+                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+            
+        </aside>
+
+    <main class="conteudo">
+        <h1 class="tituloPagina">Saida de produtos por parceiros</h1>
+        <h3 class="subtituloPagina">Registre os produtos que estão saindo do estoque para o parceiro selecionado</h3>
+
+        <section class="cardFormularioSaida">
+            <form action="#" method="POST">
+                <table class="tabelaFormularioDinamica">
+                    <thead>
+                        <tr>
+                            <th>Tipo de produto</th>
+                            <th>Quantidade</th>
+                            <th>Parceiro</th> <th>Valor por unidade</th>
+                            <th>Valor total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select class="campoSeletor">
+                                    <option disabled selected>Selecione o produto...</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="campoTexto centro" value="0 un"></td>
+                            <td>
+                                <select class="campoSeletor">
+                                    <option disabled selected>Selecione o parceiro...</option> </select>
+                            </td>
+                            <td><div class="tagValorDesabilitado">R$ 0,00</div></td>
+                            <td><div class="tagValorDesabilitado">R$ 0,00</div></td>
+                            <td><button type="button" class="btnDeletarLinha" title="Remover item"></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="containerAdicionarItem">
+                    <button type="button" class="btnAdicionarLinha">
+                        <span class="iconeMaisClaro">+</span> Adicionar produto
+                    </button>
+                </div>
+
+                <div class="painelTotalizacaoSaida">
+                    <div class="blocoDesconto">
+                        <label for="desconto">Desconto(%)</label>
+                        <input type="text" id="desconto" value="0,00">
+                    </div>
+                    <div class="blocoTotalFinal">
+                        <span class="labelTotalFinal">Total final:</span>
+                        <div class="tagValorDestaqueVerde">225,00</div>
+                    </div>
+                </div>
+
+                <div class="containerBotaoSubmissao">
+                    <button type="submit" class="btnCadastrarSaida">
+                        <span class="iconePranchetaBotao"></span> Cadastrar saída
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="produtos.js"></script>
+    <script src="saidaParceiro.js"></script>
+</body>
+</body>
+</html>

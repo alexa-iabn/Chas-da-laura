@@ -55,6 +55,8 @@ img { display: inline-block; }
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+    margin-left: 30vh; /* igual à largura da .menuLateral */
+
 }
 
 .page-content {
@@ -173,7 +175,7 @@ img { display: inline-block; }
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--green-600);
+  background: #1a4a2e;
   color: var(--white);
   font-weight: 800;
   font-size: 14px;
@@ -777,8 +779,8 @@ button {
 .user-avatar {
   width: 36px;
   height: 36px;
-  background-color: var(--color-brand-green);
-  color: var(--color-white);
+  background: #1a4a2e;
+   color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1030,7 +1032,7 @@ textarea.form-control {
   width: 48px;
   height: 48px;
   background-color: #C3E6CB;
-  color: var(--color-text-green);
+    color: #1a4a2e;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1402,3 +1404,8 @@ textarea.form-control {
     padding: 16px;
   }
 }
+
+body.sidebarFechado .main-content {
+  margin-left: 8vh; /* igual ao width fechado da .menuLateral */
+}
+

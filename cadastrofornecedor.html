@@ -6,99 +6,115 @@
   <title>Cadastro de Fornecedor — Chás da Laura</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styleMenuLateral.css" />
   <link rel="stylesheet" href="stylefornecedoresmatheus.css" />
    
 </head>
 <body>
 <div class="layout">
 
-  <!-- ===== SIDEBAR ===== -->
-  <aside class="sidebar">
+  <aside class="menuLateral">
 
-    <!-- Logo -->
-    <div class="sidebar-logo">
-      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/Logo.png" alt="Chás da Laura"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-      <div class="sidebar-logo-text" style="display:none; flex-direction:column; align-items:center;">
-        <div class="sidebar-logo-icon">🍃</div>
-        <div>Chás da <span>Laura</span></div>
-      </div>
-    </div>
+            <button id="botaoRetratil" class="botaoRetratil"></button>
 
-    <nav class="sidebar-nav">
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            </div>
 
-      <!-- Painel de início -->
-      <a href="#" class="nav-item">
-        <span class="nav-icon-wrap">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" alt="" width="16" height="16"
-               style="filter:brightness(0) invert(1); opacity:.85; flex-shrink:0;" />
-        </span>
-        Painel de início
-      </a>
+            <nav class="menu">
+                <ul>
 
-      <!-- Cadastros (aberto) -->
-      <div class="nav-item active open" onclick="toggleSub(this)">
-        <span class="nav-icon-wrap" style="background:rgba(109,187,138,.25);">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lista.svg" alt="" width="16" height="16"
-               style="filter:brightness(0) invert(1); opacity:1; flex-shrink:0;" />
-        </span>
-        Cadastros
-        <svg class="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2.5">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </div>
-      <div class="nav-sub" id="sub-cadastros">
-        <a href="#"  class="nav-item">• Clientes</a>
-        <a href="FornecedoresCadastrados.html" class="nav-item active">• Fornecedores</a>
-        <a href="#"  class="nav-item">• Insumos</a>
-        <a href="#"  class="nav-item">• Produtos</a>
-        <a href="#"  class="nav-item">• Receitas</a>
-        <a href="#"  class="nav-item">• Parceiros</a>
-      </div>
+                    <li class="blocoOpcao">
+                        <a href="paginaInicial.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeCasa"></span>
+                            </div>
+                            <span class="tituloMenu">Painel inicial</span>
+                        </a>
+                    </li>
+                    <li>
+                        <details>
 
-      <!-- Estoque -->
-      <div class="nav-item" onclick="toggleSub(this)">
-        <span class="nav-icon-wrap">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/caixa.svg" alt="" width="16" height="16"
-               style="filter:brightness(0) invert(1); opacity:.85; flex-shrink:0;" />
-        </span>
-        Estoque
-        <svg class="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2.5">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </div>
-      <div class="nav-sub" id="sub-estoque" style="display:none;">
-        <a href="#" class="nav-item">• Produtos</a>
-        <a href="#" class="nav-item">• Insumos</a>
-      </div>
+                            <summary class="blocoOpcao">
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeLapis"></span>
+                                    </div>
+                                    <span class="tituloMenu">Cadastros</span>
+                                </div>
+                            </summary>
 
-      <!-- Relatórios -->
-      <a href="#" class="nav-item">
-        <span class="nav-icon-wrap">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/grafico.svg" alt="" width="16" height="16"
-               style="filter:brightness(0) invert(1); opacity:.85; flex-shrink:0;" />
-        </span>
-        Relatórios
-      </a>
+                            <ul class="subMenu">
+                                <li><a href="CadastroClientes.html">Clientes</a></li>
+                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                                <li><a href="CadastroInsumos.html">Insumos</a></li>
+                                <li><a href="CadastroProdutos.html">Produtos</a></li>
+                                <li><a href="CadastroReceitas.html">Receitas</a></li>
+                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
 
-      <!-- Produção -->
-      <a href="#" class="nav-item">
-        <span class="nav-icon-wrap">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" alt="" width="16" height="16"
-               style="filter:brightness(0) invert(1); opacity:.85; flex-shrink:0;" />
-        </span>
-        Produção
-      </a>
-    </nav>
+                    <li>
+                        <details>
 
-    <!-- Imagem decorativa do rodapé -->
-    <div class="sidebar-footer-img">
-      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/ChaImagemMenu.png" alt="Chá decorativo" />
-    </div>
+                            <summary class=" blocoOpcao">
+                                <div class="div itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeCaixa"></span>
+                                    </div>
+                                    <span class="tituloMenu">Estoque</span>
+                                </div>
+                            </summary>
 
-  </aside>
+                            <ul class="subMenu">
+                                <li><a href="estoqueProdutos.html">Produtos</a></li>
+                                <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    
+                    <li class="blocoOpcao">
+                        <a href="PaginaRelatorios.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeGrafico"></span>
+                            </div>
+                            <span class="tituloMenu">Relatórios</span>
+                        </a>
+                    </li>
+
+                    <li class="blocoOpcao">
+                        <a href="PaginaProducao.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconePrancheta"></span>
+                            </div>
+                            <span class="tituloMenu">Produção</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="blocoOpcao" >
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeSetaCima"></span>
+                                    </div>
+                                    <span class="tituloMenu">Saídas</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="SaidasCliente.html">Clientes</a></li>
+                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+            
+        </aside>
 
   <!-- ===== MAIN ===== -->
   <div class="main">
@@ -347,5 +363,6 @@
 </div><!-- /layout -->
 
 <script src="cadastrofornecedor.js"></script>
+<script src="scriptMenuLateral.js"></script>
 </body>
 </html>

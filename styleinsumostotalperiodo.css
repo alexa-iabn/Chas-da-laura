@@ -148,6 +148,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin-left: 30vh; 
 }
 
 /* ── TOPBAR ─────────────────────────────────────────────── */
@@ -519,3 +520,8 @@ tfoot .total-row td:first-child { text-align: left; }
   color: #fff;
 }
 .pg-btn:disabled { opacity: .35; cursor: default; }
+
+body.sidebarFechado .main-content {
+  margin-left: 8vh; /* igual ao width fechado da .menuLateral */
+}
+

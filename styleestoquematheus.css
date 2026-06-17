@@ -149,6 +149,7 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, .06);
   margin-left: var(--sidebar-width);
   gap: 16px;
+  margin-left: 30vh
 }
 
 .topbar-left h1 {
@@ -668,4 +669,10 @@ tbody td {
 @media (max-width: 480px) {
   .main-content { padding: 14px; }
   .cards-resumo { grid-template-columns: 1fr; }
+}
+
+.main-content {
+  margin-left: 30vh; /* igual à largura da .menuLateral */
+  padding: 28px 32px;
+  min-height: 100vh;
 }

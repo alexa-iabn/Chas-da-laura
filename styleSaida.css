@@ -1,0 +1,610 @@
+/* ==========================================================================
+   ESTRUTURA GLOBAL - MENU LATERAL E TOPO FIXO
+   ========================================================================== */
+
+/* Reseta as margens padrões da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    background-color: #F5F7F6; /* Cor de fundo do Figma */
+}
+.menuLateral{
+    width: 30vh;
+    height: 100vh;
+
+    background-color: #144621;
+
+    position:fixed;
+    top: 0;
+    left: 0;
+
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.menuLateral summary{
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.botaoRetratil{
+    width: 5vh;
+    height: 5vh;
+
+    margin: 2vh;
+    cursor: pointer;
+
+    background-image: url(Imagens/listaSemPonto.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+
+    filter: brightness(0) invert(1);
+}
+
+body.sidebarFechado .menuLateral{
+    width: 8vh;
+}
+
+body.sidebarFechado .blocoOpcao{
+    background-color: transparent;
+}
+
+body.sidebarFechado .logoMenuLateral{
+    display: none;
+}
+
+body.sidebarFechado .tituloMenu{
+    display: none;
+}
+
+body.sidebarFechado .conteudo{
+    margin-left: 23vh;
+}
+
+body.sidebarFechado .caminho{
+    margin-left: 25vh;
+}
+
+body.sidebarFechado .imagemCha{
+    width: 13vh;
+
+    transform:
+    translateX(-2vh)
+    translateY(31vh)
+    scale(0.7);
+}
+
+.logoMenuLateral img{
+    width: 30vh;
+    height: 20vh;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+
+    padding: 0;
+    margin: 0;
+}
+
+.menu li a, .menu summary span{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.menu ul li {
+    margin-left: 1vh;
+}
+
+.menu ul li .itemMenu{
+    margin-left: 1vh;
+}
+
+.itemMenu{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+
+    margin: 0;
+    padding: 0;
+    
+}
+
+.blocoOpcao{
+    width: 27vh;
+    height: 6vh;
+
+    display: flex;
+    align-items: center;
+    border-radius: 1.5vh;
+
+    margin: 0;
+    padding: 0;
+}
+
+.blocoOpcao.ativo{
+    background-color: #53f844a9;
+}
+
+.circulo{
+    width: 5vh;
+    height: 5vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: #027420;
+}
+
+.iconeCasa{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/casa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeLapis{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/lapiz.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeCaixa{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/caixa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeGrafico{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/grafico.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconePrancheta{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/prancheta.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.iconeSetaCima{
+    width: 3.5vh;
+    height: 3.5vh;
+
+    display: block;
+
+    background-image: url(Imagens/setaCima.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.menuLateral .subMenu{
+    display: flex;
+    gap: 1.5vh;
+
+    color: #ffffff;
+    list-style: disc;
+    margin-top: 1vh;
+    margin-left: 3vh;
+    padding-left: 5vh;
+    padding-bottom: 2vh;
+
+    border-radius: 2vh;
+    background-color: #197e167e;
+}
+
+.seta{
+    margin: 1vh;
+}
+
+.imagemCha{
+    width: 32vh;
+    height: auto;
+
+    margin-top: 4vh;
+    margin-right: 5vh;
+
+    transition: 
+    transform 0.4s ease,
+    width 0.4s ease;
+
+    transform-origin: top center;
+}
+/* Header / Topo Superior da Página */
+.topoEstoque {
+    position: fixed;
+    top: 0;
+    left: 260px; /* Alinhado exatamente onde termina o menu */
+    right: 0;
+    height: 70px;
+    background-color: #F5F7F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    z-index: 99;
+}
+
+/* Indicador de navegação (Breadcrumb) */
+.caminho {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.caminho a {
+    text-decoration: none;
+    color: #666666;
+}
+
+.caminho .linkEstoqueProdutos {
+    color: #114224;
+    font-weight: 600;
+}
+
+/* Perfil do Usuário e Central de Notificações */
+.notfUser {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notificacao {
+    position: relative;
+    cursor: pointer;
+    background: white;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.PerfilUsuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background-color: #114224;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.nomeUsuario {
+    font-size: 16px;
+    color: #333333;
+    margin: 0;
+}
+.conteudo {
+    margin-left: 260px;
+    padding: 110px 40px 40px;
+    width: calc(100% - 260px);
+    box-sizing: border-box;
+    background-color: #F5F7F6;
+    min-height: 100vh;
+}
+
+.tituloPagina {
+    font-size: 24px;
+    font-weight: 700;
+    color: #114224; /* Verde escuro do sistema */
+    margin: 0 0 4px 0;
+}
+
+.subtituloPagina {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+    margin: 0 0 25px 0;
+}
+
+
+.iconeMenu {
+ 
+    object-fit: contain;
+    /* Inverte a cor do SVG escuro para branco puro */
+    filter: brightness(0) invert(1); 
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Garante o alinhamento flexível perfeito entre o ícone e o texto */
+.itemMenu, .menu details summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Cria a seta visual na extrema direita do summary */
+details summary::after {
+    content: '⌄';
+    position: absolute;
+    right: 16px;
+    font-size: 14px;
+    opacity: 0.7;
+    transition: transform 0.2s ease;
+}
+
+/* Gira a seta quando o menu estiver aberto */
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.setaDetails {
+    display: none; /* Oculta a classe antiga se estiver no HTML, deixando o controle apenas com o ::after */
+}
+
+
+/* Card centralizado que envolve o formulário */
+.cardFormularioSaida {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   02. TABELA DE FORMULÁRIO DINÂMICA
+   ========================================================================== */
+
+.tabelaFormularioDinamica {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px; /* Espaçamento entre as linhas */
+    margin-bottom: 20px;
+}
+
+/* Cabeçalho da Tabela (Fundo Verde Claro do Figma) */
+.tabelaFormularioDinamica thead th {
+    background-color: #D2F2DC; /* Verde claro suave */
+    color: #114224;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+/* Arredondar os cantos do cabeçalho */
+.tabelaFormularioDinamica thead th:first-child { border-radius: 8px 0 0 8px; }
+.tabelaFormularioDinamica thead th:last-child { border-radius: 0 8px 8px 0; }
+
+/* Células de dados */
+.tabelaFormularioDinamica tbody td {
+    padding: 6px 8px;
+    vertical-align: middle;
+}
+
+/* Customização dos Selects e Inputs de dentro da tabela */
+.campoSeletor, .campoTexto {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #333333;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.campoTexto.centro {
+    text-align: center;
+}
+
+/* Campos de Valor Desabilitado (Verde Alface do Figma) */
+.tagValorDesabilitado {
+    background-color: #E2FCDA;
+    color: #4A7A4A;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+/* Botão Lixeira (Deletar Linha) */
+.btnDeletarLinha {
+    background-color: transparent;
+    border: none;
+    color: #E74C3C;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.btnDeletarLinha:hover {
+    transform: scale(1.15);
+}
+
+/* Ícone de lixeira simulado por texto caso não use SVG */
+.btnDeletarLinha::before {
+    content: "🗑";
+}
+
+/* ==========================================================================
+   03. BOTÃO ADICIONAR PRODUTO (+)
+   ========================================================================== */
+
+.containerAdicionarItem {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.btnAdicionarLinha {
+    background: transparent;
+    border: none;
+    color: #114224;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.iconeMaisClaro {
+    background-color: #114224;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   04. PAINEL DE TOTALIZAÇÃO E DESCONTO
+   ========================================================================== */
+
+.painelTotalizacaoSaida {
+    background-color: #E2FCDA; /* Bloco verde unificado inferior */
+    border-radius: 8px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Input de Desconto */
+.blocoDesconto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.blocoDesconto label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #114224;
+}
+
+.blocoDesconto input {
+    width: 80px;
+    padding: 6px 10px;
+    border: 1px solid #BCEEBB;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Bloco Total Final */
+.blocoTotalFinal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.labelTotalFinal {
+    font-size: 15px;
+    font-weight: 600;
+    color: #114224;
+}
+
+.tagValorDestaqueVerde {
+    background-color: #A1F099; /* Destaque numérico mais forte */
+    color: #114224;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 6px 20px;
+    border-radius: 4px;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   05. BOTÃO SUBMISSÃO FINAL
+   ========================================================================== */
+
+.containerBotaoSubmissao {
+    display: flex;
+    justify-content: center;
+}
+
+.btnCadastrarSaida {
+    background-color: #114224;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 35px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.btnCadastrarSaida:hover {
+    background-color: #0d331b;
+}
+
+.btnCadastrarSaida::before {
+    content: "📋"; /* Ícone simulado da prancheta */
+}

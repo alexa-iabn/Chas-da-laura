@@ -4,66 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chás da Laura - Relatórios de Produção</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styleRelProducao.css">
 </head>
 <body>
-    
+
     <header class="topoEstoque">
         <div class="caminho">
-            <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-            <a href="estoque.html" class="LinkEstoque"> > Relatórios </a>
-            <a href="relatorioProducao.html" class="linkEstoqueProdutos">> Relatórios de produção</a>
+            <a href="paineldeinicio.html">Início</a>
+            <span>&gt;</span>
+            <a href="#" class="linkEstoqueProdutos">Relatórios de Production</a>
         </div>
+        
         <div class="notfUser">
             <div class="notificacao">
-                <i class="sino"></i>
+                <span class="sino"></span>
                 <span class="bolinha"></span>
             </div>
             <div class="PerfilUsuario">
-                <div class="avatar"><span class="L"> L </span></div>
-                <h2 class="nomeUsuario">Laura</h2>
-                <span class="seta">⌄</span>
+                <div class="avatar">L</div>
+                <span class="nomeUsuario">Laura</span>
+                <span class="seta">▼</span>
             </div>
         </div>
     </header>
+<aside class="menuLateral">
 
-    <aside class="menuLateral">
-        <button id="botaoRetratil" class="botaoRetratil"></button>
-        <div class="logoMenuLateral">
-            <img src="Imagens/Logo.png" alt="Logo chás da laura">
-        </div>
-        <nav class="menu">
-            <ul>
-                <li class="blocoOpcao">
-                    <a href="paginaInicial.html" class="itemMenu">
-                        <div class="circulo"><span class="iconeCasa"></span></div>
-                        <span class="tituloMenu">Painel inicial</span>
-                    </a>
-                </li>
-                <li>
-                    <details>
-                        <summary class="blocoOpcao">
-                            <div class="itemMenu">
-                                <div class="circulo"><span class="iconeLapis"></span></div>
-                                <span class="tituloMenu">Cadastros</span>
+            <button id="botaoRetratil" class="botaoRetratil"></button>
+
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            </div>
+
+            <nav class="menu">
+                <ul>
+
+                    <li class="blocoOpcao">
+                        <a href="paginaInicial.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeCasa"></span>
                             </div>
-                        </summary>
-                        <ul class="subMenu">
-                            <li><a href="CadastroClientes.html">Clientes</a></li>
-                            <li><a href="CadastroInsumos.html">Insumos</a></li>
-                            <li><a href="CadastroProdutos.html">Produtos</a></li>
-                        </ul>
-                    </details>
-                </li>
-                <li class="blocoOpcao">
-                    <a href="PaginaRelatorios.html" class="itemMenu">
-                        <div class="circulo"><span class="iconeGrafico"></span></div>
-                        <span class="tituloMenu">Relatórios</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+                            <span class="tituloMenu">Painel inicial</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class="blocoOpcao">
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeLapis"></span>
+                                    </div>
+                                    <span class="tituloMenu">Cadastros</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="CadastroClientes.html">Clientes</a></li>
+                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
+                                <li><a href="CadastroInsumos.html">Insumos</a></li>
+                                <li><a href="CadastroProdutos.html">Produtos</a></li>
+                                <li><a href="CadastroReceitas.html">Receitas</a></li>
+                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class=" blocoOpcao">
+                                <div class="div itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeCaixa"></span>
+                                    </div>
+                                    <span class="tituloMenu">Estoque</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="estoqueProdutos.html">Produtos</a></li>
+                                <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    
+                    <li class="blocoOpcao">
+                        <a href="PaginaRelatorios.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeGrafico"></span>
+                            </div>
+                            <span class="tituloMenu">Relatórios</span>
+                        </a>
+                    </li>
+
+                    <li class="blocoOpcao">
+                        <a href="PaginaProducao.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconePrancheta"></span>
+                            </div>
+                            <span class="tituloMenu">Produção</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="blocoOpcao" >
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeSetaCima"></span>
+                                    </div>
+                                    <span class="tituloMenu">Saídas</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="SaidasCliente.html">Clientes</a></li>
+                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+            
+        </aside>
 
     <main class="conteudo">
         <h1 class="tituloPagina">Relatórios de produção</h1>
@@ -79,13 +145,32 @@
             <div class="filtroItem">
                 <label>Produto</label>
                 <select>
-                    <option>Todos os produtos</option>
+                    <option value="todos">Todos os produtos</option>
+                    <option value="blend-calme">Blend Calme Lata - 30g</option>
+                    <option value="blend-felicita">Blend Felicitá Lata - 80g</option>
+                    <option value="blend-ormoni">Blend Ormoni Lata - 40g</option>
+                    <option value="blend-maternitea">Blend MaterniTea Lata - 90g</option>
+                    <option value="blend-airmid">Blend Airmid Lata - 40g</option>
+                    <option value="blend-chai-masala">Blend Chai Masala Lata - 80g</option>
+                    <option value="blend-desintoxitea">Blend DesintoxiTea Lata - 60g</option>
+                    <option value="blend-anime">Blend Animé Lata - 60g</option>
+                    <option value="blend-amore">Blend Amore Lata - 30g</option>
+                    <option value="spray-ormoni">Home Spray Ormoni - 200ml</option>
+                    <option value="spray-maternitea">Home Spray Maternitea - 200ml</option>
+                    <option value="spray-airmid">Home Spray Airmid - 200ml</option>
+                    <option value="kit-presente">Kit Presente Lata + Home Spray</option>
+                    <option value="sacola">Sacola Chás da Laura</option>
+                    <option value="infusor">Infusor</option>
                 </select>
             </div>
             <div class="filtroItem">
                 <label>Status</label>
                 <select>
-                    <option>Todos</option>
+                    <option value="todos">Todos</option>
+                    <option value="pendente">Pendente</option>
+                    <option value="em-producao">Em produção</option>
+                    <option value="concluido">Concluído</option>
+                    <option value="cancelado">Cancelado</option>
                 </select>
             </div>
             <div class="botoesFiltro">
@@ -107,7 +192,7 @@
             <div class="cardKpi">
                 <div class="iconeKpi verdeClaro"></div>
                 <div class="infoKpi">
-                    <span class="labelKpi">Produtos produzidos</span>
+                    <span class="labelKpi">Produtos produtos produzidos</span>
                     <span class="valorKpi">12</span>
                     <span class="subtextKpi">produtos diferentes</span>
                 </div>
@@ -135,7 +220,9 @@
             <div class="cardGrafico">
                 <div class="topoGrafico">
                     <h2 class="tituloGrafico">Produção semanal <small>(unidades)</small></h2>
-                    <button class="btnExportarCard"></button>
+                    <a href="producaototal.html" class="btnExportarCard" title="Ver total por período">
+                        <img src="imagens/exportar.svg" alt="Ícone ir para total por período">
+                    </a>
                 </div>
                 <div class="containerCanvas">
                     <canvas id="graficoProducaoSemanal"></canvas>
@@ -145,7 +232,9 @@
             <div class="cardGrafico">
                 <div class="topoGrafico">
                     <h2 class="tituloGrafico">Produtos mais produzidos</h2>
-                    <button class="btnExportarCard"></button>
+                    <a href="maisproduzido.html" class="btnExportarCard" title="Ver mais produzidos">
+                        <img src="imagens/exportar.svg" alt="Ícone ir para mais produzidos">
+                    </a>
                 </div>
                 <div class="containerCanvas">
                     <canvas id="graficoMaisProduzidos"></canvas>
@@ -155,7 +244,9 @@
             <div class="cardGrafico">
                 <div class="topoGrafico">
                     <h2 class="tituloGrafico">Consumo de insumos <small>(kg)</small></h2>
-                    <button class="btnExportarCard"></button>
+                    <a href="insumoTotal.html" class="btnExportarCard" title="Ver insumos total">
+                        <img src="imagens/exportar.svg" alt="Ícone ir para insumos total">
+                    </a>
                 </div>
                 <div class="containerCanvas">
                     <canvas id="graficoConsumoInsumos"></canvas>
@@ -213,5 +304,10 @@
             </table>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script src="produtos.js"></script>
+    <script src="relatorios-producao.js"></script>
+</body>
 </body>
 </html>
