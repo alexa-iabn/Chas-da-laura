@@ -244,3 +244,132 @@ body.sidebarFechado .imagemCha{
 
     transform-origin: top center;
 }
+
+.topoEstoque{
+    width: 100%;
+    height: 6vh;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.caminho{
+    display: flex;
+    align-items: center;
+
+    margin-left: 35vh;
+}
+
+.paginaPrincipal{
+    display: block;
+    width: 5vh;
+    height: 5vh;
+
+    background-image: url(Imagens/casa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.primeiroCaminho{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
+}
+
+.segundoCaminho{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
+}
+
+.terceiroCaminho{
+    text-decoration: none;
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 120%;
+}
+
+.notfUser{
+    display: flex;
+    align-items: center;
+    margin-right: 2vh;
+}
+
+.notificacao, .avatar{
+    background-color: rgb(255, 255, 255);
+
+    width: 5vh;
+    height: 5vh;
+    margin-top: 0.3vh;
+    margin-left: 2vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.sino{
+    width: 5vh;
+    height: 5vh;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(Imagens/sino.svg);
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.bolinha{
+    width: 2vh;
+    height: 2vh;
+
+    background-color: rgb(231, 3, 3);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0.5vh;
+    right: 0.5vh;
+}
+
+.PerfilUsuario{
+    display: flex;
+}
+
+.avatar{
+    background-color: #144621;
+}
+
+.L{
+    font-size: 25px;
+    margin: 0;
+    color: #ffffff;
+}
+
+.nomeUsuario{
+    margin: 0;
+    margin-top: 1vh;
+    margin-left: 1vh;
+
+    cursor: pointer;
+}

@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styleReceitasCastradas.css">
-<link rel="stylesheet" href="styleMenuLateral.css">
+    <link rel="stylesheet" href="styleReceitasCastradas.css">
+    <link rel="stylesheet" href="styleMenuLateral.css">
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 <title>Cadastro de Receitas</title>
 
 </head>
 
 <body>
 
-     <header class="topoEstoque">
+    <header class="topoEstoque">
 
             <div class="caminho">
                 <a href="paineldeinicio.html" class="paginaPrincipal"></a>
-                <a href="cadastroreceitas.html" class="primeiroCaminho"> > Cadastro > Cadastro receitas</a>
+                <a href="cadastroreceitas.html" class="primeiroCaminho"> > Cadastro > Receita</a>
             </div>
-            
 
             <div class="notfUser">
 
@@ -27,22 +28,38 @@
 
                 </div>
 
-                <div class="PerfilUsuario">
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
 
                     <div class="avatar">
-                        <span class="L"> L </span>
+                        <span id="iniciaisUsuario">L</span>
                     </div>
 
-                    <h2 class="nomeUsuario">Laura</h2>
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
 
                     <span class="seta">⌄</span>
 
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
                 </div>
+                
             </div>
-        </header>
+    </header>
 
-
-        <aside class="menuLateral">
+    <aside class="menuLateral">
 
             <button id="botaoRetratil" class="botaoRetratil"></button>
 
@@ -75,12 +92,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -114,7 +131,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -134,8 +151,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -165,11 +182,9 @@
 
                 <div class="blocoReceita">
 
-                    <label>Produto</label>
+                    <label>Nome da receita</label>
 
-                    <select id="nomeProduto">
-                        <option value="blend1">Blend 1</option>
-                    </select>
+                    <input type="text" placeholder="Digite o nome da receita...">
 
                 </div>
 
@@ -259,8 +274,9 @@
         </div>
     </main>
 
+    <script src="scriptCadastroReceita.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
 
-<script src="scriptCadastroReceita.js"></script>
-<script src="scriptMenuLateral.js"></script>
 </body>
 </html>

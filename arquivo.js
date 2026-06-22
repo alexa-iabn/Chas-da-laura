@@ -54,383 +54,209 @@
     });
 
 
-    /* CRIANDO PRODUTO ESTOQUE */
+/* ================= ESTOQUE PRODUTOS  ================= */
 
-    const produtos = [
+const tabelaProdutos = document.querySelector(".tabelaProdutos");
+const conteinerCartasProdutos = document.querySelector(".conteinerCartas");
+const barraPesquisa = document.querySelector(".barraPesquisaTabela");
+const filtroTabela = document.querySelector(".filtroTabela");
 
-  {
-    id: 1,
-    nome: "Blend Calme Lata",
-    categoria: "blend",
-    quantidadeEstoque: 18,
-    unidadeEstoque: "un",
-    valorUnidade: 50.00,
-    imagem: "imagens/blend-calme-lata.png"
-  },
-
-  {
-    id: 2,
-    nome: "Blend Felicitá Lata",
-    categoria: "blend",
-    quantidadeEstoque: 12,
-    unidadeEstoque: "un",
-    valorUnidade: 50.00,
-    imagem: "imagens/blend-felicita-lata.png"
-  },
-
-  {
-    id: 3,
-    nome: "Blend Ormoni Lata",
-    categoria: "blend",
-    quantidadeEstoque: 9,
-    unidadeEstoque: "un",
-    valorUnidade: 50.00,
-    imagem: "imagens/blend-ormoni-lata.png"
-  },
-
-  {
-    id: 4,
-    nome: "Blend MaterniTea Lata",
-    categoria: "blend",
-    quantidadeEstoque: 7,
-    unidadeEstoque: "un",
-    valorUnidade: 50.00,
-    imagem: "imagens/blend-maternitea-lata.png"
-  },
-
-  {
-    id: 5,
-    nome: "Blend Airmid Lata",
-    categoria: "blend",
-    quantidadeEstoque: 15,
-    unidadeEstoque: "un",
-    valorUnidade: 50.00,
-    imagem: "imagens/blend-airmid-lata.png"
-  },
-
-  {
-    id: 6,
-    nome: "Blend Chai Masala Lata",
-    categoria: "blend",
-    quantidadeEstoque: 10,
-    unidadeEstoque: "un",
-    valorUnidade: 50.00,
-    imagem: "imagens/blend-chai-masala-lata.png"
-  },
-
-  {
-    id: 7,
-    nome: "Blend DesintoxiTea Lata",
-    categoria: "blend",
-    quantidadeEstoque: 11,
-    unidadeEstoque: "un",
-    valorUnidade: 50.00,
-    imagem: "imagens/blend-desintoxitea-lata.png"
-  },
-
-  {
-    id: 8,
-    nome: "Blend Animé Lata",
-    categoria: "blend",
-    quantidadeEstoque: 14,
-    unidadeEstoque: "un",
-    valorUnidade: 50.00,
-    imagem: "imagens/blend-anime-lata.png"
-  },
-
-  {
-    id: 9,
-    nome: "Blend Amore Lata",
-    categoria: "blend",
-    quantidadeEstoque: 6,
-    unidadeEstoque: "un",
-    valorUnidade: 50.00,
-    imagem: "imagens/blend-amore-lata.png"
-  },
-
-
-  {
-    id: 10,
-    nome: "Home Spray Ormoni",
-    categoria: "home spray",
-    quantidadeEstoque: 8,
-    unidadeEstoque: "un",
-    valorUnidade: 95.00,
-    imagem: "imagens/home-spray-ormoni.png"
-  },
-
-  {
-    id: 11,
-    nome: "Home Spray Maternitea",
-    categoria: "home spray",
-    quantidadeEstoque: 5,
-    unidadeEstoque: "un",
-    valorUnidade: 95.00,
-    imagem: "imagens/home-spray-maternitea.png"
-  },
-
-  {
-    id: 12,
-    nome: "Home Spray Airmid",
-    categoria: "home spray",
-    quantidadeEstoque: 13,
-    unidadeEstoque: "un",
-    valorUnidade: 95.00,
-    imagem: "imagens/home-spray-airmid.png"
-  },
-
-
-  {
-    id: 13,
-    nome: "Kit Presente Lata + Home Spray",
-    categoria: "kit",
-    quantidadeEstoque: 4,
-    unidadeEstoque: "un",
-    valorUnidade: 150.00,
-    imagem: "imagens/kit-presente-lata-home-spray.png"
-  },
-
-
-  {
-    id: 14,
-    nome: "Sacola Chás da Laura",
-    categoria: "embalagem",
-    quantidadeEstoque: 40,
-    unidadeEstoque: "un",
-    valorUnidade: 5.00,
-    imagem: "imagens/sacola-chas-da-laura.png"
-  },
-
-
-  {
-    id: 15,
-    nome: "Infusor",
-    categoria: "acessório",
-    quantidadeEstoque: 22,
-    unidadeEstoque: "un",
-    valorUnidade: 25.00,
-    imagem: "imagens/infusor.png"
-  }
-
-];
-
-
-const tabelaProdutos = document.querySelector('.tabelaProdutos');
-
-if(tabelaProdutos){
-    const tbodyProdutos = document.createElement('tbody');
-
-    produtos.forEach((produto) => {
-        tbodyProdutos.innerHTML += `
-            <tr>
-                <td>
-                    <div class="Produto">
-                        <img class="fotoProduto" src="${produto.imagem}" alt="imagem produtos">
-                        <span>${produto.nome}</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="Categoria">
-                        <span>${produto.categoria}</span>
-                    </div>
-                </td>
-
-                <td>
-                    <div class="Status">
-                        <span>Normal</span>
-                    </div>
-                </td>
-                <td>R$ ${produto.valorUnidade.toFixed(2).replace(".", ",")}</td>
-
-                <td>${produto.quantidadeEstoque} ${produto.unidadeEstoque}</td>
-
-                <td>
-                    <div class="Acao">
-                        <i class="iconeLapisTabela"></i>
-                        <i class="iconeLixeira abrirModalExcluir"></i>
-                    </div>
-                </td>
-            </tr>
-        `;
-    });
-
-    tabelaProdutos.appendChild(tbodyProdutos);
+function pegarProdutos(){
+    return JSON.parse(localStorage.getItem("produtos")) || [];
 }
 
+function moeda(valor){
+    return Number(valor || 0).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+}
 
-  /* CRIAR CARTA */
+function statusProduto(produto){
+    const quantidade = Number(produto.quantidade || produto.quantidadeEstoque || 0);
+    const minimo = Number(produto.estoqueMinimo || 0);
 
-const conteinerCartasProdutos = document.querySelector(".conteinerCartas");
+    if(quantidade <= 0){
+        return "Zerado";
+    }
 
-produtos.forEach((produto) => {
+    if(quantidade <= minimo){
+        return "Estoque baixo";
+    }
 
-    conteinerCartasProdutos.innerHTML += `
-    
-        <article class="carta">
+    return "Normal";
+}
 
-            <div class="conteucoCarta">
+function valorProduto(produto){
+    return produto.valorUnitario || produto.precoVenda || produto.valorUnidade || 0;
+}
 
-                <div class="imagemCarta">
-                    <img src="${produto.imagem}" alt="${produto.nome}">
-                </div>
+function quantidadeProduto(produto){
+    return produto.quantidade || produto.quantidadeEstoque || 0;
+}
 
-                <div class="infoCarta">
+function unidadeProduto(produto){
+    return produto.unidadeEstoque || "un";
+}
 
-                    <h2 class="TituloCarta">${produto.nome}</h2>
+function imagemProduto(produto){
+    return produto.imagem || "Imagens/xicara.svg";
+}
 
-                    <div class="tipo">
-                        <span>${produto.categoria}</span>
+function renderizarProdutos(lista = pegarProdutos()){
+
+    if(tabelaProdutos){
+        let tbody = tabelaProdutos.querySelector("tbody");
+
+        if(!tbody){
+            tbody = document.createElement("tbody");
+            tabelaProdutos.appendChild(tbody);
+        }
+
+        tbody.innerHTML = "";
+
+        lista.forEach(produto => {
+            tbody.innerHTML += `
+                <tr>
+                    <td>
+                        <div class="Produto">
+                            <img class="fotoProduto" src="${imagemProduto(produto)}" alt="imagem produto">
+                            <span>${produto.nome || "Sem nome"}</span>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="Categoria">
+                            <span>${produto.categoria || produto.nomeReceita || "Sem categoria"}</span>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="Status">
+                            <span>${statusProduto(produto)}</span>
+                        </div>
+                    </td>
+
+                    <td>${moeda(valorProduto(produto))}</td>
+
+                    <td>${quantidadeProduto(produto)} ${unidadeProduto(produto)}</td>
+
+                    <td>
+                        <div class="Acao">
+                            <a href="editarproduto.html?id=${produto.id}" class="iconeLapisTabela"></a>
+                            <button type="button" class="iconeLixeira abrirModalExcluir" data-id="${produto.id}"></button>
+                        </div>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    if(conteinerCartasProdutos){
+        conteinerCartasProdutos.innerHTML = "";
+
+        lista.forEach(produto => {
+            conteinerCartasProdutos.innerHTML += `
+                <article class="carta">
+
+                    <div class="conteucoCarta">
+
+                        <div class="imagemCarta">
+                            <img src="${imagemProduto(produto)}" alt="${produto.nome || "Produto"}">
+                        </div>
+
+                        <div class="infoCarta">
+
+                            <h2 class="TituloCarta">${produto.nome || "Sem nome"}</h2>
+
+                            <div class="tipo">
+                                <span>${produto.categoria || produto.nomeReceita || "Sem categoria"}</span>
+                            </div>
+
+                            <div class="status">
+                                <span>${statusProduto(produto)}</span>
+                            </div>
+
+                        </div>
+
+                        <div class="detalhesCarta">
+
+                            <span class="detalhesNome nome1">
+                                preço de venda
+                            </span>
+
+                            <strong>${moeda(valorProduto(produto))}</strong>
+
+                            <hr>
+
+                            <span class="detalhesNome">
+                                Em estoque
+                            </span>
+
+                            <strong>${quantidadeProduto(produto)} ${unidadeProduto(produto)}</strong>
+
+                        </div>
+
                     </div>
-
-                    <div class="status">
-                        <span>normal</span>
-                    </div>
-
-                </div>
-
-                <div class="detalhesCarta">
-
-                    <span class="detalhesNome nome1">
-                        preço de venda
-                    </span>
-
-                    <strong>
-                        R$ ${produto.valorUnidade.toFixed(2).replace(".", ",")}
-                    </strong>
 
                     <hr>
 
-                    <span class="detalhesNome">
-                        Em estoque
-                    </span>
+                    <div class="acoesCarta">
 
-                    <strong>
-                        ${produto.quantidadeEstoque} ${produto.unidadeEstoque}
-                    </strong>
+                        <a href="editarproduto.html?id=${produto.id}">
+                            <button class="editarCartas"></button>
+                        </a>
 
-                </div>
+                        <button class="exluircartas abrirModalExcluir" data-id="${produto.id}"></button>
 
-            </div>
+                    </div>
 
-            <hr>
+                </article>
+            `;
+        });
+    }
+}
 
-            <div class="acoesCarta">
+function filtrarEOrdenarProdutos(){
+    let produtos = pegarProdutos();
 
-                <a href="editarproduto.html">
-                    <button class="editarCartas"></button>
-                </a>
+    const textoBusca = barraPesquisa ? barraPesquisa.value.toLowerCase() : "";
+    const valorFiltro = filtroTabela ? filtroTabela.value : "";
 
-                <button class="exluircartas abrirModalExcluir"></button>
-
-            </div>
-
-        </article>
-
-    `;
-});
-
-
-    /* PESQUISAR PRODUTO */
-
-const barraPesquisa = document.querySelector(".barraPesquisaTabela");
-
-barraPesquisa.addEventListener("input", () => {
-
-    const valorPesquisa = barraPesquisa.value.toLowerCase();
-
-    const linhasTabela = document.querySelectorAll(".tabelaProdutos tbody tr");
-
-    linhasTabela.forEach((linha) => {
-
-        const nomeProduto = linha.querySelector(".Produto span")
-        .textContent
-        .toLowerCase();
-
-        if(nomeProduto.includes(valorPesquisa)){
-            linha.style.display = "";
-        } else{
-            linha.style.display = "none";
-        }
-
-    });
-
-});
-
-
-    /* ORDENAR PRODUTOS */
-
-const filtroTabela = document.querySelector(".filtroTabela");
-
-filtroTabela.addEventListener("change", () => {
-
-    const valorFiltro = filtroTabela.value;
+    produtos = produtos.filter(produto =>
+        String(produto.nome || "").toLowerCase().includes(textoBusca)
+    );
 
     if(valorFiltro === "maiorPreco"){
-        produtos.sort((a, b) => b.valorUnidade - a.valorUnidade);
+        produtos.sort((a, b) => valorProduto(b) - valorProduto(a));
     }
 
     if(valorFiltro === "menorPreco"){
-        produtos.sort((a, b) => a.valorUnidade - b.valorUnidade);
+        produtos.sort((a, b) => valorProduto(a) - valorProduto(b));
     }
 
     if(valorFiltro === "maiorQuantidade"){
-        produtos.sort((a, b) => b.quantidadeEstoque - a.quantidadeEstoque);
+        produtos.sort((a, b) => quantidadeProduto(b) - quantidadeProduto(a));
     }
 
     if(valorFiltro === "menorQuantidade"){
-        produtos.sort((a, b) => a.quantidadeEstoque - b.quantidadeEstoque);
+        produtos.sort((a, b) => quantidadeProduto(a) - quantidadeProduto(b));
     }
 
-    atualizarTabela();
+    renderizarProdutos(produtos);
+}
 
-});
+if(tabelaProdutos || conteinerCartasProdutos){
 
+    renderizarProdutos();
 
-function atualizarTabela(){
+    if(barraPesquisa){
+        barraPesquisa.addEventListener("input", filtrarEOrdenarProdutos);
+    }
 
-    tbody.innerHTML = "";
-
-    produtos.forEach((produto) => {
-
-        tbody.innerHTML += `
-            <tr>
-                <td>
-                    <div class="Produto">
-                        <img class="fotoProduto" src="${produto.imagem}" alt="imagem produtos">
-                        <span>${produto.nome}</span>
-                    </div>
-                </td>
-
-                <td>
-                    <div class="Categoria">
-                        <span>${produto.categoria}</span>
-                    </div>
-                </td>
-
-                <td>
-                    <div class="Status">
-                        <span>Normal</span>
-                    </div>
-                </td>
-
-                <td>
-                    R$ ${produto.valorUnidade.toFixed(2).replace(".", ",")}
-                </td>
-
-                <td>
-                    ${produto.quantidadeEstoque} ${produto.unidadeEstoque}
-                </td>
-
-                <td>
-                    <div class="Acao">
-                        <i class="iconeLapisTabela"></i>
-                        <i class="iconeLixeira abrirModalExcluir"></i>
-                    </div>
-                </td>
-            </tr>
-        `;
-    });
-
+    if(filtroTabela){
+        filtroTabela.addEventListener("change", filtrarEOrdenarProdutos);
+    }
 }
 
 

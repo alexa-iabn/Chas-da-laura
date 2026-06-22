@@ -712,3 +712,3899 @@ body{
     cursor: pointer;
 }
 
+
+/* ================= CADASTRO DE CLIENTES ================= */
+
+.topoPaginaReceita{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 170vh;
+    margin-bottom: 3vh;
+}
+
+.formularioClientes{
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    border-radius: 10px;
+
+    width: 170vh;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    box-sizing: border-box;
+}
+
+.formularioClientes .linhaFormulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.formularioClientes label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#144621;
+}
+
+.formularioClientes input,
+.formularioClientes textarea{
+    width:100%;
+    padding:7px;
+    border:1px solid #d9d9d9;
+    border-radius:5px;
+    font-size:10px;
+    box-sizing:border-box;
+}
+
+.formularioClientes textarea{
+    resize:none;
+    min-height:30px;
+}
+
+.formularioClientes .campoGrande{
+    width:100%;
+}
+
+.botoesFormulario{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    margin-top:10px;
+}
+
+.botoesFormulario button{
+    padding:5px 10px;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.botoesFormulario .botaoCancelar{
+    background:#fff;
+    color:#333;
+    border:1px solid #cfcfcf;
+}
+
+.botoesFormulario .botaoSalvar{
+    background:#144621;
+    color:#fff;
+    border:none;
+}
+
+/* ================= TABELA DE CLIENTES ================= */
+
+.tabelaClientes{
+    width:170vh;
+    background:#fff;
+    margin-top:30px;
+
+    border-radius:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+    padding:30px;
+    box-sizing:border-box;
+}
+
+.tabelaClientes h2{
+    text-align:left;
+    margin-bottom:20px;
+    color:#000000;
+}
+
+.tabelaClientes table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabelaClientes th{
+    background:#144621;
+    color:#fff;
+    padding:5px;
+    text-align:center;
+}
+
+.tabelaClientes td{
+    padding:14px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+.tabelaClientes tbody tr:hover{
+    background:#f7f7f7;
+}
+
+
+/* ================= CADASTRO DE FORNECEDORES ================= */
+
+.topoPaginaFornecedor{
+    width: 170vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+}
+
+.topoPaginaFornecedor .botaoTabela{
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 1.5vh 2vh;
+    cursor: pointer;
+}
+
+.formularioFornecedor{
+    width: 170vh;
+    background-color: white;
+    border-radius: 1.5vh;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    padding: 4vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.tituloSecaoFormulario{
+    color: #6EEB83;
+    font-size: 2.6vh;
+    margin: 0;
+}
+
+.linhaFormulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vh;
+}
+
+.quatroColunas{
+    grid-template-columns: 1fr 1fr 2fr 0.8fr;
+}
+
+.campoFormulario{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vh;
+}
+
+.campoFormulario label{
+    color: #144621;
+    font-weight: bold;
+    font-size: 1.8vh;
+}
+
+.campoFormulario input,
+.campoFormulario select,
+.campoFormulario textarea{
+    width: 100%;
+    height: 5vh;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.8vh;
+    padding: 1vh;
+    box-sizing: border-box;
+    font-size: 1.8vh;
+}
+
+.campoFormulario textarea{
+    height: 12vh;
+    resize: none;
+}
+
+.linhaSeparadora{
+    width: 100%;
+    border: none;
+    border-top: 1px solid #d9d9d9;
+    margin: 2vh 0;
+}
+
+.botoesFormulario{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vh;
+    margin-top: 2vh;
+}
+
+.botaoCancelar{
+    background-color: transparent;
+    color: black;
+    border: 1px solid #cfcfcf;
+    border-radius: 0.8vh;
+    padding: 1.3vh 3vh;
+    cursor: pointer;
+}
+
+.botaoSalvar{
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 0.8vh;
+    padding: 1.3vh 3vh;
+    cursor: pointer;
+}
+
+
+/* ================= CADASTRO DE INSUMOS ================= */
+
+.topoPaginaInsumo{
+    width: 170vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+}
+
+.formularioInsumo{
+    width: 170vh;
+    background-color: white;
+    border-radius: 1.5vh;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    padding: 4vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.formularioInsumo .linhaFormulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vh;
+}
+
+.formularioInsumo .campoFormulario{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vh;
+}
+
+.formularioInsumo label{
+    color: #144621;
+    font-weight: bold;
+    font-size: 1.8vh;
+}
+
+.formularioInsumo input,
+.formularioInsumo select,
+.formularioInsumo textarea{
+    width: 100%;
+    height: 5vh;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.8vh;
+    padding: 1vh;
+    box-sizing: border-box;
+    font-size: 1.8vh;
+}
+
+.formularioInsumo textarea{
+    height: 12vh;
+    resize: none;
+}
+
+.campoQuantidade{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2vh;
+}
+
+.formularioInsumo .botoesFormulario{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vh;
+    margin-top: 2vh;
+}
+
+.formularioInsumo .botaoCancelar{
+    background-color: transparent;
+    color: black;
+    border: 1px solid #cfcfcf;
+    border-radius: 0.8vh;
+    padding: 1.3vh 3vh;
+    cursor: pointer;
+}
+
+.formularioInsumo .botaoSalvar{
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 0.8vh;
+    padding: 1.3vh 3vh;
+    cursor: pointer;
+}
+
+/* ================= TABELA INSUMOS ================= */
+
+.tabelaInsumos{
+    width: 170vh;
+    background-color: white;
+    border-radius: 1.5vh;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    padding: 4vh;
+    box-sizing: border-box;
+    margin-top: 4vh;
+}
+
+.topoTabelaInsumos{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3vh;
+}
+
+.topoTabelaInsumos h2{
+    margin: 0;
+    color: black;
+}
+
+.topoTabelaInsumos p{
+    margin-top: 1vh;
+    color: #555;
+}
+
+.acoesTabelaInsumos{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+#buscarInsumo{
+    width: 35vh;
+    height: 5vh;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.8vh;
+    padding: 1vh;
+    box-sizing: border-box;
+}
+
+.tabelaGeralInsumos{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabelaGeralInsumos th,
+.tabelaGeralInsumos td{
+    border: 1px solid #d9d9d9;
+    padding: 1.5vh;
+    text-align: center;
+}
+
+.tabelaGeralInsumos th{
+    background-color: #144621;
+    color: white;
+}
+
+.tabelaGeralInsumos tbody tr:hover{
+    background-color: #f8f8f8;
+}
+
+
+/* ================= CADASTRO DE PARCEIROS ================= */
+
+.topoPaginaParceiros{
+    width: 170vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3vh;
+}
+
+.topoPaginaParceiros .botaoTabela{
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 1.3vh 2vh;
+    cursor: pointer;
+}
+
+/* FORMULÁRIO */
+
+.formularioParceiros{
+    width: 170vh;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    border-radius: 1.5vh;
+    padding: 3vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.formularioParceiros .linhaFormulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vh;
+}
+
+.formularioParceiros .campoFormulario{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7vh;
+}
+
+.formularioParceiros label{
+    color: #144621;
+    font-weight: bold;
+    font-size: 1.8vh;
+}
+
+.formularioParceiros input,
+.formularioParceiros textarea{
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.8vh;
+    padding: 1vh;
+    box-sizing: border-box;
+    font-size: 1.8vh;
+}
+
+.formularioParceiros input{
+    height: 5vh;
+}
+
+.formularioParceiros textarea{
+    height: 10vh;
+    resize: none;
+}
+
+.formularioParceiros .botoesFormulario{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vh;
+    margin-top: 1vh;
+}
+
+.formularioParceiros .botaoCancelar{
+    background-color: transparent;
+    color: black;
+    border: 1px solid #cfcfcf;
+    border-radius: 0.8vh;
+    padding: 1.2vh 3vh;
+    cursor: pointer;
+}
+
+.formularioParceiros .botaoSalvar{
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 0.8vh;
+    padding: 1.2vh 3vh;
+    cursor: pointer;
+}
+
+/* TABELA */
+
+.tabelaParceiros{
+    width: 170vh;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    border-radius: 1.5vh;
+    padding: 3vh;
+    box-sizing: border-box;
+    margin-top: 4vh;
+}
+
+.topoTabelaParceiros{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3vh;
+}
+
+.tituloTabela{
+    margin: 0;
+    color: black;
+}
+
+.subtituloTabela{
+    margin-top: 1vh;
+    color: #555;
+}
+
+.acoesTabelaParceiros{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+#buscarParceiro{
+    width: 35vh;
+    height: 5vh;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.8vh;
+    padding: 1vh;
+    box-sizing: border-box;
+}
+
+.tabelaGeralParceiros{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabelaGeralParceiros th,
+.tabelaGeralParceiros td{
+    border: 1px solid #d9d9d9;
+    padding: 1.4vh;
+    text-align: center;
+}
+
+.tabelaGeralParceiros th{
+    background-color: #144621;
+    color: white;
+}
+
+.tabelaGeralParceiros tbody tr:hover{
+    background-color: #f8f8f8;
+}
+
+.iconesTabela{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vh;
+}
+
+.iconeEditar,
+.iconeExcluir{
+    width: 3vh;
+    height: 3vh;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.iconeEditar{
+    background-image: url(Imagens/lapiz_2.svg);
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeExcluir{
+    background-image: url(Imagens/lixeira.svg);
+    filter:
+    invert(17%)
+    sepia(98%)
+    saturate(7476%)
+    hue-rotate(356deg)
+    brightness(96%)
+    contrast(118%);
+}
+
+/* ================= MODAL EXCLUIR PARCEIRO ================= */
+
+.modalExcluirParceiro{
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+.modalExcluirParceiro::backdrop{
+    background-color: rgba(0,0,0,.5);
+}
+
+.caixaModalParceiro{
+    width: 55vh;
+    background: white;
+    border-radius: 1.5vh;
+    padding: 3vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+.iconeModalExcluir{
+    width: 9vh;
+    height: 9vh;
+    border-radius: 50%;
+    background: #ffe5e5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconeExcluirModal{
+    width: 5vh;
+    height: 5vh;
+    display: block;
+
+    background-image: url(Imagens/lixeira.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    filter:
+    invert(17%)
+    sepia(98%)
+    saturate(7476%)
+    hue-rotate(356deg)
+    brightness(96%)
+    contrast(118%);
+}
+
+.caixaModalParceiro h2{
+    margin: 0;
+    color: #222;
+}
+
+.textoModalParceiro{
+    margin: 0;
+    text-align: center;
+    color: #555;
+}
+
+.cardParceiroModal{
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 1vh;
+    padding: 2vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vh;
+}
+
+.cardParceiroModal strong{
+    color: #144621;
+}
+
+.infosModal{
+    padding-bottom: 3vh;
+}
+
+.cardParceiroModal span{
+    color: #555;
+}
+
+.alertaModalParceiro{
+    width: 100%;
+    background: #ffe5e5;
+    border: 1px solid #c62828;
+    color: #8b0000;
+    border-radius: 1vh;
+    padding: 1.5vh;
+    box-sizing: border-box;
+    font-size: 1.7vh;
+    text-align: center;
+}
+
+.botoesModalParceiro{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vh;
+}
+
+.botaoCancelarModal{
+    background: transparent;
+    border: 1px solid #cfcfcf;
+    color: black;
+    border-radius: 1vh;
+    padding: 1.2vh 2.5vh;
+    cursor: pointer;
+}
+
+.botaoConfirmarExclusao{
+    background: #c62828;
+    border: none;
+    color: white;
+    border-radius: 0.8vh;
+    padding: 1.2vh 2.5vh;
+    cursor: pointer;
+}
+
+.iconeIdentidade{
+     width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/identificação.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeTelefone{
+     width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/telefone.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeCarta{
+     width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/envelope.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+
+/* ================= CADASTRO DE PRODUTOS ================= */
+
+.topoPaginaProdutos{
+    width: 170vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3vh;
+}
+
+.botoesTopoProdutos{
+    display: flex;
+    gap: 2vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.botaoCalcularPreco,
+.topoPaginaProdutos .botaoTabela{
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 0.8vh;
+    padding: 1.3vh 2vh;
+    cursor: pointer;
+}
+
+.formularioProdutos{
+    width: 170vh;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    border-radius: 1.5vh;
+    padding: 3vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.formularioProdutos .linhaFormulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vh;
+}
+
+.formularioProdutos .campoFormulario{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7vh;
+}
+
+.formularioProdutos label{
+    color: #144621;
+    font-weight: bold;
+    font-size: 1.8vh;
+}
+
+.formularioProdutos input,
+.formularioProdutos select,
+.formularioProdutos textarea{
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.8vh;
+    padding: 1vh;
+    box-sizing: border-box;
+    font-size: 1.8vh;
+}
+
+.formularioProdutos input,
+.formularioProdutos select{
+    height: 5vh;
+}
+
+.formularioProdutos textarea{
+    height: 10vh;
+    resize: none;
+}
+
+.formularioProdutos .botoesFormulario{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vh;
+}
+
+.formularioProdutos .botaoCancelar{
+    background-color: transparent;
+    color: black;
+    border: 1px solid #cfcfcf;
+    border-radius: 0.8vh;
+    padding: 1.2vh 3vh;
+    cursor: pointer;
+}
+
+.formularioProdutos .botaoSalvar{
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 0.8vh;
+    padding: 1.2vh 3vh;
+    cursor: pointer;
+}
+
+/* ================= TABELA PRODUTOS ================= */
+
+.tabelaProdutos{
+    width: 170vh;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    border-radius: 1.5vh;
+    padding: 3vh;
+    box-sizing: border-box;
+    margin-top: 4vh;
+}
+
+.topoTabelaProdutos{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3vh;
+}
+
+.acoesTabelaProdutos{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+#buscarProduto{
+    width: 35vh;
+    height: 5vh;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.8vh;
+    padding: 1vh;
+    box-sizing: border-box;
+}
+
+.tabelaGeralProdutos{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabelaGeralProdutos th,
+.tabelaGeralProdutos td{
+    border: 1px solid #d9d9d9;
+    padding: 1.4vh;
+    text-align: center;
+}
+
+.tabelaGeralProdutos th{
+    background-color: #144621;
+    color: white;
+}
+
+.tabelaGeralProdutos tbody tr:hover{
+    background-color: #f8f8f8;
+}
+
+.botoesTopoProdutos{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+.botoesTopoProdutos a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.botoesTopoProdutos button,
+.acoesTabelaProdutos button,
+#buscarProduto{
+    height: 5vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.acoesTabelaProdutos{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+.acoesTabelaProdutos .botaoTabela{
+    margin: 0;
+}
+
+
+/* ================= CALCULAR PREÇO ================= */
+
+.topoPaginaCalculo{
+    width: 170vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3vh;
+}
+
+.topoPaginaCalculo .botaoTabela{
+    background-color: white;
+    color: #144621;
+    font-weight: bolder;
+    border: 1px solid #cfcfcf;
+    margin: 0;
+}
+
+.areaCalculoPreco{
+    width: 170vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vh;
+    align-items: flex-start;
+}
+
+.cardConfiguracaoPreco{
+    background-color: white;
+    border-radius: 1.5vh;
+    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    padding: 4vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+}
+
+.cardConfiguracaoPreco h2{
+    margin: 0;
+    color: black;
+    font-size: 2.5vh;
+}
+
+#produtoCalculo{
+    background-color: #f3f8f5;
+    color: black;
+    font-weight: bold;
+}
+
+.receitaSelecionada,
+.avisoCalculo{
+    background-color:  #A3FF69;
+    border-radius: 1vh;
+    padding: 2vh;
+    box-sizing: border-box;
+}
+
+.receitaSelecionada{
+    display: flex;
+    flex-direction: column;
+    gap: .8vh;
+    border: 1px solid #A3FF69;
+}
+
+.receitaSelecionada span,
+.avisoCalculo strong{
+    color: black;
+}
+
+.receitaSelecionada strong,
+.avisoCalculo p{
+    color: #00ad2e;
+    font-weight: bold;
+}
+
+.avisoCalculo{
+    border-left: 5px solid #144621;
+}
+
+.avisoCalculo p{
+    margin: .8vh 0 0 0;
+}
+
+.botaoDefinirPreco{
+    width: 100%;
+    height: 5.5vh;
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* CARD RESULTADO */
+
+.cardResultadoCalculo{
+    background-color:  #bffd98;
+    border-radius: 1.5vh;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    padding: 4vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.cardResultadoCalculo h2{
+    color: #144621;
+    margin: 0;
+}
+
+.resultadoPrincipal{
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 3vh;
+    align-items: center;
+}
+
+.resultadoPrincipal h1{
+    color: #144621;
+    font-size: 6vh;
+    margin: 1vh 0;
+}
+
+.resultadoPrincipal p{
+    color: #666;
+    margin: 0;
+}
+
+.linhaVertical{
+    width: 1px;
+    height: 100%;
+    background-color: #b6d8b6;
+}
+
+.resumoMargem{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.resumoMargem strong,
+.detalhesResultado strong{
+    color: #144621;
+}
+
+.detalhesResultado{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vh;
+    border-top: 1px solid #b6d8b6;
+    padding-top: 2vh;
+}
+
+.detalhesResultado div{
+    display: flex;
+    justify-content: space-between;
+    gap: 2vh;
+}
+
+/* GRÁFICO */
+
+.graficoPizzaArea{
+    border-top: 1px solid #b6d8b6;
+    padding-top: 2vh;
+}
+
+.graficoPizza{
+    width: 18vh;
+    height: 18vh;
+    border-radius: 50%;
+    margin: 0 auto 2vh auto;
+    background: conic-gradient(#144621 0% 27%,  #46b302 27% 100%);
+    border: 1px solid #b6d8b6;
+}
+
+.legendaGrafico{
+    display: flex;
+    justify-content: center;
+    gap: 3vh;
+}
+
+.legendaGrafico div{
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+}
+
+.corCusto,
+.corLucro{
+    width: 2vh;
+    height: 2vh;
+    border-radius: 50%;
+    display: block;
+}
+
+.corCusto{
+    background-color:  #46b302;
+    border: 1px solid #b6d8b6;
+}
+
+.corLucro{
+    background-color: #144621;
+}
+
+
+
+/* ================= CLIENTES CADASTRADOS ================= */
+
+.topoPaginaClientes{
+    width: 170vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+}
+
+.botoesTopoClientes{
+    display: flex;
+    align-items: center;
+    gap: 1.5vh;
+}
+
+.botaoVoltar,
+.botaoLista,
+.botaoCards{
+    height: 5vh;
+    padding: 0 2.5vh;
+    border-radius: 1vh;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botaoVoltar,
+.botaoLista{
+    background-color: white;
+    color: #144621;
+    border: 1px solid #cfcfcf;
+}
+
+.botaoCards{
+    background-color: #144621;
+    color: white;
+    border: none;
+}
+
+/* BLOCO DA TABELA */
+
+.clientesCadastrados{
+    width: 170vh;
+    background-color: white;
+    border-radius: 1.5vh;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    padding: 3vh;
+    box-sizing: border-box;
+}
+
+.acoesTabelaClientes{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2vh;
+    margin-bottom: 3vh;
+}
+
+#buscarCliente{
+    width: 40vh;
+    height: 5vh;
+    border: 1px solid #d9d9d9;
+    border-radius: 1vh;
+    padding: 0 1.5vh;
+}
+
+.acoesTabelaClientes .botaoTabela{
+    height: 5vh;
+    margin: 0;
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 0 2.5vh;
+    cursor: pointer;
+}
+
+.tabelaClientesCadastrados{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabelaClientesCadastrados th,
+.tabelaClientesCadastrados td{
+    border: 1px solid #d9d9d9;
+    padding: 1.5vh;
+    text-align: center;
+}
+
+.tabelaClientesCadastrados th{
+    background-color: #144621;
+    color: white;
+}
+
+/* CARDS */
+
+.gradeClientes{
+    width: 170vh;
+    margin-top: 4vh;
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3vh;
+}
+
+.cardCliente{
+    background-color: white;
+    width: 35vh;
+    border-radius: 1.5vh;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    padding: 3vh;
+}
+
+.topoCardCliente{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+
+.acoesCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vh;
+}
+
+.avatarGrande{
+    width: 7vh;
+    height: 7vh;
+    border-radius: 50%;
+    background-color: #144621;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.iconeLapisTabela{
+    width: 4vh;
+    height: 4vh;
+    margin: 0vh;
+
+    display: block;
+
+    background-image: url(Imagens/lapiz_2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+
+    cursor: pointer;
+}
+
+.iconeLixeiraTabela{
+    width: 4vh;
+    height: 4vh;
+    margin: 0vh;
+
+    display: block;
+    border: none;
+
+    background-image: url(Imagens/lixeira.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+
+    filter:
+    invert(17%)
+    sepia(98%)
+    saturate(7476%)
+    hue-rotate(356deg)
+    brightness(96%)
+    contrast(118%);
+
+    cursor: pointer;
+}
+
+.botaoLista,
+.botaoCards{
+    background: white;
+    color: #144621;
+    border: 1px solid #cfcfcf;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.botaoAtivo{
+    background: #144621 !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* ================= FORNECEDORES CADASTRADOS ================= */
+
+.topoPaginaFornecedoresCadastrados{
+    width: 170vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+}
+
+.botoesTopoFornecedores{
+    display: flex;
+    align-items: center;
+    gap: 1.5vh;
+}
+
+.fornecedoresCadastrados{
+    width: 170vh;
+    background-color: white;
+    border-radius: 1.5vh;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    padding: 3vh;
+    box-sizing: border-box;
+}
+
+.acoesTabelaFornecedores{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2vh;
+    margin-bottom: 3vh;
+}
+
+#buscarFornecedor{
+    width: 40vh;
+    height: 5vh;
+    border: 1px solid #d9d9d9;
+    border-radius: 1vh;
+    padding: 0 1.5vh;
+}
+
+.acoesTabelaFornecedores .botaoTabela{
+    height: 5vh;
+    margin: 0;
+    background-color: #144621;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    padding: 0 2.5vh;
+    cursor: pointer;
+}
+
+.tabelaFornecedoresCadastrados{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabelaFornecedoresCadastrados th,
+.tabelaFornecedoresCadastrados td{
+    border: 1px solid #d9d9d9;
+    padding: 1.5vh;
+    text-align: center;
+}
+
+.tabelaFornecedoresCadastrados th{
+    background-color: #144621;
+    color: white;
+}
+
+/* CARDS FORNECEDORES */
+
+.gradeFornecedores{
+    width: 170vh;
+    margin-top: 4vh;
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3vh;
+}
+
+.cardFornecedor{
+    background-color: white;
+    width: 35vh;
+    border-radius: 1.5vh;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    padding: 3vh;
+}
+
+.topoCardFornecedor{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+.infoPrincipalFornecedor h3,
+.infoPrincipalFornecedor p{
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+}
+
+.acoesCardFornecedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vh;
+    margin-top: 2vh;
+}
+
+/* botões lista/cards igual clientes */
+
+.botaoLista,
+.botaoCards{
+    background: white;
+    color: #144621;
+    border: 1px solid #cfcfcf;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.botaoAtivo{
+    background: #144621 !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* ================= INSUMOS CADASTRADOS ================= */
+
+.topoPaginaInsumosCadastrados{
+    width:170vh;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    margin-bottom:3vh;
+}
+
+.botoesTopoInsumos{
+    display:flex;
+    align-items:center;
+    gap:1.5vh;
+}
+
+.insumosCadastrados{
+    width:170vh;
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.acoesTabelaInsumosCadastrados{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:2vh;
+    margin-bottom:3vh;
+}
+
+#buscarInsumoCadastrado{
+    width:40vh;
+    height:5vh;
+    border:1px solid #d9d9d9;
+    border-radius:1vh;
+    padding:0 1.5vh;
+}
+
+.acoesTabelaInsumosCadastrados .botaoTabela{
+    height:5vh;
+    margin:0;
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:1vh;
+    padding:0 2.5vh;
+    cursor:pointer;
+}
+
+.tabelaInsumosCadastrados{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabelaInsumosCadastrados th,
+.tabelaInsumosCadastrados td{
+    border:1px solid #d9d9d9;
+    padding:1.5vh;
+    text-align:center;
+}
+
+.tabelaInsumosCadastrados th{
+    background:#144621;
+    color:white;
+}
+
+/* ================= CARDS INSUMOS ================= */
+
+.gradeInsumos{
+    width:170vh;
+    margin-top:4vh;
+    display:none;
+    grid-template-columns:repeat(4,1fr);
+    gap:3vh;
+}
+
+.cardInsumo{
+    width:35vh;
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+    padding:3vh;
+}
+
+.topoCardInsumo{
+    display:flex;
+    align-items:center;
+    gap:2vh;
+    margin-bottom:2vh;
+}
+
+.avatarGrandeInsumo{
+    width:7vh;
+    height:7vh;
+    border-radius:50%;
+    background:#144621;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.2vh;
+}
+
+.infoPrincipalInsumo h3{
+    margin:0;
+    font-size:2.2vh;
+}
+
+.infoPrincipalInsumo p{
+    margin:0;
+    line-height:1.2;
+    color:#666;
+}
+
+.informacoesCardInsumo{
+    display:flex;
+    flex-direction:column;
+}
+
+.itemInformacaoInsumo{
+    display:flex;
+    align-items:center;
+    color:#555;
+}
+
+.acoesCardInsumo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10vh;
+    margin-top:2vh;
+}
+
+/* ================= MODAL INSUMOS ================= */
+
+.fundoModalInsumo{
+    border:none;
+    padding:0;
+    background:transparent;
+}
+
+.fundoModalInsumo::backdrop{
+    background:rgba(0,0,0,.5);
+}
+
+.modal-insumo-card{
+    width:50vh;
+    border:1px solid #d9d9d9;
+    border-radius:1vh;
+    padding:2vh;
+    margin:2vh 0;
+}
+
+.modal-initials{
+    width:7vh;
+    height:7vh;
+    border-radius:50%;
+    background:#A3FF69;
+    color:#144621;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.2vh;
+}
+
+.modal-info{
+    display:flex;
+    flex-direction:column;
+    gap:1vh;
+}
+
+.modal-name{
+    font-weight:bold;
+    font-size:2vh;
+}
+
+.modal-detail{
+    display:flex;
+    align-items:center;
+    gap:1vh;
+    color:#555;
+}
+
+/* Botões Lista/Card */
+
+.botaoLista,
+.botaoCards{
+    background:white;
+    color:#144621;
+    border:1px solid #cfcfcf;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.botaoAtivo{
+    background:#144621 !important;
+    color:white !important;
+    border:none !important;
+}
+
+.iconeTag{
+     width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/etiqueta.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeBalaca{
+     width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/balanca.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeUsuario{
+     width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/pessoas.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+/* ================= PARCEIROS CADASTRADOS ================= */
+
+.topoPaginaParceirosCadastrados{
+    width:170vh;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    margin-bottom:3vh;
+}
+
+.botoesTopoParceiros{
+    display:flex;
+    align-items:center;
+    gap:1.5vh;
+}
+
+.parceirosCadastrados{
+    width:170vh;
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.acoesTabelaParceirosCadastrados{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:2vh;
+    margin-bottom:3vh;
+}
+
+#buscarParceiroCadastrado{
+    width:40vh;
+    height:5vh;
+    border:1px solid #d9d9d9;
+    border-radius:1vh;
+    padding:0 1.5vh;
+}
+
+.acoesTabelaParceirosCadastrados .botaoTabela{
+    height:5vh;
+    margin:0;
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:1vh;
+    padding:0 2.5vh;
+    cursor:pointer;
+}
+
+.tabelaParceirosCadastrados{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabelaParceirosCadastrados th,
+.tabelaParceirosCadastrados td{
+    border:1px solid #d9d9d9;
+    padding:1.5vh;
+    text-align:center;
+}
+
+.tabelaParceirosCadastrados th{
+    background:#144621;
+    color:white;
+}
+
+/* ================= CARDS PARCEIROS ================= */
+
+.gradeParceiros{
+    width:170vh;
+    margin-top:4vh;
+    display:none;
+    grid-template-columns:repeat(4,1fr);
+    gap:3vh;
+}
+
+.cardParceiro{
+    width:35vh;
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+    padding:3vh;
+}
+
+.topoCardParceiro{
+    display:flex;
+    align-items:center;
+    gap:2vh;
+    margin-bottom:2vh;
+}
+
+.avatarGrandeParceiro{
+    width:7vh;
+    height:7vh;
+    border-radius:50%;
+    background:#144621;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.2vh;
+}
+
+.infoPrincipalParceiro h3{
+    margin:0;
+    font-size:2.2vh;
+}
+
+.infoPrincipalParceiro p{
+    margin:0;
+    line-height:1.2;
+    color:#666;
+}
+
+.informacoesCardParceiro{
+    display:flex;
+    flex-direction:column;
+    gap:1vh;
+    margin-top:2vh;
+}
+
+.itemInformacaoParceiro{
+    display:flex;
+    align-items:center;
+    gap:1vh;
+    color:#555;
+}
+
+.acoesCardParceiro{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10vh;
+    margin-top:2vh;
+}
+
+/* ================= MODAL PARCEIROS ================= */
+
+.fundoModalParceiroCadastrado{
+    border:none;
+    padding:0;
+    background:transparent;
+}
+
+.fundoModalParceiroCadastrado::backdrop{
+    background:rgba(0,0,0,.5);
+}
+
+/* Botões Lista / Cards */
+
+.botaoLista,
+.botaoCards{
+    background:white;
+    color:#144621;
+    border:1px solid #cfcfcf;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.botaoAtivo{
+    background:#144621 !important;
+    color:white !important;
+    border:none !important;
+}
+
+/* ================= PRODUTOS CADASTRADOS ================= */
+
+.topoPaginaProdutosCadastrados{
+    width:170vh;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    margin-bottom:3vh;
+}
+
+.botoesTopoProdutosCadastrados{
+    display:flex;
+    align-items:center;
+    gap:1.5vh;
+}
+
+.produtosCadastrados{
+    width:170vh;
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.acoesTabelaProdutosCadastrados{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:2vh;
+    margin-bottom:3vh;
+}
+
+#buscarProdutoCadastrado{
+    width:40vh;
+    height:5vh;
+    border:1px solid #d9d9d9;
+    border-radius:1vh;
+    padding:0 1.5vh;
+}
+
+.acoesTabelaProdutosCadastrados .botaoTabela{
+    height:5vh;
+    margin:0;
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:1vh;
+    padding:0 2.5vh;
+    cursor:pointer;
+}
+
+.tabelaProdutosCadastrados{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabelaProdutosCadastrados th,
+.tabelaProdutosCadastrados td{
+    border:1px solid #d9d9d9;
+    padding:1.5vh;
+    text-align:center;
+}
+
+.tabelaProdutosCadastrados th{
+    background:#144621;
+    color:white;
+}
+
+/* ================= CARDS PRODUTOS ================= */
+
+.gradeProdutos{
+    width:170vh;
+    margin-top:4vh;
+    display:none;
+    grid-template-columns:repeat(4,1fr);
+    gap:3vh;
+}
+
+.cardProduto{
+    width:35vh;
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+    padding:3vh;
+}
+
+.topoCardProduto{
+    display:flex;
+    align-items:center;
+    gap:2vh;
+    margin-bottom:2vh;
+}
+
+.avatarGrandeProduto{
+    width:7vh;
+    height:7vh;
+    border-radius:50%;
+    background:#144621;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.2vh;
+}
+
+.infoPrincipalProduto h3{
+    margin:0;
+    font-size:2.2vh;
+}
+
+.infoPrincipalProduto p{
+    margin:0;
+    line-height:1.2;
+    color:#666;
+}
+
+.informacoesCardProduto{
+    display:flex;
+    flex-direction:column;
+    gap:1vh;
+    margin-top:2vh;
+}
+
+.itemInformacaoProduto{
+    display:flex;
+    align-items:center;
+    gap:1vh;
+    color:#555;
+}
+
+.acoesCardProduto{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10vh;
+    margin-top:2vh;
+}
+
+/* ================= MODAL PRODUTOS ================= */
+
+.fundoModalProdutoCadastrado{
+    border:none;
+    padding:0;
+    background:transparent;
+}
+
+.fundoModalProdutoCadastrado::backdrop{
+    background:rgba(0,0,0,.5);
+}
+
+/* Card do modal */
+
+.modal-produto-card{
+    width:50vh;
+    border:1px solid #d9d9d9;
+    border-radius:1vh;
+    padding:2vh;
+    margin:2vh 0;
+}
+
+.modal-produto-initials{
+    width:7vh;
+    height:7vh;
+    border-radius:50%;
+    background:#A3FF69;
+    color:#144621;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.2vh;
+}
+
+.modal-produto-info{
+    display:flex;
+    flex-direction:column;
+    gap:1vh;
+}
+
+.modal-produto-name{
+    font-weight:bold;
+    font-size:2vh;
+}
+
+.modal-produto-detail{
+    display:flex;
+    align-items:center;
+    gap:1vh;
+    color:#555;
+}
+
+/* Botões Lista / Cards */
+
+.botaoLista,
+.botaoCards{
+    background:white;
+    color:#144621;
+    border:1px solid #cfcfcf;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.botaoAtivo{
+    background:#144621 !important;
+    color:white !important;
+    border:none !important;
+}
+
+.iconePrancheta{
+    width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/prancheta.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+
+/* ================= EDITAR CLIENTE ================= */
+
+.topoPaginaEditarCliente{
+    width:170vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:3vh;
+}
+
+.topoPaginaEditarCliente .tituloPagina{
+    font-size:4vh;
+    margin:0;
+    color:#111;
+}
+
+.topoPaginaEditarCliente .subtituloPagina{
+    font-size:2vh;
+    font-weight:normal;
+    color:#555;
+    margin-top:1vh;
+}
+
+.botoesTopoEditarCliente{
+    display:flex;
+    align-items:center;
+    gap:2vh;
+}
+
+.botoesTopoEditarCliente .botaoVoltar{
+    background:white;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+}
+
+.botoesTopoEditarCliente .botaoTabela{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+    margin:0;
+}
+
+/* LAYOUT GERAL */
+
+.layoutEditarCliente{
+    width:170vh;
+    display:grid;
+    grid-template-columns:2fr 0.8fr;
+    gap:4vh;
+    align-items:start;
+}
+
+.areaEditarCliente{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+/* FORMULÁRIO */
+
+.formularioEditarCliente,
+.historicoCliente,
+.perfilCliente{
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.formularioEditarCliente h2,
+.historicoCliente h2{
+    margin:0 0 3vh 0;
+    color:#111;
+}
+
+.formularioEditarCliente .linhaFormulario{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarCliente .campoFormulario{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarCliente label{
+    color:#144621;
+    font-weight:bold;
+    font-size:1.8vh;
+}
+
+.formularioEditarCliente input,
+.formularioEditarCliente textarea{
+    width:100%;
+    border:1px solid #d9d9d9;
+    border-radius:.8vh;
+    padding:1vh;
+    box-sizing:border-box;
+    font-size:1.8vh;
+}
+
+.formularioEditarCliente input{
+    height:5vh;
+}
+
+.formularioEditarCliente textarea{
+    height:12vh;
+    resize:none;
+}
+
+.formularioEditarCliente .botoesFormulario{
+    display:flex;
+    justify-content:flex-end;
+    gap:2vh;
+    margin-top:2vh;
+}
+
+.formularioEditarCliente .botaoCancelar{
+    background:transparent;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+.formularioEditarCliente .botaoSalvar{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+/* HISTÓRICO */
+
+.historicoCliente{
+    width:100%;
+}
+
+.tabelaHistoricoCliente{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabelaHistoricoCliente th,
+.tabelaHistoricoCliente td{
+    border:1px solid #d9d9d9;
+    padding:1.5vh;
+    text-align:center;
+}
+
+.tabelaHistoricoCliente th{
+    background:#144621;
+    color:white;
+}
+
+/* LATERAL */
+
+.barraLateralCliente{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+.perfilCliente{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.perfilCliente .avatarGrande{
+    width:8vh;
+    height:8vh;
+    border-radius:50%;
+    background:#144621;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.4vh;
+    margin-bottom:2vh;
+}
+
+.perfilCliente h2{
+    margin:0;
+    color:#111;
+}
+
+.statusCliente{
+    margin-top:1vh;
+    color:#144621;
+    background:#e9f8e9;
+    padding:.8vh 1.5vh;
+    border-radius:2vh;
+    font-weight:bold;
+}
+
+.perfilCliente hr{
+    width:100%;
+    border:none;
+    border-top:1px solid #d9d9d9;
+    margin:2vh 0;
+}
+
+.perfilCliente p{
+    width:100%;
+    text-align:left;
+    color:#333;
+    margin:.8vh 0;
+}
+
+.perfilCliente strong{
+    color:#111;
+    margin-bottom:2vh;
+}
+
+.botaoExcluir{
+    width:100%;
+    background:transparent;
+    color:#c62828;
+    border:1px solid #c62828;
+    border-radius:1vh;
+    padding:1.3vh;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:2vh;
+}
+
+/* RESUMO */
+
+.resumoCliente{
+    background:#bffd98;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.resumoCliente h3{
+    color:#144621;
+    margin:0 0 2vh 0;
+}
+
+.itemResumo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(20,70,33,.25);
+    padding:1.5vh 0;
+}
+
+.itemResumo span{
+    color:#111;
+}
+
+.itemResumo strong{
+    color:#111;
+}
+
+.itemResumo:last-child strong{
+    color:#144621;
+}
+
+.perfilCliente p{
+    display: flex;
+    align-items: center;
+    gap: 1vh; 
+}
+
+.iconeCasa{
+    width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/casa.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+/* ================= EDITAR FORNECEDOR ================= */
+
+.topoPaginaEditarFornecedor{
+    width:170vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:3vh;
+}
+
+.botoesTopoEditarFornecedor{
+    display:flex;
+    align-items:center;
+    gap:2vh;
+}
+
+.botoesTopoEditarFornecedor .botaoVoltar{
+    background:white;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+}
+
+.botoesTopoEditarFornecedor .botaoTabela{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+}
+
+/* LAYOUT */
+
+.layoutEditarFornecedor{
+    width:170vh;
+    display:grid;
+    grid-template-columns:2fr .8fr;
+    gap:4vh;
+    align-items:start;
+}
+
+.areaEditarFornecedor{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+/* FORMULÁRIO */
+
+.formularioEditarFornecedor,
+.historicoFornecedor,
+.perfilFornecedor{
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.formularioEditarFornecedor h2,
+.historicoFornecedor h2{
+    margin:0 0 3vh 0;
+}
+
+.formularioEditarFornecedor .linhaFormulario{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarFornecedor .quatroColunas{
+    grid-template-columns:1fr 1fr 2fr 1fr;
+}
+
+.formularioEditarFornecedor .campoFormulario{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarFornecedor label{
+    color:#144621;
+    font-weight:bold;
+    font-size:1.8vh;
+}
+
+.formularioEditarFornecedor input,
+.formularioEditarFornecedor select,
+.formularioEditarFornecedor textarea{
+    width:100%;
+    border:1px solid #d9d9d9;
+    border-radius:.8vh;
+    padding:1vh;
+    box-sizing:border-box;
+    font-size:1.8vh;
+}
+
+.formularioEditarFornecedor input,
+.formularioEditarFornecedor select{
+    height:5vh;
+}
+
+.formularioEditarFornecedor textarea{
+    height:12vh;
+    resize:none;
+}
+
+.linhaSeparadora{
+    border:none;
+    border-top:1px solid #d9d9d9;
+    margin:2vh 0;
+}
+
+.tituloSecaoFormulario{
+    color:#144621;
+    margin-bottom:2vh;
+}
+
+/* BOTÕES */
+
+.formularioEditarFornecedor .botoesFormulario{
+    display:flex;
+    justify-content:flex-end;
+    gap:2vh;
+    margin-top:2vh;
+}
+
+.formularioEditarFornecedor .botaoCancelar{
+    background:transparent;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+.formularioEditarFornecedor .botaoSalvar{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+/* HISTÓRICO */
+
+.tabelaHistoricoFornecedor{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabelaHistoricoFornecedor th,
+.tabelaHistoricoFornecedor td{
+    border:1px solid #d9d9d9;
+    padding:1.5vh;
+    text-align:center;
+}
+
+.tabelaHistoricoFornecedor th{
+    background:#144621;
+    color:white;
+}
+
+/* LATERAL */
+
+.barraLateralFornecedor{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+.perfilFornecedor{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.perfilFornecedor .avatarGrande{
+    width:8vh;
+    height:8vh;
+    border-radius:50%;
+    background:#144621;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.4vh;
+    margin-bottom:2vh;
+}
+
+.perfilFornecedor h2{
+    margin:0;
+}
+
+.statusFornecedor{
+    margin-top:1vh;
+    color:#144621;
+    background:#e9f8e9;
+    padding:.8vh 1.5vh;
+    border-radius:2vh;
+    font-weight:bold;
+}
+
+.perfilFornecedor hr{
+    width:100%;
+    border:none;
+    border-top:1px solid #d9d9d9;
+    margin:2vh 0;
+}
+
+.perfilFornecedor p{
+    width:100%;
+    text-align:left;
+    color:#333;
+    margin:.8vh 0;
+
+    display:flex;
+    align-items:center;
+    gap:1vh;
+}
+
+.perfilFornecedor strong{
+    color:#111;
+    margin-bottom:2vh;
+}
+
+.botaoExcluirFornecedor{
+    width:100%;
+    background:transparent;
+    color:#c62828;
+    border:1px solid #c62828;
+    border-radius:1vh;
+    padding:1.3vh;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:2vh;
+}
+
+/* RESUMO */
+
+.resumoFornecedor{
+    background:#bffd98;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.resumoFornecedor h3{
+    color:#144621;
+    margin:0 0 2vh 0;
+}
+
+.resumoFornecedor .itemResumo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(20,70,33,.25);
+    padding:1.5vh 0;
+}
+
+.resumoFornecedor .itemResumo span,
+.resumoFornecedor .itemResumo strong{
+    color:#111;
+}
+
+.resumoFornecedor .itemResumo:last-child strong{
+    color:#144621;
+}
+
+
+/* ================= EDITAR INSUMO ================= */
+
+.topoPaginaEditarInsumo{
+    width:170vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:3vh;
+}
+
+.botoesTopoEditarInsumo{
+    display:flex;
+    align-items:center;
+    gap:2vh;
+}
+
+.botoesTopoEditarInsumo .botaoVoltar{
+    background:white;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+}
+
+.botoesTopoEditarInsumo .botaoTabela{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+}
+
+.layoutEditarInsumo{
+    width:170vh;
+    display:grid;
+    grid-template-columns:2fr .8fr;
+    gap:4vh;
+    align-items:start;
+}
+
+.areaEditarInsumo{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+.formularioEditarInsumo,
+.historicoInsumo,
+.perfilInsumo{
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.formularioEditarInsumo h2,
+.historicoInsumo h2{
+    margin:0 0 3vh 0;
+}
+
+.formularioEditarInsumo .linhaFormulario{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarInsumo .campoFormulario{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarInsumo label{
+    color:#144621;
+    font-weight:bold;
+    font-size:1.8vh;
+}
+
+.formularioEditarInsumo input,
+.formularioEditarInsumo select,
+.formularioEditarInsumo textarea{
+    width:100%;
+    border:1px solid #d9d9d9;
+    border-radius:.8vh;
+    padding:1vh;
+    box-sizing:border-box;
+    font-size:1.8vh;
+}
+
+.formularioEditarInsumo input,
+.formularioEditarInsumo select{
+    height:5vh;
+}
+
+.formularioEditarInsumo textarea{
+    height:12vh;
+    resize:none;
+}
+
+.formularioEditarInsumo .botoesFormulario{
+    display:flex;
+    justify-content:flex-end;
+    gap:2vh;
+    margin-top:2vh;
+}
+
+.formularioEditarInsumo .botaoCancelar{
+    background:transparent;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+.formularioEditarInsumo .botaoSalvar{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+.tabelaHistoricoInsumo{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabelaHistoricoInsumo th,
+.tabelaHistoricoInsumo td{
+    border:1px solid #d9d9d9;
+    padding:1.5vh;
+    text-align:center;
+}
+
+.tabelaHistoricoInsumo th{
+    background:#144621;
+    color:white;
+}
+
+.barraLateralInsumo{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+.perfilInsumo{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.perfilInsumo .avatarGrande{
+    width:8vh;
+    height:8vh;
+    border-radius:50%;
+    background:#144621;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.4vh;
+    margin-bottom:2vh;
+}
+
+.perfilInsumo h2{
+    margin:0;
+}
+
+.statusInsumo{
+    margin-top:1vh;
+    color:#144621;
+    background:#e9f8e9;
+    padding:.8vh 1.5vh;
+    border-radius:2vh;
+    font-weight:bold;
+}
+
+.perfilInsumo hr{
+    width:100%;
+    border:none;
+    border-top:1px solid #d9d9d9;
+    margin:2vh 0;
+}
+
+.perfilInsumo p{
+    width:100%;
+    text-align:left;
+    color:#333;
+    margin:.8vh 0;
+    display:flex;
+    align-items:center;
+    gap:1vh;
+}
+
+.botaoExcluir{
+    width:100%;
+    background:transparent;
+    color:#c62828;
+    border:1px solid #c62828;
+    border-radius:1vh;
+    padding:1.3vh;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:2vh;
+}
+
+.resumoInsumo{
+    background:#bffd98;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.resumoInsumo h3{
+    color:#144621;
+    margin:0 0 2vh 0;
+}
+
+.resumoInsumo .itemResumo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(20,70,33,.25);
+    padding:1.5vh 0;
+}
+
+.resumoInsumo .itemResumo strong{
+    color:#111;
+}
+
+.resumoInsumo .itemResumo:last-child strong{
+    color:#144621;
+}
+
+.fundoModalEditarInsumo{
+    border:none;
+    padding:0;
+    background:transparent;
+}
+
+.fundoModalEditarInsumo::backdrop{
+    background:rgba(0,0,0,.5);
+}
+
+
+/* ================= EDITAR PARCEIRO ================= */
+
+.topoPaginaEditarParceiro{
+    width:170vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:3vh;
+}
+
+.topoPaginaEditarParceiro .tituloPagina{
+    font-size:4vh;
+    margin:0;
+    color:#111;
+}
+
+.topoPaginaEditarParceiro .subtituloPagina{
+    font-size:2vh;
+    font-weight:normal;
+    color:#555;
+    margin-top:1vh;
+}
+
+.botoesTopoEditarParceiro{
+    display:flex;
+    align-items:center;
+    gap:2vh;
+}
+
+.botoesTopoEditarParceiro .botaoVoltar{
+    background:white;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+}
+
+.botoesTopoEditarParceiro .botaoTabela{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+    margin:0;
+}
+
+.layoutEditarParceiro{
+    width:170vh;
+    display:grid;
+    grid-template-columns:2fr 0.8fr;
+    gap:4vh;
+    align-items:start;
+}
+
+.areaEditarParceiro{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+.formularioEditarParceiro,
+.historicoParceiro,
+.perfilParceiro{
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.formularioEditarParceiro h2,
+.historicoParceiro h2{
+    margin:0 0 3vh 0;
+    color:#111;
+}
+
+.formularioEditarParceiro .linhaFormulario{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarParceiro .campoFormulario{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarParceiro label{
+    color:#144621;
+    font-weight:bold;
+    font-size:1.8vh;
+}
+
+.formularioEditarParceiro input,
+.formularioEditarParceiro textarea{
+    width:100%;
+    border:1px solid #d9d9d9;
+    border-radius:.8vh;
+    padding:1vh;
+    box-sizing:border-box;
+    font-size:1.8vh;
+}
+
+.formularioEditarParceiro input{
+    height:5vh;
+}
+
+.formularioEditarParceiro textarea{
+    height:12vh;
+    resize:none;
+}
+
+.formularioEditarParceiro .botoesFormulario{
+    display:flex;
+    justify-content:flex-end;
+    gap:2vh;
+    margin-top:2vh;
+}
+
+.formularioEditarParceiro .botaoCancelar{
+    background:transparent;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+.formularioEditarParceiro .botaoSalvar{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+.tabelaHistoricoParceiro{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabelaHistoricoParceiro th,
+.tabelaHistoricoParceiro td{
+    border:1px solid #d9d9d9;
+    padding:1.5vh;
+    text-align:center;
+}
+
+.tabelaHistoricoParceiro th{
+    background:#144621;
+    color:white;
+}
+
+.barraLateralParceiro{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+.perfilParceiro{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.perfilParceiro .avatarGrande{
+    width:8vh;
+    height:8vh;
+    border-radius:50%;
+    background:#144621;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.4vh;
+    margin-bottom:2vh;
+}
+
+.perfilParceiro h2{
+    margin:0;
+    color:#111;
+}
+
+.statusParceiro{
+    margin-top:1vh;
+    color:#144621;
+    background:#e9f8e9;
+    padding:.8vh 1.5vh;
+    border-radius:2vh;
+    font-weight:bold;
+}
+
+.perfilParceiro hr{
+    width:100%;
+    border:none;
+    border-top:1px solid #d9d9d9;
+    margin:2vh 0;
+}
+
+.perfilParceiro p{
+    width:100%;
+    text-align:left;
+    color:#333;
+    margin:.8vh 0;
+    display:flex;
+    align-items:center;
+    gap:1vh;
+}
+
+.perfilParceiro strong{
+    color:#111;
+    margin-bottom:2vh;
+}
+
+.resumoParceiro{
+    background:#bffd98;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.resumoParceiro h3{
+    color:#144621;
+    margin:0 0 2vh 0;
+}
+
+.resumoParceiro .itemResumo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(20,70,33,.25);
+    padding:1.5vh 0;
+}
+
+.resumoParceiro .itemResumo span{
+    color:#111;
+}
+
+.resumoParceiro .itemResumo strong{
+    color:#111;
+}
+
+.resumoParceiro .itemResumo:last-child strong{
+    color:#144621;
+}
+
+.fundoModalEditarParceiro{
+    border:none;
+    padding:0;
+    background:transparent;
+}
+
+.fundoModalEditarParceiro::backdrop{
+    background:rgba(0,0,0,.5);
+}
+
+
+/* ================= EDITAR PRODUTO ================= */
+
+.topoPaginaEditarProduto{
+    width:170vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:3vh;
+}
+
+.topoPaginaEditarProduto .tituloPagina{
+    font-size:4vh;
+    margin:0;
+    color:#111;
+}
+
+.topoPaginaEditarProduto .subtituloPagina{
+    font-size:2vh;
+    font-weight:normal;
+    color:#555;
+    margin-top:1vh;
+}
+
+.botoesTopoEditarProduto{
+    display:flex;
+    align-items:center;
+    gap:2vh;
+}
+
+.botoesTopoEditarProduto .botaoVoltar{
+    background:white;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+}
+
+.botoesTopoEditarProduto .botaoTabela{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+    margin:0;
+}
+
+/* LAYOUT */
+
+.layoutEditarProduto{
+    width:170vh;
+    display:grid;
+    grid-template-columns:2fr .8fr;
+    gap:4vh;
+    align-items:start;
+}
+
+.areaEditarProduto{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+/* FORMULÁRIO */
+
+.formularioEditarProduto,
+.historicoProduto,
+.perfilProduto{
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.formularioEditarProduto h2,
+.historicoProduto h2{
+    margin:0 0 3vh 0;
+    color:#111;
+}
+
+.formularioEditarProduto .linhaFormulario{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarProduto .campoFormulario{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarProduto label{
+    color:#144621;
+    font-weight:bold;
+    font-size:1.8vh;
+}
+
+.formularioEditarProduto input,
+.formularioEditarProduto select,
+.formularioEditarProduto textarea{
+    width:100%;
+    border:1px solid #d9d9d9;
+    border-radius:.8vh;
+    padding:1vh;
+    box-sizing:border-box;
+    font-size:1.8vh;
+}
+
+.formularioEditarProduto input,
+.formularioEditarProduto select{
+    height:5vh;
+}
+
+.formularioEditarProduto textarea{
+    height:12vh;
+    resize:none;
+}
+
+.formularioEditarProduto .botoesFormulario{
+    display:flex;
+    justify-content:flex-end;
+    gap:2vh;
+    margin-top:2vh;
+}
+
+.formularioEditarProduto .botaoCancelar{
+    background:transparent;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+.formularioEditarProduto .botaoSalvar{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+/* HISTÓRICO */
+
+.historicoProduto{
+    width:100%;
+}
+
+.tabelaHistoricoProduto{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabelaHistoricoProduto th,
+.tabelaHistoricoProduto td{
+    border:1px solid #d9d9d9;
+    padding:1.5vh;
+    text-align:center;
+}
+
+.tabelaHistoricoProduto th{
+    background:#144621;
+    color:white;
+}
+
+/* LATERAL */
+
+.barraLateralProduto{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+.perfilProduto{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.perfilProduto .avatarGrande{
+    width:8vh;
+    height:8vh;
+    border-radius:50%;
+    background:#144621;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.4vh;
+    margin-bottom:2vh;
+}
+
+.perfilProduto h2{
+    margin:0;
+    color:#111;
+}
+
+.statusProduto{
+    margin-top:1vh;
+    color:#144621;
+    background:#e9f8e9;
+    padding:.8vh 1.5vh;
+    border-radius:2vh;
+    font-weight:bold;
+}
+
+.perfilProduto hr{
+    width:100%;
+    border:none;
+    border-top:1px solid #d9d9d9;
+    margin:2vh 0;
+}
+
+.perfilProduto p{
+    width:100%;
+    text-align:left;
+    color:#333;
+    margin:.8vh 0;
+
+    display:flex;
+    align-items:center;
+    gap:1vh;
+}
+
+.perfilProduto strong{
+    color:#111;
+    margin-bottom:2vh;
+}
+
+.perfilProduto .botaoExcluir{
+    width:100%;
+    background:transparent;
+    color:#c62828;
+    border:1px solid #c62828;
+    border-radius:1vh;
+    padding:1.3vh;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:2vh;
+}
+
+/* RESUMO */
+
+.resumoProduto{
+    background:#bffd98;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.resumoProduto h3{
+    color:#144621;
+    margin:0 0 2vh 0;
+}
+
+.resumoProduto .itemResumo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(20,70,33,.25);
+    padding:1.5vh 0;
+}
+
+.resumoProduto .itemResumo span{
+    color:#111;
+}
+
+.resumoProduto .itemResumo strong{
+    color:#111;
+}
+
+.resumoProduto .itemResumo:last-child strong{
+    color:#144621;
+}
+
+.iconeCalendario{
+    width: 4vh;
+    height: 4vh;
+
+    border: none;
+    background-color: transparent;
+
+    display: block;
+
+    background-image: url(Imagens/calendario.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+
+/* ================= EDITAR RECEITA ================= */
+
+.topoPaginaEditarReceita{
+    width:170vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:3vh;
+}
+
+.topoPaginaEditarReceita .tituloPagina{
+    font-size:4vh;
+    margin:0;
+    color:#111;
+}
+
+.topoPaginaEditarReceita .subtituloPagina{
+    font-size:2vh;
+    font-weight:normal;
+    color:#555;
+    margin-top:1vh;
+}
+
+.botoesTopoEditarReceita{
+    display:flex;
+    align-items:center;
+    gap:2vh;
+}
+
+.botoesTopoEditarReceita .botaoVoltar{
+    background:white;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+}
+
+.botoesTopoEditarReceita .botaoTabela{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:1vh;
+    padding:1.3vh 2.5vh;
+    cursor:pointer;
+    margin:0;
+}
+
+.layoutEditarReceita{
+    width:170vh;
+    display:grid;
+    grid-template-columns:2fr .8fr;
+    gap:4vh;
+    align-items:start;
+}
+
+.areaEditarReceita{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+.formularioEditarReceita,
+.historicoReceita,
+.perfilReceita{
+    background:white;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.formularioEditarReceita h2,
+.historicoReceita h2{
+    margin:0 0 3vh 0;
+    color:#111;
+}
+
+.formularioEditarReceita .linhaFormulario{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarReceita .campoFormulario{
+    display:flex;
+    flex-direction:column;
+    gap:.8vh;
+    margin-bottom:2vh;
+}
+
+.formularioEditarReceita label{
+    color:#144621;
+    font-weight:bold;
+    font-size:1.8vh;
+}
+
+.formularioEditarReceita input,
+.formularioEditarReceita select,
+.formularioEditarReceita textarea{
+    width:100%;
+    border:1px solid #d9d9d9;
+    border-radius:.8vh;
+    padding:1vh;
+    box-sizing:border-box;
+    font-size:1.8vh;
+}
+
+.formularioEditarReceita input,
+.formularioEditarReceita select{
+    height:5vh;
+}
+
+.formularioEditarReceita textarea{
+    height:12vh;
+    resize:none;
+}
+
+.listaInsumosReceita{
+    display:flex;
+    flex-direction:column;
+    gap:2vh;
+}
+
+.blocoInsumoReceita{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr auto;
+    gap:2vh;
+    align-items:end;
+    padding:2vh;
+    border:1px solid #d9d9d9;
+    border-radius:1vh;
+}
+
+.botaoAdicionarInsumo{
+    width:100%;
+    background:white;
+    color:#144621;
+    border:1px solid #144621;
+    border-radius:1vh;
+    padding:1.3vh;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.formularioEditarReceita .botoesFormulario{
+    display:flex;
+    justify-content:flex-end;
+    gap:2vh;
+    margin-top:2vh;
+}
+
+.formularioEditarReceita .botaoCancelar{
+    background:transparent;
+    color:black;
+    border:1px solid #cfcfcf;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+.formularioEditarReceita .botaoSalvar{
+    background:#144621;
+    color:white;
+    border:none;
+    border-radius:.8vh;
+    padding:1.3vh 3vh;
+    cursor:pointer;
+}
+
+.tabelaHistoricoReceita{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabelaHistoricoReceita th,
+.tabelaHistoricoReceita td{
+    border:1px solid #d9d9d9;
+    padding:1.5vh;
+    text-align:center;
+}
+
+.tabelaHistoricoReceita th{
+    background:#144621;
+    color:white;
+}
+
+.barraLateralReceita{
+    display:flex;
+    flex-direction:column;
+    gap:4vh;
+}
+
+.perfilReceita{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.perfilReceita .avatarGrande{
+    width:8vh;
+    height:8vh;
+    border-radius:50%;
+    background:#144621;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:2.4vh;
+    margin-bottom:2vh;
+}
+
+.perfilReceita h2{
+    margin:0;
+    color:#111;
+}
+
+.statusReceita{
+    margin-top:1vh;
+    color:#144621;
+    background:#e9f8e9;
+    padding:.8vh 1.5vh;
+    border-radius:2vh;
+    font-weight:bold;
+}
+
+.perfilReceita hr{
+    width:100%;
+    border:none;
+    border-top:1px solid #d9d9d9;
+    margin:2vh 0;
+}
+
+.perfilReceita p{
+    width:100%;
+    text-align:left;
+    color:#333;
+    margin:.8vh 0;
+    display:flex;
+    align-items:center;
+    gap:1vh;
+}
+
+.perfilReceita strong{
+    color:#111;
+    margin-bottom:2vh;
+}
+
+.perfilReceita .botaoExcluir{
+    width:100%;
+    background:transparent;
+    color:#c62828;
+    border:1px solid #c62828;
+    border-radius:1vh;
+    padding:1.3vh;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:2vh;
+}
+
+.resumoReceita{
+    background:#bffd98;
+    border-radius:1.5vh;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    padding:3vh;
+    box-sizing:border-box;
+}
+
+.resumoReceita h3{
+    color:#144621;
+    margin:0 0 2vh 0;
+}
+
+.resumoReceita .itemResumo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(20,70,33,.25);
+    padding:1.5vh 0;
+}
+
+.resumoReceita .itemResumo strong{
+    color:#111;
+}
+
+.resumoReceita .itemResumo:last-child strong{
+    color:#144621;
+}
+
+.fundoModalEditarReceita{
+    border:none;
+    padding:0;
+    background:transparent;
+}
+
+.fundoModalEditarReceita::backdrop{
+    background:rgba(0,0,0,.5);
+}

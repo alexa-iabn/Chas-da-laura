@@ -4,18 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cadastro de Insumos — Chás da Laura</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styleMenuLateral.css" />
-  <link rel="stylesheet" href="styleinsumosmatheus.css" />
-
-
+  <link rel="stylesheet" href="styleReceitasCastradas.css" />
+  <link rel="stylesheet" href="stylePerfilUsuario.css">
+  <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
-<body>
-<div class="layout">
 
-  <!-- SIDEBAR -->
-  <aside class="menuLateral">
+<body>
+
+    <header class="topoEstoque">
+
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="cadastroinsumos.html" class="primeiroCaminho"> > Cadastro > Insumos</a>
+            </div>
+
+            <div class="notfUser">
+
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
+
+                </div>
+
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
 
             <button id="botaoRetratil" class="botaoRetratil"></button>
 
@@ -27,7 +70,7 @@
                 <ul>
 
                     <li class="blocoOpcao">
-                        <a href="paginaInicial.html" class="itemMenu">
+                        <a href="paineldeinicio.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeCasa"></span>
                             </div>
@@ -48,12 +91,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -78,7 +121,7 @@
                     </li>
                     
                     <li class="blocoOpcao">
-                        <a href="PaginaRelatorios.html" class="itemMenu">
+                        <a href="painelrelatorios.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeGrafico"></span>
                             </div>
@@ -87,7 +130,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -107,8 +150,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -117,191 +160,131 @@
 
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
-        </aside>
+    </aside>
 
-  <!-- MAIN -->
-  <div class="main">
-    <header class="topbar">
-      <div class="topbar-left">
-        <button class="topbar-menu-btn">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/listaSemPonto.svg" alt="Menu" />
-        </button>
-        <nav class="breadcrumb">
-          <img class="bc-home" src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" alt="" />
-          <a href="#">Cadastros</a>
-          <span class="sep">›</span>
-          <a href="InsumosCadastrados.html">Insumos</a>
-          <span class="sep">›</span>
-          <span class="current">Novo insumo</span>
-        </nav>
-      </div>
-      <div class="topbar-actions">
-        <button class="bell-btn" aria-label="Notificações">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg" alt="Notificações" />
-          <span class="bell-dot"></span>
-        </button>
-        <div class="user-badge">
-          <div class="user-avatar">L</div>
-          Laura
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </div>
-      </div>
-    </header>
+    <main class="conteudo">
 
-    <main class="page-content">
-
-      <!-- Page Header -->
-      <div class="page-header">
-        <div>
-          <h1 class="page-title">Cadastro de Insumos</h1>
-          <p class="page-subtitle">Preencha as informações essenciais para cadastrar um novo insumo</p>
-        </div>
-        <a href="InsumosCadastrados.html" class="btn btn-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-          Ver insumos cadastrados
-        </a>
-      </div>
-
-      <!-- Form Card -->
-      <div class="form-card">
-        <!-- ✅ onsubmit removido do <form> — o listener está no JS -->
-        <form id="formInsumo">
-
-          <!-- Row 1: Nome + Valor -->
-          <div class="form-grid form-grid-2" style="margin-bottom:14px">
-            <div class="form-group">
-              <label class="form-label" for="nomeInsumo">Nome do insumo</label>
-              <input class="form-control" id="nomeInsumo" type="text" placeholder="Digite o nome do insumo" required />
+        <div class="topoPaginaInsumo">
+            <div>
+                <h1 class="tituloPagina">Cadastro de insumos</h1>
+                <h3 class="subtituloPagina">
+                    Preencha as informações essenciais para cadastrar um novo insumo
+                </h3>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="valorInsumo">Valor</label>
-              <input class="form-control" id="valorInsumo" type="number" min="0" step="0.01" placeholder="0,00" />
-            </div>
-          </div>
 
-          <!-- Row 2: Quantidade + Fornecedor -->
-          <div class="form-grid form-grid-2" style="margin-bottom:14px">
-            <div class="form-group">
-              <label class="form-label" for="qtdInsumo">Quantidade</label>
-              <div class="qty-wrap">
-                <input class="form-control" id="qtdInsumo" type="number" min="0" step="0.01" placeholder="Digite a quantidade do insumo..." />
-                <select class="form-control" id="unidadeInsumo">
-                  <option value="KG">KG</option>
-                  <option value="G">G</option>
-                  <option value="L">L</option>
-                  <option value="ML">ML</option>
-                  <option value="UN">UN</option>
-                  <option value="CX">CX</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="fornecedorInsumo">Fornecedor</label>
-              <select class="form-control" id="fornecedorInsumo">
-                <option value="">Selecione o fornecedor</option>
-                <option>Nutribom alimentos LTDA</option>
-                <option>Ervas do Campo Ltda</option>
-                <option>Embalagens Verde Natural</option>
-                <option>Chás Premium do Brasil</option>
-                <option>Agrotech Especiarias</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Row 3: Validade + Estoque mínimo -->
-          <div class="form-grid form-grid-2" style="margin-bottom:14px">
-            <div class="form-group">
-              <label class="form-label" for="validadeInsumo">Validade</label>
-              <input class="form-control" id="validadeInsumo" type="date" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="estoqueMin">Estoque mínimo</label>
-              <input class="form-control" id="estoqueMin" type="text" placeholder="Ex: 05" />
-            </div>
-          </div>
-
-          <!-- Row 4: Descrição -->
-          <div class="form-group">
-            <label class="form-label" for="descInsumo">Descrição</label>
-            <textarea class="form-control" id="descInsumo" rows="4"
-              placeholder="Descreva o insumo, características, qualidade, origem, etc..."></textarea>
-          </div>
-
-          <!-- Actions -->
-          <div class="form-actions">
-            <a href="InsumosCadastrados.html" class="btn btn-outline">Cancelar</a>
-            <button type="submit" class="btn btn-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              Salvar insumo
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <!-- Table Section -->
-      <div class="table-section">
-        <div class="table-section-header">
-          <div>
-            <p class="table-section-title">Insumos cadastrados</p>
-            <p class="table-section-sub">Gerencie os insumos do sistema</p>
-          </div>
-          <div class="table-section-controls">
-            <div class="search-wrap">
-              <span class="search-icon">
-                <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg" alt="" width="14" height="14" />
-              </span>
-              <input id="miniSearch" type="text" placeholder="Buscar insumos..." oninput="filterMini()" />
-            </div>
-            <button class="btn btn-primary" onclick="scrollToForm()">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"/>
-                <line x1="5" y1="12" x2="19" y2="12"/>
-              </svg>
-              Novo insumo
-            </button>
-          </div>
+            <a href="InsumosCadastrados.html">
+                <button type="button" class="botaoTabela">
+                    Ver insumos cadastrados
+                </button>
+            </a>
         </div>
 
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Categoria</th>
-                <th>Quantidade</th>
-                <th>Fornecedor</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody id="miniTableBody"></tbody>
-          </table>
-        </div>
-      </div>
+        <section class="formularioInsumo">
+
+            <div class="linhaFormulario">
+                <div class="campoFormulario">
+                    <label>Nome do insumo</label>
+                    <input type="text" id="nomeInsumo" placeholder="Digite o nome do insumo">
+                </div>
+
+                <div class="campoFormulario">
+                    <label>Valor</label>
+                    <input type="number" id="valorInsumo" placeholder="0,00">
+                </div>
+            </div>
+
+            <div class="linhaFormulario">
+                <div class="campoFormulario">
+                    <label>Quantidade</label>
+
+                    <div class="campoQuantidade">
+                        <input type="number" id="quantidadeInsumo" placeholder="Digite a quantidade">
+                        <select id="unidadeInsumo">
+                            <option>KG</option>
+                            <option>G</option>
+                            <option>L</option>
+                            <option>ML</option>
+                            <option>UN</option>
+                            <option>CX</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="campoFormulario">
+                    <label>Fornecedor</label>
+                    <select id="fornecedorInsumo">
+                        <option value="">Selecione o fornecedor</option>
+                        <option>Nutribom alimentos LTDA</option>
+                        <option>Ervas do Campo Ltda</option>
+                        <option>Embalagens Verde Natural</option>
+                        <option>Chás Premium do Brasil</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="linhaFormulario">
+                <div class="campoFormulario">
+                    <label>Validade</label>
+                    <input type="date" id="validadeInsumo">
+                </div>
+
+                <div class="campoFormulario">
+                    <label>Estoque mínimo</label>
+                    <input type="number" id="estoqueMinimo" placeholder="Ex: 5">
+                </div>
+            </div>
+
+            <div class="campoFormulario">
+                <label>Descrição</label>
+                <textarea id="descricaoInsumo" rows="4" placeholder="Descreva o insumo, características, qualidade, origem, etc..."></textarea>
+            </div>
+
+            <div class="botoesFormulario">
+                <button type="button" class="botaoCancelar">Cancelar</button>
+                <button type="button" class="botaoSalvar">Salvar insumo</button>
+            </div>
+
+        </section>
+
+        <section class="tabelaInsumos">
+
+            <div class="topoTabelaInsumos">
+                <div>
+                    <h2>Insumos cadastrados</h2>
+                    <p>Gerencie os insumos do sistema</p>
+                </div>
+
+                <div class="acoesTabelaInsumos">
+                    <input type="text" id="buscarInsumo" placeholder="Buscar insumos...">
+
+                    <button type="button" class="botaoTabela">
+                        + Novo insumo
+                    </button>
+                </div>
+            </div>
+
+            <table class="tabelaGeralInsumos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Fornecedor</th>
+                        <th>Valor</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbodyInsumos">
+                </tbody>
+            </table>
+
+        </section>
 
     </main>
-  </div>
-</div>
 
-<!-- Toast -->
-<div class="toast" id="toast">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="20 6 9 17 4 12"/>
-  </svg>
-  Insumo salvo com sucesso!
-</div>
-
-<!-- ✅ Script no final do body — garante que o HTML já existe quando o JS roda -->
-<script src="cadastroinsumos.js"></script>
-<script src="scriptMenuLateral.js"></script>
+    <script src="scriptCadastros.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
+    
 </body>
 </html>

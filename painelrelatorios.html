@@ -5,47 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios</title>
     <link rel="stylesheet" href="stylePanelRelatorio.css">
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
     <link rel="stylesheet" href="styleMenuLateral.css">
 </head>
 
 <body>
 
-<header class="topoEstoque">
+    <header class="topoEstoque">
 
             <div class="caminho">
-                <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-                <a href="EstoqueInsumos.html" class="primeiroCaminho"> > Estoque > Estoque Insumos</a>
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="painelrelatorios.html" class="primeiroCaminho"> > Relatórios</a>
             </div>
 
             <div class="notfUser">
 
                 <div class="notificacao">
-
                     <i class="sino"></i>
                     <span class="bolinha"></span>
 
                 </div>
 
-                <div class="PerfilUsuario">
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
 
                     <div class="avatar">
-                        <span class="L"> L </span>
+                        <span id="iniciaisUsuario">L</span>
                     </div>
 
-                    <h2 class="nomeUsuario">Laura</h2>
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
 
                     <span class="seta">⌄</span>
 
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
                 </div>
-        </header>
+                
+            </div>
+    </header>
 
+    <aside class="menuLateral">
 
-<aside class="menuLateral">
+            <button id="botaoRetratil" class="botaoRetratil"></button>
 
-    <button id="botaoRetratil" class="botaoRetratil"></button>
-
-    <div class="logoMenuLateral">
-        <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
             </div>
 
             <nav class="menu">
@@ -73,12 +90,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -142,116 +159,119 @@
 
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
-        </aside>
+    </aside>
 
-<main class="conteudo">
+    <main class="conteudo">
 
-    <section class="cabecalhoPagina">
-        <h1 class="tituloPagina">Relatórios</h1>
-        <h3 class="subtituloPagina">Acompanhe e analise todos os dados do seu negócio</h3>
-    </section>
+        <section class="cabecalhoPagina">
+            <h1 class="tituloPagina">Relatórios</h1>
+            <h3 class="subtituloPagina">Acompanhe e analise todos os dados do seu negócio</h3>
+        </section>
 
-    <section class="cardsRelatorios">
+        <section class="cardsRelatorios">
 
-        <a href="relatorioprodução.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="iconepranceta"></i></div>
-                <h3>Produção</h3>
-            </div>
-            <p>Acompanhe o volume de produção realizada, receitas utilizadas e produtos finais</p>
-        </a>
+            <a href="relatorioprodução.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="iconepranceta"></i></div>
+                    <h3>Produção</h3>
+                </div>
+                <p>Acompanhe o volume de produção realizada, receitas utilizadas e produtos finais</p>
+            </a>
 
-        <a href="relatorioestoque.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="iconecaixa"></i></div>
-                <h3>Estoque</h3>
-            </div>
-            <p>Veja a movimentação do estoque, saldos atuais, entradas e saídas de insumos e produtos</p>
-        </a>
+            <a href="relatorioestoque.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="iconecaixa"></i></div>
+                    <h3>Estoque</h3>
+                </div>
+                <p>Veja a movimentação do estoque, saldos atuais, entradas e saídas de insumos e produtos</p>
+            </a>
 
-        <a href="relatoriosinsumo.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="iconefolha"></i></div>
-                <h3>Insumos</h3>
-            </div>
-            <p>Analise o consumo de insumos, custo, perda e os mais utilizados</p>
-        </a>
+            <a href="relatoriosinsumo.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="iconefolha"></i></div>
+                    <h3>Insumos</h3>
+                </div>
+                <p>Analise o consumo de insumos, custo, perda e os mais utilizados</p>
+            </a>
 
-        <a href="relatoriosVendas.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="carrinho"></i></div>
-                <h3>Vendas</h3>
-            </div>
-            <p>Acompanhe suas vendas, faturamento, produtos mais vendidos e ticket médio</p>
-        </a>
+            <a href="relatoriosVendas.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="carrinho"></i></div>
+                    <h3>Vendas</h3>
+                </div>
+                <p>Acompanhe suas vendas, faturamento, produtos mais vendidos e ticket médio</p>
+            </a>
 
-        <a href="relatoriosfinancieiros.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="iconemoeda"></i></div>
-                <h3>Financeiro</h3>
-            </div>
-            <p>Receita, despesas, lucro líquido e demonstrativo financeiro</p>
-        </a>
+            <a href="relatoriosfinancieiros.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="iconemoeda"></i></div>
+                    <h3>Financeiro</h3>
+                </div>
+                <p>Receita, despesas, lucro líquido e demonstrativo financeiro</p>
+            </a>
 
-        <a href="relatoriosMargemLucro.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="iconegraficoSeta"></i></div>
-                <h3>Lucro Margem</h3>
-            </div>
-            <p>Analise lucratividade, margem de contribuição e performance dos produtos</p>
-        </a>
+            <a href="relatoriosMargemLucro.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="iconegraficoSeta"></i></div>
+                    <h3>Lucro Margem</h3>
+                </div>
+                <p>Analise lucratividade, margem de contribuição e performance dos produtos</p>
+            </a>
 
-        <a href="relatorioReceitas.html" class="cardRelatorio">
-            <div class="topoRelatorios">    
-                <div class="icone"><i class="iconeLivro"></i></div>
-                <h3>Receitas</h3>
-            </div>
-            <p>Detalhes das receitas, custo por unidade, rendimento e cada produto</p>
-        </a>
+            <a href="relatorioReceitas.html" class="cardRelatorio">
+                <div class="topoRelatorios">    
+                    <div class="icone"><i class="iconeLivro"></i></div>
+                    <h3>Receitas</h3>
+                </div>
+                <p>Detalhes das receitas, custo por unidade, rendimento e cada produto</p>
+            </a>
 
-        <a href="relatorioClientes.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="iconepessoas"></i></div>
-                <h3>Clientes</h3>
-            </div>
-            <p>Analise clientes, frequência de compra, ticket médio.</p>
-        </a>
+            <a href="relatorioClientes.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="iconepessoas"></i></div>
+                    <h3>Clientes</h3>
+                </div>
+                <p>Analise clientes, frequência de compra, ticket médio.</p>
+            </a>
 
-        <a href="relatoriosFornecedores.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="iconemaoSeta"></i></div>
-                <h3>Fornecedores</h3>
-            </div>
-            <p>Desempenho de fornecedores, compras realizadas e prazo de entrega</p>
-        </a>
+            <a href="relatoriosFornecedores.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="iconemaoSeta"></i></div>
+                    <h3>Fornecedores</h3>
+                </div>
+                <p>Desempenho de fornecedores, compras realizadas e prazo de entrega</p>
+            </a>
 
-        <a href="relatorioprodução.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="iconeCalendario"></i></div>
-                <h3>Produção</h3>
-            </div>
-            <p>Compare produções por dia, semana, mês ou ano e identifique a sazonalidade</p>
-        </a>
+            <a href="relatorioprodução.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="iconeCalendario"></i></div>
+                    <h3>Produção</h3>
+                </div>
+                <p>Compare produções por dia, semana, mês ou ano e identifique a sazonalidade</p>
+            </a>
 
-        <a href="#.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="iconeCalculadora"></i></div>
-                <h3>Custos</h3>
-            </div>
-            <p>Veja o detalhamento dos custos de produção e composição da receita</p>
-        </a>
+            <a href="#.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="iconeCalculadora"></i></div>
+                    <h3>Custos</h3>
+                </div>
+                <p>Veja o detalhamento dos custos de produção e composição da receita</p>
+            </a>
 
-        <a href="relatoriosResumoGeral.html" class="cardRelatorio">
-            <div class="topoRelatorios">
-                <div class="icone"><i class="iconeGraficoRedondo"></i></div>
-                <h3>Resumo geral</h3>
-            </div>
-            <p>Visão consolidada dos principais indicadores do seu negócio em um só lugar.</p>
-        </a>
+            <a href="relatoriosResumoGeral.html" class="cardRelatorio">
+                <div class="topoRelatorios">
+                    <div class="icone"><i class="iconeGraficoRedondo"></i></div>
+                    <h3>Resumo geral</h3>
+                </div>
+                <p>Visão consolidada dos principais indicadores do seu negócio em um só lugar.</p>
+            </a>
 
-    </section>
+        </section>
 
-</main>
-<script src="scriptMenuLateral.js"></script>
+    </main>
+
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
+
 </body>
 </html>

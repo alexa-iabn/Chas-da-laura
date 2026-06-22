@@ -3,34 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="stylesabrina.css">
-<link rel="stylesheet" href="styleMenuLateral.css">
-<title>Produtos Cadastrados</title>
+  <link rel="stylesheet" href="styleMenuLateral.css">
+  <link rel="stylesheet" href="styleReceitasCastradas.css" />
+  <link rel="stylesheet" href="stylePerfilUsuario.css">
+  <link rel="icon" type="image/png" href="Imagens/xicara.svg">
+  <title>Produtos Cadastrados</title>
 </head>
 
 <body>
 
-<header class="topoEstoque">
-  <a href="paineldeinicio.html" class="paginaPrincipal"></a>
-  <a href="#" class="LinkEstoque">Cadastros</a>
-  <a href="#" class="linkEstoqueProdutos"> > Produtos > Produtos cadastrados</a>
+    <header class="topoEstoque">
 
-  <div class="notificacao">
-    <i class="sino"></i>
-  </div>
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="cadastroprodutos.html" class="primeiroCaminho"> > Cadastro > Produtos</a>
+                <a href="produtoscadastrados.html" class="segundoCaminho"> > Produtos cadastrados</a>
+            </div>
 
-  <div class="PerfilUsuario">
-    <div class="avatar">L</div>
-    <h2 class="nomeUsuario">Laura</h2>
-  </div>
-</header>
+            <div class="notfUser">
 
-<aside class="menuLateral">
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
 
-    <button id="botaoRetratil" class="botaoRetratil"></button>
+                </div>
 
-    <div class="logoMenuLateral">
-        <img src="Imagens/Logo.png" alt="Logo chás da laura">
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
+
+            <button id="botaoRetratil" class="botaoRetratil"></button>
+
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
             </div>
 
             <nav class="menu">
@@ -58,12 +92,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -97,7 +131,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -117,8 +151,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -127,154 +161,147 @@
 
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
-        </aside>
+    </aside>
 
-<main class="conteudoPrincipal">
+    <main class="conteudo">
 
-  <h1 class="tituloPagina">Produtos cadastrados</h1>
-  <h3 class="subtituloPagina">Gerencie e visualize todos os produtos do sistema</h3>
+        <div class="topoPaginaProdutosCadastrados">
 
-  <div class="conteinerTabela">
+            <div>
+                <h1 class="tituloPagina">Produtos cadastrados</h1>
+                <h3 class="subtituloPagina">
+                    Gerencie e visualize todos os produtos cadastrados no sistema
+                </h3>
+            </div>
 
-    <div class="topoCardsReceitas">
-      <div>
-        <a href="paineldeinicio.html"><button>← Voltar</button></a>
-        <button>☰ Lista</button>
-        <button>▣ Cards</button>
-      </div>
+            <div class="botoesTopoProdutosCadastrados">
+                <button type="button" class="botaoVoltar" onclick="window.location.href='CadastroProdutos.html'">
+                    ← Voltar
+                </button>
 
-      <div>
-        <input type="text" placeholder="Buscar produto...">
-        <a href="cadastroprodutos.html"><button>+ Novo produto</button></a>
-      </div>
-    </div>
+                <button type="button" class="botaoLista botaoAtivo">
+                    Lista
+                </button>
 
-    <table class="tabelaGeral">
-      <thead>
-        <tr>
-          <th>Nome do produto</th>
-          <th>Categoria</th>
-          <th>Unidade</th>
-          <th>Preço de venda</th>
-          <th>Estoque</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
+                <button type="button" class="botaoCards">
+                    Cards
+                </button>
+            </div>
 
-      <tbody>
-        <tr>
-          <td>Blend 1</td>
-          <td>Chá</td>
-          <td>Lata 50g</td>
-          <td>R$ 50,00</td>
-          <td>10 un</td>
-          <td>
-            <a href="editarproduto.html">✏️</a>
-            <button class="botaoAbrirModal">🗑️</button>
-          </td>
-        </tr>
+        </div>
 
-        <tr>
-          <td>Chá de Camomila</td>
-          <td>Chá</td>
-          <td>Lata 50g</td>
-          <td>R$ 45,00</td>
-          <td>8 un</td>
-          <td>
-            <a href="editarproduto.html">✏️</a>
-            <button class="botaoAbrirModal">🗑️</button>
-          </td>
-        </tr>
+        <section class="conteinerTabela produtosCadastrados">
 
-        <tr>
-          <td>Blend Relaxante</td>
-          <td>Blend</td>
-          <td>Saco 100g</td>
-          <td>R$ 60,00</td>
-          <td>15 un</td>
-          <td>
-            <a href="editarproduto.html">✏️</a>
-            <button class="botaoAbrirModal">🗑️</button>
-          </td>
-        </tr>
+            <div class="acoesTabelaProdutosCadastrados">
 
-        <tr>
-          <td>Aromatizador Lavanda</td>
-          <td>Aromatizador</td>
-          <td>Unidade</td>
-          <td>R$ 35,00</td>
-          <td>20 un</td>
-          <td>
-            <a href="editarproduto.html">✏️</a>
-            <button class="botaoAbrirModal">🗑️</button>
-          </td>
-        </tr>
+                <input
+                    type="search"
+                    id="buscarProdutoCadastrado"
+                    placeholder="Buscar produto..."
+                >
 
-        <tr>
-          <td>Chá Verde Premium</td>
-          <td>Chá</td>
-          <td>Lata 50g</td>
-          <td>R$ 55,00</td>
-          <td>6 un</td>
-          <td>
-            <a href="editarproduto.html">✏️</a>
-            <button class="botaoAbrirModal">🗑️</button>
-          </td>
-        </tr>
+                <button type="button" class="botaoTabela" onclick="window.location.href='CadastroProdutos.html'">
+                    + Novo produto
+                </button>
 
-        <tr>
-          <td>Blend Energizante</td>
-          <td>Blend</td>
-          <td>Saco 100g</td>
-          <td>R$ 65,00</td>
-          <td>12 un</td>
-          <td>
-            <a href="editarproduto.html">✏️</a>
-            <button class="botaoAbrirModal">🗑️</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            </div>
 
-  </div>
+            <table class="tabelaProdutosCadastrados">
 
-</main>
+                <thead>
+                    <tr>
+                        <th>Nome do produto</th>
+                        <th>Receita</th>
+                        <th>Quantidade</th>
+                        <th>Preço de venda</th>
+                        <th>Validade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
 
-<div class="fundoModal">
-  <div class="modalExcluir">
+                <tbody id="tbodyProdutosCadastrados"></tbody>
 
-    <div class="iconeModal">🗑️</div>
+            </table>
 
-    <h2>Excluir produto</h2>
+        </section>
 
-    <p>Tem certeza que deseja excluir este produto?</p>
-    <p>Essa ação não pode ser desfeita.</p>
+        <section class="gradeProdutos"></section>
 
-    <div class="cardModalReceita">
-      <div class="bolinhaReceita">B1</div>
+    </main>
 
-      <div>
-        <h3>Blend 1</h3>
-        <p>📦 Chá</p>
-        <p>💰 R$ 50,00</p>
-        <p>📊 10 un</p>
-      </div>
-    </div>
+    <dialog class="fundoModal fundoModalProdutoCadastrado">
 
-    <div class="alertaModal">
-      ⚠️ Todas as informações e históricos relacionados a este produto serão permanentemente apagados do sistema.
-    </div>
+        <div class="modalExcluir">
 
-    <div class="botoesModal">
-      <button class="botaoCancelar">Cancelar</button>
-      <button class="botaoConfirmarExcluir">Excluir produto</button>
-    </div>
+            <div class="iconeModal">
+                <i class="iconeLixeira"></i>
+            </div>
 
-  </div>
-</div>
+            <h2 class="tituloModal">Excluir produto</h2>
 
-<script src="app.js"></script>
-<script src="js/produtoscadastrados.js"></script>
-<script src="scriptMenuLateral.js"></script>
+            <p class="textoModal">
+                Tem certeza que deseja excluir este produto? Essa ação não pode ser desfeita.
+            </p>
+
+            <div class="cardModalReceita">
+
+                <div class="topoModal">
+
+                    <div class="bolinhaReceita">
+                        <span id="iniciaisProdutoCadastradoModal">PR</span>
+                    </div>
+
+                    <h3 id="nomeProdutoCadastradoModal">Nome do produto</h3>
+
+                </div>
+
+                <div class="infosModal">
+
+                    <div class="info">
+                        <i class="iconePrancheta"></i>
+                        <span id="receitaProdutoCadastradoModal">Receita</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="iconeBalaca"></i>
+                        <span id="quantidadeProdutoCadastradoModal">Quantidade</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="iconemoeda"></i>
+                        <span id="precoProdutoCadastradoModal">Preço de venda</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="alertaModal">
+                <i class="iconeAlerta"></i>
+                <span>
+                    Todas as informações e históricos relacionados a este produto serão permanentemente apagados do sistema.
+                </span>
+            </div>
+
+            <div class="botoesModal">
+
+                <button type="button" class="botaoCancelarModal">
+                    Cancelar
+                </button>
+
+                <button type="button" class="botaoConfirmarExcluir">
+                    Excluir produto
+                </button>
+
+            </div>
+
+        </div>
+
+    </dialog>
+
+    <script src="scriptCadastros.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
+    
 </body>
 </html>

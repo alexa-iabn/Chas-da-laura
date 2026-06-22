@@ -1,0 +1,108 @@
+
+.PerfilUsuario{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #14532D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.avatar span{
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.nomeUsuario{
+    font-size: 15px;
+    font-weight: 600;
+    color: #2F2F2F;
+    margin: 0;
+}
+
+.seta{
+    font-size: 18px;
+    color: #555;
+    transition: .3s;
+}
+
+.PerfilUsuario.ativo .seta{
+    transform: rotate(180deg);
+}
+
+/* MENU DO USUÁRIO */
+
+.menuUsuario{
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 170px;
+
+    background: #14532D;
+
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.18);
+
+    z-index: 9999;
+}
+
+.ocultarMenuUsuario{
+    display: none;
+}
+
+/* BOTÕES */
+
+.opcaoMenuUsuario{
+    width: 100%;
+    padding: 16px 18px;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.opcaoMenuUsuario:hover{
+    background: rgba(255,255,255,.12);
+}
+
+.opcaoMenuUsuario:active{
+    background: rgba(255,255,255,.18);
+}
+
+.opcaoMenuUsuario.sair{
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.opcaoMenuUsuario.sair:hover{
+    background: #C62828;
+}

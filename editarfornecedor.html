@@ -4,16 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Editar Fornecedor — Chás da Laura</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styleMenuLateral.css" />
-  <link rel="stylesheet" href="stylefornecedoresmatheus.css" />
-  <!-- O JS externo deve vir no fim do body (defer) para garantir que o DOM esteja pronto -->
+  <link rel="stylesheet" href="styleReceitasCastradas.css" />
+  <link rel="stylesheet" href="stylePerfilUsuario.css">
+  <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
-<body>
-<div class="layout">
 
-  <aside class="menuLateral">
+<body>
+
+    <header class="topoEstoque">
+
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="cadastrofornecedor.html" class="primeiroCaminho"> > Cadastro > Fornecedor</a>
+                <a href="fornecedorescadastrado.html" class="segundoCaminho"> > Fornecedores castrados</a>
+                <a href="editarfornecedor.html" class="terceiroCaminho"> > editar fornecedor</a>
+            </div>
+
+            <div class="notfUser">
+
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
+
+                </div>
+
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
 
             <button id="botaoRetratil" class="botaoRetratil"></button>
 
@@ -25,7 +72,7 @@
                 <ul>
 
                     <li class="blocoOpcao">
-                        <a href="paginaInicial.html" class="itemMenu">
+                        <a href="paineldeinicio.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeCasa"></span>
                             </div>
@@ -46,12 +93,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -76,7 +123,7 @@
                     </li>
                     
                     <li class="blocoOpcao">
-                        <a href="PaginaRelatorios.html" class="itemMenu">
+                        <a href="painelrelatorios.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeGrafico"></span>
                             </div>
@@ -85,7 +132,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -105,8 +152,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -115,323 +162,314 @@
 
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
-        </aside>
+    </aside>
 
+    <main class="conteudo">
 
-  <!-- ===== MAIN ===== -->
-  <div class="main">
+        <div class="topoPaginaEditarFornecedor">
 
-    <!-- Topbar -->
-    <header class="topbar">
-      <button class="topbar-menu-btn" onclick="toggleSidebar()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
-
-      <nav class="breadcrumb">
-        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" class="bc-icon" alt="" />
-        <a href="#">Cadastros</a>
-        <span class="sep">›</span>
-        <a href="fornecedorescadastrado.html">Fornecedor</a>
-        <span class="sep">›</span>
-        <span class="current">Editar fornecedor</span>
-      </nav>
-
-      <div class="topbar-actions">
-        <button class="bell-btn">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg" alt="Notificações" />
-          <span class="bell-dot"></span>
-        </button>
-        <div class="user-badge">
-          <div class="user-avatar">L</div>
-          Laura
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-      </div>
-    </header>
-
-    <!-- ===== PAGE CONTENT ===== -->
-    <main class="page-content">
-
-      <!-- Page header -->
-      <div class="page-header">
-        <div>
-          <h1 class="page-title">Editar fornecedor</h1>
-          <p class="page-subtitle">Modifique as informações do fornecedor</p>
-        </div>
-        <div class="page-header-actions">
-          <button class="btn btn-voltar" onclick="history.back()">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-            Voltar
-          </button>
-          <a href="cadastrofornecedor.html" class="btn btn-ver-clientes">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            Ver fornecedores cadastrados
-          </a>
-        </div>
-      </div>
-
-      <!-- Two-column layout -->
-      <div class="edit-layout">
-
-        <!-- ===== FORMULÁRIO ===== -->
-        <div class="form-col">
-
-          <!-- Seção: Informações gerais -->
-          <div class="form-section">
-            <div class="form-section-header">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              Informações gerais
+            <div>
+                <h1 class="tituloPagina">Editar fornecedor</h1>
+                <h3 class="subtituloPagina">
+                    Atualize e modifique as informações do fornecedor
+                </h3>
             </div>
-            <div class="form-body">
-              <div class="form-grid form-grid-2">
-                <div class="form-group">
-                  <label class="form-label">Nome do Fornecedor</label>
-                  <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite o nome completo" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">CNPJ</label>
-                  <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00"
-                         oninput="maskCNPJ(this)" maxlength="18" />
-                </div>
-              </div>
 
-              <div class="form-grid form-grid-2" style="margin-top:14px;">
-                <div class="form-group">
-                  <label class="form-label">Telefone</label>
-                  <div class="input-suffix-wrap">
-                    <input type="text" class="form-control" id="telefone" placeholder="(00) 00000-0000"
-                           oninput="maskTel(this)" maxlength="15" />
-                    <span class="input-suffix">
-                      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/carta.svg" alt="" />
+            <div class="botoesTopoEditarFornecedor">
+                <button type="button" class="botaoVoltar" onclick="window.history.back()">
+                    ← Voltar
+                </button>
+
+                <button type="button" class="botaoTabela" onclick="window.location.href='fornecedorescadastrado.html'">
+                    Ver fornecedores cadastrados
+                </button>
+            </div>
+
+        </div>
+
+        <div class="layoutEditarFornecedor">
+
+            <div class="areaEditarFornecedor">
+
+                <section class="formularioEditarFornecedor">
+
+                    <h2>Informações gerais</h2>
+
+                    <div class="linhaFormulario">
+                        <div class="campoFormulario">
+                            <label>Nome completo</label>
+                            <input type="text" id="editarNomeFornecedor" placeholder="Digite o nome do fornecedor">
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>CNPJ</label>
+                            <input type="text" id="editarCnpjFornecedor" placeholder="00.000.000/0001-00">
+                        </div>
+                    </div>
+
+                    <div class="linhaFormulario">
+                        <div class="campoFormulario">
+                            <label>Telefone</label>
+                            <input type="text" id="editarTelefoneFornecedor" placeholder="(00) 00000-0000">
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>E-mail</label>
+                            <input type="email" id="editarEmailFornecedor" placeholder="exemplo@gmail.com">
+                        </div>
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label>Razão social</label>
+                        <input type="text" id="editarRazaoSocialFornecedor" placeholder="Digite a razão social">
+                    </div>
+
+                    <hr class="linhaSeparadora">
+
+                    <h2>Endereço</h2>
+
+                    <div class="linhaFormulario quatroColunas">
+                        <div class="campoFormulario">
+                            <label>Estado</label>
+                            <select id="editarEstadoFornecedor">
+                                <option value="">Selecione...</option>
+                                <option value="PR">PR</option>
+                                <option value="SP">SP</option>
+                                <option value="SC">SC</option>
+                                <option value="RS">RS</option>
+                                <option value="RJ">RJ</option>
+                                <option value="MG">MG</option>
+                            </select>
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>Cidade</label>
+                            <select id="editarCidadeFornecedor">
+                                <option value="">Selecione...</option>
+                                <option value="Foz do Iguaçu">Foz do Iguaçu</option>
+                                <option value="Curitiba">Curitiba</option>
+                                <option value="São Paulo">São Paulo</option>
+                                <option value="Florianópolis">Florianópolis</option>
+                                <option value="Porto Alegre">Porto Alegre</option>
+                            </select>
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>Endereço</label>
+                            <input type="text" id="editarEnderecoFornecedor" placeholder="Digite o endereço">
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>Número</label>
+                            <input type="text" id="editarNumeroFornecedor" placeholder="123">
+                        </div>
+                    </div>
+
+                    <hr class="linhaSeparadora">
+
+                    <h2>Informações complementares</h2>
+
+                    <div class="linhaFormulario">
+                        <div class="campoFormulario">
+                            <label>Categoria de fornecimento</label>
+                            <select id="editarCategoriaFornecedor">
+                                <option value="">Selecione uma categoria...</option>
+                                <option value="Ervas e plantas">Ervas e plantas</option>
+                                <option value="Embalagens">Embalagens</option>
+                                <option value="Ingredientes naturais">Ingredientes naturais</option>
+                                <option value="Equipamentos">Equipamentos</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>Condições de pagamento</label>
+                            <input type="text" id="editarPagamentoFornecedor" placeholder="Ex: à vista, 30 dias, 10/30/45">
+                        </div>
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label>Observação</label>
+                        <textarea id="editarObservacaoFornecedor" rows="4" placeholder="Digite alguma observação sobre o fornecedor..."></textarea>
+                    </div>
+
+                    <div class="botoesFormulario">
+                        <button type="button" class="botaoCancelar">
+                            Cancelar
+                        </button>
+
+                        <button type="button" class="botaoSalvar">
+                            Salvar alterações
+                        </button>
+                    </div>
+
+                </section>
+
+                <section class="historicoFornecedor">
+
+                    <h2>Últimas atividades</h2>
+
+                    <table class="tabelaHistoricoFornecedor">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Usuário</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tbodyHistoricoFornecedor">
+                            <tr>
+                                <td>--/--/----</td>
+                                <td>Cadastro</td>
+                                <td>Fornecedor cadastrado no sistema</td>
+                                <td>Laura</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </section>
+
+            </div>
+
+            <aside class="barraLateralFornecedor">
+
+                <section class="perfilFornecedor">
+
+                    <div class="avatarGrande" id="avatarEditarFornecedor">
+                        FN
+                    </div>
+
+                    <h2 id="nomeResumoFornecedor">Nome do fornecedor</h2>
+
+                    <span class="statusFornecedor">
+                        Fornecedor ativo
                     </span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">E-mail</label>
-                  <input type="email" class="form-control" id="email" placeholder="Exemplo@email.com" />
-                </div>
-              </div>
 
-              <div class="form-grid" style="margin-top:14px;">
-                <div class="form-group">
-                  <label class="form-label">Razão social</label>
-                  <input type="text" class="form-control" id="razaoSocial" placeholder="Ex: Fazenda Boa Vista Ltda" />
-                </div>
-              </div>
+                    <hr>
 
-              <div class="form-grid" style="margin-top:14px;">
-                <div class="form-group">
-                  <label class="form-label">Lida</label>
-                  <input type="text" class="form-control" id="lida" placeholder="" />
-                </div>
-              </div>
-            </div>
-          </div>
+                    <p id="telefoneResumoFornecedor"><i class="iconeTelefone"></i> Telefone</p>
+                    <p id="emailResumoFornecedor"><i class="iconeCarta"></i> E-mail</p>
+                    <p id="enderecoResumoFornecedor"><i class="iconeCasa"></i> Endereço</p>
+                    <p id="categoriaResumoFornecedor"><i class="iconeTag"></i> Categoria</p>
 
-          <!-- Seção: Endereço -->
-          <div class="form-section">
-            <div class="form-section-header">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Endereço
-            </div>
-            <div class="form-body">
-              <div class="form-grid form-grid-4-addr">
-                <div class="form-group">
-                  <label class="form-label">Estado</label>
-                  <select class="form-control" id="estado" onchange="carregarCidades()">
-                    <option value="">Selecione...</option>
-                    <option value="AC">AC</option><option value="AL">AL</option>
-                    <option value="AM">AM</option><option value="AP">AP</option>
-                    <option value="BA">BA</option><option value="CE">CE</option>
-                    <option value="DF">DF</option><option value="ES">ES</option>
-                    <option value="GO">GO</option><option value="MA">MA</option>
-                    <option value="MG">MG</option><option value="MS">MS</option>
-                    <option value="MT">MT</option><option value="PA">PA</option>
-                    <option value="PB">PB</option><option value="PE">PE</option>
-                    <option value="PI">PI</option><option value="PR">PR</option>
-                    <option value="RJ">RJ</option><option value="RN">RN</option>
-                    <option value="RO">RO</option><option value="RR">RR</option>
-                    <option value="RS">RS</option><option value="SC">SC</option>
-                    <option value="SE">SE</option><option value="SP">SP</option>
-                    <option value="TO">TO</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Cidade</label>
-                  <select class="form-control" id="cidade">
-                    <option value="">Selecione...</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Endereço</label>
-                  <input type="text" class="form-control" id="endereco" placeholder="Ex: Rua das Flores" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Número</label>
-                  <input type="text" class="form-control" id="numero" placeholder="123" />
-                </div>
-              </div>
-            </div>
-          </div>
+                    <hr>
 
-          <!-- Seção: Informações complementares -->
-          <div class="form-section">
-            <div class="form-section-header">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              Informações complementares
-            </div>
-            <div class="form-body">
-              <div class="form-grid form-grid-2">
-                <div class="form-group">
-                  <label class="form-label">Categoria de fornecimento</label>
-                  <select class="form-control" id="categoria">
-                    <option value="">Selecione uma categoria...</option>
-                    <option value="Ervas e Plantas">Ervas e Plantas</option>
-                    <option value="Embalagens">Embalagens</option>
-                    <option value="Ingredientes Naturais">Ingredientes Naturais</option>
-                    <option value="Equipamentos">Equipamentos</option>
-                    <option value="Outros">Outros</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Condições de pagamento</label>
-                  <input type="text" class="form-control" id="pagamento" placeholder="Ex: 30 dias, À vista, 10/30/45 dias" />
-                </div>
-              </div>
+                    <p>Fornecedor desde:</p>
+                    <strong id="dataCadastroFornecedor">--/--/----</strong>
 
-              <div class="form-group" style="margin-top:14px;">
-                <label class="form-label">Observação</label>
-                <textarea class="form-control" id="observacao" rows="4"
-                  placeholder="Digite alguma observação sobre o fornecedor..."></textarea>
-              </div>
-            </div>
-          </div>
+                    <button type="button" class="botaoExcluir">
+                        Excluir fornecedor
+                    </button>
 
-          <!-- Ações do formulário -->
-          <div class="form-actions">
-            <button class="btn btn-cancelar" onclick="history.back()">Cancelar</button>
-            <button class="btn btn-salvar" onclick="salvarAlteracoes()">
-              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/certo.svg" alt="" />
-              Salvar alterações
-            </button>
-          </div>
+                </section>
 
-        </div><!-- /form-col -->
+                <section class="resumoFornecedor">
 
-        <!-- ===== PAINEL LATERAL ===== -->
-        <aside class="side-panel">
+                    <h3>Resumo do fornecedor</h3>
 
-          <!-- Card do fornecedor -->
-          <div class="supplier-info-card">
-            <div class="sic-head">
-              <div class="sic-avatar">??</div>
-              <div>
-                <div class="sic-name" id="sideNome">—</div>
-                <div class="sic-status">
-                  <span class="status-dot"></span>
-                  Ativo
-                </div>
-              </div>
-            </div>
-            <div class="sic-body">
-              <div class="sic-row">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.62 4.45 2 2 0 0 1 3.59 2.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-                <span id="sideTel">—</span>
-              </div>
-              <div class="sic-row">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <a href="#" id="sideEmail" class="sic-link">—</a>
-              </div>
-              <div class="sic-row">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span id="sideAddr">—</span>
-              </div>
-              <div class="sic-row">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <span>Cadastrado em<br><small>—</small></span>
-              </div>
-            </div>
-            <button class="btn btn-excluir-forn" onclick="openDeleteModal()">
-              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt="" />
-              Excluir fornecedor
-            </button>
-          </div>
+                    <div class="itemResumo">
+                        <span>Total de pedidos</span>
+                        <strong id="totalPedidosFornecedor">0</strong>
+                    </div>
 
-          <!-- Resumo do fornecedor -->
-          <div class="resumo-card">
-            <div class="resumo-title">Resumo do fornecedor</div>
-            <div class="resumo-grid">
-              <div class="resumo-row">
-                <span class="resumo-label">Total de pedidos</span>
-                <span class="resumo-value">—</span>
-              </div>
-              <div class="resumo-row">
-                <span class="resumo-label">Valor total em compras</span>
-                <span class="resumo-value green">—</span>
-              </div>
-              <div class="resumo-row">
-                <span class="resumo-label">Último pedido</span>
-                <span class="resumo-value">—</span>
-              </div>
-              <div class="resumo-row">
-                <span class="resumo-label">Status</span>
-                <span class="badge-ativo">Ativo</span>
-              </div>
-            </div>
-          </div>
+                    <div class="itemResumo">
+                        <span>Valor total em compras</span>
+                        <strong id="valorTotalFornecedor">R$ 0,00</strong>
+                    </div>
 
-        </aside>
-      </div><!-- /edit-layout -->
+                    <div class="itemResumo">
+                        <span>Último pedido</span>
+                        <strong id="ultimoPedidoFornecedor">--/--/----</strong>
+                    </div>
+
+                    <div class="itemResumo">
+                        <span>Status</span>
+                        <strong>Ativo</strong>
+                    </div>
+
+                </section>
+
+            </aside>
+
+        </div>
 
     </main>
-  </div><!-- /main -->
-</div><!-- /layout -->
 
-<!-- ===== MODAL EXCLUIR ===== -->
-<div class="modal-overlay" id="deleteModal">
-  <div class="modal">
-    <div class="modal-icon-ring">
-      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt=""
-           style="width:30px;filter:invert(27%) sepia(99%) saturate(2000%) hue-rotate(340deg);" />
-    </div>
-    <div class="modal-title">Excluir Fornecedor</div>
-    <p class="modal-subtitle">Tem certeza que deseja excluir este fornecedor?<br>Essa ação não pode ser desfeita.</p>
-    <div class="modal-supplier-card">
-      <div class="modal-initials">??</div>
-      <div class="modal-info">
-        <div class="modal-name">—</div>
-        <div class="modal-detail">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.62 4.45 2 2 0 0 1 3.59 2.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-          —
+    <dialog class="fundoModal fundoModalEditarFornecedor">
+
+        <div class="modalExcluir">
+
+            <div class="iconeModal">
+                <i class="iconeLixeira"></i>
+            </div>
+
+            <h2 class="tituloModal">Excluir fornecedor</h2>
+
+            <p class="textoModal">
+                Tem certeza que deseja excluir este fornecedor? Essa ação não pode ser desfeita.
+            </p>
+
+            <div class="cardModalReceita">
+
+                <div class="topoModal">
+
+                    <div class="bolinhaReceita">
+                        <span id="iniciaisFornecedorEditarModal">FN</span>
+                    </div>
+
+                    <h3 id="nomeFornecedorEditarModal">Nome do fornecedor</h3>
+
+                </div>
+
+                <div class="infosModal">
+
+                    <div class="info">
+                        <i class="iconeIdentidade"></i>
+                        <span id="cnpjFornecedorEditarModal">CNPJ</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="iconeTelefone"></i>
+                        <span id="telefoneFornecedorEditarModal">Telefone</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="iconeCarta"></i>
+                        <span id="emailFornecedorEditarModal">E-mail</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="alertaModal">
+                <i class="iconeAlerta"></i>
+                <span>
+                    Todas as informações e históricos relacionados a este fornecedor serão permanentemente apagados do sistema.
+                </span>
+            </div>
+
+            <div class="botoesModal">
+
+                <button type="button" class="botaoCancelarModal">
+                    Cancelar
+                </button>
+
+                <button type="button" class="botaoConfirmarExcluir">
+                    Excluir fornecedor
+                </button>
+
+            </div>
+
         </div>
-        <div class="modal-detail">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          —
-        </div>
-      </div>
-    </div>
-    <div class="modal-warning">
-      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/aviso.svg" alt="" style="width:16px;flex-shrink:0;" />
-      <span>Todas as informações e históricos relacionados a este fornecedor serão permanentemente apagados do sistema</span>
-    </div>
-    <div class="modal-actions">
-      <button class="btn btn-cancelar-modal" onclick="closeDeleteModal()">Cancelar</button>
-      <button class="btn btn-danger-modal" onclick="excluirFornecedor()">
-        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" alt=""
-             style="width:14px;filter:brightness(0) invert(1);" />
-        Excluir fornecedor
-      </button>
-    </div>
-  </div>
-</div>
 
-<!-- Toast estático -->
-<div class="toast" id="toast"></div>
+    </dialog>
 
-<!-- JS externo no fim do body — carrega depois do DOM -->
-<script src="editarfornecedor.js"></script>
-<script src="scriptMenuLateral.js"></script>
+    <script src="scriptCadastros.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
+
 </body>
 </html>

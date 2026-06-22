@@ -3,39 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="stylesabrina.css">
-<link rel="stylesheet" href="styleMenuLateral.css">
+    <link rel="stylesheet" href="styleMenuLateral.css" />
+    <link rel="stylesheet" href="styleReceitasCastradas.css" />
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 <title>Editar Receita</title>
 </head>
 
 <body>
 
-<header class="topoEstoque">
-    <a href="paineldeinicio.html" class="paginaPrincipal"></a>
-    <a href="#" class="LinkEstoque">Cadastros</a>
-    <a href="#" class="linkEstoqueProdutos"> > Receitas > Editar receita</a>
+    <header class="topoEstoque">
 
-    <div class="notificacao">
-        <i class="sino"></i>
-        <span class="bolinha"></span>
-    </div>
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="cadastroreceitas.html" class="primeiroCaminho"> > Cadastro > Receitas</a>
+                <a href="receitascadastradas.html" class="segundoCaminho"> > Receitas Cadastradas</a>
+                <a href="editarreceita.html" class="terceiroCaminho"> > editar receita</a>
+            </div>
 
-    <div class="PerfilUsuario">
-        <div class="avatar">
-            <span class="L">L</span>
-        </div>
+            <div class="notfUser">
 
-        <h2 class="nomeUsuario">Laura</h2>
-        <span class="seta">⌄</span>
-    </div>
-</header>
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
 
-<aside class="menuLateral">
+                </div>
 
-    <button id="botaoRetratil" class="botaoRetratil"></button>
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
 
-    <div class="logoMenuLateral">
-        <img src="Imagens/Logo.png" alt="Logo chás da laura">
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
+
+            <button id="botaoRetratil" class="botaoRetratil"></button>
+
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
             </div>
 
             <nav class="menu">
@@ -63,12 +93,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -102,7 +132,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -122,8 +152,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -132,95 +162,230 @@
 
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
-        </aside>
+    </aside>
 
-<main class="conteudoPrincipal">
+    <main class="conteudo">
 
-    <div class="topoPaginaReceita">
-        <div>
-            <h1 class="tituloPagina">Editar receita</h1>
-            <h3 class="subtituloPagina">Preencha as informações essenciais para cadastrar uma nova receita</h3>
-        </div>
+        <div class="topoPaginaEditarReceita">
 
-        <a href="receitascadastradas.html">
-            <button class="botaoTabela">Ver receitas cadastradas</button>
-        </a>
-    </div>
-
-    <section class="areaDoisPaineis">
-
-        <div class="conteinerTabela formularioEditar">
-
-            <label>Nome do produto</label>
-            <select class="campoGrande">
-                <option>Chá de camomila - lata 50g</option>
-            </select>
-
-            <div class="linhaForm2">
-                <div>
-                    <label>Rendimento da receita</label>
-                    <input type="number" value="1">
-                </div>
-
-                <div>
-                    <label>Unidade</label>
-                    <select>
-                        <option>Lata 50g</option>
-                    </select>
-                </div>
+            <div>
+                <h1 class="tituloPagina">Editar receita</h1>
+                <h3 class="subtituloPagina">Atualize e modifique as informações da receita</h3>
             </div>
 
-            <label>Validade</label>
-            <input type="text" placeholder="Ex: 10 dias" class="campoGrande">
+            <div class="botoesTopoEditarReceita">
+                <button type="button" class="botaoVoltar" onclick="window.history.back()">
+                    ← Voltar
+                </button>
 
-            <label>Descrição</label>
-            <textarea class="campoGrande" rows="5" placeholder="Descreva o insumo, característica, qualidade, origem, etc..."></textarea>
-
-            <div class="botoesFormulario">
-                <button class="btnVoltar">Cancelar</button>
-                <button class="btnVerde">Salvar receita</button>
+                <button type="button" class="botaoTabela" onclick="window.location.href='receitascadastradas.html'">
+                    Ver receitas cadastradas
+                </button>
             </div>
 
         </div>
 
-        <div class="ladoDireitoReceita">
+        <div class="layoutEditarReceita">
 
-            <div class="cardResumoReceita">
-                <div class="bolinhaReceita">R1</div>
+            <div class="areaEditarReceita">
 
-                <h3>Receita 1</h3>
+                <section class="formularioEditarReceita">
 
-                <p>Rendimento</p>
-                <strong>10 Latas - 50g</strong>
+                    <h2>Informações da receita</h2>
 
-                <p>Custo por unidade</p>
-                <strong>R$ 2,15</strong>
+                    <div class="campoFormulario">
+                        <label>Produto da receita</label>
+                        <select id="editarProdutoReceita"></select>
+                    </div>
 
-                <p>Custo total</p>
-                <strong>R$ 21,50</strong>
+                    <div class="linhaFormulario">
+                        <div class="campoFormulario">
+                            <label>Rendimento da receita</label>
+                            <input type="number" id="editarRendimentoReceita">
+                        </div>
 
-                <p>Cadastrado em 12/03/2026</p>
+                        <div class="campoFormulario">
+                            <label>Unidade</label>
+                            <select id="editarUnidadeReceita">
+                                <option value="lata 50g">Lata 50g</option>
+                                <option value="lata 30g">Lata 30g</option>
+                                <option value="lata 80g">Lata 80g</option>
+                                <option value="unidade">Unidade</option>
+                                <option value="caixa">Caixa</option>
+                            </select>
+                        </div>
+                    </div>
 
-                <button class="botaoExcluir">Excluir receita</button>
+                    <div class="campoFormulario">
+                        <label>Validade</label>
+                        <input type="text" id="editarValidadeReceita" placeholder="Ex: 10 dias">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label>Descrição</label>
+                        <textarea id="editarDescricaoReceita" rows="4"></textarea>
+                    </div>
+
+                    <h2>Insumos da receita</h2>
+
+                    <div class="listaInsumosReceita" id="listaInsumosReceita"></div>
+
+                    <button type="button" class="botaoAdicionarInsumo" id="botaoAdicionarInsumoReceita">
+                        + Adicionar insumo
+                    </button>
+
+                    <div class="botoesFormulario">
+                        <button type="button" class="botaoCancelar">Cancelar</button>
+                        <button type="button" class="botaoSalvar">Salvar alterações</button>
+                    </div>
+
+                </section>
+
+                <section class="historicoReceita">
+
+                    <h2>Últimas atividades</h2>
+
+                    <table class="tabelaHistoricoReceita">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Usuário</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tbodyHistoricoReceita"></tbody>
+                    </table>
+
+                </section>
+
             </div>
 
-            <div class="cardResumoVerde">
-                <h3>Resumo da receita</h3>
+            <aside class="barraLateralReceita">
 
-                <p>Total de insumos <strong>10</strong></p>
-                <p>Valor total <strong>R$ 150,00</strong></p>
-                <p>Última atualização <strong>18/09/2025</strong></p>
-                <p>Status <strong>Disponível</strong></p>
+                <section class="perfilReceita">
+
+                    <div class="avatarGrande" id="avatarEditarReceita">RC</div>
+
+                    <h2 id="nomeResumoReceita">Nome da receita</h2>
+
+                    <span class="statusReceita">Receita ativa</span>
+
+                    <hr>
+
+                    <p id="produtoResumoReceita"><i class="iconePrancheta"></i> Produto</p>
+                    <p id="rendimentoResumoReceita"><i class="iconeCaixa"></i> Rendimento</p>
+                    <p id="custoUnidadeResumoReceita"><i class="iconeMoedas"></i> Custo por unidade</p>
+                    <p id="custoTotalResumoReceita"><i class="iconeMoedas"></i> Custo total</p>
+
+                    <hr>
+
+                    <p>Receita desde:</p>
+                    <strong id="dataCadastroReceita">--/--/----</strong>
+
+                    <button type="button" class="botaoExcluir">Excluir receita</button>
+
+                </section>
+
+                <section class="resumoReceita">
+
+                    <h3>Resumo da receita</h3>
+
+                    <div class="itemResumo">
+                        <span>Total de insumos</span>
+                        <strong id="totalInsumosReceita">0</strong>
+                    </div>
+
+                    <div class="itemResumo">
+                        <span>Valor total</span>
+                        <strong id="valorTotalReceita">R$ 0,00</strong>
+                    </div>
+
+                    <div class="itemResumo">
+                        <span>Última atualização</span>
+                        <strong id="ultimaAtualizacaoReceita">--/--/----</strong>
+                    </div>
+
+                    <div class="itemResumo">
+                        <span>Status</span>
+                        <strong id="statusResumoReceita">Disponível</strong>
+                    </div>
+
+                </section>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <dialog class="fundoModal fundoModalEditarReceita">
+
+        <div class="modalExcluir">
+
+            <div class="iconeModal">
+                <i class="iconeLixeira"></i>
             </div>
 
-         </div>
+            <h2 class="tituloModal">Excluir receita</h2>
 
-    </section>
+            <p class="textoModal">
+                Tem certeza que deseja excluir esta receita? Essa ação não pode ser desfeita.
+            </p>
 
-</main>
+            <div class="cardModalReceita">
 
-<script src="app.js"></script>
-<script src="js/editarreceita.js"></script>
-<script src="scriptMenuLateral.js"></script>
+                <div class="topoModal">
+
+                    <div class="bolinhaReceita">
+                        <span id="iniciaisReceitaEditarModal">RC</span>
+                    </div>
+
+                    <h3 id="nomeReceitaEditarModal">Nome da receita</h3>
+
+                </div>
+
+                <div class="infosModal">
+
+                    <div class="info">
+                        <i class="iconePrancheta"></i>
+                        <span id="produtoReceitaEditarModal">Produto</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="iconeCaixa"></i>
+                        <span id="rendimentoReceitaEditarModal">Rendimento</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="iconeMoedas"></i>
+                        <span id="custoReceitaEditarModal">Custo total</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="alertaModal">
+                <i class="iconeAlerta"></i>
+                <span>
+                    Todas as informações e históricos relacionados a esta receita serão permanentemente apagados do sistema.
+                </span>
+            </div>
+
+            <div class="botoesModal">
+                <button type="button" class="botaoCancelarModal">Cancelar</button>
+                <button type="button" class="botaoConfirmarExcluir">Excluir receita</button>
+            </div>
+
+        </div>
+
+    </dialog>
+
+    <script src="scriptCadastros.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
+    
 </body>
 </html>

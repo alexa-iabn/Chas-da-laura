@@ -3,34 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="stylesabrina.css">
-<link rel="stylesheet" href="styleMenuLateral.css">
-<title>Parceiros Cadastrados</title>
+  <link rel="stylesheet" href="styleMenuLateral.css">
+  <link rel="stylesheet" href="styleReceitasCastradas.css" />
+  <link rel="stylesheet" href="stylePerfilUsuario.css">
+  <link rel="icon" type="image/png" href="Imagens/xicara.svg">
+  <title>Parceiros Cadastrados</title>
 </head>
 
 <body>
 
-<header class="topoEstoque">
-  <a href="paineldeinicio.html" class="paginaPrincipal"></a>
-  <a href="#" class="LinkEstoque">Cadastros</a>
-  <a href="#" class="linkEstoqueProdutos"> > Parceiros > Parceiros cadastrados</a>
+    <header class="topoEstoque">
 
-  <div class="notificacao">
-    <i class="sino"></i>
-  </div>
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="cadastroparceiros.html" class="primeiroCaminho"> > Cadastro > Parceiros</a>
+                <a href="parceiroscadastrados.html" class="segundoCaminho"> > Parceiros cadastrados</a>
+            </div>
 
-  <div class="PerfilUsuario">
-    <div class="avatar">L</div>
-    <h2 class="nomeUsuario">Laura</h2>
-  </div>
-</header>
+            <div class="notfUser">
 
-<aside class="menuLateral">
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
 
-    <button id="botaoRetratil" class="botaoRetratil"></button>
+                </div>
 
-    <div class="logoMenuLateral">
-        <img src="Imagens/Logo.png" alt="Logo chás da laura">
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
+
+            <button id="botaoRetratil" class="botaoRetratil"></button>
+
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
             </div>
 
             <nav class="menu">
@@ -58,12 +92,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -97,7 +131,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -117,8 +151,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -127,126 +161,147 @@
 
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
-        </aside>
+    </aside>
 
+    <main class="conteudo">
 
-<main class="conteudoPrincipal">
+        <div class="topoPaginaParceirosCadastrados">
 
-  <h1 class="tituloPagina">Parceiros cadastrados</h1>
-  <h3 class="subtituloPagina">Gerencie e visualize todos os parceiros do sistema</h3>
+            <div>
+                <h1 class="tituloPagina">Parceiros cadastrados</h1>
+                <h3 class="subtituloPagina">
+                    Gerencie e visualize todos os parceiros cadastrados no sistema
+                </h3>
+            </div>
 
-  <div class="conteinerTabela">
+            <div class="botoesTopoParceiros">
+                <button type="button" class="botaoVoltar" onclick="window.location.href='CadastroParceiros.html'">
+                    ← Voltar
+                </button>
 
-    <div class="topoCardsReceitas">
-      <div>
-        <a href="paineldeinicio.html"><button>← Voltar</button></a>
-        <button>☰ Lista</button>
-        <button>▣ Cards</button>
-      </div>
+                <button type="button" class="botaoLista botaoAtivo">
+                    Lista
+                </button>
 
-      <div>
-        <input type="text" placeholder="Buscar parceiro...">
-        <a href="cadastroparceiros.html"><button>+ Novo parceiro</button></a>
-      </div>
-    </div>
+                <button type="button" class="botaoCards">
+                    Cards
+                </button>
+            </div>
 
-    <table class="tabelaGeral">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>CPF/CNPJ</th>
-          <th>Telefone</th>
-          <th>Endereço</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
+        </div>
 
-      <tbody>
-        <tr>
-          <td>Maria Silva</td>
-          <td>123.456.789-00</td>
-          <td>(11) 98765-4321</td>
-          <td>Rua X, 134</td>
-          <td>
-            <a href="editarparceiro.html">✏️</a>
-            <button class="botaoAbrirModal">🗑️</button>
-          </td>
-        </tr>
+        <section class="conteinerTabela parceirosCadastrados">
 
-        <tr>
-          <td>João Oliveira</td>
-          <td>987.654.321-00</td>
-          <td>(11) 98765-4321</td>
-          <td>Rua X, 134</td>
-          <td>
-            <a href="editarparceiro.html">✏️</a>
-            <button class="botaoAbrirModal">🗑️</button>
-          </td>
-        </tr>
+            <div class="acoesTabelaParceirosCadastrados">
 
-        <tr>
-          <td>Ana Paula Santos</td>
-          <td>456.789.123-00</td>
-          <td>(11) 98765-4321</td>
-          <td>Rua X, 134</td>
-          <td>
-            <a href="editarparceiro.html">✏️</a>
-            <button class="botaoAbrirModal">🗑️</button>
-          </td>
-        </tr>
+                <input
+                    type="search"
+                    id="buscarParceiroCadastrado"
+                    placeholder="Buscar parceiro..."
+                >
 
-        <tr>
-          <td>Maria Silva</td>
-          <td>123.456.789-00</td>
-          <td>(11) 98765-4321</td>
-          <td>Rua X, 134</td>
-          <td>
-            <a href="editarparceiro.html">✏️</a>
-            <button class="botaoAbrirModal">🗑️</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+                <button type="button" class="botaoTabela" onclick="window.location.href='CadastroParceiros.html'">
+                    + Novo parceiro
+                </button>
 
-  </div>
+            </div>
 
-</main>
+            <table class="tabelaParceirosCadastrados">
 
-<div class="fundoModal">
-  <div class="modalExcluir">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF/CNPJ</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Endereço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
 
-    <div class="iconeModal">🗑️</div>
+                <tbody id="tbodyParceirosCadastrados"></tbody>
 
-    <h2>Excluir parceiro</h2>
+            </table>
 
-    <p>Tem certeza que deseja excluir este parceiro?</p>
-    <p>Essa ação não pode ser desfeita.</p>
+        </section>
 
-    <div class="cardModalReceita">
-      <div class="bolinhaReceita">MS</div>
+        <section class="gradeParceiros"></section>
 
-      <div>
-        <h3>Maria Silva</h3>
-        <p>📞 (11) 98765-4321</p>
-        <p>✉️ maria.silva@gmail.com</p>
-        <p>📍 Rua X, 134 - Foz do Iguaçu - PR</p>
-      </div>
-    </div>
+    </main>
 
-    <div class="alertaModal">
-      ⚠️ Todas as informações e históricos relacionados a este parceiro serão permanentemente apagados do sistema.
-    </div>
+    <dialog class="fundoModal fundoModalParceiroCadastrado">
 
-    <div class="botoesModal">
-      <button class="botaoCancelar">Cancelar</button>
-      <button class="botaoConfirmarExcluir">Excluir parceiro</button>
-    </div>
+        <div class="modalExcluir">
 
-  </div>
-</div>
+            <div class="iconeModal">
+                <i class="iconeLixeira"></i>
+            </div>
 
-<script src="app.js"></script>
-<script src="js/parceiroscadastrados.js"></script>
-<script src="scriptMenuLateral.js"></script>
+            <h2 class="tituloModal">Excluir parceiro</h2>
+
+            <p class="textoModal">
+                Tem certeza que deseja excluir este parceiro? Essa ação não pode ser desfeita.
+            </p>
+
+            <div class="cardModalReceita">
+
+                <div class="topoModal">
+
+                    <div class="bolinhaReceita">
+                        <span id="iniciaisParceiroCadastradoModal">PC</span>
+                    </div>
+
+                    <h3 id="nomeParceiroCadastradoModal">Nome do parceiro</h3>
+
+                </div>
+
+                <div class="infosModal">
+
+                    <div class="info">
+                        <i class="iconeIdentidade"></i>
+                        <span id="cpfParceiroCadastradoModal">CPF/CNPJ</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="iconeTelefone"></i>
+                        <span id="telefoneParceiroCadastradoModal">Telefone</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="iconeCarta"></i>
+                        <span id="emailParceiroCadastradoModal">E-mail</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="alertaModal">
+                <i class="iconeAlerta"></i>
+                <span>
+                    Todas as informações e históricos relacionados a este parceiro serão permanentemente apagados do sistema.
+                </span>
+            </div>
+
+            <div class="botoesModal">
+
+                <button type="button" class="botaoCancelarModal">
+                    Cancelar
+                </button>
+
+                <button type="button" class="botaoConfirmarExcluir">
+                    Excluir parceiro
+                </button>
+
+            </div>
+
+        </div>
+
+    </dialog>
+
+    <script src="scriptCadastros.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
+    
 </body>
 </html>

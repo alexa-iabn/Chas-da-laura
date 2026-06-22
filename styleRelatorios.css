@@ -385,3 +385,163 @@ table{
 }
 
 
+.iconeAvisoDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/aviso.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeXDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/xCirculo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeEstrelaDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/estrela.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconePilhaDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/pilha.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeSetaCimaDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/setaCima.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeSetaBaixoDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/setaBaixo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeGraficoDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/graficoRedondo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+
+.iconeTicketDemo{
+    width: 6vh;
+    height: 6vh;
+    margin: 1vh;
+
+    display: block;
+
+    background-image: url(Imagens/etiqueta.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter:
+    invert(19%)
+    sepia(33%)
+    saturate(1015%)
+    hue-rotate(96deg)
+    brightness(94%)
+    contrast(93%);
+}
+

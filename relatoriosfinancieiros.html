@@ -4,34 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios de Finanças</title>
-    <link rel="stylesheet" href="stylesabrina.css">
-    <link rel="stylesheet" href="styleMenuLateral.css">
+    <link rel="stylesheet" href="styleEstoque.css">
+    <link rel="stylesheet" href="styleRelatorios.css">
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 
 <body>
 
-<header class="topoEstoque">
-    <a href="paineldeinicio.html" class="paginaPrincipal"></a>
-    <a href="#" class="LinkEstoque">Relatórios</a>
+    <header class="topoEstoque">
 
-    <div class="notificacao">
-        <i class="sino"></i>
-        <span class="bolinha"></span>
-    </div>
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="painelrelatorios.html" class="primeiroCaminho"> > Relatórios</a>
+                <a href="relatoriosfinancieiros.html" class="segundoCaminho"> > Relatório Financeiro</a>
+            </div>
 
-    <div class="PerfilUsuario">
-        <div class="avatar"><span class="L">L</span></div>
-        <h2 class="nomeUsuario">Laura</h2>
-        <span class="seta">⌄</span>
-    </div>
-</header>
+            <div class="notfUser">
 
-<aside class="menuLateral">
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
 
-    <button id="botaoRetratil" class="botaoRetratil"></button>
+                </div>
 
-    <div class="logoMenuLateral">
-        <img src="Imagens/Logo.png" alt="Logo chás da laura">
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
+
+            <button id="botaoRetratil" class="botaoRetratil"></button>
+
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
             </div>
 
             <nav class="menu">
@@ -59,12 +92,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -89,7 +122,7 @@
                     </li>
                     
                     <li class="blocoOpcao">
-                        <a href="PaginaRelatorios.html" class="itemMenu">
+                        <a href="painelrelatorios.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeGrafico"></span>
                             </div>
@@ -98,7 +131,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -118,8 +151,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -128,240 +161,183 @@
 
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
-        </aside>
-<main class="conteudoPrincipal">
+    </aside>
 
-    <section class="cabecalhoPagina">
-        <h1 class="tituloPagina">Relatórios de Finanças</h1>
-        <h3 class="subtituloPagina">
-            Acompanhe o desempenho financeiro da empresa no período selecionado
-        </h3>
-    </section>
+    <main class="conteudo">
 
-    <section class="painelFiltrosRelatorio">
-        <div>
-            <label>Período</label>
-            <select>
-                <option>01/05/2025 - 31/05/2026</option>
-            </select>
+        <div class="titulos">
+            <h1 class="tituloPagina">Relatório financeiro</h1>
+            <h3 class="subtituloPagina">Acompanhe entradas, saídas, lucro e margem no período selecionado</h3>
         </div>
 
-        <div>
-            <label>Categoria</label>
-            <select>
-                <option>Todas as categorias</option>
-            </select>
-        </div>
+        <section class="conteinerRelatorios">
 
-        <div>
-            <label>Forma de pagamento</label>
-            <select>
-                <option>Todos os tipos</option>
-            </select>
-        </div>
+            <div class="conteinerFiltros">
 
-        <button class="btnVerde">Filtrar</button>
-        <button class="btnVoltar">Limpar Filtros</button>
-    </section>
+                <div class="conjuntoFiltros">
 
-    <section class="cardsFinanceiros">
-        <div class="cardFinanceiro">
-            <div class="iconeFinanceiro verde">⌂</div>
-            <div>
-                <p>Receita total</p>
-                <h2>R$ 48.756,30</h2>
-                <span>Valor total de vendas</span>
+                    <div class="filtro">
+                        <span>Período</span>
+
+                        <div class="periodo">
+                            <input type="date" class="campoData" id="dataInicioFinanceiro">
+                            <input type="date" class="campoData" id="dataFimFinanceiro">
+                        </div>
+                    </div>
+
+                    <div class="filtro">
+                        <span>Categoria</span>
+                        <select class="campoData" id="filtroCategoriaFinanceiro">
+                            <option>insumos</option>
+                            <option>Produtos</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="acoesFiltro">
+                    <button class="botaoFiltrar" id="botaoFiltrarFinanceiro">
+                        <i class="iconeFiltro"></i>
+                        <span>Filtrar</span>
+                    </button>
+
+                    <button class="botaoLimparFiltro" id="botaoLimparFiltroFinanceiro">
+                        <i class="iconeCarregar"></i>
+                        <span>Limpar Filtro</span>
+                    </button>
+                </div>
+
             </div>
-        </div>
 
-        <div class="cardFinanceiro">
-            <div class="iconeFinanceiro vermelho">⌄</div>
-            <div>
-                <p>Despesas totais</p>
-                <h2 class="vermelhoTexto">R$ 22.413,00</h2>
-                <span>Valor total em despesas</span>
+            <div class="demostracoes" id="demostracoesFinanceiro">
+
+                <div class="demo">
+                    <div class="iconeDemo">
+                        <span class="iconeMoedas"></span>
+                    </div>
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Receita total</span>
+                        <span class="demoTitulo">R$ 0,00</span>
+                        <span class="demoTextoNormal">valor total de vendas</span>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="iconeDemo">
+                        <span class="iconeSetaBaixo"></span>
+                    </div>
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Despesas totais</span>
+                        <span class="demoTitulo">R$ 0,00</span>
+                        <span class="demoTextoNormal">valor total em despesas</span>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="iconeDemo">
+                        <span class="iconeGraficoDemo"></span>
+                    </div>
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Lucro líquido</span>
+                        <span class="demoTitulo">R$ 0,00</span>
+                        <span class="demoTextoNormal">total em lucro líquido</span>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="iconeDemo">
+                        <span class="iconeTicketDemo"></span>
+                    </div>
+                    <div class="textoDemo">
+                        <span class="demoSemiTitulo">Margem de lucro</span>
+                        <span class="demoTitulo">0%</span>
+                        <span class="demoTextoNormal">média do período</span>
+                    </div>
+                </div>
+
             </div>
-        </div>
 
-        <div class="cardFinanceiro">
-            <div class="iconeFinanceiro verde">▣</div>
-            <div>
-                <p>Lucro líquido</p>
-                <h2>R$ 21.385,33</h2>
-                <span>Total em lucro líquido</span>
+            <div class="graficos">
+
+                <div class="cardGrafico">
+                    <div class="topoGrafico">
+                        <h2 class="tituloGrafico">Entradas x Saídas</h2>
+                        <a href="">
+                            <button class="olharTabela"></button>
+                        </a>
+                    </div>
+
+                    <canvas class="graficoEntradasSaidasFinanceiro"></canvas>
+                </div>
+
+                <div class="cardGrafico">
+                    <div class="topoGrafico">
+                        <h2 class="tituloGrafico">Evolução do faturamento</h2>
+                        <a href="">
+                            <button class="olharTabela"></button>
+                        </a>
+                    </div>
+
+                    <canvas class="graficoEvolucaoFaturamentoFinanceiro"></canvas>
+                </div>
+
+                <div class="cardGrafico">
+                    <div class="topoGrafico">
+                        <h2 class="tituloGrafico">Distribuição de despesas</h2>
+                        <a href="">
+                            <button class="olharTabela"></button>
+                        </a>
+                    </div>
+
+                    <canvas class="graficoDespesasFinanceiro"></canvas>
+                </div>
+
             </div>
-        </div>
 
-        <div class="cardFinanceiro">
-            <div class="iconeFinanceiro verde">◴</div>
-            <div>
-                <p>Margem de lucro</p>
-                <h2>57,0%</h2>
-                <span>Média da margem de lucro</span>
+            <div class="conteinerTabela">
+
+                <div class="tituloTabela">
+                    <h2>Resumo financeiro</h2>
+                </div>
+
+                <table class="tabela tabelaRelatorioFinanceiro tabelaGeral">
+
+                    <thead class="topoTabelaVerdadeira">
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Entradas</th>
+                            <th>% entradas</th>
+                            <th>Saídas</th>
+                            <th>% saídas</th>
+                            <th>Saldo</th>
+                            <th>% saldo</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Vendas</td>
+                            <td>R$ 0,00</td>
+                            <td>0%</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R$ 0,00</td>
+                            <td>0%</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
             </div>
-        </div>
-    </section>
 
-<section class="graficosRelatorio">
+        </section>
 
-    <div class="cardGrafico">
-        <div class="cabecalhoGrafico">
-            <h4>Entradas x Saídas (R$)</h4>
-            <button class="btnDescargar">⇩</button>
-        </div>
+    </main>
 
-        <canvas id="graficoEntradasSaidas"></canvas>
-
-        <div class="resumoGrafico">
-            <div class="resumoVerde">
-                <span>Total de entradas</span>
-                <strong>R$ 52.230,80</strong>
-            </div>
-            <div class="resumoVermelho">
-                <span>Total de saídas</span>
-                <strong>R$ 22.413,20</strong>
-            </div>
-            <div class="resumoAzul">
-                <span>Saldo do período</span>
-                <strong>R$ 29.817,60</strong>
-            </div>
-        </div>
-    </div>
-
-    <div class="cardGrafico">
-        <div class="cabecalhoGrafico">
-            <h4>Evolução do faturamento (R$)</h4>
-            <button class="btnDescargar">⇩</button>
-        </div>
-
-        <canvas id="graficoFaturamento"></canvas>
-
-        <div class="resumoGrafico">
-            <div class="resumoVerde">
-                <span>Maior faturamento</span>
-                <strong>R$ 21.000,00</strong>
-            </div>
-            <div class="resumoAzul">
-                <span>Média mensal</span>
-                <strong>R$ 15.400,00</strong>
-            </div>
-            <div class="resumoVerde">
-                <span>Menor faturamento</span>
-                <strong>R$ 9.000,00</strong>
-            </div>
-        </div>
-    </div>
-
-    <div class="cardGrafico">
-        <div class="cabecalhoGrafico">
-            <h4>Distribuição de despesas (R$)</h4>
-            <button class="btnDescargar">⇩</button>
-        </div>
-
-        <canvas id="graficoDespesas"></canvas>
-
-        <div class="resumoGrafico">
-            <div class="resumoVerde">
-                <span>Maior despesa</span>
-                <strong>R$ 9.842,00</strong>
-            </div>
-            <div class="resumoVermelho">
-                <span>Menor despesa</span>
-                <strong>R$ 1.489,00</strong>
-            </div>
-            <div class="resumoAzul">
-                <span>Total despesas</span>
-                <strong>R$ 22.413,00</strong>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-    <section class="resumoFinanceiro">
-        <h3>Resumo Financeiro</h3>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Categoria</th>
-                    <th>Entradas (R$)</th>
-                    <th>%</th>
-                    <th>Saídas (R$)</th>
-                    <th>%</th>
-                    <th>Saldo (R$)</th>
-                    <th>%</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Vendas</td>
-                    <td>R$ 44.756,30</td>
-                    <td>100%</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>R$ 44.756,30</td>
-                    <td>162%</td>
-                </tr>
-
-                <tr class="linhaVerde">
-                    <td>Total de entradas</td>
-                    <td>R$ 48.756,30</td>
-                    <td>100%</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>R$ 48.756,30</td>
-                    <td>163%</td>
-                </tr>
-
-                <tr>
-                    <td>Custo de produção</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>R$ 9.842,00</td>
-                    <td>43%</td>
-                    <td>-R$ 9.842,00</td>
-                    <td>-33%</td>
-                </tr>
-
-                <tr>
-                    <td>Despesas operacionais</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>R$ 7.420,00</td>
-                    <td>33%</td>
-                    <td>-R$ 7.420,00</td>
-                    <td>-30%</td>
-                </tr>
-
-                <tr class="linhaVermelha">
-                    <td>Total de saídas</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>R$ 17.262,00</td>
-                    <td>100%</td>
-                    <td>-R$ 17.262,00</td>
-                    <td>-63%</td>
-                </tr>
-
-                <tr class="linhaAzul">
-                    <td>Saldo do período</td>
-                    <td>R$ 48.756,30</td>
-                    <td>-</td>
-                    <td>R$ 17.262,00</td>
-                    <td>-</td>
-                    <td>R$ 25.494,30</td>
-                    <td>100%</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-</main>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="graficosabrina.js"></script>
-<script src="scriptMenuLateral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scriptRelatorios.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
 
 </body>
 </html>

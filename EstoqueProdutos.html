@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de produtos</title>
     <link rel="stylesheet" href="styleEstoque.css">
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
@@ -12,7 +14,7 @@
 
             <div class="caminho">
                 <a href="paineldeinicio.html" class="paginaPrincipal"></a>
-                <a href="EstoqueProdutos.html" class="primeiroCaminho"> > Estoque > Estoque Produtos </a>
+                <a href="EstoqueProdutos.html" class="primeiroCaminho"> > Estoque > Produtos</a>
             </div>
 
             <div class="notfUser">
@@ -23,26 +25,43 @@
 
                 </div>
 
-                <div class="PerfilUsuario">
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
 
                     <div class="avatar">
-                        <span class="L"> L </span>
+                        <span id="iniciaisUsuario">L</span>
                     </div>
 
-                    <h2 class="nomeUsuario">Laura</h2>
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
 
                     <span class="seta">⌄</span>
 
-                </div>
-            </div>
-        </header>
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
 
-        <aside class="menuLateral">
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
 
             <button id="botaoRetratil" class="botaoRetratil"></button>
 
             <div class="logoMenuLateral">
-                <img src="Imagens/Logo.png"  alt="Logo chás da laura">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
             </div>
 
             <nav class="menu">
@@ -71,8 +90,8 @@
 
                             <ul class="subMenu">
                                 <li><a href="cadastroclientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
                                 <li><a href="cadastroprodutos.html">Produtos</a></li>
                                 <li><a href="cadastroreceitas.html">Receitas</a></li>
                                 <li><a href="cadastroparceiros.html">parceiros</a></li>
@@ -109,7 +128,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -317,6 +336,9 @@
                 </div>
             </section>
         </main>
+
         <script src="arquivo.js"></script>
+        <script src="scriptPerfilUsuario.js"></script>
+        
 </body>
 </html>

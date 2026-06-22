@@ -6,30 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Clientes</title>
     <link rel="stylesheet" href="styleMenuLateral.css">
-    <link rel="stylesheet" href="styleclientes.css">
-    
+    <link rel="stylesheet" href="styleReceitasCastradas.css">
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 
 <body>
 
-<header class="topoEstoque">
-        <div class="caminho">
-            <a href="paineldeinicio.html">Início</a>
-            <span>&gt;</span>
-            <a href="#" class="linkEstoqueProdutos">Relatórios de Produção</a>
-        </div>
-        
-        <div class="notfUser">
-            <div class="notificacao">
-                <span class="sino"></span>
-                <span class="bolinha"></span>
+    <header class="topoEstoque">
+
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="cadastroclientes.html" class="primeiroCaminho"> > Cadastro > Cliente</a>
             </div>
-            <div class="PerfilUsuario">
-                <div class="avatar">L</div>
-                <span class="nomeUsuario">Laura</span>
-                <span class="seta">▼</span>
+
+            <div class="notfUser">
+
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
+
+                </div>
+
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
             </div>
-        </div>
     </header>
 
     <aside class="menuLateral">
@@ -44,7 +71,7 @@
                 <ul>
 
                     <li class="blocoOpcao">
-                        <a href="paginaInicial.html" class="itemMenu">
+                        <a href="paineldeinicio.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeCasa"></span>
                             </div>
@@ -66,9 +93,9 @@
 
                             <ul class="subMenu">
                                 <li><a href="cadastroclientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
                                 <li><a href="cadastroreceitas.html">Receitas</a></li>
                                 <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
@@ -95,7 +122,7 @@
                     </li>
                     
                     <li class="blocoOpcao">
-                        <a href="PaginaRelatorios.html" class="itemMenu">
+                        <a href="painelrelatorios.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeGrafico"></span>
                             </div>
@@ -104,7 +131,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -134,127 +161,155 @@
 
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
-        </aside>
-<main>
+    </aside>
+    
+    <main class="conteudo">
 
-    <div class="topoPaginaReceita">
-
-        <div>
-
-            <h1 class="tituloPagina">
-                Cadastro de cliente
-            </h1>
-
-            <h3 class="subtituloPagina">
-                Preencha as informações essenciais para cadastrar um novo cliente
-            </h3>
-
-        </div>
-
-        <a href="clientescadastrados.html">
-
-            <button class="botaoTabela">
-                Ver clientes cadastrados
-            </button>
-
-        </a>
-
-    </div>
-
-    <section class="conteinerTabela formularioClientes">
-
-        <div class="linhaFormulario">
+        <div class="topoPaginaReceita">
 
             <div>
 
-                <label>Nome Completo</label>
+                <h1 class="tituloPagina">
+                    Cadastro de cliente
+                </h1>
+
+                <h3 class="subtituloPagina">
+                    Preencha as informações essenciais para cadastrar um novo cliente
+                </h3>
+
+            </div>
+
+            <a href="clientescadastrados.html">
+
+                <button class="botaoTabela">
+                    Ver clientes cadastrados
+                </button>
+
+            </a>
+
+        </div>
+
+        <section class="conteinerTabela formularioClientes">
+
+            <div class="linhaFormulario">
+
+                <div>
+
+                    <label>Nome Completo</label>
+
+                    <input
+                        type="text"
+                        placeholder="Digite seu nome completo"
+                    >
+
+                </div>
+
+                <div>
+
+                    <label>CPF/CNPJ</label>
+
+                    <input
+                        type="text"
+                        placeholder="000.000.000-00"
+                    >
+
+                </div>
+
+            </div>
+
+            <div class="linhaFormulario">
+
+                <div>
+
+                    <label>Telefone</label>
+
+                    <input
+                        type="tel"
+                        placeholder="(00) 00000-0000"
+                    >
+
+                </div>
+
+                <div>
+
+                    <label>E-mail</label>
+
+                    <input
+                        type="email"
+                        placeholder="exemplo@gmail.com"
+                    >
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <label>Endereço</label>
 
                 <input
                     type="text"
-                    placeholder="Digite seu nome completo"
+                    placeholder="Digite seu endereço"
                 >
 
             </div>
 
             <div>
 
-                <label>CPF/CNPJ</label>
+                <label>Observação</label>
 
-                <input
-                    type="text"
-                    placeholder="000.000.000-00"
-                >
-
-            </div>
-
-        </div>
-
-        <div class="linhaFormulario">
-
-            <div>
-
-                <label>Telefone</label>
-
-                <input
-                    type="tel"
-                    placeholder="(00) 00000-0000"
-                >
+                <textarea
+                    class="campoGrande"
+                    rows="4"
+                    placeholder="Digite alguma observação sobre o cliente..."
+                ></textarea>
 
             </div>
 
-            <div>
+            <div class="botoesFormulario">
 
-                <label>E-mail</label>
+                <button class="botaoCancelar">
+                    Cancelar
+                </button>
 
-                <input
-                    type="email"
-                    placeholder="exemplo@gmail.com"
-                >
+                <button class="botaoSalvar">
+                    Salvar cliente
+                </button>
 
             </div>
 
-        </div>
+        </section>
 
-        <div>
+        <section class="tabelaClientes">
 
-            <label>Endereço</label>
+            <h2>Clientes cadastrados</h2>
 
-            <input
-                type="text"
-                placeholder="Digite seu endereço"
-            >
+            <table>
 
-        </div>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF/CNPJ</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Endereço</th>
+                    </tr>
+                </thead>
 
-        <div>
+                <tbody id="tbodyClientes">
 
-            <label>Observação</label>
+                </tbody>
 
-            <textarea
-                class="campoGrande"
-                rows="4"
-                placeholder="Digite alguma observação sobre o cliente..."
-            ></textarea>
+            </table>
 
-        </div>
+        </section>
 
-        <div class="botoesFormulario">
+    </main>
 
-            <button class="botaoCancelar">
-                Cancelar
-            </button>
-
-            <button class="botaoSalvar">
-                Salvar cliente
-            </button>
-
-        </div>
-
-    </section>
-
-</main>
-<script src="clientes.js"></script>
+    <script src="scriptCadastros.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
 
 </body>
 </html>
-```
+

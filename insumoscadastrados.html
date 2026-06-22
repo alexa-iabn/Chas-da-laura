@@ -4,17 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Insumos Cadastrados — Chás da Laura</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styleMenuLateral.css" />
-  <link rel="stylesheet" href="styleinsumosmatheus.css" />
+  <link rel="stylesheet" href="styleReceitasCastradas.css" />
+  <link rel="stylesheet" href="stylePerfilUsuario.css">
+  <link rel="icon" type="image/png" href="Imagens/xicara.svg">
   
 </head>
 
 <body>
-<div class="layout">
 
-  <aside class="menuLateral">
+    <header class="topoEstoque">
+
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="cadastroinsumos.html" class="primeiroCaminho"> > Cadastro > Insumos</a>
+                <a href="insumoscadastrados.html" class="segundoCaminho"> > Insumos cadastrados</a>
+            </div>
+
+            <div class="notfUser">
+
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
+
+                </div>
+
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
 
             <button id="botaoRetratil" class="botaoRetratil"></button>
 
@@ -26,7 +72,7 @@
                 <ul>
 
                     <li class="blocoOpcao">
-                        <a href="paginaInicial.html" class="itemMenu">
+                        <a href="paineldeinicio.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeCasa"></span>
                             </div>
@@ -47,12 +93,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -77,7 +123,7 @@
                     </li>
                     
                     <li class="blocoOpcao">
-                        <a href="PaginaRelatorios.html" class="itemMenu">
+                        <a href="painelrelatorios.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeGrafico"></span>
                             </div>
@@ -86,7 +132,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -106,8 +152,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -116,175 +162,147 @@
 
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
-        </aside>
+    </aside>
 
 
-  <!-- ── MAIN ── -->
-  <div class="main">
+    <main class="conteudo">
 
-    <!-- TOPBAR -->
-    <header class="topbar">
-      <div class="topbar-left">
-        <button class="hamburger-btn" aria-label="Menu" onclick="toggleSidebar()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <line x1="3" y1="12" x2="21" y2="12"/>
-            <line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-        </button>
-        <nav class="breadcrumb">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/casa.svg" width="15" height="15" alt="" onerror="this.style.display='none'" />
-          <a href="#">Cadastros</a>
-          <span class="sep">›</span>
-          <a href="#">Insumos</a>
-          <span class="sep">›</span>
-          <span class="current">Insumos cadastrados</span>
-        </nav>
-      </div>
-      <div class="topbar-right">
-        <button class="bell-btn" aria-label="Notificações">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/sino.svg" width="18" height="18" alt="" onerror="this.style.display='none'" />
-          <span class="bell-dot"></span>
-        </button>
-        <div class="user-badge">
-          <div class="user-avatar">L</div>
-          Laura
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-        </div>
-      </div>
-    </header>
+        <div class="topoPaginaInsumosCadastrados">
 
-    <!-- PAGE CONTENT -->
-    <main class="page-content">
-
-      <!-- Page Header -->
-      <div class="page-header">
-        <div>
-          <h1 class="page-title">Insumos cadastrados</h1>
-          <p class="page-subtitle">Gerencie e visualize todos os insumos do sistema</p>
-        </div>
-        <a href="CadastroInsumos.html" class="btn-back">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="15 18 9 12 15 6"/>
-          </svg>
-          Voltar
-        </a>
-      </div>
-
-      <!-- Toolbar -->
-      <div class="toolbar">
-        <div class="search-wrap">
-          <span class="search-icon">
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg" width="14" height="14" alt="" onerror="this.style.display='none'" />
-          </span>
-          <input id="searchInput" type="text" placeholder="Buscar insumo..." oninput="filterData()" />
-        </div>
-        <div class="toolbar-right">
-          <div class="view-toggle">
-            <button class="view-btn active" id="btnLista" onclick="setView('lista')">
-              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lista.svg" width="13" height="13" alt="" onerror="this.style.display='none'" />
-              Lista
-            </button>
-            <button class="view-btn" id="btnCards" onclick="setView('cards')">
-              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/verTabela.svg" width="13" height="13" alt="" onerror="this.style.display='none'" />
-              Cards
-            </button>
-          </div>
-          <button class="btn-primary" onclick="location.href='CadastroInsumos.html'">
-            <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/mais.svg" width="14" height="14" alt="" onerror="this.style.display='none'" />
-            Novo insumo
-          </button>
-        </div>
-      </div>
-
-      <!-- LIST VIEW -->
-      <div id="listaView">
-        <div class="table-section">
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Nome do Insumo</th>
-                  <th>Categoria</th>
-                  <th>Quantidade</th>
-                  <th>Fornecedor</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody id="tableBody"></tbody>
-            </table>
-            <div class="empty-state" id="emptyList">
-              <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg" width="40" height="40" alt="" onerror="this.style.display='none'" />
-              <p>Nenhum insumo encontrado.</p>
+            <div>
+                <h1 class="tituloPagina">Insumos cadastrados</h1>
+                <h3 class="subtituloPagina">
+                    Gerencie e visualize todos os insumos cadastrados no sistema
+                </h3>
             </div>
-          </div>
-          <div class="pagination">
-            <span id="paginationInfo"></span>
-            <div class="pagination-btns" id="paginationBtns"></div>
-          </div>
-        </div>
-      </div>
 
-      <!-- CARDS VIEW -->
-      <div id="cardsView" style="display:none">
-        <div class="cards-grid" id="cardsGrid"></div>
-        <div class="empty-state" id="emptyCards">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lupa.svg" width="40" height="40" alt="" onerror="this.style.display='none'" />
-          <p>Nenhum insumo encontrado.</p>
+            <div class="botoesTopoInsumos">
+                <button type="button" class="botaoVoltar" onclick="window.location.href='cadastroinsumos.html'">
+                    ← Voltar
+                </button>
+
+                <button type="button" class="botaoLista botaoAtivo">
+                    Lista
+                </button>
+
+                <button type="button" class="botaoCards">
+                    Cards
+                </button>
+            </div>
+
         </div>
-      </div>
+
+        <section class="conteinerTabela insumosCadastrados">
+
+            <div class="acoesTabelaInsumosCadastrados">
+
+                <input
+                    type="search"
+                    id="buscarInsumoCadastrado"
+                    placeholder="Buscar insumo..."
+                >
+
+                <button type="button" class="botaoTabela" onclick="window.location.href='cadastroinsumos.html'">
+                    + Novo insumo
+                </button>
+
+            </div>
+
+            <table class="tabelaInsumosCadastrados">
+
+                <thead>
+                    <tr>
+                        <th>Nome do insumo</th>
+                        <th>Categoria</th>
+                        <th>Quantidade</th>
+                        <th>Fornecedor</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbodyInsumosCadastrados"></tbody>
+
+            </table>
+
+        </section>
+
+        <section class="gradeInsumos"></section>
 
     </main>
-  </div>
-</div>
 
-<!-- ── DELETE MODAL ── -->
-<div class="modal-overlay" id="deleteModal">
-  <div class="modal">
-    <div class="modal-icon-ring">
-      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" width="32" height="32" alt="" onerror="this.style.display='none'" />
-    </div>
-    <div class="modal-title">Excluir Insumo</div>
-    <p class="modal-subtitle">Tem certeza que deseja excluir este Insumo?<br>Essa ação não pode ser desfeita.</p>
+    <dialog class="fundoModal fundoModalInsumo">
 
-    <div class="modal-insumo-card">
-      <div class="modal-initials" id="modalInitials">FC</div>
-      <div class="modal-info">
-        <div class="modal-name" id="modalName">—</div>
-        <div class="modal-detail">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/etiqueta.svg" width="13" height="13" alt="" onerror="this.style.display='none'" />
-          <span id="modalCat">—</span>
+        <div class="modalExcluir">
+
+            <div class="iconeModal">
+                <i class="iconeLixeira"></i>
+            </div>
+
+            <h2 class="tituloModal">Excluir insumo</h2>
+
+            <p class="textoModal">
+                Tem certeza que deseja excluir este insumo? Essa ação não pode ser desfeita.
+            </p>
+
+            <div class="cardModalReceita">
+
+                <div class="topoModal">
+
+                    <div class="bolinhaReceita">
+                        <span id="iniciaisInsumoModal">IN</span>
+                    </div>
+
+                    <h3 id="nomeInsumoModal">Nome do insumo</h3>
+
+                </div>
+
+                <div class="infosModal">
+
+                    <div class="info">
+                        <i class="iconeTag"></i>
+                        <span id="categoriaInsumoModal">Categoria</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="iconeBalaca"></i>
+                        <span id="quantidadeInsumoModal">Quantidade</span>
+                    </div>
+
+                    <div class="info">
+                        <i class="iconeUsuario"></i>
+                        <span id="fornecedorInsumoModal">Fornecedor</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="alertaModal">
+                <i class="iconeAlerta"></i>
+                <span>
+                    Todas as informações e históricos relacionados a este insumo serão permanentemente apagados do sistema.
+                </span>
+            </div>
+
+            <div class="botoesModal">
+
+                <button type="button" class="botaoCancelarModal">
+                    Cancelar
+                </button>
+
+                <button type="button" class="botaoConfirmarExcluir">
+                    Excluir insumo
+                </button>
+
+            </div>
+
         </div>
-        <div class="modal-detail">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/balanca.svg" width="13" height="13" alt="" onerror="this.style.display='none'" />
-          <span id="modalQtd">—</span>
-        </div>
-        <div class="modal-detail">
-          <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/prancheta.svg" width="13" height="13" alt="" onerror="this.style.display='none'" />
-          <span id="modalForn">—</span>
-        </div>
-      </div>
-    </div>
 
-    <div class="modal-warning">
-      <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/aviso.svg" width="16" height="16" alt="" onerror="this.style.display='none'" />
-      <span>Todas as informações e históricos relacionados a este Insumo serão permanentemente apagados do sistema</span>
-    </div>
+    </dialog>
 
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
-      <button class="btn-delete" onclick="confirmDelete()">
-        <img src="https://raw.githubusercontent.com/alexa-iabn/Chas-da-laura/main/Imagens/lixeira.svg" width="14" height="14" alt="" onerror="this.style.display='none'" />
-        Excluir Insumo
-      </button>
-    </div>
-  </div>
-</div>
-
-<script src="insumoscadastrados.js"></script>
-<script src="scriptMenuLateral.js"></script>
+    <script src="scriptCadastros.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
+    <link rel="stylesheet" href="styleMenuLateral.css">
+    <link rel="stylesheet" href="stylePerfil.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
+    <title>Perfil</title>
+</head>
+<body>
+
+    <header class="topoEstoque">
+
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="saidasClientes.html" class="primeiroCaminho"> > Saída > Clientes</a>
+            </div>
+
+            <div class="notfUser">
+
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
+
+                </div>
+
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
+
+            <button id="botaoRetratil" class="botaoRetratil"></button>
+
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            </div>
+
+            <nav class="menu">
+                <ul>
+
+                    <li class="blocoOpcao">
+                        <a href="paineldeinicio.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeCasa"></span>
+                            </div>
+                            <span class="tituloMenu">Painel inicial</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class="blocoOpcao">
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeLapis"></span>
+                                    </div>
+                                    <span class="tituloMenu">Cadastros</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class=" blocoOpcao">
+                                <div class="div itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeCaixa"></span>
+                                    </div>
+                                    <span class="tituloMenu">Estoque</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="estoqueProdutos.html">Produtos</a></li>
+                                <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    
+                    <li class="blocoOpcao">
+                        <a href="painelrelatorios.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeGrafico"></span>
+                            </div>
+                            <span class="tituloMenu">Relatórios</span>
+                        </a>
+                    </li>
+
+                    <li class="blocoOpcao">
+                        <a href="producao.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconePrancheta"></span>
+                            </div>
+                            <span class="tituloMenu">Produção</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="blocoOpcao" >
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeSetaCima"></span>
+                                    </div>
+                                    <span class="tituloMenu">Saídas</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+            
+    </aside>
+
+    <main class="conteudo">
+
+        <div class="topoPaginaPerfil">
+
+            <div>
+                <h1 class="tituloPagina">Perfil</h1>
+                <h3 class="subtituloPagina">Gerencie suas informações de acesso ao sistema</h3>
+            </div>
+
+            <button type="button" class="botaoVoltar" onclick="history.back()">
+                ← Voltar
+            </button>
+
+        </div>
+
+        <section class="layoutPerfil">
+
+            <aside class="cardPerfilUsuario">
+
+                <div class="avatarPerfilGrande" id="avatarPerfilGrande">
+                    L
+                </div>
+
+                <h2 id="nomePerfilResumo">
+                    Laura
+                </h2>
+
+                <span class="cargoPerfil" id="cargoPerfil">
+                    Usuário do sistema
+                </span>
+
+                <p id="emailPerfilResumo">
+                    email@exemplo.com
+                </p>
+
+                <div class="infoPerfilConta">
+                    <span>Conta criada em</span>
+                    <strong id="dataCriacaoPerfil">--/--/----</strong>
+                </div>
+
+            </aside>
+
+            <section class="cardFormularioPerfil">
+
+                <div class="cabecalhoCardPerfil">
+                    <h2>Informações pessoais</h2>
+                    <p>Atualize os dados exibidos no seu perfil</p>
+                </div>
+
+                <form class="formularioPerfil">
+
+                    <div class="linhaFormulario">
+
+                        <div class="campoFormulario">
+                            <label>Nome de usuário</label>
+                            <input type="text" id="nomeUsuarioPerfil" placeholder="Nome exibido na barra">
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>Nome completo</label>
+                            <input type="text" id="nomeCompletoPerfil" placeholder="Digite seu nome completo">
+                        </div>
+
+                    </div>
+
+                    <div class="linhaFormulario">
+
+                        <div class="campoFormulario">
+                            <label>E-mail</label>
+                            <input type="email" id="emailPerfil" placeholder="Digite seu e-mail">
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>Função</label>
+                            <input type="text" id="funcaoPerfil" placeholder="Ex: Administrador" disabled>
+                        </div>
+
+                    </div>
+
+                    <div class="cabecalhoCardPerfil espacoSenha">
+                        <h2>Alterar senha</h2>
+                        <p>Preencha os campos abaixo apenas se quiser trocar sua senha</p>
+                    </div>
+
+                    <div class="linhaFormulario">
+
+                        <div class="campoFormulario">
+                            <label>Senha atual</label>
+                            <input type="password" id="senhaAtualPerfil" placeholder="Digite sua senha atual">
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>Nova senha</label>
+                            <input type="password" id="novaSenhaPerfil" placeholder="Digite a nova senha">
+                        </div>
+
+                    </div>
+
+                    <div class="linhaFormulario">
+
+                        <div class="campoFormulario">
+                            <label>Confirmar nova senha</label>
+                            <input type="password" id="confirmarSenhaPerfil" placeholder="Confirme a nova senha">
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>Status da conta</label>
+                            <input type="text" id="statusPerfil" value="Ativa" disabled>
+                        </div>
+
+                    </div>
+
+                    <div class="botoesFormulario">
+                        <button type="button" class="botaoCancelar" onclick="history.back()">
+                            Cancelar
+                        </button>
+
+                        <button type="button" class="botaoSalvar" id="botaoSalvarPerfil">
+                            Salvar alterações
+                        </button>
+                    </div>
+
+                </form>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfil.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
+
+</body>
+</html>

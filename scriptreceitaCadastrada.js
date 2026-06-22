@@ -58,7 +58,7 @@ function carregarReceitasNaTabela(){
                 <td>${formatarMoeda(custoTotal)}</td>
                 <td>
                     <div class="acoes">
-                        <a href="editarreceita.html" class="editarReceita"></a>
+                        <a href="editarreceita.html?id=${receita.id}" class="iconeLapisTabela"></a>
                         <button type="button" class="botaoAbrirModal"></button>
                     </div>
                 </td>

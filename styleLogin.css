@@ -1,0 +1,409 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body.paginaCadastro{
+    display:flex;
+    width:100%;
+    height:100vh;
+}
+
+/* ===================== LADO ESQUERDO ===================== */
+
+.ladoCadastroImagem{
+    width:50%;
+    background-image:url("Imagens/fundoLogin.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+
+    text-align:center;
+    padding-top:20px;
+    padding-left:60px;
+    padding-right:60px;
+}
+
+.logoCadastro{
+    width:15vh;
+    margin-bottom:1vh;
+}
+
+.ladoCadastroImagem h1{
+    font-size:38px;
+    color:#144621;
+    margin-bottom:2vh;
+    line-height:1.2;
+}
+
+.ladoCadastroImagem p{
+    font-size:20px;
+    color:#4b4b4b;
+    line-height:1.6;
+}
+
+/* ===================== LADO DIREITO ===================== */
+
+.ladoCadastroFormulario{
+    width:50%;
+    background:#f4f4f4;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ===================== CARD ===================== */
+
+.cardLogin{
+    width:500px;
+    background:white;
+    border-radius:18px;
+    padding:45px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.15);
+}
+
+.cardLogin h2{
+    color:#144621;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.cardLogin>p{
+    color:#4d4d4d;
+    margin-bottom:30px;
+}
+
+/* ===================== FORM ===================== */
+
+.cardLogin form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.cardLogin label{
+    color:#144621;
+    font-weight:bold;
+}
+
+.cardLogin input[type="email"],
+.cardLogin input[type="password"]{
+    width:100%;
+    height:52px;
+
+    padding:0 15px;
+
+    border:1px solid #d8d8d8;
+    border-radius:10px;
+    font-size:16px;
+}
+
+/* ===================== LEMBRAR ===================== */
+
+.linhaLogin{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:8px 0 25px;
+}
+
+.lembrar{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#444;
+    font-weight:normal;
+}
+
+.linhaLogin a{
+    text-decoration:none;
+    color:#144621;
+    font-size:15px;
+}
+
+.linhaLogin a:hover{
+    text-decoration:underline;
+}
+
+/* ===================== BOTÃO ===================== */
+
+.botaoCadastrar{
+    width:100%;
+    height:52px;
+
+    background:#144621;
+    color:white;
+
+    border:none;
+    border-radius:10px;
+
+    font-size:17px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.botaoCadastrar:hover{
+    background:#0f3519;
+}
+
+/* ===================== CADASTRAR ===================== */
+
+.textoEntrar{
+    margin-top:25px;
+    text-align:center;
+    color:#555;
+}
+
+.textoEntrar a{
+    color:#144621;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.textoEntrar a:hover{
+    text-decoration:underline;
+}
+
+/*========================== CADASTRAR ==========================*/
+
+/* LADO DIREITO */
+
+.ladoCadastroFormulario{
+    width: 50%;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CARD */
+
+.cardCadastro{
+    width: 500px;
+    background-color: white;
+    padding: 23px 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+}
+
+.cardCadastro h2{
+    color: #144621;
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+.cardCadastro > p{
+    color: #144621;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.cardCadastro form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cardCadastro label{
+    color: #144621;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.cardCadastro input{
+    width: 100%;
+    height: 40px;
+    padding: 0 14px;
+
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+/* CÓDIGO DE ACESSO */
+
+.linhaCodigo{
+    display: flex;
+    gap: 10px;
+}
+
+.linhaCodigo input{
+    flex: 1;
+}
+
+.botaoSolicitar{
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+
+    background-color: #144621;
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* BOTÃO CADASTRAR */
+
+.botaoCadastrar{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+    background-color: #144621;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botaoCadastrar:hover,
+.botaoSolicitar:hover{
+    background-color: #0f3519;
+}
+
+.textoEntrar{
+    text-align: center;
+    color: #555;
+    margin-top: 18px;
+}
+
+.textoEntrar a{
+    color: #144621;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* MODAL */
+
+.fundoModalCadastro{
+    border: none;
+    padding: 0;
+    margin: auto;         
+    border-radius: 18px;
+    overflow: hidden;     
+    max-width: none;
+    max-height: none;
+}
+
+.fundoModalCadastro::backdrop{
+    background: rgba(0,0,0,.55);
+}
+
+.modalCodigo{
+    width: 520px;
+    background-color: white;
+    border-radius: 18px;
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    position: relative;
+}
+
+.fecharModal{
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modalCodigo h2{
+    color: #144621;
+    font-size: 28px;
+}
+
+.modalCodigo p{
+    color: #555;
+    line-height: 1.4;
+}
+
+.modalCodigo label{
+    color: #144621;
+    font-weight: bold;
+}
+
+.modalCodigo input,
+.modalCodigo textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+}
+
+.modalCodigo textarea{
+    height: 60px;
+    resize: none;
+}
+
+.infoCodigo{
+    background-color: #eef8ee;
+    border: 1px solid #144621;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.infoCodigo strong{
+    color: #144621;
+}
+
+/*=================== REDEFINIR SENHA ======================*/
+
+.separador{
+    width: 100%;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.cardLogin form > a{
+    text-decoration: none;
+    width: 100%;
+}
+
+.botaoVoltar{
+    width: 100%;
+    height: 42px;
+
+    background-color: white;
+    color: #144621;
+
+    border: 1px solid #144621;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.botaoVoltar:hover{
+    background-color: #f0f7f0;
+}

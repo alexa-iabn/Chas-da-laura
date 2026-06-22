@@ -818,6 +818,8 @@ main{
     hue-rotate(96deg)
     brightness(94%)
     contrast(93%);
+
+    cursor: pointer;
 }
 
 .iconeLixeira{
@@ -826,10 +828,12 @@ main{
     margin: 0vh;
 
     display: block;
+    border: none;
 
     background-image: url(Imagens/lixeira.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: transparent;
 
     filter:
     invert(17%)
@@ -838,6 +842,8 @@ main{
     hue-rotate(356deg)
     brightness(96%)
     contrast(118%);
+
+    cursor: pointer;
 }
 
 .conteinerCartas{
@@ -1192,7 +1198,6 @@ main{
     width: 3vh;
     height: 3vh;
     margin: 0vh;
-    margin-top: ;
 
     display: block;
 
@@ -1253,7 +1258,6 @@ main{
     width: 3vh;
     height: 3vh;
     margin: 0vh;
-    margin-top: ;
 
     display: block;
 

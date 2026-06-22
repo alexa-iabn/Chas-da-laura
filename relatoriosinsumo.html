@@ -5,104 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chás da Laura - Relatórios de Insumos</title>
     <link rel="stylesheet" href="styleInsumos.css">
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
 </head>
 <body>
     
-   <header class="topoEstoque">
-        <div class="caminho">
-            <a href="paineldeinicio.html">Início</a>
-            <span>&gt;</span>
-            <a href="#" class="linkEstoqueProdutos">Relatórios de Produção</a>
-        </div>
-        
-        <div class="notfUser">
-            <div class="notificacao">
-                <span class="sino"></span>
-                <span class="bolinha"></span>
+    <header class="topoEstoque">
+
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="painelrelatorios.html" class="primeiroCaminho"> > Relatórios</a>
+                <a href="relatoriosinsumo.html" class="segundoCaminho"> > Relatório insumos</a>
             </div>
-            <div class="PerfilUsuario">
-                <div class="avatar">L</div>
-                <span class="nomeUsuario">Laura</span>
-                <span class="seta">▼</span>
+
+            <div class="notfUser">
+
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
+
+                </div>
+
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
             </div>
-        </div>
     </header>
 
     <aside class="menuLateral">
-        <div class="logoMenuLateral">
-            <img src="imagens/Logo.png" alt="Logo Chás da Laura">
-        </div>
 
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="paineldeinicio.html" class="itemMenu">
-                        <img src="imagens/casa.svg" alt="Painel inicial" class="iconeMenu">
-                        <span class="tituloMenu">Painel inicial</span>
-                    </a>
-                </li>
+            <button id="botaoRetratil" class="botaoRetratil"></button>
 
-                <li>
-                    <details open>
-                        <summary class="itemMenu">
-                            <img src="imagens/lapiz_2.svg" alt="Cadastros" class="iconeMenu">
-                            <span class="tituloMenu">Cadastros</span>
-                        </summary>
-                        <ul class="subMenu">
-                            <li><a href="cadastroclientes.html">Clientes</a></li>
-                            <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                            <li><a href="CadastroInsumos.html">Insumos</a></li>
-                            <li><a href="cadastroprodutos.html">Produtos</a></li>
-                            <li><a href="cadastroreceitas.html">Receitas</a></li>
-                            <li><a href="cadastroparceiros.html">Parceiros</a></li>
-                        </ul>
-                    </details>
-                </li>
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
+            </div>
 
-                <li>
-                    <details>
-                        <summary class="itemMenu">
-                            <img src="imagens/caixa.svg" alt="Estoque" class="iconeMenu"> 
-                            <span class="tituloMenu">Estoque</span>
-                        </summary>
-                        <ul class="subMenu">
-                            <li><a href="EstoqueProdutos.html">Produtos</a></li>
-                            <li><a href="EstoqueInsumos.html">Insumos</a></li>
-                        </ul>
-                    </details>
-                </li>
+            <nav class="menu">
+                <ul>
 
-                <li>
-                    <a href="relatoriosVendas.html" class="itemMenu">
-                        <img src="imagens/grafico.svg" alt="Relatórios" class="iconeMenu">
-                        <span class="tituloMenu">Relatórios</span>
-                    </a>
-                </li>
+                    <li class="blocoOpcao">
+                        <a href="paineldeinicio.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeCasa"></span>
+                            </div>
+                            <span class="tituloMenu">Painel inicial</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="PaginaProducao.html" class="itemMenu">
-                        <img src="imagens/grafico.svg" alt="Produção" class="iconeMenu">
-                        <span class="tituloMenu">Produção</span>
-                    </a>
-                </li>
+                    <li>
+                        <details>
 
-                <li>
-                    <details>
-                        <summary class="itemMenu">
-                            <img src="imagens/setaCima.svg" alt="Saídas" class="iconeMenu">
-                            <span class="tituloMenu">Saídas</span>
-                        </summary>
-                        <ul class="subMenu">
-                            <li><a href="saidasClientes.html">Clientes</a></li>
-                            <li><a href="saidaParceiro.html">Parceiros</a></li>
-                        </ul>
-                    </details>
-                </li>
-            </ul>
-        </nav>
+                            <summary class="blocoOpcao">
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeLapis"></span>
+                                    </div>
+                                    <span class="tituloMenu">Cadastros</span>
+                                </div>
+                            </summary>
 
-        <img src="imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+                            <ul class="subMenu">
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details>
+
+                            <summary class=" blocoOpcao">
+                                <div class="div itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeCaixa"></span>
+                                    </div>
+                                    <span class="tituloMenu">Estoque</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="estoqueProdutos.html">Produtos</a></li>
+                                <li><a href="estoqueInsumos.html">Insumos</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    
+                    <li class="blocoOpcao">
+                        <a href="painelrelatorios.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconeGrafico"></span>
+                            </div>
+                            <span class="tituloMenu">Relatórios</span>
+                        </a>
+                    </li>
+
+                    <li class="blocoOpcao">
+                        <a href="producao.html" class="itemMenu">
+                            <div class="circulo">
+                                <span class="iconePrancheta"></span>
+                            </div>
+                            <span class="tituloMenu">Produção</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary class="blocoOpcao" >
+                                <div class="itemMenu">
+                                    <div class="circulo">
+                                        <span class="iconeSetaCima"></span>
+                                    </div>
+                                    <span class="tituloMenu">Saídas</span>
+                                </div>
+                            </summary>
+
+                            <ul class="subMenu">
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+
+            <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
+            
     </aside>
+
     <main class="conteudo">
         <h1 class="tituloPagina">Relatórios de Insumos</h1>
         <h3 class="subtituloPagina">Acompanhe a situação atual de todos os itens em estoque</h3>
@@ -227,5 +284,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="produtos.js"></script>
     <script src="relatorios.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
+    
 </body>
 </html>

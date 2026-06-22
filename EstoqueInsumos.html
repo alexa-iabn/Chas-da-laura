@@ -5,39 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque de insumos</title>
     <link rel="stylesheet" href="styleEstoque.css">
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 <body>
     
         <header class="topoEstoque">
 
             <div class="caminho">
-                <a href="paginaPrincipal.html" class="paginaPrincipal"></a>
-                <a href="EstoqueInsumos.html" class="primeiroCaminho"> > Estoque > Estoque Insumos</a>
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="EstoqueInsumos.html" class="primeiroCaminho"> > Estoque > Insumos</a>
             </div>
 
             <div class="notfUser">
 
                 <div class="notificacao">
-
                     <i class="sino"></i>
                     <span class="bolinha"></span>
 
                 </div>
 
-                <div class="PerfilUsuario">
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
 
                     <div class="avatar">
-                        <span class="L"> L </span>
+                        <span id="iniciaisUsuario">L</span>
                     </div>
 
-                    <h2 class="nomeUsuario">Laura</h2>
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
 
                     <span class="seta">⌄</span>
 
-                </div>
-        </header>
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
 
-        <aside class="menuLateral">
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
 
             <button id="botaoRetratil" class="botaoRetratil"></button>
 
@@ -49,7 +68,7 @@
                 <ul>
 
                     <li class="blocoOpcao">
-                        <a href="paginaInicial.html" class="itemMenu">
+                        <a href="paineldeinicio.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeCasa"></span>
                             </div>
@@ -70,12 +89,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -100,7 +119,7 @@
                     </li>
                     
                     <li class="blocoOpcao">
-                        <a href="PaginaRelatorios.html" class="itemMenu">
+                        <a href="painelrelatorios.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeGrafico"></span>
                             </div>
@@ -109,7 +128,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -129,8 +148,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -352,6 +371,9 @@
                 </div>
             </section>
         </main>
+
         <script src="arquivo.js"></script>
+        <script src="scriptPerfilUsuario.js"></script>
+        
 </body>
 </html>

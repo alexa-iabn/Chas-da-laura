@@ -1,0 +1,235 @@
+/* ================= PERFIL ================= */
+
+.topoPaginaPerfil{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3vh;
+    margin-top: 2vh;
+}
+
+.topoPaginaPerfil .tituloPagina{
+    font-size: 4vh;
+    color: #111;
+    margin: 0;
+}
+
+.topoPaginaPerfil .subtituloPagina{
+    font-size: 2vh;
+    color: #555;
+    font-weight: normal;
+    margin-top: 1vh;
+}
+
+/* mantém o conteúdo como você deixou */
+.conteudo{
+    width: 170vh;
+    height: auto;
+
+    margin-left: 35vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: first baseline;
+}
+
+/* ================= LAYOUT INTERNO ================= */
+
+.layoutPerfil{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 32vh 1fr;
+    gap: 4vh;
+    align-items: start;
+}
+
+.cardPerfilUsuario,
+.cardFormularioPerfil{
+    width: 100%;
+    background: #fff;
+    border-radius: 1.5vh;
+    box-shadow: 0 4px 14px rgba(0,0,0,.14);
+    padding: 3vh;
+    box-sizing: border-box;
+}
+
+.cardPerfilUsuario{
+    min-height: 42vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cardFormularioPerfil{
+    min-height: 42vh;
+}
+
+/* ================= CARD ESQUERDO ================= */
+
+.avatarPerfilGrande{
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+    background: #144621;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+
+.cardPerfilUsuario h2{
+    margin: 0;
+    color: #111;
+    font-size: 2.7vh;
+}
+
+.cargoPerfil{
+    background: #e9f8e9;
+    color: #144621;
+    padding: .8vh 1.5vh;
+    border-radius: 2vh;
+    font-weight: bold;
+    font-size: 1.6vh;
+    margin: 1.5vh 0;
+}
+
+#emailPerfilResumo{
+    color: #555;
+    font-size: 1.8vh;
+    margin-bottom: 3vh;
+}
+
+.infoPerfilConta{
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: .8vh;
+}
+
+.infoPerfilConta span{
+    color: #666;
+    font-size: 1.6vh;
+}
+
+.infoPerfilConta strong{
+    color: #144621;
+    font-size: 1.8vh;
+}
+
+/* ================= FORMULÁRIO ================= */
+
+.cabecalhoCardPerfil{
+    margin-bottom: 2.5vh;
+}
+
+.cabecalhoCardPerfil h2{
+    color: #144621;
+    font-size: 2.8vh;
+    margin: 0 0 .8vh 0;
+}
+
+.cabecalhoCardPerfil p{
+    color: #666;
+    margin: 0;
+    font-size: 1.7vh;
+}
+
+.espacoSenha{
+    margin-top: 3vh;
+}
+
+.formularioPerfil{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formularioPerfil .linhaFormulario{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vh;
+    margin-bottom: 2vh;
+}
+
+.campoFormulario{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .8vh;
+}
+
+.campoFormulario label{
+    color: #144621;
+    font-weight: bold;
+    font-size: 1.8vh;
+}
+
+.campoFormulario input{
+    width: 100%;
+    height: 5vh;
+    border: 1px solid #d6d6d6;
+    border-radius: .8vh;
+    padding: 0 1.5vh;
+    font-size: 1.8vh;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.campoFormulario input:focus{
+    border-color: #144621;
+}
+
+.campoFormulario input:disabled{
+    background: #f3f3f3;
+    color: #777;
+}
+
+/* ================= BOTÕES ================= */
+
+.botoesFormulario{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vh;
+    margin-top: 3vh;
+}
+
+.botaoCancelar,
+.botaoVoltar{
+    background: transparent;
+    color: #111;
+    border: 1px solid #cfcfcf;
+    border-radius: .8vh;
+    padding: 1.3vh 3vh;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botaoSalvar{
+    background: #144621;
+    color: white;
+    border: none;
+    border-radius: .8vh;
+    padding: 1.3vh 3vh;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botaoSalvar:hover{
+    background: #0f3519;
+}
+
+.botaoCancelar:hover,
+.botaoVoltar:hover{
+    background: #f3f3f3;
+}
+

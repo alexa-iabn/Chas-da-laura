@@ -1,0 +1,198 @@
+/* ================= CONTEÚDO ================= */
+
+.conteudo{
+
+    width: 170vh;
+    height: auto;
+
+    margin-left: 35vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: first baseline;
+}
+
+
+/* ================= NOVO LOGIN ================= */
+
+.topoPaginaNovoLogin{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+.layoutNovoLogin{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 36vh;
+    gap: 4vh;
+    align-items: start;
+}
+
+.cardFormularioNovoLogin,
+.cardResumoNovoLogin{
+    width: 100%;
+    background: #fff;
+    border-radius: 1.5vh;
+    box-shadow: 0 4px 14px rgba(0,0,0,.14);
+    padding: 3vh;
+    box-sizing: border-box;
+}
+
+.cardFormularioNovoLogin h2{
+    color: #144621;
+    font-size: 2.8vh;
+    margin-bottom: 3vh;
+}
+
+.linhaFormulario{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vh;
+    margin-bottom: 2vh;
+}
+
+.campoFormulario{
+    display: flex;
+    flex-direction: column;
+    gap: .8vh;
+}
+
+.campoFormulario label{
+    color: #144621;
+    font-weight: bold;
+    font-size: 1.8vh;
+}
+
+.campoFormulario input,
+.campoFormulario select{
+    width: 100%;
+    height: 5vh;
+    border: 1px solid #d6d6d6;
+    border-radius: .8vh;
+    padding: 0 1.5vh;
+    font-size: 1.8vh;
+    outline: none;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.campoFormulario input:focus,
+.campoFormulario select:focus{
+    border-color: #144621;
+}
+
+.cardResumoNovoLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cardResumoNovoLogin hr{
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2vh 0;
+}
+
+.botoesFormulario{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vh;
+    margin-top: 3vh;
+}
+
+.botaoCancelar,
+.botaoVoltar{
+    background: transparent;
+    color: #111;
+    border: 1px solid #cfcfcf;
+    border-radius: .8vh;
+    padding: 1.3vh 3vh;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botaoSalvar{
+    background: #144621;
+    color: white;
+    border: none;
+    border-radius: .8vh;
+    padding: 1.3vh 3vh;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botaoSalvar:hover{
+    background: #0f3519;
+}
+
+.botaoCancelar:hover,
+.botaoVoltar:hover{
+    background: #f3f3f3;
+}
+
+
+.avatarPerfilGrande{
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+    background: #144621;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    font-weight: bold;
+    margin-bottom: 2vh;
+    box-shadow: 0 .5vh 1.5vh rgba(20,70,33,.25);
+}
+
+.cardResumoNovoLogin h2{
+    margin: 0;
+    font-size: 2.8vh;
+    color: #111;
+}
+
+.cargoPerfil{
+    margin-top: 1.5vh;
+    margin-bottom: 2vh;
+    background: #E9F7ED;
+    color: #144621;
+    padding: .8vh 2vh;
+    border-radius: 3vh;
+    font-size: 1.7vh;
+    font-weight: 600;
+}
+
+#emailResumoNovoUsuario{
+    margin: 0;
+    color: #666;
+    font-size: 1.7vh;
+    margin-bottom: 2vh;
+}
+
+.infoPerfilConta{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .6vh;
+    margin-top: 2vh;
+}
+
+.infoPerfilConta span{
+    color: #666;
+    font-size: 1.6vh;
+}
+
+.infoPerfilConta strong{
+    color: #144621;
+    font-size: 1.8vh;
+}

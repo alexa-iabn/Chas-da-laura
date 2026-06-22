@@ -6,26 +6,63 @@
     <title>Resumo Geral</title>
     <link rel="stylesheet" href="stylesabrina.css">
     <link rel="stylesheet" href="styleMenuLateral.css">
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
 </head>
 <body>
 
-<header class="topoEstoque">
-    <a href="paineldeinicio.html" class="paginaPrincipal"></a>
-    <a href="relatoriosVendas.html" class="LinkEstoque">Relatórios</a>
-    <a href="relatoriosResumoGeral.html" class="linkEstoqueProdutos"> &gt; Resumo Geral</a>
-    <div class="notificacao"><i class="sino"></i></div>
-    <div class="PerfilUsuario">
-        <div class="avatar"><span>L</span></div>
-        <span class="nomeUsuario">Laura</span>
-    </div>
-</header>
+    <header class="topoEstoque">
 
-<aside class="menuLateral">
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="painelrelatorios.html" class="primeiroCaminho"> > Relatórios</a>
+                <a href="relatoriosResumoGeral.html" class="segundoCaminho"> > Relatório Resumo geral</a>
+            </div>
 
-    <button id="botaoRetratil" class="botaoRetratil"></button>
+            <div class="notfUser">
 
-    <div class="logoMenuLateral">
-        <img src="Imagens/Logo.png" alt="Logo chás da laura">
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
+
+                </div>
+
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+    </header>
+
+    <aside class="menuLateral">
+
+            <button id="botaoRetratil" class="botaoRetratil"></button>
+
+            <div class="logoMenuLateral">
+                <img src="Imagens/Logo.png" alt="Logo chás da laura">
             </div>
 
             <nav class="menu">
@@ -53,12 +90,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -92,7 +129,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -112,8 +149,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -122,152 +159,154 @@
 
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
-        </aside>
+    </aside>
 
-<main class="conteudoPrincipal">
+    <main class="conteudoPrincipal">
 
-    <div class="topoPagina">
-        <div>
-            <h1 class="tituloPagina">Resumo Geral</h1>
-            <p class="subtituloPagina">Visão consolidada de vendas, estoque, receitas e produção.</p>
-        </div>
-        <div class="grupoBotoes">
-            <select id="selectPeriodo" class="filtrar">
-                <option value="7">Últimos 7 dias</option>
-                <option value="30" selected>Últimos 30 dias</option>
-                <option value="90">Últimos 90 dias</option>
-                <option value="365">Último ano</option>
-            </select>
-            <button class="btnVerde" id="btnAtualizar">&#8635; Atualizar</button>
-        </div>
-    </div>
-
-    <!-- Cards de resumo -->
-    <section class="cardsResumo" id="cardsResumo">
-        <div class="cardResumo">
-            <span class="cardSubtitulo">Faturamento do período</span>
-            <strong class="cardNumero" id="cardFaturamento">—</strong>
-            <a href="relatoriosVendas.html">Ver vendas</a>
-        </div>
-        <div class="cardResumo">
-            <span class="cardSubtitulo">Produtos em estoque</span>
-            <strong class="cardNumero" id="cardEstoque">—</strong>
-            <a href="relatorioestoque.html">Ver estoque</a>
-        </div>
-        <div class="cardResumo">
-            <span class="cardSubtitulo">Receitas cadastradas</span>
-            <strong class="cardNumero" id="cardReceitas">—</strong>
-            <a href="relatorioReceitas.html">Ver receitas</a>
-        </div>
-        <div class="cardResumo">
-            <span class="cardSubtitulo">Produções no período</span>
-            <strong class="cardNumero" id="cardProducoes">—</strong>
-            <a href="relatoriosProducao.html">Ver produções</a>
-        </div>
-    </section>
-
-    <!-- Linha: gráfico + resumo lateral -->
-    <div class="linhaDashboard" style="margin-top: 24px;">
-
-        <div class="cardDashboard">
-            <div class="topoPagina" style="margin-bottom: 12px;">
-                <h2 class="tituloTabela" style="margin:0;">Faturamento mensal <span style="font-size:14px; color:#555;">(R$)</span></h2>
+        <div class="topoPagina">
+            <div>
+                <h1 class="tituloPagina">Resumo Geral</h1>
+                <p class="subtituloPagina">Visão consolidada de vendas, estoque, receitas e produção.</p>
             </div>
-            <div class="graficoBarras" id="graficoFaturamento">
-                <!-- preenchido pelo JS -->
+            <div class="grupoBotoes">
+                <select id="selectPeriodo" class="filtrar">
+                    <option value="7">Últimos 7 dias</option>
+                    <option value="30" selected>Últimos 30 dias</option>
+                    <option value="90">Últimos 90 dias</option>
+                    <option value="365">Último ano</option>
+                </select>
+                <button class="btnVerde" id="btnAtualizar">&#8635; Atualizar</button>
             </div>
         </div>
 
-        <div class="cardDashboard cardResumoVerde2" style="background:#DDF7C9;">
-            <h3 style="margin:0 0 16px 0; color:#0D4B24;">Destaques do período</h3>
-            <div class="linhaResumo">
-                <span>Produto mais vendido</span>
-                <strong id="produtoDestaque">—</strong>
+        <!-- Cards de resumo -->
+        <section class="cardsResumo" id="cardsResumo">
+            <div class="cardResumo">
+                <span class="cardSubtitulo">Faturamento do período</span>
+                <strong class="cardNumero" id="cardFaturamento">—</strong>
+                <a href="relatoriosVendas.html">Ver vendas</a>
             </div>
-            <div class="linhaResumo">
-                <span>Receita mais produzida</span>
-                <strong id="receitaDestaque">—</strong>
+            <div class="cardResumo">
+                <span class="cardSubtitulo">Produtos em estoque</span>
+                <strong class="cardNumero" id="cardEstoque">—</strong>
+                <a href="relatorioestoque.html">Ver estoque</a>
             </div>
-            <div class="linhaResumo">
-                <span>Insumo mais usado</span>
-                <strong id="insumoDestaque">—</strong>
+            <div class="cardResumo">
+                <span class="cardSubtitulo">Receitas cadastradas</span>
+                <strong class="cardNumero" id="cardReceitas">—</strong>
+                <a href="relatorioReceitas.html">Ver receitas</a>
             </div>
-            <div class="linhaResumo">
-                <span>Ticket médio</span>
-                <strong id="ticketMedio">—</strong>
+            <div class="cardResumo">
+                <span class="cardSubtitulo">Produções no período</span>
+                <strong class="cardNumero" id="cardProducoes">—</strong>
+                <a href="relatoriosProducao.html">Ver produções</a>
             </div>
-            <div class="linhaResumo">
-                <span>Total de clientes</span>
-                <strong id="totalClientes">—</strong>
+        </section>
+
+        <!-- Linha: gráfico + resumo lateral -->
+        <div class="linhaDashboard" style="margin-top: 24px;">
+
+            <div class="cardDashboard">
+                <div class="topoPagina" style="margin-bottom: 12px;">
+                    <h2 class="tituloTabela" style="margin:0;">Faturamento mensal <span style="font-size:14px; color:#555;">(R$)</span></h2>
+                </div>
+                <div class="graficoBarras" id="graficoFaturamento">
+                    <!-- preenchido pelo JS -->
+                </div>
+            </div>
+
+            <div class="cardDashboard cardResumoVerde2" style="background:#DDF7C9;">
+                <h3 style="margin:0 0 16px 0; color:#0D4B24;">Destaques do período</h3>
+                <div class="linhaResumo">
+                    <span>Produto mais vendido</span>
+                    <strong id="produtoDestaque">—</strong>
+                </div>
+                <div class="linhaResumo">
+                    <span>Receita mais produzida</span>
+                    <strong id="receitaDestaque">—</strong>
+                </div>
+                <div class="linhaResumo">
+                    <span>Insumo mais usado</span>
+                    <strong id="insumoDestaque">—</strong>
+                </div>
+                <div class="linhaResumo">
+                    <span>Ticket médio</span>
+                    <strong id="ticketMedio">—</strong>
+                </div>
+                <div class="linhaResumo">
+                    <span>Total de clientes</span>
+                    <strong id="totalClientes">—</strong>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Seção inferior -->
-    <div class="secaoInferior">
+        <!-- Seção inferior -->
+        <div class="secaoInferior">
 
-        <div class="cardAtividades">
-            <h3>Últimas vendas</h3>
-            <table class="tabelaAtividades tabelaGeral" id="tabelaUltimasVendas">
+            <div class="cardAtividades">
+                <h3>Últimas vendas</h3>
+                <table class="tabelaAtividades tabelaGeral" id="tabelaUltimasVendas">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Valor total</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyUltimasVendas">
+                        <tr><td colspan="5" style="text-align:center; color:#aaa;">Carregando...</td></tr>
+                    </tbody>
+                </table>
+                <a href="relatoriosVendas.html" class="linkVerTudo">Ver relatório completo →</a>
+            </div>
+
+            <div class="cardResumoPainel">
+                <h3>Estoque crítico</h3>
+                <div id="listaEstoqueCritico">
+                    <p style="font-size:13px; color:#555;">Carregando...</p>
+                </div>
+                <a href="relatorioestoque.html" class="linkVerTudo" style="margin-top:12px; display:block;">Ver estoque →</a>
+            </div>
+
+        </div>
+
+        <!-- Tabela consolidada -->
+        <div class="conteinerTabela" style="margin-top: 24px;">
+            <div class="barraBusca">
+                <div>
+                    <h2 class="tituloTabela" style="margin:0;">Consolidado por categoria</h2>
+                    <p class="subtituloTabela">Desempenho de vendas agrupado por categoria de produto</p>
+                </div>
+                <div class="grupoBotoes">
+                    <input type="text" placeholder="Buscar categoria..." id="buscaCategoria" style="padding:9px 12px; border:1px solid #ddd; border-radius:6px; font-size:13px;">
+                    <button class="btnVerde" id="btnExportarResumo">&#8659; Exportar</button>
+                </div>
+            </div>
+            <table class="tabelaGeral" id="tabelaConsolidado">
                 <thead>
                     <tr>
-                        <th>Data</th>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Valor total</th>
-                        <th>Tipo</th>
+                        <th>Categoria</th>
+                        <th>Qtd. vendida</th>
+                        <th>Faturamento</th>
+                        <th>Margem média</th>
+                        <th>% do total</th>
                     </tr>
                 </thead>
-                <tbody id="tbodyUltimasVendas">
+                <tbody id="tbodyConsolidado">
                     <tr><td colspan="5" style="text-align:center; color:#aaa;">Carregando...</td></tr>
                 </tbody>
             </table>
-            <a href="relatoriosVendas.html" class="linkVerTudo">Ver relatório completo →</a>
         </div>
 
-        <div class="cardResumoPainel">
-            <h3>Estoque crítico</h3>
-            <div id="listaEstoqueCritico">
-                <p style="font-size:13px; color:#555;">Carregando...</p>
-            </div>
-            <a href="relatorioestoque.html" class="linkVerTudo" style="margin-top:12px; display:block;">Ver estoque →</a>
-        </div>
+    </main>
 
-    </div>
+    <script src="app.js"></script>
+    <script src="app.js"></script>
+    <script src="js/relatoriosResumoGeral.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
 
-    <!-- Tabela consolidada -->
-    <div class="conteinerTabela" style="margin-top: 24px;">
-        <div class="barraBusca">
-            <div>
-                <h2 class="tituloTabela" style="margin:0;">Consolidado por categoria</h2>
-                <p class="subtituloTabela">Desempenho de vendas agrupado por categoria de produto</p>
-            </div>
-            <div class="grupoBotoes">
-                <input type="text" placeholder="Buscar categoria..." id="buscaCategoria" style="padding:9px 12px; border:1px solid #ddd; border-radius:6px; font-size:13px;">
-                <button class="btnVerde" id="btnExportarResumo">&#8659; Exportar</button>
-            </div>
-        </div>
-        <table class="tabelaGeral" id="tabelaConsolidado">
-            <thead>
-                <tr>
-                    <th>Categoria</th>
-                    <th>Qtd. vendida</th>
-                    <th>Faturamento</th>
-                    <th>Margem média</th>
-                    <th>% do total</th>
-                </tr>
-            </thead>
-            <tbody id="tbodyConsolidado">
-                <tr><td colspan="5" style="text-align:center; color:#aaa;">Carregando...</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-</main>
-
-<script src="app.js"></script>
-<script src="app.js"></script>
-<script src="js/relatoriosResumoGeral.js"></script>
-<script src="scriptMenuLateral.js"></script>
 </body>
 </html>

@@ -1,32 +1,63 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Cliente</title>
-    <link rel="stylesheet" href="styleclientes.css">
+    <link rel="stylesheet" href="styleMenuLateral.css">
+    <link rel="stylesheet" href="styleReceitasCastradas.css" />
+    <link rel="stylesheet" href="stylePerfilUsuario.css">
+    <link rel="icon" type="image/png" href="Imagens/xicara.svg">
 </head>
 
 <body>
-<header class="topoEstoque">
-        <div class="caminho">
-            <a href="paineldeinicio.html">Início</a>
-            <span>&gt;</span>
-            <a href="#" class="linkEstoqueProdutos">Relatórios de Produção</a>
-        </div>
-        
-        <div class="notfUser">
-            <div class="notificacao">
-                <span class="sino"></span>
-                <span class="bolinha"></span>
+
+    <header class="topoEstoque">
+
+            <div class="caminho">
+                <a href="paineldeinicio.html" class="paginaPrincipal"></a>
+                <a href="cadastroclientes.html" class="primeiroCaminho"> > Cadastro > Cliente</a>
+                <a href="clientescadastrados.html" class="segundoCaminho"> > Cliente cadastrado</a>
+                <a href="editarcliente.html" class="terceiroCaminho"> > editar cliente</a>
             </div>
-            <div class="PerfilUsuario">
-                <div class="avatar">L</div>
-                <span class="nomeUsuario">Laura</span>
-                <span class="seta">▼</span>
+
+            <div class="notfUser">
+
+                <div class="notificacao">
+                    <i class="sino"></i>
+                    <span class="bolinha"></span>
+
+                </div>
+
+                <div class="PerfilUsuario" id="botaoPerfilUsuario">
+
+                    <div class="avatar">
+                        <span id="iniciaisUsuario">L</span>
+                    </div>
+
+                    <h2 class="nomeUsuario" id="nomeUsuarioLogado">Laura</h2>
+
+                    <span class="seta">⌄</span>
+
+                    <div class="menuUsuario ocultarMenuUsuario" id="menuUsuario">
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoIrPerfil">
+                            Perfil
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario" id="botaoCriarLogin">
+                            Criar novo login
+                        </button>
+
+                        <button type="button" class="opcaoMenuUsuario sair" id="botaoSair">
+                            Sair
+                        </button>
+
+                    </div>
+
+                </div>
+                
             </div>
-        </div>
     </header>
 
     <aside class="menuLateral">
@@ -41,7 +72,7 @@
                 <ul>
 
                     <li class="blocoOpcao">
-                        <a href="paginaInicial.html" class="itemMenu">
+                        <a href="paineldeinicio.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeCasa"></span>
                             </div>
@@ -62,12 +93,12 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="CadastroClientes.html">Clientes</a></li>
-                                <li><a href="CadastroFornecedores.html">Fornecedores</a></li>
-                                <li><a href="CadastroInsumos.html">Insumos</a></li>
-                                <li><a href="CadastroProdutos.html">Produtos</a></li>
-                                <li><a href="CadastroReceitas.html">Receitas</a></li>
-                                <li><a href="CadastroParceiros.html">parceiros</a></li>
+                                <li><a href="cadastroclientes.html">Clientes</a></li>
+                                <li><a href="cadastrofornecedor.html">Fornecedores</a></li>
+                                <li><a href="cadastroinsumos.html">Insumos</a></li>
+                                <li><a href="cadastroprodutos.html">Produtos</a></li>
+                                <li><a href="cadastroreceitas.html">Receitas</a></li>
+                                <li><a href="cadastroparceiros.html">parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -92,7 +123,7 @@
                     </li>
                     
                     <li class="blocoOpcao">
-                        <a href="PaginaRelatorios.html" class="itemMenu">
+                        <a href="painelrelatorios.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconeGrafico"></span>
                             </div>
@@ -101,7 +132,7 @@
                     </li>
 
                     <li class="blocoOpcao">
-                        <a href="PaginaProducao.html" class="itemMenu">
+                        <a href="producao.html" class="itemMenu">
                             <div class="circulo">
                                 <span class="iconePrancheta"></span>
                             </div>
@@ -121,8 +152,8 @@
                             </summary>
 
                             <ul class="subMenu">
-                                <li><a href="SaidasCliente.html">Clientes</a></li>
-                                <li><a href="SaidasParceiros.html">Parceiros</a></li>
+                                <li><a href="saidasClientes.html">Clientes</a></li>
+                                <li><a href="saidaParceiro.html">Parceiros</a></li>
                             </ul>
                         </details>
                     </li>
@@ -132,298 +163,186 @@
             <img src="Imagens/ChaImagemMenu.png" class="imagemCha" alt="Chá da Laura">
             
         </aside>
-<main>
 
-    <div class="topoPaginaReceita">
+    <main class="conteudo">
 
-        <div>
+        <div class="topoPaginaEditarCliente">
 
-            <h1 class="tituloPagina">
-                Editar cliente
-            </h1>
+            <div>
+                <h1 class="tituloPagina">Editar cliente</h1>
+                <h3 class="subtituloPagina">
+                    Atualize e modifique as informações do cliente
+                </h3>
+            </div>
 
-            <h3 class="subtituloPagina">
-                Atualize os dados do cliente
-            </h3>
-
-        </div>
-
-    </div>
-
-    <div class="layoutEditarCliente">
-
-        <!-- COLUNA ESQUERDA -->
-        <div class="conteudoPrincipal">
-
-            <section class="conteinerTabela formularioClientes">
-
-                <div class="linhaFormulario">
-
-                    <div>
-
-                        <label>Nome Completo</label>
-
-                        <input
-                            type="text"
-                            value="Maria Silva"
-                        >
-
-                    </div>
-
-                    <div>
-
-                        <label>CPF/CNPJ</label>
-
-                        <input
-                            type="text"
-                            value="123.456.789-00"
-                        >
-
-                    </div>
-
-                </div>
-
-                <div class="linhaFormulario">
-
-                    <div>
-
-                        <label>Telefone</label>
-
-                        <input
-                            type="text"
-                            value="(11) 98765-4321"
-                        >
-
-                    </div>
-
-                    <div>
-
-                        <label>E-mail</label>
-
-                        <input
-                            type="email"
-                            value="maria@email.com"
-                        >
-
-                    </div>
-
-                </div>
-
-                <div>
-
-                    <label>Endereço</label>
-
-                    <input
-                        type="text"
-                        value="Rua das Flores, 123"
-                    >
-
-                </div>
-
-                <div>
-
-                    <label>Observação</label>
-
-                    <textarea
-                        rows="4"
-                        class="campoGrande"
-                    >Cliente frequente e interessado em novos lançamentos.</textarea>
-
-                </div>
-
-                <div class="botoesFormulario">
-
-                    <button class="botaoCancelar">
-                        Cancelar
-                    </button>
-
-                    <button class="botaoSalvar">
-                        Salvar alterações
-                    </button>
-
-                </div>
-
-            </section>
-
-            <!-- HISTÓRICO -->
-
-            <section class="conteinerTabela">
-
-                <h2>
-                    Últimas atividades
-                </h2>
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-
-                            <th>Data</th>
-                            <th>Tipo</th>
-                            <th>Descrição</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-
-                            <td>12/05/2025</td>
-
-                            <td>Cadastro</td>
-
-                            <td>
-                                Cliente cadastrado no sistema
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>15/05/2025</td>
-
-                            <td>Atualização</td>
-
-                            <td>
-                                Telefone alterado
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>18/05/2025</td>
-
-                            <td>Atualização</td>
-
-                            <td>
-                                E-mail atualizado
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </section>
-
-        </div>
-
-        <!-- COLUNA DIREITA -->
-
-        <aside class="barraLateralCliente">
-
-            <section class="perfilCliente">
-
-                <div class="avatarGrande">
-                    MS
-                </div>
-
-                <h2>
-                    Maria Silva
-                </h2>
-
-                <span class="statusCliente">
-                    Cliente ativo
-                </span>
-
-                <hr>
-
-                <p>
-                    📞 (11) 98765-4321
-                </p>
-
-                <p>
-                    ✉️ maria@email.com
-                </p>
-
-                <p>
-                    📍 Rua das Flores, 123
-                </p>
-
-                <hr>
-
-                <p>
-                    Cliente desde:
-                </p>
-
-                <strong>
-                    12/05/2025
-                </strong>
-
-                <button class="botaoExcluir">
-                    Excluir cliente
+            <div class="botoesTopoEditarCliente">
+                <button type="button" class="botaoVoltar" onclick="window.history.back()">
+                    ← Voltar
                 </button>
 
-            </section>
+                <button type="button" class="botaoTabela" onclick="window.location.href='clientescadastrados.html'">
+                    Ver clientes cadastrados
+                </button>
+            </div>
 
-            <section class="resumoCliente">
+        </div>
 
-                <h3>
-                    Resumo do cliente
-                </h3>
+        <div class="layoutEditarCliente">
 
-                <div class="itemResumo">
+            <div class="areaEditarCliente">
 
-                    <span>
-                        Total de pedidos
+                <section class="formularioEditarCliente">
+
+                    <h2>Informações do cliente</h2>
+
+                    <div class="linhaFormulario">
+                        <div class="campoFormulario">
+                            <label>Nome completo</label>
+                            <input type="text" id="editarNomeCliente">
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>CPF/CNPJ</label>
+                            <input type="text" id="editarCpfCliente">
+                        </div>
+                    </div>
+
+                    <div class="linhaFormulario">
+                        <div class="campoFormulario">
+                            <label>Telefone</label>
+                            <input type="text" id="editarTelefoneCliente">
+                        </div>
+
+                        <div class="campoFormulario">
+                            <label>E-mail</label>
+                            <input type="email" id="editarEmailCliente">
+                        </div>
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label>Endereço</label>
+                        <input type="text" id="editarEnderecoCliente">
+                    </div>
+
+                    <div class="campoFormulario">
+                        <label>Observação</label>
+                        <textarea id="editarObservacaoCliente" rows="4"></textarea>
+                    </div>
+
+                    <div class="botoesFormulario">
+                        <button type="button" class="botaoCancelar">
+                            Cancelar
+                        </button>
+
+                        <button type="button" class="botaoSalvar">
+                            Salvar alterações
+                        </button>
+                    </div>
+
+                </section>
+
+                <section class="historicoCliente">
+
+                    <h2>Últimas atividades</h2>
+
+                    <table class="tabelaHistoricoCliente">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Usuário</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tbodyHistoricoCliente">
+                            <tr>
+                                <td>12/05/2025</td>
+                                <td>Cadastro</td>
+                                <td>Cliente cadastrado no sistema</td>
+                                <td>Laura</td>
+                            </tr>
+
+                            <tr>
+                                <td>15/05/2025</td>
+                                <td>Atualização</td>
+                                <td>Telefone alterado</td>
+                                <td>Laura</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </section>
+
+            </div>
+
+            <aside class="barraLateralCliente">
+
+                <section class="perfilCliente">
+
+                    <div class="avatarGrande" id="avatarEditarCliente">
+                        CL
+                    </div>
+
+                    <h2 id="nomeResumoCliente">Nome do cliente</h2>
+
+                    <span class="statusCliente">
+                        Cliente ativo
                     </span>
 
-                    <strong>
-                        12
-                    </strong>
+                    <hr>
 
-                </div>
+                    <p id="telefoneResumoCliente"><i class="iconeTelefone"></i> Telefone</p>
+                    <p id="emailResumoCliente"><i class="iconeCarta"></i> E-mail</p>
+                    <p id="enderecoResumoCliente"><i class="iconeCasa"></i> Endereço</p>
 
-                <div class="itemResumo">
+                    <hr>
 
-                    <span>
-                        Valor total
-                    </span>
+                    <p>Cliente desde:</p>
+                    <strong id="dataCadastroCliente">--/--/----</strong>
 
-                    <strong>
-                        R$ 2.540,00
-                    </strong>
+                    <button type="button" class="botaoExcluir">
+                        Excluir cliente
+                    </button>
 
-                </div>
+                </section>
 
-                <div class="itemResumo">
+                <section class="resumoCliente">
 
-                    <span>
-                        Última compra
-                    </span>
+                    <h3>Resumo do cliente</h3>
 
-                    <strong>
-                        20/05/2025
-                    </strong>
+                    <div class="itemResumo">
+                        <span>Total de pedidos</span>
+                        <strong id="totalPedidosCliente">0</strong>
+                    </div>
 
-                </div>
+                    <div class="itemResumo">
+                        <span>Valor total em compras</span>
+                        <strong id="valorTotalCliente">R$ 0,00</strong>
+                    </div>
 
-                <div class="itemResumo">
+                    <div class="itemResumo">
+                        <span>Último pedido</span>
+                        <strong id="ultimoPedidoCliente">--/--/----</strong>
+                    </div>
 
-                    <span>
-                        Status
-                    </span>
+                    <div class="itemResumo">
+                        <span>Status</span>
+                        <strong>Ativo</strong>
+                    </div>
 
-                    <strong>
-                        Ativo
-                    </strong>
+                </section>
 
-                </div>
+            </aside>
 
-            </section>
+        </div>
 
-        </aside>
+    </main>
 
-    </div>
-
-</main>
-<script src="clientes.js"></script>
+    <script src="scriptCadastros.js"></script>
+    <script src="scriptMenuLateral.js"></script>
+    <script src="scriptPerfilUsuario.js"></script>
 
 </body>
 </html>
-```
+
